@@ -16,6 +16,7 @@ namespace IMS_PESO
         {
             InitializeComponent();
             panel1.BackColor = ColorTranslator.FromHtml("#FCA311");
+            
         }
         //Setting Upper Panel to dragable (refs. initMovable.cs and mousedown event on panel)
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -38,6 +39,12 @@ namespace IMS_PESO
                 initMovable.ReleaseCapture();
                 initMovable.SendMessage(Handle, initMovable.WM_NCLBUTTONDOWN, initMovable.HT_CAPTION, 0);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NSRP a = new NSRP();
+            a.ShowDialog();
         }
     }
 }
