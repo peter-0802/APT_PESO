@@ -9,3 +9,4 @@ D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.exe
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.pdb
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\bin\Debug\Bunifu_UI_v1.5.4.dll
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.NSRP.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.Form2.resources
