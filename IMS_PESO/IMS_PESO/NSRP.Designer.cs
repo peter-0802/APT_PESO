@@ -264,6 +264,69 @@
             this.label85 = new System.Windows.Forms.Label();
             this.dateTimePicker15 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker16 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.textBox67 = new System.Windows.Forms.TextBox();
+            this.textBox68 = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.textBox69 = new System.Windows.Forms.TextBox();
+            this.textBox70 = new System.Windows.Forms.TextBox();
+            this.textBox71 = new System.Windows.Forms.TextBox();
+            this.textBox60 = new System.Windows.Forms.TextBox();
+            this.textBox62 = new System.Windows.Forms.TextBox();
+            this.textBox64 = new System.Windows.Forms.TextBox();
+            this.textBox66 = new System.Windows.Forms.TextBox();
+            this.textBox72 = new System.Windows.Forms.TextBox();
+            this.textBox73 = new System.Windows.Forms.TextBox();
+            this.textBox74 = new System.Windows.Forms.TextBox();
+            this.textBox75 = new System.Windows.Forms.TextBox();
+            this.textBox76 = new System.Windows.Forms.TextBox();
+            this.textBox77 = new System.Windows.Forms.TextBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.dateTimePicker20 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker18 = new System.Windows.Forms.DateTimePicker();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker22 = new System.Windows.Forms.DateTimePicker();
+            this.label95 = new System.Windows.Forms.Label();
+            this.dateTimePicker23 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker24 = new System.Windows.Forms.DateTimePicker();
+            this.label98 = new System.Windows.Forms.Label();
+            this.dateTimePicker25 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker26 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker27 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker28 = new System.Windows.Forms.DateTimePicker();
+            this.label99 = new System.Windows.Forms.Label();
+            this.dateTimePicker29 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.label110 = new System.Windows.Forms.Label();
+            this.checkBox30 = new System.Windows.Forms.CheckBox();
+            this.checkBox31 = new System.Windows.Forms.CheckBox();
+            this.checkBox32 = new System.Windows.Forms.CheckBox();
+            this.checkBox33 = new System.Windows.Forms.CheckBox();
+            this.checkBox34 = new System.Windows.Forms.CheckBox();
+            this.checkBox35 = new System.Windows.Forms.CheckBox();
+            this.checkBox36 = new System.Windows.Forms.CheckBox();
+            this.checkBox37 = new System.Windows.Forms.CheckBox();
+            this.checkBox38 = new System.Windows.Forms.CheckBox();
+            this.checkBox39 = new System.Windows.Forms.CheckBox();
+            this.checkBox40 = new System.Windows.Forms.CheckBox();
+            this.checkBox41 = new System.Windows.Forms.CheckBox();
+            this.checkBox42 = new System.Windows.Forms.CheckBox();
+            this.checkBox43 = new System.Windows.Forms.CheckBox();
+            this.checkBox44 = new System.Windows.Forms.CheckBox();
+            this.checkBox45 = new System.Windows.Forms.CheckBox();
+            this.checkBox46 = new System.Windows.Forms.CheckBox();
+            this.checkBox47 = new System.Windows.Forms.CheckBox();
+            this.textBox78 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -285,6 +348,8 @@
             this.groupBox18.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox20.SuspendLayout();
+            this.groupBox21.SuspendLayout();
+            this.groupBox22.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -447,6 +512,11 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.groupBox22);
+            this.panel1.Controls.Add(this.label110);
+            this.panel1.Controls.Add(this.label97);
+            this.panel1.Controls.Add(this.groupBox21);
+            this.panel1.Controls.Add(this.label96);
             this.panel1.Controls.Add(this.groupBox20);
             this.panel1.Controls.Add(this.label81);
             this.panel1.Controls.Add(this.groupBox18);
@@ -898,9 +968,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Location = new System.Drawing.Point(22, 2302);
+            this.groupBox4.Location = new System.Drawing.Point(22, 2711);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(945, 44);
+            this.groupBox4.Size = new System.Drawing.Size(945, 39);
             this.groupBox4.TabIndex = 45;
             this.groupBox4.TabStop = false;
             // 
@@ -2646,7 +2716,7 @@
             this.groupBox20.Controls.Add(this.label87);
             this.groupBox20.Location = new System.Drawing.Point(18, 2034);
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(1011, 160);
+            this.groupBox20.Size = new System.Drawing.Size(1011, 108);
             this.groupBox20.TabIndex = 123;
             this.groupBox20.TabStop = false;
             // 
@@ -2812,6 +2882,707 @@
             this.dateTimePicker16.Size = new System.Drawing.Size(100, 22);
             this.dateTimePicker16.TabIndex = 130;
             // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.comboBox7);
+            this.groupBox21.Controls.Add(this.dateTimePicker28);
+            this.groupBox21.Controls.Add(this.label99);
+            this.groupBox21.Controls.Add(this.dateTimePicker29);
+            this.groupBox21.Controls.Add(this.comboBox5);
+            this.groupBox21.Controls.Add(this.dateTimePicker24);
+            this.groupBox21.Controls.Add(this.label98);
+            this.groupBox21.Controls.Add(this.dateTimePicker25);
+            this.groupBox21.Controls.Add(this.comboBox6);
+            this.groupBox21.Controls.Add(this.dateTimePicker26);
+            this.groupBox21.Controls.Add(this.dateTimePicker27);
+            this.groupBox21.Controls.Add(this.comboBox4);
+            this.groupBox21.Controls.Add(this.dateTimePicker22);
+            this.groupBox21.Controls.Add(this.label95);
+            this.groupBox21.Controls.Add(this.dateTimePicker23);
+            this.groupBox21.Controls.Add(this.comboBox3);
+            this.groupBox21.Controls.Add(this.label94);
+            this.groupBox21.Controls.Add(this.label91);
+            this.groupBox21.Controls.Add(this.dateTimePicker18);
+            this.groupBox21.Controls.Add(this.label90);
+            this.groupBox21.Controls.Add(this.textBox73);
+            this.groupBox21.Controls.Add(this.dateTimePicker20);
+            this.groupBox21.Controls.Add(this.textBox74);
+            this.groupBox21.Controls.Add(this.textBox75);
+            this.groupBox21.Controls.Add(this.textBox76);
+            this.groupBox21.Controls.Add(this.textBox77);
+            this.groupBox21.Controls.Add(this.label89);
+            this.groupBox21.Controls.Add(this.textBox60);
+            this.groupBox21.Controls.Add(this.textBox62);
+            this.groupBox21.Controls.Add(this.textBox64);
+            this.groupBox21.Controls.Add(this.textBox66);
+            this.groupBox21.Controls.Add(this.textBox72);
+            this.groupBox21.Controls.Add(this.textBox70);
+            this.groupBox21.Controls.Add(this.textBox71);
+            this.groupBox21.Controls.Add(this.textBox69);
+            this.groupBox21.Controls.Add(this.label92);
+            this.groupBox21.Controls.Add(this.label93);
+            this.groupBox21.Controls.Add(this.textBox67);
+            this.groupBox21.Controls.Add(this.textBox68);
+            this.groupBox21.Location = new System.Drawing.Point(18, 2186);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(1011, 188);
+            this.groupBox21.TabIndex = 125;
+            this.groupBox21.TabStop = false;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.Location = new System.Drawing.Point(259, 16);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(69, 18);
+            this.label92.TabIndex = 125;
+            this.label92.Text = "Address";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label93.Location = new System.Drawing.Point(9, 16);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(128, 18);
+            this.label93.TabIndex = 124;
+            this.label93.Text = "Company Name";
+            // 
+            // textBox67
+            // 
+            this.textBox67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox67.Location = new System.Drawing.Point(12, 74);
+            this.textBox67.Multiline = true;
+            this.textBox67.Name = "textBox67";
+            this.textBox67.Size = new System.Drawing.Size(235, 20);
+            this.textBox67.TabIndex = 106;
+            // 
+            // textBox68
+            // 
+            this.textBox68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox68.Location = new System.Drawing.Point(12, 46);
+            this.textBox68.Multiline = true;
+            this.textBox68.Name = "textBox68";
+            this.textBox68.Size = new System.Drawing.Size(235, 20);
+            this.textBox68.TabIndex = 80;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label96.Location = new System.Drawing.Point(15, 2155);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(171, 18);
+            this.label96.TabIndex = 124;
+            this.label96.Text = "WORK EXPERIENCE";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label97.Location = new System.Drawing.Point(192, 2155);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(430, 18);
+            this.label97.TabIndex = 126;
+            this.label97.Text = "(Limit to 10 years period, start with the most recent employment)";
+            // 
+            // textBox69
+            // 
+            this.textBox69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox69.Location = new System.Drawing.Point(12, 100);
+            this.textBox69.Multiline = true;
+            this.textBox69.Name = "textBox69";
+            this.textBox69.Size = new System.Drawing.Size(235, 20);
+            this.textBox69.TabIndex = 133;
+            // 
+            // textBox70
+            // 
+            this.textBox70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox70.Location = new System.Drawing.Point(12, 152);
+            this.textBox70.Multiline = true;
+            this.textBox70.Name = "textBox70";
+            this.textBox70.Size = new System.Drawing.Size(235, 20);
+            this.textBox70.TabIndex = 135;
+            // 
+            // textBox71
+            // 
+            this.textBox71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox71.Location = new System.Drawing.Point(12, 126);
+            this.textBox71.Multiline = true;
+            this.textBox71.Name = "textBox71";
+            this.textBox71.Size = new System.Drawing.Size(235, 20);
+            this.textBox71.TabIndex = 134;
+            // 
+            // textBox60
+            // 
+            this.textBox60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox60.Location = new System.Drawing.Point(256, 152);
+            this.textBox60.Multiline = true;
+            this.textBox60.Name = "textBox60";
+            this.textBox60.Size = new System.Drawing.Size(235, 20);
+            this.textBox60.TabIndex = 140;
+            // 
+            // textBox62
+            // 
+            this.textBox62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox62.Location = new System.Drawing.Point(256, 126);
+            this.textBox62.Multiline = true;
+            this.textBox62.Name = "textBox62";
+            this.textBox62.Size = new System.Drawing.Size(235, 20);
+            this.textBox62.TabIndex = 139;
+            // 
+            // textBox64
+            // 
+            this.textBox64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox64.Location = new System.Drawing.Point(256, 100);
+            this.textBox64.Multiline = true;
+            this.textBox64.Name = "textBox64";
+            this.textBox64.Size = new System.Drawing.Size(235, 20);
+            this.textBox64.TabIndex = 138;
+            // 
+            // textBox66
+            // 
+            this.textBox66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox66.Location = new System.Drawing.Point(256, 74);
+            this.textBox66.Multiline = true;
+            this.textBox66.Name = "textBox66";
+            this.textBox66.Size = new System.Drawing.Size(235, 20);
+            this.textBox66.TabIndex = 137;
+            // 
+            // textBox72
+            // 
+            this.textBox72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox72.Location = new System.Drawing.Point(256, 46);
+            this.textBox72.Multiline = true;
+            this.textBox72.Name = "textBox72";
+            this.textBox72.Size = new System.Drawing.Size(235, 20);
+            this.textBox72.TabIndex = 136;
+            // 
+            // textBox73
+            // 
+            this.textBox73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox73.Location = new System.Drawing.Point(499, 152);
+            this.textBox73.Multiline = true;
+            this.textBox73.Name = "textBox73";
+            this.textBox73.Size = new System.Drawing.Size(144, 20);
+            this.textBox73.TabIndex = 146;
+            // 
+            // textBox74
+            // 
+            this.textBox74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox74.Location = new System.Drawing.Point(499, 126);
+            this.textBox74.Multiline = true;
+            this.textBox74.Name = "textBox74";
+            this.textBox74.Size = new System.Drawing.Size(144, 20);
+            this.textBox74.TabIndex = 145;
+            // 
+            // textBox75
+            // 
+            this.textBox75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox75.Location = new System.Drawing.Point(499, 100);
+            this.textBox75.Multiline = true;
+            this.textBox75.Name = "textBox75";
+            this.textBox75.Size = new System.Drawing.Size(144, 20);
+            this.textBox75.TabIndex = 144;
+            // 
+            // textBox76
+            // 
+            this.textBox76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox76.Location = new System.Drawing.Point(499, 74);
+            this.textBox76.Multiline = true;
+            this.textBox76.Name = "textBox76";
+            this.textBox76.Size = new System.Drawing.Size(144, 20);
+            this.textBox76.TabIndex = 143;
+            // 
+            // textBox77
+            // 
+            this.textBox77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox77.Location = new System.Drawing.Point(499, 46);
+            this.textBox77.Multiline = true;
+            this.textBox77.Name = "textBox77";
+            this.textBox77.Size = new System.Drawing.Size(144, 20);
+            this.textBox77.TabIndex = 142;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label89.Location = new System.Drawing.Point(502, 16);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(70, 18);
+            this.label89.TabIndex = 141;
+            this.label89.Text = "Position";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.Location = new System.Drawing.Point(740, 46);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(19, 16);
+            this.label90.TabIndex = 124;
+            this.label90.Text = "to";
+            // 
+            // dateTimePicker20
+            // 
+            this.dateTimePicker20.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker20.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker20.Location = new System.Drawing.Point(649, 44);
+            this.dateTimePicker20.Name = "dateTimePicker20";
+            this.dateTimePicker20.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker20.TabIndex = 123;
+            // 
+            // dateTimePicker18
+            // 
+            this.dateTimePicker18.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker18.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker18.Location = new System.Drawing.Point(765, 44);
+            this.dateTimePicker18.Name = "dateTimePicker18";
+            this.dateTimePicker18.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker18.TabIndex = 147;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.Location = new System.Drawing.Point(646, 16);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(122, 18);
+            this.label91.TabIndex = 148;
+            this.label91.Text = "Inclusive Dates";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label94.Location = new System.Drawing.Point(884, 16);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(56, 18);
+            this.label94.TabIndex = 149;
+            this.label94.Text = "Status";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Permanent",
+            "Contractual",
+            "Part Time",
+            "Probationary"});
+            this.comboBox3.Location = new System.Drawing.Point(871, 45);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 150;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Permanent",
+            "Contractual",
+            "Part Time",
+            "Probationary"});
+            this.comboBox4.Location = new System.Drawing.Point(871, 73);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 154;
+            // 
+            // dateTimePicker22
+            // 
+            this.dateTimePicker22.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker22.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker22.Location = new System.Drawing.Point(765, 72);
+            this.dateTimePicker22.Name = "dateTimePicker22";
+            this.dateTimePicker22.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker22.TabIndex = 153;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label95.Location = new System.Drawing.Point(740, 74);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(19, 16);
+            this.label95.TabIndex = 152;
+            this.label95.Text = "to";
+            // 
+            // dateTimePicker23
+            // 
+            this.dateTimePicker23.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker23.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker23.Location = new System.Drawing.Point(649, 72);
+            this.dateTimePicker23.Name = "dateTimePicker23";
+            this.dateTimePicker23.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker23.TabIndex = 151;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Permanent",
+            "Contractual",
+            "Part Time",
+            "Probationary"});
+            this.comboBox5.Location = new System.Drawing.Point(871, 127);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 21);
+            this.comboBox5.TabIndex = 161;
+            // 
+            // dateTimePicker24
+            // 
+            this.dateTimePicker24.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker24.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker24.Location = new System.Drawing.Point(765, 126);
+            this.dateTimePicker24.Name = "dateTimePicker24";
+            this.dateTimePicker24.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker24.TabIndex = 160;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label98.Location = new System.Drawing.Point(740, 128);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(19, 16);
+            this.label98.TabIndex = 159;
+            this.label98.Text = "to";
+            // 
+            // dateTimePicker25
+            // 
+            this.dateTimePicker25.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker25.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker25.Location = new System.Drawing.Point(649, 126);
+            this.dateTimePicker25.Name = "dateTimePicker25";
+            this.dateTimePicker25.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker25.TabIndex = 158;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "Permanent",
+            "Contractual",
+            "Part Time",
+            "Probationary"});
+            this.comboBox6.Location = new System.Drawing.Point(871, 99);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 21);
+            this.comboBox6.TabIndex = 157;
+            // 
+            // dateTimePicker26
+            // 
+            this.dateTimePicker26.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker26.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker26.Location = new System.Drawing.Point(765, 98);
+            this.dateTimePicker26.Name = "dateTimePicker26";
+            this.dateTimePicker26.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker26.TabIndex = 156;
+            // 
+            // dateTimePicker27
+            // 
+            this.dateTimePicker27.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker27.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker27.Location = new System.Drawing.Point(649, 98);
+            this.dateTimePicker27.Name = "dateTimePicker27";
+            this.dateTimePicker27.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker27.TabIndex = 155;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "Permanent",
+            "Contractual",
+            "Part Time",
+            "Probationary"});
+            this.comboBox7.Location = new System.Drawing.Point(871, 151);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(121, 21);
+            this.comboBox7.TabIndex = 165;
+            // 
+            // dateTimePicker28
+            // 
+            this.dateTimePicker28.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker28.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker28.Location = new System.Drawing.Point(765, 150);
+            this.dateTimePicker28.Name = "dateTimePicker28";
+            this.dateTimePicker28.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker28.TabIndex = 164;
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label99.Location = new System.Drawing.Point(740, 152);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(19, 16);
+            this.label99.TabIndex = 163;
+            this.label99.Text = "to";
+            // 
+            // dateTimePicker29
+            // 
+            this.dateTimePicker29.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker29.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker29.Location = new System.Drawing.Point(649, 150);
+            this.dateTimePicker29.Name = "dateTimePicker29";
+            this.dateTimePicker29.Size = new System.Drawing.Size(85, 22);
+            this.dateTimePicker29.TabIndex = 162;
+            // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.textBox78);
+            this.groupBox22.Controls.Add(this.checkBox42);
+            this.groupBox22.Controls.Add(this.checkBox43);
+            this.groupBox22.Controls.Add(this.checkBox44);
+            this.groupBox22.Controls.Add(this.checkBox45);
+            this.groupBox22.Controls.Add(this.checkBox46);
+            this.groupBox22.Controls.Add(this.checkBox47);
+            this.groupBox22.Controls.Add(this.checkBox36);
+            this.groupBox22.Controls.Add(this.checkBox37);
+            this.groupBox22.Controls.Add(this.checkBox38);
+            this.groupBox22.Controls.Add(this.checkBox39);
+            this.groupBox22.Controls.Add(this.checkBox40);
+            this.groupBox22.Controls.Add(this.checkBox41);
+            this.groupBox22.Controls.Add(this.checkBox34);
+            this.groupBox22.Controls.Add(this.checkBox35);
+            this.groupBox22.Controls.Add(this.checkBox32);
+            this.groupBox22.Controls.Add(this.checkBox33);
+            this.groupBox22.Controls.Add(this.checkBox31);
+            this.groupBox22.Controls.Add(this.checkBox30);
+            this.groupBox22.Location = new System.Drawing.Point(18, 2417);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(1011, 188);
+            this.groupBox22.TabIndex = 128;
+            this.groupBox22.TabStop = false;
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label110.Location = new System.Drawing.Point(15, 2386);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(443, 18);
+            this.label110.TabIndex = 127;
+            this.label110.Text = "OTHER SKILL ACQUIRED WITHOUT FORMAL TRAINING";
+            // 
+            // checkBox30
+            // 
+            this.checkBox30.AutoSize = true;
+            this.checkBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox30.Location = new System.Drawing.Point(12, 19);
+            this.checkBox30.Name = "checkBox30";
+            this.checkBox30.Size = new System.Drawing.Size(151, 22);
+            this.checkBox30.TabIndex = 87;
+            this.checkBox30.Text = "AUTO MECHANIC";
+            this.checkBox30.UseVisualStyleBackColor = true;
+            // 
+            // checkBox31
+            // 
+            this.checkBox31.AutoSize = true;
+            this.checkBox31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox31.Location = new System.Drawing.Point(12, 47);
+            this.checkBox31.Name = "checkBox31";
+            this.checkBox31.Size = new System.Drawing.Size(113, 22);
+            this.checkBox31.TabIndex = 88;
+            this.checkBox31.Text = "BEAUTICIAN";
+            this.checkBox31.UseVisualStyleBackColor = true;
+            // 
+            // checkBox32
+            // 
+            this.checkBox32.AutoSize = true;
+            this.checkBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox32.Location = new System.Drawing.Point(12, 103);
+            this.checkBox32.Name = "checkBox32";
+            this.checkBox32.Size = new System.Drawing.Size(187, 22);
+            this.checkBox32.TabIndex = 90;
+            this.checkBox32.Text = "COMPUTER LITERATE";
+            this.checkBox32.UseVisualStyleBackColor = true;
+            // 
+            // checkBox33
+            // 
+            this.checkBox33.AutoSize = true;
+            this.checkBox33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox33.Location = new System.Drawing.Point(12, 75);
+            this.checkBox33.Name = "checkBox33";
+            this.checkBox33.Size = new System.Drawing.Size(170, 22);
+            this.checkBox33.TabIndex = 89;
+            this.checkBox33.Text = "CARPENTRY WORK";
+            this.checkBox33.UseVisualStyleBackColor = true;
+            // 
+            // checkBox34
+            // 
+            this.checkBox34.AutoSize = true;
+            this.checkBox34.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox34.Location = new System.Drawing.Point(12, 159);
+            this.checkBox34.Name = "checkBox34";
+            this.checkBox34.Size = new System.Drawing.Size(82, 22);
+            this.checkBox34.TabIndex = 92;
+            this.checkBox34.Text = "DRIVER";
+            this.checkBox34.UseVisualStyleBackColor = true;
+            // 
+            // checkBox35
+            // 
+            this.checkBox35.AutoSize = true;
+            this.checkBox35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox35.Location = new System.Drawing.Point(12, 131);
+            this.checkBox35.Name = "checkBox35";
+            this.checkBox35.Size = new System.Drawing.Size(175, 22);
+            this.checkBox35.TabIndex = 91;
+            this.checkBox35.Text = "DOMESTIC CHORES";
+            this.checkBox35.UseVisualStyleBackColor = true;
+            // 
+            // checkBox36
+            // 
+            this.checkBox36.AutoSize = true;
+            this.checkBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox36.Location = new System.Drawing.Point(308, 159);
+            this.checkBox36.Name = "checkBox36";
+            this.checkBox36.Size = new System.Drawing.Size(139, 22);
+            this.checkBox36.TabIndex = 98;
+            this.checkBox36.Text = "PAINTING JOBS";
+            this.checkBox36.UseVisualStyleBackColor = true;
+            // 
+            // checkBox37
+            // 
+            this.checkBox37.AutoSize = true;
+            this.checkBox37.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox37.Location = new System.Drawing.Point(308, 131);
+            this.checkBox37.Name = "checkBox37";
+            this.checkBox37.Size = new System.Drawing.Size(145, 22);
+            this.checkBox37.TabIndex = 97;
+            this.checkBox37.Text = "PAINTER/ARTIST";
+            this.checkBox37.UseVisualStyleBackColor = true;
+            // 
+            // checkBox38
+            // 
+            this.checkBox38.AutoSize = true;
+            this.checkBox38.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox38.Location = new System.Drawing.Point(308, 103);
+            this.checkBox38.Name = "checkBox38";
+            this.checkBox38.Size = new System.Drawing.Size(102, 22);
+            this.checkBox38.TabIndex = 96;
+            this.checkBox38.Text = "MASONRY";
+            this.checkBox38.UseVisualStyleBackColor = true;
+            // 
+            // checkBox39
+            // 
+            this.checkBox39.AutoSize = true;
+            this.checkBox39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox39.Location = new System.Drawing.Point(308, 75);
+            this.checkBox39.Name = "checkBox39";
+            this.checkBox39.Size = new System.Drawing.Size(117, 22);
+            this.checkBox39.TabIndex = 95;
+            this.checkBox39.Text = "GARDENING";
+            this.checkBox39.UseVisualStyleBackColor = true;
+            // 
+            // checkBox40
+            // 
+            this.checkBox40.AutoSize = true;
+            this.checkBox40.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox40.Location = new System.Drawing.Point(308, 47);
+            this.checkBox40.Name = "checkBox40";
+            this.checkBox40.Size = new System.Drawing.Size(127, 22);
+            this.checkBox40.TabIndex = 94;
+            this.checkBox40.Text = "EMBROIDERY";
+            this.checkBox40.UseVisualStyleBackColor = true;
+            // 
+            // checkBox41
+            // 
+            this.checkBox41.AutoSize = true;
+            this.checkBox41.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox41.Location = new System.Drawing.Point(308, 19);
+            this.checkBox41.Name = "checkBox41";
+            this.checkBox41.Size = new System.Drawing.Size(123, 22);
+            this.checkBox41.TabIndex = 93;
+            this.checkBox41.Text = "ELECTRICIAN";
+            this.checkBox41.UseVisualStyleBackColor = true;
+            // 
+            // checkBox42
+            // 
+            this.checkBox42.AutoSize = true;
+            this.checkBox42.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox42.Location = new System.Drawing.Point(551, 159);
+            this.checkBox42.Name = "checkBox42";
+            this.checkBox42.Size = new System.Drawing.Size(94, 22);
+            this.checkBox42.TabIndex = 104;
+            this.checkBox42.Text = "OTHERS:";
+            this.checkBox42.UseVisualStyleBackColor = true;
+            // 
+            // checkBox43
+            // 
+            this.checkBox43.AutoSize = true;
+            this.checkBox43.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox43.Location = new System.Drawing.Point(551, 131);
+            this.checkBox43.Name = "checkBox43";
+            this.checkBox43.Size = new System.Drawing.Size(105, 22);
+            this.checkBox43.TabIndex = 103;
+            this.checkBox43.Text = "TAILORING";
+            this.checkBox43.UseVisualStyleBackColor = true;
+            // 
+            // checkBox44
+            // 
+            this.checkBox44.AutoSize = true;
+            this.checkBox44.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox44.Location = new System.Drawing.Point(551, 103);
+            this.checkBox44.Name = "checkBox44";
+            this.checkBox44.Size = new System.Drawing.Size(141, 22);
+            this.checkBox44.TabIndex = 102;
+            this.checkBox44.Text = "STENOGRAPHY";
+            this.checkBox44.UseVisualStyleBackColor = true;
+            // 
+            // checkBox45
+            // 
+            this.checkBox45.AutoSize = true;
+            this.checkBox45.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox45.Location = new System.Drawing.Point(551, 75);
+            this.checkBox45.Name = "checkBox45";
+            this.checkBox45.Size = new System.Drawing.Size(164, 22);
+            this.checkBox45.TabIndex = 101;
+            this.checkBox45.Text = "SEWING DRESSES";
+            this.checkBox45.UseVisualStyleBackColor = true;
+            // 
+            // checkBox46
+            // 
+            this.checkBox46.AutoSize = true;
+            this.checkBox46.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox46.Location = new System.Drawing.Point(551, 47);
+            this.checkBox46.Name = "checkBox46";
+            this.checkBox46.Size = new System.Drawing.Size(105, 22);
+            this.checkBox46.TabIndex = 100;
+            this.checkBox46.Text = "PLUMBING";
+            this.checkBox46.UseVisualStyleBackColor = true;
+            // 
+            // checkBox47
+            // 
+            this.checkBox47.AutoSize = true;
+            this.checkBox47.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox47.Location = new System.Drawing.Point(551, 19);
+            this.checkBox47.Name = "checkBox47";
+            this.checkBox47.Size = new System.Drawing.Size(143, 22);
+            this.checkBox47.TabIndex = 99;
+            this.checkBox47.Text = "PHOTOGRAPHY";
+            this.checkBox47.UseVisualStyleBackColor = true;
+            // 
+            // textBox78
+            // 
+            this.textBox78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox78.Location = new System.Drawing.Point(651, 159);
+            this.textBox78.Multiline = true;
+            this.textBox78.Name = "textBox78";
+            this.textBox78.Size = new System.Drawing.Size(341, 20);
+            this.textBox78.TabIndex = 166;
+            // 
             // NSRP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2866,6 +3637,10 @@
             this.groupBox19.PerformLayout();
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox21.PerformLayout();
+            this.groupBox22.ResumeLayout(false);
+            this.groupBox22.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3108,5 +3883,68 @@
         private System.Windows.Forms.TextBox textBox65;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.GroupBox groupBox22;
+        private System.Windows.Forms.TextBox textBox78;
+        private System.Windows.Forms.CheckBox checkBox42;
+        private System.Windows.Forms.CheckBox checkBox43;
+        private System.Windows.Forms.CheckBox checkBox44;
+        private System.Windows.Forms.CheckBox checkBox45;
+        private System.Windows.Forms.CheckBox checkBox46;
+        private System.Windows.Forms.CheckBox checkBox47;
+        private System.Windows.Forms.CheckBox checkBox36;
+        private System.Windows.Forms.CheckBox checkBox37;
+        private System.Windows.Forms.CheckBox checkBox38;
+        private System.Windows.Forms.CheckBox checkBox39;
+        private System.Windows.Forms.CheckBox checkBox40;
+        private System.Windows.Forms.CheckBox checkBox41;
+        private System.Windows.Forms.CheckBox checkBox34;
+        private System.Windows.Forms.CheckBox checkBox35;
+        private System.Windows.Forms.CheckBox checkBox32;
+        private System.Windows.Forms.CheckBox checkBox33;
+        private System.Windows.Forms.CheckBox checkBox31;
+        private System.Windows.Forms.CheckBox checkBox30;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker28;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.DateTimePicker dateTimePicker29;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker24;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.DateTimePicker dateTimePicker25;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker26;
+        private System.Windows.Forms.DateTimePicker dateTimePicker27;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker22;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.DateTimePicker dateTimePicker23;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.DateTimePicker dateTimePicker18;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.TextBox textBox73;
+        private System.Windows.Forms.DateTimePicker dateTimePicker20;
+        private System.Windows.Forms.TextBox textBox74;
+        private System.Windows.Forms.TextBox textBox75;
+        private System.Windows.Forms.TextBox textBox76;
+        private System.Windows.Forms.TextBox textBox77;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.TextBox textBox60;
+        private System.Windows.Forms.TextBox textBox62;
+        private System.Windows.Forms.TextBox textBox64;
+        private System.Windows.Forms.TextBox textBox66;
+        private System.Windows.Forms.TextBox textBox72;
+        private System.Windows.Forms.TextBox textBox70;
+        private System.Windows.Forms.TextBox textBox71;
+        private System.Windows.Forms.TextBox textBox69;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.TextBox textBox67;
+        private System.Windows.Forms.TextBox textBox68;
+        private System.Windows.Forms.Label label96;
     }
 }
