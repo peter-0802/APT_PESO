@@ -40,5 +40,10 @@ namespace IMS_PESO
         {
 
         }
+
+        private void groupBox17_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
