@@ -31,7 +31,8 @@ namespace IMS_PESO
                     Username = APT.GetValue("Username").ToString();
                     Password = APT.GetValue("Password").ToString();
                     addminpass = APT.GetValue("adminpass").ToString();
-                    string connect = "datasource = '" + Datasource + "'; port = '" + Port + "'; database = '" + Database + "'; username = '" + Username + "'; password = '" + Password + "'; SSL Mode = NONE";
+                    //string connect = "datasource = '" + Datasource + "'; port = '" + Port + "'; database = '" + Database + "'; username = '" + Username + "'; password = '" + Password + "'; SSL Mode = NONE";
+                    string connect = "datasource = localhost; port = 3306; database = apt_peso; username = root; password = ; SSL Mode = NONE";
                     connstring = connect;
                     APT.Close();
                 }

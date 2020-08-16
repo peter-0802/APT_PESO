@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class Form1
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -71,8 +71,9 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "PWD";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,7 +82,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PESO - IMS | Dashboard";
             this.Load += new System.EventHandler(this.Form1_Load);

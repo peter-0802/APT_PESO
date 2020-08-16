@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IMS_PESO
 {
-    public partial class Form1 : Form
+    public partial class Dashboard : Form
     {
-        public Form1()
+        public Dashboard()
         {
             InitializeComponent();
             panel1.BackColor = ColorTranslator.FromHtml("#FCA311");
@@ -44,6 +44,12 @@ namespace IMS_PESO
         private void button1_Click(object sender, EventArgs e)
         {
             NSRP a = new NSRP();
+            a.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            report a = new report();
             a.ShowDialog();
         }
     }
