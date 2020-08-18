@@ -120,6 +120,12 @@
     <Compile Include="report.Designer.cs">
       <DependentUpon>report.cs</DependentUpon>
     </Compile>
+    <Compile Include="tester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tester.Designer.cs">
+      <DependentUpon>tester.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="crt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crt.cs</LastGenOutput>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="report.resx">
       <DependentUpon>report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tester.resx">
+      <DependentUpon>tester.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
