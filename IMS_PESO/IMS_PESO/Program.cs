@@ -15,7 +15,7 @@ namespace IMS_PESO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NSRP());
+            Application.Run(new Login());
         }
     }
 }
