@@ -25,10 +25,14 @@ namespace IMS_PESO
                 MessageBox.Show(ex.GetType().ToString());
             }
             InitializeComponent();
+            disabilities.Clear();
+            jobs_location.Clear();
+            jobs.Clear();
         }
 
-        List<string> cities = new List<string>();
-
+        List<string> disabilities = new List<string>();
+        List<string> jobs = new List<string>();
+        List<string> jobs_location = new List<string>();
         private void radioButton14_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton14.Checked == true)
@@ -59,40 +63,7 @@ namespace IMS_PESO
             }
             type = null;
         }
-
-        private void radioButton25_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton25.Checked == true)
-            {
-                textBox25.Text = string.Empty;
-                textBox26.Text = string.Empty;
-                textBox27.Text = string.Empty;
-                textBox25.Enabled = false;
-                textBox26.Enabled = false;
-                textBox27.Enabled = false;
-
-                textBox22.Enabled = true;
-                textBox23.Enabled = true;
-                textBox24.Enabled = true;
-            }
-        }
-
-        private void radioButton26_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton26.Checked == true)
-            {
-                textBox22.Text = string.Empty;
-                textBox23.Text = string.Empty;
-                textBox24.Text = string.Empty;
-                textBox22.Enabled = false;
-                textBox23.Enabled = false;
-                textBox24.Enabled = false;
-
-                textBox25.Enabled = true;
-                textBox26.Enabled = true;
-                textBox27.Enabled = true;
-            }
-        }
+        
         public string type = null;
         private void insert()
         {
@@ -134,6 +105,26 @@ namespace IMS_PESO
                 cmd.Parameters.AddWithValue("@landline_no", this.textBox10.Text);
                 cmd.Parameters.AddWithValue("@cp_no", this.textBox9.Text);
 
+                if (radioButton8.Checked == true)
+                {
+                    cmd.Parameters.AddWithValue("@activeseek", this.radioButton8.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@activeseek", this.radioButton9.Text);
+                }
+                cmd.Parameters.AddWithValue("@period", this.textBox16.Text);
+
+                if (radioButton11.Checked == true)
+                {
+                    cmd.Parameters.AddWithValue("@willtoworkem", this.radioButton11.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@willtoworkem", this.radioButton10.Text);
+                }
+                cmd.Parameters.AddWithValue("@nowhen", this.textBox17.Text);
+                cmd.Parameters.AddWithValue("@pppp", this.textBox18.Text);
                 string qry = @"insert into contacts
                                     (
                                     code,
@@ -157,7 +148,12 @@ namespace IMS_PESO
                                     height,
                                     email,
                                     landline_no,
-                                    cp_no
+                                    cp_no,
+                                    activeseek,
+                                    period,
+                                    willtoworkem,
+                                    nowhen,
+                                    pppp
                                     ) values
                                     (
                                        (select if (count(id) <= 0, 'CON - 1', concat('CON - ', max(id) + 1)) code from contacts as code),
@@ -181,15 +177,20 @@ namespace IMS_PESO
                                        @height,
                                        @email,
                                        @landline_no,
-                                       @cp_no
+                                       @cp_no,
+                                       @activeseek,
+                                       @period,
+                                       @willtoworkem,
+                                       @nowhen,
+                                       @pppp
                                     )";
                 cmd.CommandText = qry;
                 cmd.ExecuteNonQuery();
                 //---------------------------------------------------
-                for (int i = 0; i < cities.Count; i++)
+                for (int i = 0; i < disabilities.Count; i++)
                 {
                     cmd = conn.CreateCommand();
-                    cmd.Parameters.AddWithValue("@disability", cities[i].ToString());
+                    cmd.Parameters.AddWithValue("@disability", disabilities[i].ToString());
                     string qry1 = @"insert into disability
                                         (contact_id, disability)
                                         values
@@ -213,7 +214,32 @@ namespace IMS_PESO
                 string q2 = @"insert into emp_status_type (contact_id, status, type) values ((select id from contacts order by id desc limit 1), @status, @type)";
                 cmd.CommandText = q2;
                 cmd.ExecuteNonQuery();
+                //---------------------------------------------------
 
+
+                for (int i = 0; i < jobs.Count; i++)
+                {
+                        cmd = conn.CreateCommand();
+                        if (radioButton25.Checked == true)
+                        {
+                            cmd.Parameters.AddWithValue("@Local_abroad", "Local");
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@Local_abroad", "Abroad");
+                        }
+                        cmd.Parameters.AddWithValue("@job", jobs[i].ToString());
+                        cmd.Parameters.AddWithValue("@location", jobs_location[i].ToString());
+                        cmd.Parameters.AddWithValue("@expectedsal", textBox28.Text);
+                        cmd.Parameters.AddWithValue("@passportno", textBox29.Text);
+                        cmd.Parameters.AddWithValue("@expirydate", textBox30.Text);
+                        string q3 = @"insert into contacts_job
+                                        (contact_id, Local_abroad, job, location, expectedsal, passportno, expirydate)
+                                        values
+                                        ((select id from contacts order by id desc limit 1), @Local_abroad, @job, @location, @expectedsal, @passportno, @expirydate)";
+                        cmd.CommandText = q3;
+                        cmd.ExecuteNonQuery();
+                }
                 myTrans.Commit();
 
                 MessageBox.Show("Record Added");
@@ -241,18 +267,17 @@ namespace IMS_PESO
         private void button1_Click(object sender, EventArgs e)
         {
             insert();
-            cities.Clear();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == true)
             {
-                cities.Add(checkBox1.Text);
+                disabilities.Add(checkBox1.Text);
             }
             else if (checkBox1.Checked == false)
             {
-                cities.Remove(checkBox1.Text);
+                disabilities.Remove(checkBox1.Text);
             }
             return;
         }
@@ -261,11 +286,11 @@ namespace IMS_PESO
         {
             if (checkBox2.Checked == true)
             {
-                cities.Add(checkBox2.Text);
+                disabilities.Add(checkBox2.Text);
             }
             else if (checkBox2.Checked == false)
             {
-                cities.Remove(checkBox2.Text);
+                disabilities.Remove(checkBox2.Text);
             }
             return;
         }
@@ -274,11 +299,11 @@ namespace IMS_PESO
         {
             if (checkBox4.Checked == true)
             {
-                cities.Add(checkBox4.Text);
+                disabilities.Add(checkBox4.Text);
             }
             else if (checkBox4.Checked == false)
             {
-                cities.Remove(checkBox4.Text);
+                disabilities.Remove(checkBox4.Text);
             }
             return;
         }
@@ -287,11 +312,11 @@ namespace IMS_PESO
         {
             if (checkBox3.Checked == true)
             {
-                cities.Add(checkBox3.Text);
+                disabilities.Add(checkBox3.Text);
             }
             else if (checkBox3.Checked == false)
             {
-                cities.Remove(checkBox3.Text);
+                disabilities.Remove(checkBox3.Text);
             }
             return;
         }
@@ -314,15 +339,15 @@ namespace IMS_PESO
 
         private void textBox13_Leave(object sender, EventArgs e)
         {
-           if (textBox13.Text == string.Empty || textBox13.Text == "" || textBox13.Text == null || textBox13.Text == " ")
+            if (String.IsNullOrWhiteSpace(textBox13.Text))
             {
                 MessageBox.Show("Please specify other disability");
-                cities.RemoveAll(string.IsNullOrWhiteSpace);
+                disabilities.RemoveAll(string.IsNullOrWhiteSpace);
                 checkBox5.Checked = false;
             }
-            else if (textBox13.Text != string.Empty || textBox13.Text != "" || textBox13.Text != null || textBox13.Text != " ")
+            else if (!String.IsNullOrWhiteSpace(textBox13.Text))
             {
-                cities.Add("Others: " + textBox13.Text);
+                disabilities.Add("Others: " + textBox13.Text);
             }
         }
 
@@ -404,6 +429,128 @@ namespace IMS_PESO
         private void textBox15_Leave(object sender, EventArgs e)
         {
             type = "Others - " + textBox15.Text;
+        }
+
+        private void radioButton13_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton13.Checked == true)
+            {
+                radioButton12.Checked = false;
+                textBox18.Enabled = true;
+            }
+        }
+
+        private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton12.Checked == true)
+            {
+                radioButton13.Checked = false;
+                textBox18.Text = string.Empty;
+                textBox18.Enabled = false;
+            }
+        }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton10.Checked == true)
+            {
+                radioButton11.Checked = false;
+                textBox17.Enabled = true;
+            }
+        }
+
+        private void radioButton11_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton11.Checked == true)
+            {
+                radioButton12.Checked = false;
+                textBox17.Text = string.Empty;
+                textBox17.Enabled = false;
+            }
+        }
+
+        private void textBox21_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBox21.Text))
+            {
+                MessageBox.Show("Oops! Empty Field, removing corresponding location if exists");
+                jobs.RemoveAll(string.IsNullOrWhiteSpace);
+                textBox24.Text = string.Empty;
+            }
+            else if (!String.IsNullOrWhiteSpace(textBox21.Text))
+            {
+                jobs.Add(textBox21.Text);
+            }
+        }
+
+        private void textBox19_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBox19.Text))
+            {
+                MessageBox.Show("Oops! Empty Field, removing corresponding location if exists");
+                jobs.RemoveAll(string.IsNullOrWhiteSpace);
+                textBox23.Text = string.Empty;
+            }
+            else if (!String.IsNullOrWhiteSpace(textBox19.Text))
+            {
+                jobs.Add(textBox19.Text);
+            }
+        }
+
+        private void textBox20_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBox20.Text))
+            {
+                MessageBox.Show("Oops! Empty Field, removing corresponding location if exists");
+                jobs.RemoveAll(string.IsNullOrWhiteSpace);
+                textBox22.Text = string.Empty;
+            }
+            else if (!String.IsNullOrWhiteSpace(textBox20.Text))
+            {
+                jobs.Add(textBox20.Text);
+            }
+        }
+
+        private void textBox24_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBox24.Text))
+            {
+                MessageBox.Show("Oops! Empty Field, removing corresponding job if exists");
+                jobs_location.RemoveAll(string.IsNullOrWhiteSpace);
+                textBox21.Text = string.Empty;
+            }
+            else if (!String.IsNullOrWhiteSpace(textBox24.Text))
+            {
+                jobs_location.Add(textBox24.Text);
+            }
+        }
+
+        private void textBox23_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBox23.Text))
+            {
+                MessageBox.Show("Oops! Empty Field, removing corresponding job if exists");
+                jobs_location.RemoveAll(string.IsNullOrWhiteSpace);
+                textBox19.Text = string.Empty;
+            }
+            else if (!String.IsNullOrWhiteSpace(textBox23.Text))
+            {
+                jobs_location.Add(textBox23.Text);
+            }
+        }
+
+        private void textBox22_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBox22.Text))
+            {
+                MessageBox.Show("Oops! Empty Field, removing corresponding job if exists");
+                jobs_location.RemoveAll(string.IsNullOrWhiteSpace);
+                textBox20.Text = string.Empty;
+            }
+            else if (!String.IsNullOrWhiteSpace(textBox22.Text))
+            {
+                jobs_location.Add(textBox22.Text);
+            }
         }
     }
 }
