@@ -2643,7 +2643,6 @@
             this.radioButton26.TabStop = true;
             this.radioButton26.Text = "Overseas, specific countries";
             this.radioButton26.UseVisualStyleBackColor = true;
-            this.radioButton26.CheckedChanged += new System.EventHandler(this.radioButton26_CheckedChanged);
             // 
             // radioButton25
             // 
@@ -2656,7 +2655,6 @@
             this.radioButton25.TabStop = true;
             this.radioButton25.Text = "Local, specific cities/municipality";
             this.radioButton25.UseVisualStyleBackColor = true;
-            this.radioButton25.CheckedChanged += new System.EventHandler(this.radioButton25_CheckedChanged);
             // 
             // groupBox13
             // 
