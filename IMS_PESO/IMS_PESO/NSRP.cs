@@ -29,7 +29,7 @@ namespace IMS_PESO
             jobs_location.Clear();
             jobs.Clear();
         }
-
+        DataTable techvoc_col = new DataTable();
         List<string> disabilities = new List<string>();
         List<string> jobs = new List<string>();
         List<string> jobs_location = new List<string>();
@@ -63,8 +63,8 @@ namespace IMS_PESO
             }
             type = null;
         }
-        
         public string type = null;
+
         private void insert()
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -76,173 +76,295 @@ namespace IMS_PESO
             cmd.Transaction = myTrans;
             try
             {
-                cmd.Parameters.AddWithValue("@surname", this.textBox1.Text);
-                cmd.Parameters.AddWithValue("@firstname", this.textBox2.Text);
-                cmd.Parameters.AddWithValue("@middlename", this.textBox3.Text);
-                cmd.Parameters.AddWithValue("@suffix", this.comboBox1.Text);
-                cmd.Parameters.AddWithValue("@dob", this.dateTimePicker1.Text);
-                if (radioButton1.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("@sex", this.radioButton1.Text);
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@sex", this.radioButton2.Text);
-                }
-                cmd.Parameters.AddWithValue("@civil_status", this.comboBox11.Text);
-                cmd.Parameters.AddWithValue("@religion", this.comboBox2.Text);
-                cmd.Parameters.AddWithValue("@birthplace", this.textBox4.Text);
-                cmd.Parameters.AddWithValue("@house_no", this.textBox5.Text);
-                cmd.Parameters.AddWithValue("@brgy", this.comboBox8.Text);
-                cmd.Parameters.AddWithValue("@municipality", this.comboBox9.Text);
-                cmd.Parameters.AddWithValue("@province", this.comboBox10.Text);
-                cmd.Parameters.AddWithValue("@tin", this.textBox83.Text);
-                cmd.Parameters.AddWithValue("@gsis_sss", this.textBox82.Text);
-                cmd.Parameters.AddWithValue("@pagibig", this.textBox81.Text);
-                cmd.Parameters.AddWithValue("@philhealth", this.textBox6.Text);
-                cmd.Parameters.AddWithValue("@height", this.textBox12.Text);
-                cmd.Parameters.AddWithValue("@email", this.textBox11.Text);
-                cmd.Parameters.AddWithValue("@landline_no", this.textBox10.Text);
-                cmd.Parameters.AddWithValue("@cp_no", this.textBox9.Text);
+                //cmd.Parameters.AddWithValue("@surname", this.textBox1.Text);
+                //cmd.Parameters.AddWithValue("@firstname", this.textBox2.Text);
+                //cmd.Parameters.AddWithValue("@middlename", this.textBox3.Text);
+                //cmd.Parameters.AddWithValue("@suffix", this.comboBox1.Text);
+                //cmd.Parameters.AddWithValue("@dob", this.dateTimePicker1.Text);
+                //if (radioButton1.Checked == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@sex", this.radioButton1.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@sex", this.radioButton2.Text);
+                //}
+                //cmd.Parameters.AddWithValue("@civil_status", this.comboBox11.Text);
+                //cmd.Parameters.AddWithValue("@religion", this.comboBox2.Text);
+                //cmd.Parameters.AddWithValue("@birthplace", this.textBox4.Text);
+                //cmd.Parameters.AddWithValue("@house_no", this.textBox5.Text);
+                //cmd.Parameters.AddWithValue("@brgy", this.comboBox8.Text);
+                //cmd.Parameters.AddWithValue("@municipality", this.comboBox9.Text);
+                //cmd.Parameters.AddWithValue("@province", this.comboBox10.Text);
+                //cmd.Parameters.AddWithValue("@tin", this.textBox83.Text);
+                //cmd.Parameters.AddWithValue("@gsis_sss", this.textBox82.Text);
+                //cmd.Parameters.AddWithValue("@pagibig", this.textBox81.Text);
+                //cmd.Parameters.AddWithValue("@philhealth", this.textBox6.Text);
+                //cmd.Parameters.AddWithValue("@height", this.textBox12.Text);
+                //cmd.Parameters.AddWithValue("@email", this.textBox11.Text);
+                //cmd.Parameters.AddWithValue("@landline_no", this.textBox10.Text);
+                //cmd.Parameters.AddWithValue("@cp_no", this.textBox9.Text);
 
-                if (radioButton8.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("@activeseek", this.radioButton8.Text);
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@activeseek", this.radioButton9.Text);
-                }
-                cmd.Parameters.AddWithValue("@period", this.textBox16.Text);
+                //if (radioButton8.Checked == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@activeseek", this.radioButton8.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@activeseek", this.radioButton9.Text);
+                //}
+                //cmd.Parameters.AddWithValue("@period", this.textBox16.Text);
 
-                if (radioButton11.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("@willtoworkem", this.radioButton11.Text);
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@willtoworkem", this.radioButton10.Text);
-                }
-                cmd.Parameters.AddWithValue("@nowhen", this.textBox17.Text);
-                cmd.Parameters.AddWithValue("@pppp", this.textBox18.Text);
-                string qry = @"insert into contacts
-                                    (
-                                    code,
-                                    surname,
-                                    firstname,
-                                    middlename,
-                                    suffix,
-                                    dob,
-                                    sex,
-                                    civil_status,
-                                    religion,
-                                    birthplace,
-                                    house_no,
-                                    brgy,
-                                    municipality,
-                                    province,
-                                    tin,
-                                    gsis_sss,
-                                    pagibig,
-                                    philhealth,
-                                    height,
-                                    email,
-                                    landline_no,
-                                    cp_no,
-                                    activeseek,
-                                    period,
-                                    willtoworkem,
-                                    nowhen,
-                                    pppp
-                                    ) values
-                                    (
-                                       (select if (count(id) <= 0, 'CON - 1', concat('CON - ', max(id) + 1)) code from contacts as code),
-                                       @surname,
-                                       @firstname,
-                                       @middlename,
-                                       @suffix,
-                                       @dob,
-                                       @sex,
-                                       @civil_status,
-                                       @religion,
-                                       @birthplace,
-                                       @house_no,
-                                       @brgy,
-                                       @municipality,
-                                       @province,
-                                       @tin,
-                                       @gsis_sss,
-                                       @pagibig,
-                                       @philhealth,
-                                       @height,
-                                       @email,
-                                       @landline_no,
-                                       @cp_no,
-                                       @activeseek,
-                                       @period,
-                                       @willtoworkem,
-                                       @nowhen,
-                                       @pppp
-                                    )";
-                cmd.CommandText = qry;
-                cmd.ExecuteNonQuery();
-                //---------------------------------------------------
-                for (int i = 0; i < disabilities.Count; i++)
-                {
-                    cmd = conn.CreateCommand();
-                    cmd.Parameters.AddWithValue("@disability", disabilities[i].ToString());
-                    string qry1 = @"insert into disability
-                                        (contact_id, disability)
-                                        values
-                                        ((select id from contacts order by id desc limit 1), @disability)";
-                    cmd.CommandText = qry1;
-                    cmd.ExecuteNonQuery();
-                }
-                //---------------------------------------------------
-                cmd = conn.CreateCommand();
-                if (radioButton14.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("@status", this.radioButton14.Text);
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@status", this.radioButton15.Text);
-                }
-                cmd.Parameters.AddWithValue("@type", type.ToString());
+                //if (radioButton11.Checked == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@willtoworkem", this.radioButton11.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@willtoworkem", this.radioButton10.Text);
+                //}
+                //cmd.Parameters.AddWithValue("@nowhen", this.textBox17.Text);
+                //cmd.Parameters.AddWithValue("@pppp", this.textBox18.Text);
+                //string qry = @"insert into contacts
+                //                    (
+                //                    code,
+                //                    surname,
+                //                    firstname,
+                //                    middlename,
+                //                    suffix,
+                //                    dob,
+                //                    sex,
+                //                    civil_status,
+                //                    religion,
+                //                    birthplace,
+                //                    house_no,
+                //                    brgy,
+                //                    municipality,
+                //                    province,
+                //                    tin,
+                //                    gsis_sss,
+                //                    pagibig,
+                //                    philhealth,
+                //                    height,
+                //                    email,
+                //                    landline_no,
+                //                    cp_no,
+                //                    activeseek,
+                //                    period,
+                //                    willtoworkem,
+                //                    nowhen,
+                //                    pppp
+                //                    ) values
+                //                    (
+                //                       (select if (count(id) <= 0, 'CON - 1', concat('CON - ', max(id) + 1)) code from contacts as code),
+                //                       @surname,
+                //                       @firstname,
+                //                       @middlename,
+                //                       @suffix,
+                //                       @dob,
+                //                       @sex,
+                //                       @civil_status,
+                //                       @religion,
+                //                       @birthplace,
+                //                       @house_no,
+                //                       @brgy,
+                //                       @municipality,
+                //                       @province,
+                //                       @tin,
+                //                       @gsis_sss,
+                //                       @pagibig,
+                //                       @philhealth,
+                //                       @height,
+                //                       @email,
+                //                       @landline_no,
+                //                       @cp_no,
+                //                       @activeseek,
+                //                       @period,
+                //                       @willtoworkem,
+                //                       @nowhen,
+                //                       @pppp
+                //                    )";
+                //cmd.CommandText = qry;
+                //cmd.ExecuteNonQuery();
+                ////---------------------------------------------------
+                //for (int i = 0; i < disabilities.Count; i++)
+                //{
+                //    cmd = conn.CreateCommand();
+                //    cmd.Parameters.AddWithValue("@disability", disabilities[i].ToString());
+                //    string qry1 = @"insert into disability
+                //                        (contact_id, disability)
+                //                        values
+                //                        ((select id from contacts order by id desc limit 1), @disability)";
+                //    cmd.CommandText = qry1;
+                //    cmd.ExecuteNonQuery();
+                //}
+                ////---------------------------------------------------
+                //cmd = conn.CreateCommand();
+                //if (radioButton14.Checked == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@status", this.radioButton14.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@status", this.radioButton15.Text);
+                //}
+                //cmd.Parameters.AddWithValue("@type", type.ToString());
 
 
-                string q2 = @"insert into emp_status_type (contact_id, status, type) values ((select id from contacts order by id desc limit 1), @status, @type)";
-                cmd.CommandText = q2;
-                cmd.ExecuteNonQuery();
-                //---------------------------------------------------
+                //string q2 = @"insert into emp_status_type (contact_id, status, type) values ((select id from contacts order by id desc limit 1), @status, @type)";
+                //cmd.CommandText = q2;
+                //cmd.ExecuteNonQuery();
+                ////---------------------------------------------------
+                //for (int i = 0; i < jobs.Count; i++)
+                //{
+                //    cmd = conn.CreateCommand();
+                //    if (radioButton25.Checked == true)
+                //    {
+                //        cmd.Parameters.AddWithValue("@Local_abroad", "Local");
+                //    }
+                //    else
+                //    {
+                //        cmd.Parameters.AddWithValue("@Local_abroad", "Abroad");
+                //    }
+                //    cmd.Parameters.AddWithValue("@job", jobs[i].ToString());
+                //    cmd.Parameters.AddWithValue("@location", jobs_location[i].ToString());
+                //    cmd.Parameters.AddWithValue("@expectedsal", textBox28.Text);
+                //    cmd.Parameters.AddWithValue("@passportno", textBox29.Text);
+                //    cmd.Parameters.AddWithValue("@expirydate", textBox30.Text);
+                //    string q3 = @"insert into contacts_job
+                //                        (contact_id, Local_abroad, job, location, expectedsal, passportno, expirydate)
+                //                        values
+                //                        ((select id from contacts order by id desc limit 1), @Local_abroad, @job, @location, @expectedsal, @passportno, @expirydate)";
+                //    cmd.CommandText = q3;
+                //    cmd.ExecuteNonQuery();
+                //}
+                ////-----------------------------------------------------
+                //    cmd = conn.CreateCommand();
+                //    cmd.Parameters.AddWithValue("@language", textBox31.Text);
+                //    cmd.Parameters.AddWithValue("@reade", checkBox18.Text);
+                //    cmd.Parameters.AddWithValue("@writee", checkBox19.Text);
+                //    cmd.Parameters.AddWithValue("@speake", checkBox20.Text);
+                //    cmd.Parameters.AddWithValue("@understande", checkBox21.Text);
 
+                //    cmd.Parameters.AddWithValue("@readf", checkBox25.Text);
+                //    cmd.Parameters.AddWithValue("@writef", checkBox24.Text);
+                //    cmd.Parameters.AddWithValue("@speakf", checkBox23.Text);
+                //    cmd.Parameters.AddWithValue("@understandf", checkBox22.Text);
+
+                //    cmd.Parameters.AddWithValue("@reado", checkBox29.Text);
+                //    cmd.Parameters.AddWithValue("@writeo", checkBox28.Text);
+                //    cmd.Parameters.AddWithValue("@speako", checkBox27.Text);
+                //    cmd.Parameters.AddWithValue("@understando", checkBox26.Text);
+                //string q4 = @"insert into language
+                //                        (contact_id, `language`, `read`, `write`, `speak`, `understand`)
+                //                        values
+                //                        ((select id from contacts order by id desc limit 1), 'English', @reade, @writee, @speake, @understande),
+                //                        ((select id from contacts order by id desc limit 1), 'Filipino', @readf, @writef, @speakf, @understandf),
+                //                        ((select id from contacts order by id desc limit 1), @language, @reado, @writeo, @speako, @understando)";
+                //    cmd.CommandText = q4;
+                //    cmd.ExecuteNonQuery();
+                //cmd = conn.CreateCommand();
+                //cmd.Parameters.AddWithValue("@school", textBox32.Text);
+                //if (checkBox6.Checked == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@underg", 1);
+                //    cmd.Parameters.AddWithValue("@yearlvl", textBox41.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@underg", 0);
+                //    cmd.Parameters.AddWithValue("@yearlvl", "N/A");
+                //}
+                //cmd.Parameters.AddWithValue("@yearg", dateTimePicker9.Text);
+                //cmd.Parameters.AddWithValue("@awards", textBox45.Text);
+
+                //string q5 = @"insert into elementary (contact_id, school, underg, yearlvl, yearg, awards) values ((select id from contacts order by id desc limit 1), @school, @underg, @yearlvl, @yearg, @awards)";
+                //cmd.CommandText = q5;
+                //cmd.ExecuteNonQuery();
+                ////----------------------------------------------------------------------------------------------------
+                //cmd = conn.CreateCommand();
+                //cmd.Parameters.AddWithValue("@schoolh", textBox33.Text);
+                //if (checkBox7.Checked == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@undergh", 1);
+                //    cmd.Parameters.AddWithValue("@yearlvlh", textBox43.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@undergh", 0);
+                //    cmd.Parameters.AddWithValue("@yearlvlh", "N/A");
+                //}
+                //cmd.Parameters.AddWithValue("@yeargh", dateTimePicker8.Text);
+                //cmd.Parameters.AddWithValue("@awardsh", textBox47.Text);
+
+                //string q6 = @"insert into hs (contact_id, school, underg, yearlvl, yearg, awards) values ((select id from contacts order by id desc limit 1), @schoolh, @undergh, @yearlvlh, @yeargh, @awardsh)";
+                //cmd.CommandText = q6;
+                //cmd.ExecuteNonQuery();
+                ////----------------------------------------------------------------------------------------------------
+                //cmd = conn.CreateCommand();
+                //cmd.Parameters.AddWithValue("@schoolc", textBox33.Text);
+                //if (checkBox8.Checked == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@undergc", 1);
+                //    cmd.Parameters.AddWithValue("@yearlvlc", textBox42.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@undergc", 0);
+                //    cmd.Parameters.AddWithValue("@yearlvlc", "N/A");
+                //}
+                //cmd.Parameters.AddWithValue("@yeargc", dateTimePicker7.Text);
+                //cmd.Parameters.AddWithValue("@awardsc", textBox46.Text);
+
+                //string q7 = @"insert into college (contact_id, school, underg, yearlvl, yearg, awards) values ((select id from contacts order by id desc limit 1), @schoolc, @undergc, @yearlvlc, @yeargc, @awardsc)";
+                //cmd.CommandText = q7;
+                //cmd.ExecuteNonQuery();
+                ////----------------------------------------------------------------------------------------------------
+                //cmd = conn.CreateCommand();
+                //cmd.Parameters.AddWithValue("@schoolu", textBox33.Text);
+                //if (checkBox9.Checked == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@undergu", 1);
+                //    cmd.Parameters.AddWithValue("@yearlvlu", textBox40.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@undergu", 0);
+                //    cmd.Parameters.AddWithValue("@yearlvlu", "N/A");
+                //}
+                //cmd.Parameters.AddWithValue("@yeargu", dateTimePicker6.Text);
+                //cmd.Parameters.AddWithValue("@awardsu", textBox44.Text);
+
+                //string q8 = @"insert into grad (contact_id, school, underg, yearlvl, yearg, awards) values ((select id from contacts order by id desc limit 1), @schoolu, @undergu, @yearlvlu, @yeargu, @awardsu)";
+                //cmd.CommandText = q8;
+                //cmd.ExecuteNonQuery();
 
                 for (int i = 0; i < jobs.Count; i++)
                 {
-                        cmd = conn.CreateCommand();
-                        if (radioButton25.Checked == true)
-                        {
-                            cmd.Parameters.AddWithValue("@Local_abroad", "Local");
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@Local_abroad", "Abroad");
-                        }
-                        cmd.Parameters.AddWithValue("@job", jobs[i].ToString());
-                        cmd.Parameters.AddWithValue("@location", jobs_location[i].ToString());
-                        cmd.Parameters.AddWithValue("@expectedsal", textBox28.Text);
-                        cmd.Parameters.AddWithValue("@passportno", textBox29.Text);
-                        cmd.Parameters.AddWithValue("@expirydate", textBox30.Text);
-                        string q3 = @"insert into contacts_job
+                    cmd = conn.CreateCommand();
+                    if (radioButton25.Checked == true)
+                    {
+                        cmd.Parameters.AddWithValue("@Local_abroad", "Local");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Local_abroad", "Abroad");
+                    }
+                    cmd.Parameters.AddWithValue("@job", jobs[i].ToString());
+                    cmd.Parameters.AddWithValue("@location", jobs_location[i].ToString());
+                    cmd.Parameters.AddWithValue("@expectedsal", textBox28.Text);
+                    cmd.Parameters.AddWithValue("@passportno", textBox29.Text);
+                    cmd.Parameters.AddWithValue("@expirydate", textBox30.Text);
+                    string q3 = @"insert into contacts_job
                                         (contact_id, Local_abroad, job, location, expectedsal, passportno, expirydate)
                                         values
                                         ((select id from contacts order by id desc limit 1), @Local_abroad, @job, @location, @expectedsal, @passportno, @expirydate)";
-                        cmd.CommandText = q3;
-                        cmd.ExecuteNonQuery();
-                }
-                myTrans.Commit();
+                    cmd.CommandText = q3;
+                    cmd.ExecuteNonQuery();
+                    myTrans.Commit();
 
-                MessageBox.Show("Record Added");
+                    MessageBox.Show("Record Added");
+                }
             }
             catch (Exception e)
             {
@@ -367,7 +489,7 @@ namespace IMS_PESO
                 textBox14.Enabled = false;
                 textBox14.Text = string.Empty;
             }
-            
+
         }
 
         private void radioButton24_CheckedChanged(object sender, EventArgs e)
@@ -378,7 +500,7 @@ namespace IMS_PESO
             }
             else
                 textBox15.Enabled = false;
-                textBox15.Text = string.Empty;
+            textBox15.Text = string.Empty;
         }
 
         private void radioButton16_CheckedChanged(object sender, EventArgs e)
@@ -418,7 +540,7 @@ namespace IMS_PESO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox14_Leave(object sender, EventArgs e)
@@ -551,6 +673,234 @@ namespace IMS_PESO
             {
                 jobs_location.Add(textBox22.Text);
             }
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = e.KeyChar.ToString().ToUpper()[0];
+            base.OnKeyPress(e);
+        }
+
+        private void checkBox18_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox18.Checked == true)
+            {
+                checkBox18.Text = "Yes";
+            }
+            else
+                checkBox18.Text = "No";
+        }
+
+        private void checkBox19_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox19.Checked == true)
+            {
+                checkBox19.Text = "Yes";
+            }
+            else
+                checkBox19.Text = "No";
+        }
+
+        private void checkBox20_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox20.Checked == true)
+            {
+                checkBox20.Text = "Yes";
+            }
+            else
+                checkBox20.Text = "No";
+        }
+
+        private void checkBox21_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox21.Checked == true)
+            {
+                checkBox21.Text = "Yes";
+            }
+            else
+                checkBox21.Text = "No";
+        }
+
+        private void checkBox25_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox25.Checked == true)
+            {
+                checkBox25.Text = "Yes";
+            }
+            else
+                checkBox25.Text = "No";
+        }
+
+        private void checkBox24_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox24.Checked == true)
+            {
+                checkBox24.Text = "Yes";
+            }
+            else
+                checkBox24.Text = "No";
+        }
+
+        private void checkBox23_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox23.Checked == true)
+            {
+                checkBox23.Text = "Yes";
+            }
+            else
+                checkBox23.Text = "No";
+        }
+
+        private void checkBox22_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox22.Checked == true)
+            {
+                checkBox22.Text = "Yes";
+            }
+            else
+                checkBox22.Text = "No";
+        }
+
+        private void checkBox29_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox29.Checked == true)
+            {
+                checkBox29.Text = "Yes";
+            }
+            else
+                checkBox29.Text = "No";
+        }
+
+        private void checkBox28_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox28.Checked == true)
+            {
+                checkBox28.Text = "Yes";
+            }
+            else
+                checkBox28.Text = "No";
+        }
+
+        private void checkBox27_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox27.Checked == true)
+            {
+                checkBox27.Text = "Yes";
+            }
+            else
+                checkBox27.Text = "No";
+        }
+
+        private void checkBox26_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox26.Checked == true)
+            {
+                checkBox26.Text = "Yes";
+            }
+            else
+                checkBox26.Text = "No";
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked == true)
+            {
+                textBox41.Enabled = true;
+                dateTimePicker9.Enabled = true;
+                textBox45.Enabled = true;
+            }
+            else
+            {
+                textBox41.Enabled = false;
+                dateTimePicker9.Enabled = false;
+                textBox45.Enabled = false;
+            }
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox7.Checked == true)
+            {
+                textBox43.Enabled = true;
+                dateTimePicker8.Enabled = true;
+                textBox47.Enabled = true;
+            }
+            else
+            {
+                textBox43.Enabled = false;
+                dateTimePicker8.Enabled = false;
+                textBox47.Enabled = false;
+            }
+
+        }
+
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox8.Checked == true)
+            {
+                textBox42.Enabled = true;
+                dateTimePicker7.Enabled = true;
+                textBox46.Enabled = true;
+            }
+            else
+            {
+                textBox42.Enabled = false;
+                dateTimePicker7.Enabled = false;
+                textBox46.Enabled = false;
+            }
+
+        }
+
+        private void checkBox9_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox9.Checked == true)
+            {
+                textBox40.Enabled = true;
+                dateTimePicker6.Enabled = true;
+                textBox44.Enabled = true;
+            }
+            else
+            {
+                textBox40.Enabled = false;
+                dateTimePicker6.Enabled = false;
+                textBox44.Enabled = false;
+            }
+
+        }
+
+        private void textBox58_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBox51.Text) || String.IsNullOrWhiteSpace(textBox49.Text))
+            {
+                textBox49.Text = string.Empty;
+                textBox51.Text = string.Empty;
+                textBox58.Text = string.Empty;
+            }
+            else
+            {
+                DataRow techvoc_row = techvoc_col.NewRow();
+                techvoc_col.Rows.Add(new object[] { "c", "d", "t", "r"});
+                foreach (DataRow row in techvoc_col.Rows)
+                {
+                    MessageBox.Show(row["course"].ToString());
+                }
+            }
+        }
+
+        private void NSRP_Load(object sender, EventArgs e)
+        {
+            techvoc_col.Clear();
+            techvoc_col.Columns.Add("course");
+            techvoc_col.Columns.Add("duration");
+            techvoc_col.Columns.Add("training_ins");
+            techvoc_col.Columns.Add("cert");
+            //DataRow techvoc_row = techvoc_col.NewRow();
+            //techvoc_col.Rows.Add(new object[] { "Ravi" });
+            //techvoc_col.Rows.Add(new object[] { "Ravi2" });
+            //foreach (DataRow row in techvoc_col.Rows)
+            //{
+            //    MessageBox.Show(row["course"].ToString());
+            //}
         }
     }
 }

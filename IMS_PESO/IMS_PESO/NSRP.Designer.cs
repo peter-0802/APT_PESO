@@ -54,6 +54,10 @@
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
             this.textBox45 = new System.Windows.Forms.TextBox();
             this.textBox46 = new System.Windows.Forms.TextBox();
@@ -330,6 +334,7 @@
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label9 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox22.SuspendLayout();
@@ -356,6 +361,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(16, 80);
             this.textBox1.Name = "textBox1";
@@ -384,6 +390,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(311, 80);
             this.textBox2.Name = "textBox2";
@@ -402,6 +409,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(616, 80);
             this.textBox3.Name = "textBox3";
@@ -431,6 +439,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 26);
             this.comboBox1.TabIndex = 8;
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // dateTimePicker1
             // 
@@ -692,6 +701,10 @@
             // 
             // groupBox17
             // 
+            this.groupBox17.Controls.Add(this.checkBox9);
+            this.groupBox17.Controls.Add(this.checkBox8);
+            this.groupBox17.Controls.Add(this.checkBox7);
+            this.groupBox17.Controls.Add(this.checkBox6);
             this.groupBox17.Controls.Add(this.textBox44);
             this.groupBox17.Controls.Add(this.textBox45);
             this.groupBox17.Controls.Add(this.textBox46);
@@ -727,6 +740,50 @@
             this.groupBox17.Size = new System.Drawing.Size(1011, 204);
             this.groupBox17.TabIndex = 80;
             this.groupBox17.TabStop = false;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox9.Location = new System.Drawing.Point(628, 171);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(15, 14);
+            this.checkBox9.TabIndex = 111;
+            this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox8.Location = new System.Drawing.Point(628, 127);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(15, 14);
+            this.checkBox8.TabIndex = 110;
+            this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox7.Location = new System.Drawing.Point(628, 83);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(15, 14);
+            this.checkBox7.TabIndex = 109;
+            this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(628, 39);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(15, 14);
+            this.checkBox6.TabIndex = 89;
+            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // textBox44
             // 
@@ -826,6 +883,7 @@
             // 
             // textBox40
             // 
+            this.textBox40.Enabled = false;
             this.textBox40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox40.Location = new System.Drawing.Point(649, 167);
             this.textBox40.Name = "textBox40";
@@ -834,6 +892,7 @@
             // 
             // textBox41
             // 
+            this.textBox41.Enabled = false;
             this.textBox41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox41.Location = new System.Drawing.Point(649, 35);
             this.textBox41.Name = "textBox41";
@@ -842,6 +901,7 @@
             // 
             // textBox42
             // 
+            this.textBox42.Enabled = false;
             this.textBox42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox42.Location = new System.Drawing.Point(649, 123);
             this.textBox42.Name = "textBox42";
@@ -850,6 +910,7 @@
             // 
             // textBox43
             // 
+            this.textBox43.Enabled = false;
             this.textBox43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox43.Location = new System.Drawing.Point(649, 79);
             this.textBox43.Name = "textBox43";
@@ -861,9 +922,9 @@
             this.dateTimePicker5.CustomFormat = "yyyy";
             this.dateTimePicker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker5.Location = new System.Drawing.Point(488, 167);
+            this.dateTimePicker5.Location = new System.Drawing.Point(476, 167);
             this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(127, 22);
+            this.dateTimePicker5.Size = new System.Drawing.Size(105, 22);
             this.dateTimePicker5.TabIndex = 95;
             // 
             // dateTimePicker4
@@ -871,9 +932,9 @@
             this.dateTimePicker4.CustomFormat = "yyyy";
             this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(489, 123);
+            this.dateTimePicker4.Location = new System.Drawing.Point(477, 123);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(127, 22);
+            this.dateTimePicker4.Size = new System.Drawing.Size(105, 22);
             this.dateTimePicker4.TabIndex = 94;
             // 
             // dateTimePicker3
@@ -881,9 +942,9 @@
             this.dateTimePicker3.CustomFormat = "yyyy";
             this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(488, 79);
+            this.dateTimePicker3.Location = new System.Drawing.Point(476, 79);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(127, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(105, 22);
             this.dateTimePicker3.TabIndex = 93;
             // 
             // dateTimePicker2
@@ -891,9 +952,9 @@
             this.dateTimePicker2.CustomFormat = "yyyy";
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(488, 35);
+            this.dateTimePicker2.Location = new System.Drawing.Point(476, 35);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(127, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(105, 22);
             this.dateTimePicker2.TabIndex = 92;
             // 
             // textBox36
@@ -1274,6 +1335,7 @@
             // 
             // groupBox21
             // 
+            this.groupBox21.Controls.Add(this.label21);
             this.groupBox21.Controls.Add(this.comboBox7);
             this.groupBox21.Controls.Add(this.dateTimePicker28);
             this.groupBox21.Controls.Add(this.label99);
@@ -2199,6 +2261,7 @@
             this.textBox58.Name = "textBox58";
             this.textBox58.Size = new System.Drawing.Size(248, 20);
             this.textBox58.TabIndex = 80;
+            this.textBox58.Leave += new System.EventHandler(this.textBox58_Leave);
             // 
             // label77
             // 
@@ -2244,7 +2307,7 @@
             // 
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(406, 2045);
+            this.label69.Location = new System.Drawing.Point(320, 2023);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(355, 18);
             this.label69.TabIndex = 87;
@@ -2297,7 +2360,7 @@
             // 
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(484, 9);
+            this.label59.Location = new System.Drawing.Point(472, 9);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(138, 20);
             this.label59.TabIndex = 82;
@@ -2425,10 +2488,11 @@
             this.checkBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox26.Location = new System.Drawing.Point(878, 82);
             this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(52, 22);
+            this.checkBox26.Size = new System.Drawing.Size(47, 22);
             this.checkBox26.TabIndex = 88;
-            this.checkBox26.Text = "Yes";
+            this.checkBox26.Text = "No";
             this.checkBox26.UseVisualStyleBackColor = true;
+            this.checkBox26.CheckedChanged += new System.EventHandler(this.checkBox26_CheckedChanged);
             // 
             // label51
             // 
@@ -2446,10 +2510,11 @@
             this.checkBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox27.Location = new System.Drawing.Point(714, 82);
             this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(52, 22);
+            this.checkBox27.Size = new System.Drawing.Size(47, 22);
             this.checkBox27.TabIndex = 87;
-            this.checkBox27.Text = "Yes";
+            this.checkBox27.Text = "No";
             this.checkBox27.UseVisualStyleBackColor = true;
+            this.checkBox27.CheckedChanged += new System.EventHandler(this.checkBox27_CheckedChanged);
             // 
             // checkBox28
             // 
@@ -2457,10 +2522,11 @@
             this.checkBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox28.Location = new System.Drawing.Point(505, 80);
             this.checkBox28.Name = "checkBox28";
-            this.checkBox28.Size = new System.Drawing.Size(52, 22);
+            this.checkBox28.Size = new System.Drawing.Size(47, 22);
             this.checkBox28.TabIndex = 86;
-            this.checkBox28.Text = "Yes";
+            this.checkBox28.Text = "No";
             this.checkBox28.UseVisualStyleBackColor = true;
+            this.checkBox28.CheckedChanged += new System.EventHandler(this.checkBox28_CheckedChanged);
             // 
             // checkBox29
             // 
@@ -2468,10 +2534,11 @@
             this.checkBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox29.Location = new System.Drawing.Point(310, 82);
             this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(52, 22);
+            this.checkBox29.Size = new System.Drawing.Size(47, 22);
             this.checkBox29.TabIndex = 84;
-            this.checkBox29.Text = "Yes";
+            this.checkBox29.Text = "No";
             this.checkBox29.UseVisualStyleBackColor = true;
+            this.checkBox29.CheckedChanged += new System.EventHandler(this.checkBox29_CheckedChanged);
             // 
             // checkBox22
             // 
@@ -2479,10 +2546,11 @@
             this.checkBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox22.Location = new System.Drawing.Point(878, 45);
             this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(52, 22);
+            this.checkBox22.Size = new System.Drawing.Size(47, 22);
             this.checkBox22.TabIndex = 83;
-            this.checkBox22.Text = "Yes";
+            this.checkBox22.Text = "No";
             this.checkBox22.UseVisualStyleBackColor = true;
+            this.checkBox22.CheckedChanged += new System.EventHandler(this.checkBox22_CheckedChanged);
             // 
             // checkBox23
             // 
@@ -2490,10 +2558,11 @@
             this.checkBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox23.Location = new System.Drawing.Point(714, 45);
             this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(52, 22);
+            this.checkBox23.Size = new System.Drawing.Size(47, 22);
             this.checkBox23.TabIndex = 82;
-            this.checkBox23.Text = "Yes";
+            this.checkBox23.Text = "No";
             this.checkBox23.UseVisualStyleBackColor = true;
+            this.checkBox23.CheckedChanged += new System.EventHandler(this.checkBox23_CheckedChanged);
             // 
             // checkBox24
             // 
@@ -2501,10 +2570,11 @@
             this.checkBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox24.Location = new System.Drawing.Point(505, 43);
             this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(52, 22);
+            this.checkBox24.Size = new System.Drawing.Size(47, 22);
             this.checkBox24.TabIndex = 81;
-            this.checkBox24.Text = "Yes";
+            this.checkBox24.Text = "No";
             this.checkBox24.UseVisualStyleBackColor = true;
+            this.checkBox24.CheckedChanged += new System.EventHandler(this.checkBox24_CheckedChanged);
             // 
             // checkBox25
             // 
@@ -2512,10 +2582,11 @@
             this.checkBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox25.Location = new System.Drawing.Point(310, 45);
             this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(52, 22);
+            this.checkBox25.Size = new System.Drawing.Size(47, 22);
             this.checkBox25.TabIndex = 79;
-            this.checkBox25.Text = "Yes";
+            this.checkBox25.Text = "No";
             this.checkBox25.UseVisualStyleBackColor = true;
+            this.checkBox25.CheckedChanged += new System.EventHandler(this.checkBox25_CheckedChanged);
             // 
             // label50
             // 
@@ -2533,10 +2604,11 @@
             this.checkBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox21.Location = new System.Drawing.Point(878, 17);
             this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(52, 22);
+            this.checkBox21.Size = new System.Drawing.Size(47, 22);
             this.checkBox21.TabIndex = 78;
-            this.checkBox21.Text = "Yes";
+            this.checkBox21.Text = "No";
             this.checkBox21.UseVisualStyleBackColor = true;
+            this.checkBox21.CheckedChanged += new System.EventHandler(this.checkBox21_CheckedChanged);
             // 
             // checkBox20
             // 
@@ -2544,10 +2616,11 @@
             this.checkBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox20.Location = new System.Drawing.Point(714, 17);
             this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(52, 22);
+            this.checkBox20.Size = new System.Drawing.Size(47, 22);
             this.checkBox20.TabIndex = 77;
-            this.checkBox20.Text = "Yes";
+            this.checkBox20.Text = "No";
             this.checkBox20.UseVisualStyleBackColor = true;
+            this.checkBox20.CheckedChanged += new System.EventHandler(this.checkBox20_CheckedChanged);
             // 
             // checkBox19
             // 
@@ -2555,10 +2628,11 @@
             this.checkBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox19.Location = new System.Drawing.Point(505, 15);
             this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(52, 22);
+            this.checkBox19.Size = new System.Drawing.Size(47, 22);
             this.checkBox19.TabIndex = 76;
-            this.checkBox19.Text = "Yes";
+            this.checkBox19.Text = "No";
             this.checkBox19.UseVisualStyleBackColor = true;
+            this.checkBox19.CheckedChanged += new System.EventHandler(this.checkBox19_CheckedChanged);
             // 
             // checkBox18
             // 
@@ -2566,10 +2640,11 @@
             this.checkBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox18.Location = new System.Drawing.Point(310, 17);
             this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(52, 22);
+            this.checkBox18.Size = new System.Drawing.Size(47, 22);
             this.checkBox18.TabIndex = 75;
-            this.checkBox18.Text = "Yes";
+            this.checkBox18.Text = "No";
             this.checkBox18.UseVisualStyleBackColor = true;
+            this.checkBox18.CheckedChanged += new System.EventHandler(this.checkBox18_CheckedChanged);
             // 
             // label52
             // 
@@ -3497,9 +3572,9 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(543, 428);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(116, 18);
+            this.label18.Size = new System.Drawing.Size(119, 18);
             this.label18.TabIndex = 40;
-            this.label18.Text = "Landing Number";
+            this.label18.Text = "Landline Number";
             // 
             // textBox10
             // 
@@ -3675,6 +3750,16 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(740, 103);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(19, 16);
+            this.label21.TabIndex = 166;
+            this.label21.Text = "to";
+            // 
             // NSRP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3687,6 +3772,7 @@
             this.Name = "NSRP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NSRP";
+            this.Load += new System.EventHandler(this.NSRP_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox17.ResumeLayout(false);
@@ -4038,5 +4124,10 @@
         private System.Windows.Forms.Label label104;
         private System.Windows.Forms.Label label105;
         private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.Label label21;
     }
 }
