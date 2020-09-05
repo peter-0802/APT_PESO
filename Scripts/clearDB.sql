@@ -1,0 +1,15 @@
+﻿truncate contacts;
+truncate college;
+truncate contacts_job;
+truncate disability;
+truncate elementary;
+truncate eligibility;
+truncate emp_status_type;
+truncate grad;
+truncate hs;
+truncate `language`;
+truncate prc;
+truncate skills;
+truncate tech_voc;
+truncate work_exp;
+truncate contact_programs;

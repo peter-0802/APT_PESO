@@ -1,16 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<xs:schema id="dataset" 
-                  targetNamespace="http://tempuri.org/dataset.xsd"
-                  elementFormDefault="qualified"
-                  attributeFormDefault="qualified"
-                  xmlns="http://tempuri.org/dataset.xsd"
-                  xmlns:mstns="http://tempuri.org/dataset.xsd"
-                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
-                  xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
-    <xs:element name="dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true">
-        <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded"></xs:choice>
-        </xs:complexType>
-    </xs:element>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dataset" targetNamespace="http://tempuri.org/dataset.xsd" xmlns:mstns="http://tempuri.org/dataset.xsd" xmlns="http://tempuri.org/dataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dataset" msprop:Generator_UserDSName="dataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="childLaborReport" msprop:Generator_TableClassName="childLaborReportDataTable" msprop:Generator_TableVarName="tablechildLaborReport" msprop:Generator_RowChangedName="childLaborReportRowChanged" msprop:Generator_TablePropName="childLaborReport" msprop:Generator_RowDeletingName="childLaborReportRowDeleting" msprop:Generator_RowChangingName="childLaborReportRowChanging" msprop:Generator_RowEvHandlerName="childLaborReportRowChangeEventHandler" msprop:Generator_RowDeletedName="childLaborReportRowDeleted" msprop:Generator_RowClassName="childLaborReportRow" msprop:Generator_UserTableName="childLaborReport" msprop:Generator_RowEvArgName="childLaborReportRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="event_date" msprop:Generator_ColumnVarNameInTable="columnevent_date" msprop:Generator_ColumnPropNameInRow="event_date" msprop:Generator_ColumnPropNameInTable="event_dateColumn" msprop:Generator_UserColumnName="event_date" type="xs:string" minOccurs="0" />
+              <xs:element name="event" msprop:Generator_ColumnVarNameInTable="columnevent" msprop:Generator_ColumnPropNameInRow="_event" msprop:Generator_ColumnPropNameInTable="eventColumn" msprop:Generator_UserColumnName="event" type="xs:string" minOccurs="0" />
+              <xs:element name="host" msprop:Generator_ColumnVarNameInTable="columnhost" msprop:Generator_ColumnPropNameInRow="host" msprop:Generator_ColumnPropNameInTable="hostColumn" msprop:Generator_UserColumnName="host" type="xs:string" minOccurs="0" />
+              <xs:element name="veneu" msprop:Generator_ColumnVarNameInTable="columnveneu" msprop:Generator_ColumnPropNameInRow="veneu" msprop:Generator_ColumnPropNameInTable="veneuColumn" msprop:Generator_UserColumnName="veneu" type="xs:string" minOccurs="0" />
+              <xs:element name="surname" msprop:Generator_ColumnVarNameInTable="columnsurname" msprop:Generator_ColumnPropNameInRow="surname" msprop:Generator_ColumnPropNameInTable="surnameColumn" msprop:Generator_UserColumnName="surname" type="xs:string" minOccurs="0" />
+              <xs:element name="firstname" msprop:Generator_ColumnVarNameInTable="columnfirstname" msprop:Generator_ColumnPropNameInRow="firstname" msprop:Generator_ColumnPropNameInTable="firstnameColumn" msprop:Generator_UserColumnName="firstname" type="xs:string" minOccurs="0" />
+              <xs:element name="middlename" msprop:Generator_ColumnVarNameInTable="columnmiddlename" msprop:Generator_ColumnPropNameInRow="middlename" msprop:Generator_ColumnPropNameInTable="middlenameColumn" msprop:Generator_UserColumnName="middlename" type="xs:string" minOccurs="0" />
+              <xs:element name="gender" msprop:Generator_ColumnVarNameInTable="columngender" msprop:Generator_ColumnPropNameInRow="gender" msprop:Generator_ColumnPropNameInTable="genderColumn" msprop:Generator_UserColumnName="gender" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

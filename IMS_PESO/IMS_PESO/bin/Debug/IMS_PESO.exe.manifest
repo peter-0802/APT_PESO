@@ -278,14 +278,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IMS_PESO.exe" size="146432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IMS_PESO.exe" size="240128">
       <assemblyIdentity name="IMS_PESO" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>rtTsIdhkspV3kxi4D/wIaRaUWYE=</dsig:DigestValue>
+        <dsig:DigestValue>34vRCDvy6XrLgDEA8bpOwy+Fjr4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
