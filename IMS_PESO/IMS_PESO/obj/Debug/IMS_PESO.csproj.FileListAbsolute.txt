@@ -62,3 +62,4 @@ D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.childLabor.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.auth.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.childLaborFilter.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.SPES.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.spesFilter.resources

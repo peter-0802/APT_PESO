@@ -103,6 +103,12 @@
     <Compile Include="auth.Designer.cs">
       <DependentUpon>auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="spesFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="spesFilter.Designer.cs">
+      <DependentUpon>spesFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="SPES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,10 +139,10 @@
       <DependentUpon>cr_childLaborReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="cr_sraReport.cs">
+    <Compile Include="cr_spesReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>cr_sraReport.rpt</DependentUpon>
+      <DependentUpon>cr_spesReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="dataset.cs">
@@ -232,6 +238,9 @@
     <EmbeddedResource Include="auth.resx">
       <DependentUpon>auth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="spesFilter.resx">
+      <DependentUpon>spesFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SPES.resx">
       <DependentUpon>SPES.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,9 +257,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>cr_childLaborReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="cr_sraReport.rpt">
+    <EmbeddedResource Include="cr_spesReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>cr_sraReport.cs</LastGenOutput>
+      <LastGenOutput>cr_spesReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

@@ -529,7 +529,7 @@ namespace IMS_PESO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            childLaborFilter a = new childLaborFilter();
+            spesFilter a = new spesFilter();
             a.ShowDialog();
         }
     }

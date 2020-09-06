@@ -30,24 +30,24 @@ namespace IMS_PESO
         
 
         public string qry = null;
-        public void bindreport()
-        {
-            dataset ds = new dataset();
-            using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(qry, conn);
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds, ds.Tables["childLaborReport"].TableName);
-                cr_childLaborReport rep = new cr_childLaborReport();
-                rep.SetDataSource(ds);
-                this.crystalReportViewer1.ReportSource = rep;
-            }
-        }
+        public string datasetTable = null;
+        //public void bindreport()
+        //{
+        //    dataset ds = new dataset();
+        //    using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
+        //    {
+        //        conn.Open();
+        //        MySqlCommand cmd = new MySqlCommand(qry, conn);
+        //        MySqlDataAdapter adapter = new MySqlDataAdapter();
+        //        adapter.SelectCommand = cmd;
+        //        adapter.Fill(ds, ds.Tables[datasetTable].TableName);
+        //        cr_childLaborReport rep = new cr_childLaborReport();
+        //        rep.SetDataSource(ds);
+        //        this.crystalReportViewer1.ReportSource = rep;
+        //    }
+        //}
         private void report_Load(object sender, EventArgs e)
         {
-            bindreport();
         }
         }
     }
