@@ -34,33 +34,6 @@ namespace IMS_PESO
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //report a = new report();
-            //string iQry = @"SELECT
-            //            event_date,
-            //            event,
-            //            host,
-            //            veneu,
-            //            surname,
-            //            firstname,
-            //            middlename,
-            //            gender,
-            //            concat(surname, firstname, middlename) `test`
-            //            FROM spes
-            //            where event_date between '{0}' and '{1}'
-            //            and event like '%%{2}%%'
-            //            and host like '%%{3}%%'
-            //            and veneu like '%%{4}%%'
-            //            and concat(surname, firstname, middlename) like '%%{5}%%'";
-            //a.qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
-            //a.datasetTable = "childLaborReport";
-            //cr_spesReport b = new cr_spesReport();
-            //a.ShowDialog();
-            bindreport();
-
-
-        }
-        public void bindreport()
-        {
             report a = new report();
             string iQry = @"SELECT
                         event_date,
@@ -79,7 +52,7 @@ namespace IMS_PESO
                         and veneu like '%%{4}%%'
                         and concat(surname, firstname, middlename) like '%%{5}%%'";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
-            string datasetTable = "childLaborReport";
+            string datasetTable = "reportPerModule";
 
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
@@ -95,6 +68,7 @@ namespace IMS_PESO
                 a.ShowDialog();
             }
         }
+        
         private void spesFilter_Load(object sender, EventArgs e)
         {
 

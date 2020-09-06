@@ -24,7 +24,7 @@ namespace IMS_PESO {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dataset : global::System.Data.DataSet {
         
-        private childLaborReportDataTable tablechildLaborReport;
+        private reportPerModuleDataTable tablereportPerModule;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace IMS_PESO {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["childLaborReport"] != null)) {
-                    base.Tables.Add(new childLaborReportDataTable(ds.Tables["childLaborReport"]));
+                if ((ds.Tables["reportPerModule"] != null)) {
+                    base.Tables.Add(new reportPerModuleDataTable(ds.Tables["reportPerModule"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace IMS_PESO {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public childLaborReportDataTable childLaborReport {
+        public reportPerModuleDataTable reportPerModule {
             get {
-                return this.tablechildLaborReport;
+                return this.tablereportPerModule;
             }
         }
         
@@ -152,8 +152,8 @@ namespace IMS_PESO {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["childLaborReport"] != null)) {
-                    base.Tables.Add(new childLaborReportDataTable(ds.Tables["childLaborReport"]));
+                if ((ds.Tables["reportPerModule"] != null)) {
+                    base.Tables.Add(new reportPerModuleDataTable(ds.Tables["reportPerModule"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace IMS_PESO {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablechildLaborReport = ((childLaborReportDataTable)(base.Tables["childLaborReport"]));
+            this.tablereportPerModule = ((reportPerModuleDataTable)(base.Tables["reportPerModule"]));
             if ((initTable == true)) {
-                if ((this.tablechildLaborReport != null)) {
-                    this.tablechildLaborReport.InitVars();
+                if ((this.tablereportPerModule != null)) {
+                    this.tablereportPerModule.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace IMS_PESO {
             this.Namespace = "http://tempuri.org/dataset.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablechildLaborReport = new childLaborReportDataTable();
-            base.Tables.Add(this.tablechildLaborReport);
+            this.tablereportPerModule = new reportPerModuleDataTable();
+            base.Tables.Add(this.tablereportPerModule);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializechildLaborReport() {
+        private bool ShouldSerializereportPerModule() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace IMS_PESO {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void childLaborReportRowChangeEventHandler(object sender, childLaborReportRowChangeEvent e);
+        public delegate void reportPerModuleRowChangeEventHandler(object sender, reportPerModuleRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class childLaborReportDataTable : global::System.Data.TypedTableBase<childLaborReportRow> {
+        public partial class reportPerModuleDataTable : global::System.Data.TypedTableBase<reportPerModuleRow> {
             
             private global::System.Data.DataColumn columnevent_date;
             
@@ -297,8 +297,8 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public childLaborReportDataTable() {
-                this.TableName = "childLaborReport";
+            public reportPerModuleDataTable() {
+                this.TableName = "reportPerModule";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -306,7 +306,7 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal childLaborReportDataTable(global::System.Data.DataTable table) {
+            internal reportPerModuleDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -323,7 +323,7 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected childLaborReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected reportPerModuleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -403,34 +403,34 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public childLaborReportRow this[int index] {
+            public reportPerModuleRow this[int index] {
                 get {
-                    return ((childLaborReportRow)(this.Rows[index]));
+                    return ((reportPerModuleRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event childLaborReportRowChangeEventHandler childLaborReportRowChanging;
+            public event reportPerModuleRowChangeEventHandler reportPerModuleRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event childLaborReportRowChangeEventHandler childLaborReportRowChanged;
+            public event reportPerModuleRowChangeEventHandler reportPerModuleRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event childLaborReportRowChangeEventHandler childLaborReportRowDeleting;
+            public event reportPerModuleRowChangeEventHandler reportPerModuleRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event childLaborReportRowChangeEventHandler childLaborReportRowDeleted;
+            public event reportPerModuleRowChangeEventHandler reportPerModuleRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddchildLaborReportRow(childLaborReportRow row) {
+            public void AddreportPerModuleRow(reportPerModuleRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public childLaborReportRow AddchildLaborReportRow(string event_date, string _event, string host, string veneu, string surname, string firstname, string middlename, string gender) {
-                childLaborReportRow rowchildLaborReportRow = ((childLaborReportRow)(this.NewRow()));
+            public reportPerModuleRow AddreportPerModuleRow(string event_date, string _event, string host, string veneu, string surname, string firstname, string middlename, string gender) {
+                reportPerModuleRow rowreportPerModuleRow = ((reportPerModuleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         event_date,
                         _event,
@@ -440,15 +440,15 @@ namespace IMS_PESO {
                         firstname,
                         middlename,
                         gender};
-                rowchildLaborReportRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowchildLaborReportRow);
-                return rowchildLaborReportRow;
+                rowreportPerModuleRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowreportPerModuleRow);
+                return rowreportPerModuleRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                childLaborReportDataTable cln = ((childLaborReportDataTable)(base.Clone()));
+                reportPerModuleDataTable cln = ((reportPerModuleDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -456,7 +456,7 @@ namespace IMS_PESO {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new childLaborReportDataTable();
+                return new reportPerModuleDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -498,28 +498,28 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public childLaborReportRow NewchildLaborReportRow() {
-                return ((childLaborReportRow)(this.NewRow()));
+            public reportPerModuleRow NewreportPerModuleRow() {
+                return ((reportPerModuleRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new childLaborReportRow(builder);
+                return new reportPerModuleRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(childLaborReportRow);
+                return typeof(reportPerModuleRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.childLaborReportRowChanged != null)) {
-                    this.childLaborReportRowChanged(this, new childLaborReportRowChangeEvent(((childLaborReportRow)(e.Row)), e.Action));
+                if ((this.reportPerModuleRowChanged != null)) {
+                    this.reportPerModuleRowChanged(this, new reportPerModuleRowChangeEvent(((reportPerModuleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -527,8 +527,8 @@ namespace IMS_PESO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.childLaborReportRowChanging != null)) {
-                    this.childLaborReportRowChanging(this, new childLaborReportRowChangeEvent(((childLaborReportRow)(e.Row)), e.Action));
+                if ((this.reportPerModuleRowChanging != null)) {
+                    this.reportPerModuleRowChanging(this, new reportPerModuleRowChangeEvent(((reportPerModuleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -536,8 +536,8 @@ namespace IMS_PESO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.childLaborReportRowDeleted != null)) {
-                    this.childLaborReportRowDeleted(this, new childLaborReportRowChangeEvent(((childLaborReportRow)(e.Row)), e.Action));
+                if ((this.reportPerModuleRowDeleted != null)) {
+                    this.reportPerModuleRowDeleted(this, new reportPerModuleRowChangeEvent(((reportPerModuleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -545,14 +545,14 @@ namespace IMS_PESO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.childLaborReportRowDeleting != null)) {
-                    this.childLaborReportRowDeleting(this, new childLaborReportRowChangeEvent(((childLaborReportRow)(e.Row)), e.Action));
+                if ((this.reportPerModuleRowDeleting != null)) {
+                    this.reportPerModuleRowDeleting(this, new reportPerModuleRowChangeEvent(((reportPerModuleRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovechildLaborReportRow(childLaborReportRow row) {
+            public void RemovereportPerModuleRow(reportPerModuleRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -579,7 +579,7 @@ namespace IMS_PESO {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "childLaborReportDataTable";
+                attribute2.FixedValue = "reportPerModuleDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -623,15 +623,15 @@ namespace IMS_PESO {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class childLaborReportRow : global::System.Data.DataRow {
+        public partial class reportPerModuleRow : global::System.Data.DataRow {
             
-            private childLaborReportDataTable tablechildLaborReport;
+            private reportPerModuleDataTable tablereportPerModule;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal childLaborReportRow(global::System.Data.DataRowBuilder rb) : 
+            internal reportPerModuleRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablechildLaborReport = ((childLaborReportDataTable)(this.Table));
+                this.tablereportPerModule = ((reportPerModuleDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -639,14 +639,14 @@ namespace IMS_PESO {
             public string event_date {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.event_dateColumn]));
+                        return ((string)(this[this.tablereportPerModule.event_dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'event_date\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'event_date\' in table \'reportPerModule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.event_dateColumn] = value;
+                    this[this.tablereportPerModule.event_dateColumn] = value;
                 }
             }
             
@@ -655,14 +655,14 @@ namespace IMS_PESO {
             public string _event {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.eventColumn]));
+                        return ((string)(this[this.tablereportPerModule.eventColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'event\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'event\' in table \'reportPerModule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.eventColumn] = value;
+                    this[this.tablereportPerModule.eventColumn] = value;
                 }
             }
             
@@ -671,14 +671,14 @@ namespace IMS_PESO {
             public string host {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.hostColumn]));
+                        return ((string)(this[this.tablereportPerModule.hostColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'host\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'host\' in table \'reportPerModule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.hostColumn] = value;
+                    this[this.tablereportPerModule.hostColumn] = value;
                 }
             }
             
@@ -687,14 +687,14 @@ namespace IMS_PESO {
             public string veneu {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.veneuColumn]));
+                        return ((string)(this[this.tablereportPerModule.veneuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'veneu\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'veneu\' in table \'reportPerModule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.veneuColumn] = value;
+                    this[this.tablereportPerModule.veneuColumn] = value;
                 }
             }
             
@@ -703,14 +703,14 @@ namespace IMS_PESO {
             public string surname {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.surnameColumn]));
+                        return ((string)(this[this.tablereportPerModule.surnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'surname\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'surname\' in table \'reportPerModule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.surnameColumn] = value;
+                    this[this.tablereportPerModule.surnameColumn] = value;
                 }
             }
             
@@ -719,14 +719,14 @@ namespace IMS_PESO {
             public string firstname {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.firstnameColumn]));
+                        return ((string)(this[this.tablereportPerModule.firstnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'firstname\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'firstname\' in table \'reportPerModule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.firstnameColumn] = value;
+                    this[this.tablereportPerModule.firstnameColumn] = value;
                 }
             }
             
@@ -735,14 +735,14 @@ namespace IMS_PESO {
             public string middlename {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.middlenameColumn]));
+                        return ((string)(this[this.tablereportPerModule.middlenameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'middlename\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'middlename\' in table \'reportPerModule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.middlenameColumn] = value;
+                    this[this.tablereportPerModule.middlenameColumn] = value;
                 }
             }
             
@@ -751,111 +751,111 @@ namespace IMS_PESO {
             public string gender {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.genderColumn]));
+                        return ((string)(this[this.tablereportPerModule.genderColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'gender\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'gender\' in table \'reportPerModule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.genderColumn] = value;
+                    this[this.tablereportPerModule.genderColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isevent_dateNull() {
-                return this.IsNull(this.tablechildLaborReport.event_dateColumn);
+                return this.IsNull(this.tablereportPerModule.event_dateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setevent_dateNull() {
-                this[this.tablechildLaborReport.event_dateColumn] = global::System.Convert.DBNull;
+                this[this.tablereportPerModule.event_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Is_eventNull() {
-                return this.IsNull(this.tablechildLaborReport.eventColumn);
+                return this.IsNull(this.tablereportPerModule.eventColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set_eventNull() {
-                this[this.tablechildLaborReport.eventColumn] = global::System.Convert.DBNull;
+                this[this.tablereportPerModule.eventColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IshostNull() {
-                return this.IsNull(this.tablechildLaborReport.hostColumn);
+                return this.IsNull(this.tablereportPerModule.hostColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SethostNull() {
-                this[this.tablechildLaborReport.hostColumn] = global::System.Convert.DBNull;
+                this[this.tablereportPerModule.hostColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsveneuNull() {
-                return this.IsNull(this.tablechildLaborReport.veneuColumn);
+                return this.IsNull(this.tablereportPerModule.veneuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetveneuNull() {
-                this[this.tablechildLaborReport.veneuColumn] = global::System.Convert.DBNull;
+                this[this.tablereportPerModule.veneuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IssurnameNull() {
-                return this.IsNull(this.tablechildLaborReport.surnameColumn);
+                return this.IsNull(this.tablereportPerModule.surnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetsurnameNull() {
-                this[this.tablechildLaborReport.surnameColumn] = global::System.Convert.DBNull;
+                this[this.tablereportPerModule.surnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsfirstnameNull() {
-                return this.IsNull(this.tablechildLaborReport.firstnameColumn);
+                return this.IsNull(this.tablereportPerModule.firstnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetfirstnameNull() {
-                this[this.tablechildLaborReport.firstnameColumn] = global::System.Convert.DBNull;
+                this[this.tablereportPerModule.firstnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsmiddlenameNull() {
-                return this.IsNull(this.tablechildLaborReport.middlenameColumn);
+                return this.IsNull(this.tablereportPerModule.middlenameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetmiddlenameNull() {
-                this[this.tablechildLaborReport.middlenameColumn] = global::System.Convert.DBNull;
+                this[this.tablereportPerModule.middlenameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsgenderNull() {
-                return this.IsNull(this.tablechildLaborReport.genderColumn);
+                return this.IsNull(this.tablereportPerModule.genderColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetgenderNull() {
-                this[this.tablechildLaborReport.genderColumn] = global::System.Convert.DBNull;
+                this[this.tablereportPerModule.genderColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -863,22 +863,22 @@ namespace IMS_PESO {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class childLaborReportRowChangeEvent : global::System.EventArgs {
+        public class reportPerModuleRowChangeEvent : global::System.EventArgs {
             
-            private childLaborReportRow eventRow;
+            private reportPerModuleRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public childLaborReportRowChangeEvent(childLaborReportRow row, global::System.Data.DataRowAction action) {
+            public reportPerModuleRowChangeEvent(reportPerModuleRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public childLaborReportRow Row {
+            public reportPerModuleRow Row {
                 get {
                     return this.eventRow;
                 }

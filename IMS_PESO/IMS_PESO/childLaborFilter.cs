@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
@@ -40,8 +41,22 @@ namespace IMS_PESO
                         and host like '%%{3}%%'
                         and veneu like '%%{4}%%'
                         and concat(surname, firstname, middlename) like '%%{5}%%'";
-            a.qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
-            a.ShowDialog();
+            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            string datasetTable = "reportPerModule";
+
+            dataset ds = new dataset();
+            using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(qry, conn);
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, ds.Tables[datasetTable].TableName);
+                cr_childLaborReport rep = new cr_childLaborReport();
+                rep.SetDataSource(ds);
+                a.crystalReportViewer1.ReportSource = rep;
+                a.ShowDialog();
+            }
         }
     }
 }
