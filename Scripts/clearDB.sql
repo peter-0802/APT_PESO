@@ -13,3 +13,5 @@ truncate skills;
 truncate tech_voc;
 truncate work_exp;
 truncate contact_programs;
+truncate child_labor;
+truncate spes;

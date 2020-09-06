@@ -97,17 +97,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="auth2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="auth2.Designer.cs">
-      <DependentUpon>auth2.cs</DependentUpon>
-    </Compile>
     <Compile Include="auth.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="auth.Designer.cs">
       <DependentUpon>auth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SPES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SPES.Designer.cs">
+      <DependentUpon>SPES.cs</DependentUpon>
     </Compile>
     <Compile Include="childLabor.cs">
       <SubType>Form</SubType>
@@ -229,11 +229,11 @@
     <Compile Include="work_exp.Designer.cs">
       <DependentUpon>work_exp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="auth2.resx">
-      <DependentUpon>auth2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="auth.resx">
       <DependentUpon>auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPES.resx">
+      <DependentUpon>SPES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="childLabor.resx">
       <DependentUpon>childLabor.cs</DependentUpon>

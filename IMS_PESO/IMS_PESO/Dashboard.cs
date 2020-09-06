@@ -80,8 +80,7 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NSRP a = new NSRP();
-            a.label33.Text = button1.Text;
+            SPES a = new SPES();
             a.ShowDialog();
         }
 
@@ -125,7 +124,6 @@ namespace IMS_PESO
         private void button6_Click(object sender, EventArgs e)
         {
             childLabor a = new childLabor();
-            //a.label33.Text = button6.Text;
             a.ShowDialog();
         }
     }

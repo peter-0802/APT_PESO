@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class childLabor : Form
+    public partial class SPES : Form
     {
         DBConn DB = new DBConn();
-        public childLabor()
+        public SPES()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace IMS_PESO
         }
         private void getEvent()
         {
-            string query = @"select event `EVENT`, event_date `DATE` from child_labor group by event";
+            string query = @"select event `EVENT`, event_date `DATE` from spes group by event";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -87,12 +87,73 @@ namespace IMS_PESO
                         myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
                         myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
                         myCommand.Parameters.AddWithValue("@notes", "notes");
-                        string query = @"insert ignore into child_labor
+                        string query = @"insert into spes
                                         (event, event_date, host, veneu, surname, firstname, middlename, gender, notes)
                                         values
                                         (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @notes)";
                         myCommand.CommandText = query;
                         myCommand.ExecuteNonQuery();
+                }
+                myTrans.Commit();
+                MessageBox.Show(this, "Record Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exg)
+            {
+                try
+                {
+                    myTrans.Rollback();
+                }
+                catch (Exception ex)
+                {
+                    if (myTrans.Connection != null)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                MessageBox.Show(exg.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void update()
+        {
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            conn.Open();
+            MySqlCommand myCommand = conn.CreateCommand();
+            MySqlTransaction myTrans;
+            myTrans = conn.BeginTransaction();
+            myCommand.Connection = conn;
+            myCommand.Transaction = myTrans;
+            try
+            {
+
+                myCommand.Parameters.AddWithValue("@event", label9.Text);
+                string qD = @"delete from spes where event = @event;";
+                myCommand.CommandText = qD;
+                myCommand.ExecuteNonQuery();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    myCommand = conn.CreateCommand();
+                    if (row.IsNewRow) continue;
+                    myCommand.Parameters.AddWithValue("@event", textBox1.Text);
+                    myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                    myCommand.Parameters.AddWithValue("@veneu", textBox2.Text);
+                    myCommand.Parameters.AddWithValue("@host", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
+                    myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
+                    myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
+                    myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
+                    myCommand.Parameters.AddWithValue("@notes", "notes");
+                    string query = @"insert ignore into spes
+                                        (event, event_date, host, veneu, surname, firstname, middlename, gender, notes)
+                                        values
+                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @notes)";
+                    myCommand.CommandText = query;
+                    myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
                 MessageBox.Show(this, "Record Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -166,67 +227,6 @@ namespace IMS_PESO
                 conn.Close();
             }
         }
-        private void update()
-        {
-            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-            conn.Open();
-            MySqlCommand myCommand = conn.CreateCommand();
-            MySqlTransaction myTrans;
-            myTrans = conn.BeginTransaction();
-            myCommand.Connection = conn;
-            myCommand.Transaction = myTrans;
-            try
-            {
-
-                myCommand.Parameters.AddWithValue("@event", label9.Text);
-                string qD = @"delete from child_labor where event = @event;";
-                myCommand.CommandText = qD;
-                myCommand.ExecuteNonQuery();
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    myCommand = conn.CreateCommand();
-                    if (row.IsNewRow) continue;
-                    myCommand.Parameters.AddWithValue("@event", textBox1.Text);
-                    myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
-                    myCommand.Parameters.AddWithValue("@veneu", textBox2.Text);
-                    myCommand.Parameters.AddWithValue("@host", textBox3.Text);
-                    myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
-                    myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
-                    myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
-                    myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
-                    myCommand.Parameters.AddWithValue("@notes", "notes");
-                    string query = @"insert into child_labor
-                                        (event, event_date, host, veneu, surname, firstname, middlename, gender, notes)
-                                        values
-                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @notes)";
-                    myCommand.CommandText = query;
-                    myCommand.ExecuteNonQuery();
-                }
-                myTrans.Commit();
-                MessageBox.Show(this, "Record Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception exg)
-            {
-                try
-                {
-                    myTrans.Rollback();
-                }
-                catch (Exception ex)
-                {
-                    if (myTrans.Connection != null)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
-                MessageBox.Show(exg.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(textBox1.Text) || String.IsNullOrWhiteSpace(textBox2.Text) || String.IsNullOrWhiteSpace(textBox3.Text))
@@ -237,7 +237,7 @@ namespace IMS_PESO
             {
                 MySqlConnection conn = new MySqlConnection(DBConn.connstring);
                 MySqlDataReader myreader;
-                string query = @"select event from child_labor where event = '{0}'";
+                string query = @"select event from spes where event = '{0}'";
                 string q2 = string.Format(query, textBox1.Text);
                 MySqlCommand cmdmdlr = new MySqlCommand(q2, conn);
                 try
@@ -263,6 +263,7 @@ namespace IMS_PESO
                 }
                 finally { conn.Close(); }
             }
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -299,7 +300,7 @@ namespace IMS_PESO
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlDataReader myreader;
-            string query = @"select event from child_labor where event = '{0}'";
+            string query = @"select event from spes where event = '{0}'";
             string q2 = string.Format(query, textBox1.Text);
             MySqlCommand cmdmdlr = new MySqlCommand(q2, conn);
             try
@@ -366,7 +367,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@event", label9.Text);
-                        string qD = @"delete from child_labor where event = @event;";
+                        string qD = @"delete from spes where event = @event;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -420,7 +421,7 @@ namespace IMS_PESO
                         firstname,
                         middlename,
                         gender
-                        from child_labor
+                        from spes
                         where event = '{0}'";
             string FinalQuery = string.Format(query, label9.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -470,7 +471,7 @@ namespace IMS_PESO
                                 event_date,
                                 host,
                                 veneu
-                                from child_labor
+                                from spes
                                 where event = '{0}'
                                 group by event";
             string finalQuery = string.Format(query, label9.Text);
