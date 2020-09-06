@@ -97,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="auth2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="auth2.Designer.cs">
+      <DependentUpon>auth2.cs</DependentUpon>
+    </Compile>
     <Compile Include="auth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     <Compile Include="childLabor.Designer.cs">
       <DependentUpon>childLabor.cs</DependentUpon>
     </Compile>
+    <Compile Include="childLaborFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="childLaborFilter.Designer.cs">
+      <DependentUpon>childLaborFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="contactList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>cr_childLaborReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cr_sraReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cr_sraReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="dataset.cs">
@@ -211,11 +229,17 @@
     <Compile Include="work_exp.Designer.cs">
       <DependentUpon>work_exp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="auth2.resx">
+      <DependentUpon>auth2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="auth.resx">
       <DependentUpon>auth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="childLabor.resx">
       <DependentUpon>childLabor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="childLaborFilter.resx">
+      <DependentUpon>childLaborFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="contactList.resx">
       <DependentUpon>contactList.cs</DependentUpon>
@@ -223,6 +247,10 @@
     <EmbeddedResource Include="cr_childLaborReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>cr_childLaborReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cr_sraReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cr_sraReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

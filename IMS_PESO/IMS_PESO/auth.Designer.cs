@@ -134,6 +134,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "auth";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.auth_FormClosing);
+            this.Load += new System.EventHandler(this.auth_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

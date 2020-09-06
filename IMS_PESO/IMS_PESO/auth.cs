@@ -25,6 +25,7 @@ namespace IMS_PESO
                 MessageBox.Show(ex.GetType().ToString());
             }
             InitializeComponent();
+            panel1.BackColor = ColorTranslator.FromHtml("#FCA311");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -42,6 +43,11 @@ namespace IMS_PESO
             {
                 upflag = "1";
             }
+        }
+
+        private void auth_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,7 +55,7 @@ namespace IMS_PESO
             }
             finally
             {
-                conn.Close();
+                conn.Close();;
             }
         }
         private void childLabor_Load(object sender, EventArgs e)
@@ -249,27 +249,27 @@ namespace IMS_PESO
         
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            //MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-            //MySqlDataReader myreader;
-            //string query = @"select event from child_labor where event = '{0}'";
-            //string q2 = string.Format(query, textBox1.Text);
-            //MySqlCommand cmdmdlr = new MySqlCommand(q2, conn);
-            //try
-            //{
-            //    conn.Open();
-            //    myreader = cmdmdlr.ExecuteReader();
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            MySqlDataReader myreader;
+            string query = @"select event from child_labor where event = '{0}'";
+            string q2 = string.Format(query, textBox1.Text);
+            MySqlCommand cmdmdlr = new MySqlCommand(q2, conn);
+            try
+            {
+                conn.Open();
+                myreader = cmdmdlr.ExecuteReader();
 
-            //    if (myreader.Read())
-            //    {
-            //        MessageBox.Show(this, "This event already exist please change event title :-)", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        textBox1.Focus();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //finally { conn.Close(); }
+                if (myreader.Read())
+                {
+                    MessageBox.Show(this, "This event already exist please change event title :-)", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox1.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally { conn.Close(); }
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -293,7 +293,7 @@ namespace IMS_PESO
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            label9.Text = this.dataGridView2.CurrentRow.Cells[0].Value.ToString();
+                    label9.Text = this.dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -302,46 +302,50 @@ namespace IMS_PESO
             a.ShowDialog();
             if (a.upflag == "1")
             {
-                if (!String.IsNullOrWhiteSpace(label9.Text) || label9.Text == "~code~")
+                if (String.IsNullOrWhiteSpace(label9.Text) || label9.Text == "~code~")
                 {
                     MessageBox.Show(this, "Please select an event to delete", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-                conn.Open();
-                MySqlCommand myCommand = conn.CreateCommand();
-                MySqlTransaction myTrans;
-                myTrans = conn.BeginTransaction();
-                myCommand.Connection = conn;
-                myCommand.Transaction = myTrans;
-                try
+                else
                 {
-                    myCommand.Parameters.AddWithValue("@event", label9.Text);
-                    string qD = @"delete from child_labor where event = @event;";
-                    myCommand.CommandText = qD;
-                    myCommand.ExecuteNonQuery();
-                    myTrans.Commit();
-                    MessageBox.Show(this, "Record Deleted", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception exg)
-                {
+                    MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+                    conn.Open();
+                    MySqlCommand myCommand = conn.CreateCommand();
+                    MySqlTransaction myTrans;
+                    myTrans = conn.BeginTransaction();
+                    myCommand.Connection = conn;
+                    myCommand.Transaction = myTrans;
                     try
                     {
-                        myTrans.Rollback();
+                        myCommand.Parameters.AddWithValue("@event", label9.Text);
+                        string qD = @"delete from child_labor where event = @event;";
+                        myCommand.CommandText = qD;
+                        myCommand.ExecuteNonQuery();
+                        myTrans.Commit();
+                        MessageBox.Show(this, "Record Deleted", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
+                    catch (Exception exg)
                     {
-                        if (myTrans.Connection != null)
+                        try
                         {
-                            MessageBox.Show(ex.ToString());
+                            myTrans.Rollback();
                         }
+                        catch (Exception ex)
+                        {
+                            if (myTrans.Connection != null)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
+                        }
+                        MessageBox.Show(exg.ToString());
                     }
-                    MessageBox.Show(exg.ToString());
+                    finally
+                    {
+                        conn.Close();
+                    }
+                    getEvent();
                 }
-                finally
-                {
-                    conn.Close();
-                }
-                getEvent();
+                this.Close();
             }
             else
             {
@@ -400,11 +404,16 @@ namespace IMS_PESO
 
         private void label9_TextChanged(object sender, EventArgs e)
         {
-            if (label9.Text != "~code~")
+            if (label9.Text != "~code~" && !String.IsNullOrWhiteSpace(label9.Text))
             {
                 button6.Enabled = false;
                 button1.Enabled = true;
                 button2.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
             }
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlDataReader myreader;
@@ -461,7 +470,7 @@ namespace IMS_PESO
                     update();
                     getEvent();
                 }
-                
+                this.Close();
             }
             else
             {
@@ -471,17 +480,7 @@ namespace IMS_PESO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            report a = new report();
-            a.qry = @"SELECT
-                        event_date,
-                        event,
-                        host,
-                        veneu,
-                        surname,
-                        firstname,
-                        middlename,
-                        gender
-                        FROM child_labor";
+            childLaborFilter a = new childLaborFilter();
             a.ShowDialog();
         }
     }

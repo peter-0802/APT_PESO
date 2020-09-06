@@ -281,6 +281,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -304,6 +305,7 @@
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.Location = new System.Drawing.Point(885, 92);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(303, 531);
             this.dataGridView2.TabIndex = 24;
