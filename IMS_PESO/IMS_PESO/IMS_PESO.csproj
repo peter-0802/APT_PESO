@@ -103,6 +103,42 @@
     <Compile Include="auth.Designer.cs">
       <DependentUpon>auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="cr_shReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cr_shReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cr_sraReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cr_sraReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sraFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sraFilter.Designer.cs">
+      <DependentUpon>sraFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SRA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SRA.Designer.cs">
+      <DependentUpon>SRA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hsSchoolarFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hsSchoolarFilter.Designer.cs">
+      <DependentUpon>hsSchoolarFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSschoolar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSschoolar.Designer.cs">
+      <DependentUpon>HSschoolar.cs</DependentUpon>
+    </Compile>
     <Compile Include="spesFilter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +273,26 @@
     </Compile>
     <EmbeddedResource Include="auth.resx">
       <DependentUpon>auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cr_shReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cr_shReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cr_sraReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cr_sraReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sraFilter.resx">
+      <DependentUpon>sraFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SRA.resx">
+      <DependentUpon>SRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hsSchoolarFilter.resx">
+      <DependentUpon>hsSchoolarFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSschoolar.resx">
+      <DependentUpon>HSschoolar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="spesFilter.resx">
       <DependentUpon>spesFilter.cs</DependentUpon>

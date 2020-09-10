@@ -63,3 +63,7 @@ D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.auth.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.childLaborFilter.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.SPES.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.spesFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.HSchoolar.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.sraFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.SRA.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.hsSchoolarFilter.resources

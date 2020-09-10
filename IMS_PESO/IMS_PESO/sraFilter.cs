@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class spesFilter : Form
+    public partial class sraFilter : Form
     {
         DBConn DB = new DBConn();
-        public spesFilter()
+        public sraFilter()
         {
             try
             {
@@ -36,22 +36,27 @@ namespace IMS_PESO
         {
             report a = new report();
             string iQry = @"SELECT
-                        event_date,
-                        event,
+                        (select min(event_date) from sra where event_date between '{0}' and '{1}') `min`,
+                        (select max(event_date) from sra where event_date between '{0}' and '{1}') `max`,
+                        agency,
+                        sra_no,
                         host,
                         veneu,
-                        surname,
-                        firstname,
-                        middlename,
+                        address_branch,
+                        rep_contact,
+                        concat(surname, ', ', firstname, ' ', middlename) `name`,
+                        address,
+                        age,
                         gender,
-                        concat(surname, firstname, middlename) `test`
-                        FROM spes
+                        `position`,
+                        jobsite,
+                        remarks
+                        FROM sra
                         where event_date between '{0}' and '{1}'
-                        and event like '%%{2}%%'
-                        and host like '%%{3}%%'
-                        and veneu like '%%{4}%%'
-                        and concat(surname, firstname, middlename) like '%%{5}%%'";
-            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+                        and agency like '%%{2}%%'
+                        and sra_no like '%%{3}%%'
+                        group by agency";
+            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text, textBox2.Text);
 
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
@@ -60,8 +65,8 @@ namespace IMS_PESO
                 MySqlCommand cmd = new MySqlCommand(qry, conn);
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
-                adapter.Fill(ds, ds.Tables["childLaborReport"].TableName);
-                cr_spesReport rep = new cr_spesReport();
+                adapter.Fill(ds, ds.Tables["sraReport"].TableName);
+                cr_sraReport rep = new cr_sraReport();
                 rep.SetDataSource(ds);
                 a.crystalReportViewer1.ReportSource = rep;
                 a.ShowDialog();

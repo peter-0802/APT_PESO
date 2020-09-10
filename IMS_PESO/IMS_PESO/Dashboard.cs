@@ -86,7 +86,7 @@ namespace IMS_PESO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            report a = new report();
+            SRA a = new SRA();
             a.ShowDialog();
         }
 
@@ -125,6 +125,33 @@ namespace IMS_PESO
         {
             childLabor a = new childLabor();
             a.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            HSchoolar a = new HSchoolar();
+            a.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            /*
+            passport
+            country
+            address
+            contact no
+            emp status
+            -active
+            -inactive
+            remarks
+            */
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            /*
+            Remarks
+            */
         }
     }
 }

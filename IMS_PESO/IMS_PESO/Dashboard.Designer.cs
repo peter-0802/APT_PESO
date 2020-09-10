@@ -112,7 +112,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ForeColor = System.Drawing.Color.Red;
             this.button2.Location = new System.Drawing.Point(428, 262);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(202, 100);
@@ -191,14 +191,15 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.ForeColor = System.Drawing.Color.Red;
             this.button7.Location = new System.Drawing.Point(636, 39);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(202, 100);
             this.button7.TabIndex = 20;
-            this.button7.Text = "HS Schoolar";
+            this.button7.Text = "HS/College Schoolar";
             this.button7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -221,12 +222,12 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.ForeColor = System.Drawing.Color.Red;
             this.button9.Location = new System.Drawing.Point(636, 262);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(202, 100);
             this.button9.TabIndex = 22;
-            this.button9.Text = "GIP";
+            this.button9.Text = "Job Fair";
             this.button9.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button9.UseVisualStyleBackColor = false;
             // 
@@ -244,6 +245,7 @@
             this.button10.Text = "EEP";
             this.button10.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -251,7 +253,7 @@
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.ForeColor = System.Drawing.Color.Red;
             this.button11.Location = new System.Drawing.Point(428, 369);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(202, 100);
@@ -259,6 +261,7 @@
             this.button11.Text = "OFW";
             this.button11.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -281,7 +284,7 @@
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.ForeColor = System.Drawing.Color.Blue;
             this.button13.Location = new System.Drawing.Point(636, 481);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(202, 100);
@@ -316,7 +319,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(202, 100);
             this.button15.TabIndex = 24;
-            this.button15.Text = "Kasambahay";
+            this.button15.Text = "PWD";
             this.button15.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button15.UseVisualStyleBackColor = false;
             // 

@@ -10,9 +10,9 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class childLaborFilter : Form
+    public partial class hsSchoolarFilter : Form
     {
-        public childLaborFilter()
+        public hsSchoolarFilter()
         {
             InitializeComponent();
         }
@@ -27,22 +27,15 @@ namespace IMS_PESO
             report a = new report();
             string iQry = @"SELECT
                         event_date,
-                        event,
-                        host,
-                        veneu,
-                        surname,
-                        firstname,
-                        middlename,
+                        concat(surname, ', ', firstname, ' ', middlename) `name`,
                         gender,
-                        concat(surname, firstname, middlename) `test`
-                        FROM child_labor
-                        where event_date between '{0}' and '{1}'
-                        and event like '%%{2}%%'
-                        and host like '%%{3}%%'
-                        and veneu like '%%{4}%%'
-                        and concat(surname, firstname, middlename) like '%%{5}%%'";
-            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
-            string datasetTable = "childLaborReport";
+                        school,
+                        yearlevel,
+                        barangay
+                        FROM hsshcoolar
+                        where event_date between '{0}' and '{1}'";
+            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text);
+            string datasetTable = "hsReport";
 
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
@@ -52,7 +45,7 @@ namespace IMS_PESO
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(ds, ds.Tables[datasetTable].TableName);
-                cr_childLaborReport rep = new cr_childLaborReport();
+                cr_shReport rep = new cr_shReport();
                 rep.SetDataSource(ds);
                 a.crystalReportViewer1.ReportSource = rep;
                 a.ShowDialog();

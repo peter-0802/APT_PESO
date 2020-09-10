@@ -4,7 +4,11 @@
 
     public partial class dataset
     {
-        partial class reportPerModuleDataTable
+        partial class sraReportDataTable
+        {
+        }
+
+        partial class childLaborReportDataTable
         {
         }
     }
