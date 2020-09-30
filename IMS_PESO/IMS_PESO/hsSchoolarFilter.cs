@@ -26,15 +26,23 @@ namespace IMS_PESO
         {
             report a = new report();
             string iQry = @"SELECT
-                        event_date,
-                        concat(surname, ', ', firstname, ' ', middlename) `name`,
-                        gender,
-                        school,
-                        yearlevel,
-                        barangay
-                        FROM hsshcoolar
-                        where event_date between '{0}' and '{1}'";
-            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text);
+                            date `DATE`,
+                            code `CODE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            gender `GENDER`,
+                            dob `BOD`,
+                            mother `MOTHERNAME`,
+                            father `FATHERNAME`,
+                            address `ADDRESS`,
+                            contact `CONTACT`,
+                            school `SCHOOL`,
+                            yearlevel `YEAR`,
+                            ave `AVE`,
+                            status `STATUS`
+                            FROM hsshcoolar
+                            where date between '{0}' and '{1}'
+                            group by code";
+            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
             string datasetTable = "hsReport";
 
             dataset ds = new dataset();
@@ -45,7 +53,7 @@ namespace IMS_PESO
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(ds, ds.Tables[datasetTable].TableName);
-                cr_shReport rep = new cr_shReport();
+                _cr_shReport rep = new _cr_shReport();
                 rep.SetDataSource(ds);
                 a.crystalReportViewer1.ReportSource = rep;
                 a.ShowDialog();

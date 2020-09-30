@@ -355,7 +355,7 @@ namespace IMS_PESO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            auth a = new auth();
+            _auth a = new _auth();
             a.ShowDialog();
             if (a.upflag == "1")
             {
@@ -514,7 +514,7 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            auth a = new auth();
+            _auth a = new _auth();
             a.ShowDialog();
             if (a.upflag == "1")
             {

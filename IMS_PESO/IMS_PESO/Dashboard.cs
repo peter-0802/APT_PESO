@@ -27,10 +27,13 @@ namespace IMS_PESO
             }
             InitializeComponent();
             panel1.BackColor = ColorTranslator.FromHtml("#FCA311");
-            button4.BackColor = ColorTranslator.FromHtml("#14213D");
-            button3.BackColor = ColorTranslator.FromHtml("#14213D");
-            button5.BackColor = ColorTranslator.FromHtml("#14213D");
-            
+            //button5.BackColor = ColorTranslator.FromHtml("#14213D");
+
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
+            Region rg = new Region(gp);
+            pictureBox1.Region = rg;
+
         }
         //Setting Upper Panel to dragable (refs. initMovable.cs and mousedown event on panel)
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -129,12 +132,14 @@ namespace IMS_PESO
 
         private void button7_Click(object sender, EventArgs e)
         {
-            HSchoolar a = new HSchoolar();
+            _collegeSchoolar a = new _collegeSchoolar();
             a.ShowDialog();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
+            OFW a = new OFW();
+            a.ShowDialog();
             /*
             passport
             country
@@ -152,6 +157,34 @@ namespace IMS_PESO
             /*
             Remarks
             */
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            HSchoolar a = new HSchoolar();
+            a.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            jobFair a = new jobFair();
+            a.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            OFW a = new OFW();
+            a.ShowDialog();
+        }
+
+        private void button5_MouseHover(object sender, EventArgs e)
+        {
+            
         }
     }
 }

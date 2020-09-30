@@ -16,14 +16,14 @@ namespace IMS_PESO {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class cr_shReport : ReportClass {
+    public class _cr_spesReport : ReportClass {
         
-        public cr_shReport() {
+        public _cr_spesReport() {
         }
         
         public override string ResourceName {
             get {
-                return "cr_shReport.rpt";
+                return "_cr_spesReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace IMS_PESO {
         
         public override string FullResourceName {
             get {
-                return "IMS_PESO.cr_shReport.rpt";
+                return "IMS_PESO._cr_spesReport.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace IMS_PESO {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace IMS_PESO {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection3 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace IMS_PESO {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,17 +98,49 @@ namespace IMS_PESO {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection3 {
             get {
                 return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
+            get {
+                return this.ReportDefinition.Sections[7];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+            get {
+                return this.ReportDefinition.Sections[8];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[9];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[10];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedcr_shReport : Component, ICachedReport {
+    public class Cached_cr_spesReport : Component, ICachedReport {
         
-        public Cachedcr_shReport() {
+        public Cached_cr_spesReport() {
         }
         
         [Browsable(false)]
@@ -145,7 +177,7 @@ namespace IMS_PESO {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            cr_shReport rpt = new cr_shReport();
+            _cr_spesReport rpt = new _cr_spesReport();
             rpt.Site = this.Site;
             return rpt;
         }

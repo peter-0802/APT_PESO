@@ -42,33 +42,34 @@ namespace IMS_PESO
         }
         private void getEvent()
         {
-            string query = @"select event_date `DATE` from hsshcoolar group by event_date";
-            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            try
-            {
-                MySqlDataAdapter dgv = new MySqlDataAdapter();
-                dgv.SelectCommand = cmd;
-                DataTable dbdatasec = new DataTable();
-                dgv.Fill(dbdatasec);
-                BindingSource bsource = new BindingSource();
+            //string query = @"select event_date `DATE` from hsshcoolar group by event_date";
+            //MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            //MySqlCommand cmd = new MySqlCommand(query, conn);
+            //try
+            //{
+            //    MySqlDataAdapter dgv = new MySqlDataAdapter();
+            //    dgv.SelectCommand = cmd;
+            //    DataTable dbdatasec = new DataTable();
+            //    dgv.Fill(dbdatasec);
+            //    BindingSource bsource = new BindingSource();
 
-                bsource.DataSource = dbdatasec;
-                dataGridView2.DataSource = bsource;
-                dgv.Update(dbdatasec);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();;
-            }
+            //    bsource.DataSource = dbdatasec;
+            //    dataGridView2.DataSource = bsource;
+            //    dgv.Update(dbdatasec);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    conn.Close();;
+            //}
         }
         private void childLabor_Load(object sender, EventArgs e)
         {
-            getEvent();
+            getAttendee();
+            DataGridViewColumnSelector cs = new DataGridViewColumnSelector(dataGridView1);
         }
 
         private void insert()
@@ -237,42 +238,9 @@ namespace IMS_PESO
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            insert();
-            //if (String.IsNullOrWhiteSpace(textBox1.Text) || String.IsNullOrWhiteSpace(textBox2.Text) || String.IsNullOrWhiteSpace(textBox3.Text))
-            //{
-            //    MessageBox.Show(this, "Looks like some fields are empty :-(", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            //    MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-            //    MySqlDataReader myreader;
-            //    string query = @"select event from spes where event = '{0}'";
-            //    string q2 = string.Format(query, textBox1.Text);
-            //    MySqlCommand cmdmdlr = new MySqlCommand(q2, conn);
-            //    try
-            //    {
-            //        conn.Open();
-            //        myreader = cmdmdlr.ExecuteReader();
-
-            //        if (myreader.Read())
-            //        {
-            //            MessageBox.Show(this, "This event already exist please change event title :-)", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            textBox1.Focus();
-            //        }
-            //        else
-            //        {
-            //            insert();
-            //            insertToContact();
-            //            this.Close();
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //    finally { conn.Close(); }
-            //}
-
+            _hsSchoolar a = new _hsSchoolar();
+            a.ShowDialog();
+            getAttendee();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -356,7 +324,7 @@ namespace IMS_PESO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            auth a = new auth();
+            _auth a = new _auth();
             a.ShowDialog();
             if (a.upflag == "1")
             {
@@ -375,8 +343,8 @@ namespace IMS_PESO
                     myCommand.Transaction = myTrans;
                     try
                     {
-                        myCommand.Parameters.AddWithValue("@event", label9.Text);
-                        string qD = @"delete from spes where event = @event;";
+                        myCommand.Parameters.AddWithValue("@code", label9.Text);
+                        string qD = @"delete from hsshcoolar where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -401,9 +369,9 @@ namespace IMS_PESO
                     {
                         conn.Close();
                     }
-                    getEvent();
+                    getAttendee();
+                    label9.Text = "~code~";
                 }
-                this.Close();
             }
             else
             {
@@ -422,33 +390,35 @@ namespace IMS_PESO
         }
         private void getAttendee()
         {
-            this.dataGridView1.DataSource = null;
-            this.dataGridView1.Rows.Clear();
-            string query;
-            query = @"SELECT
-                        surname,
-                        firstname,
-                        middlename,
-                        gender
-                        from spes
-                        where event = '{0}'";
-            string FinalQuery = string.Format(query, label9.Text);
+            string query = @"SELECT
+                            code `CODE`,
+                            surname `SURNAME`,
+                            firstname `FIRST NAME`,
+                            middlename `MIDDLE NAME`,
+                            gender `GENDER`,
+                            dob `BIRTH DATE`,
+                            mother `MOTHERS NAME`,
+                            father `FATHERS NAME`,
+                            address `ADDRESS`,
+                            contact `CONTACT`,
+                            school `SCHOOL`,
+                            yearlevel `YEAR LEVEL`,
+                            ave `AVERAGE`,
+                            status `STATUS`
+                            FROM hsshcoolar";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-            MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             try
             {
                 MySqlDataAdapter dgv = new MySqlDataAdapter();
                 dgv.SelectCommand = cmd;
-                DataTable dbdatasec1 = new DataTable();
-                dgv.Fill(dbdatasec1);
-                for (int i = 0; i < dbdatasec1.Rows.Count; i++)
-                {
-                    dataGridView1.Rows.Add();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["surname"].Value = dbdatasec1.Rows[i]["surname"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["gender"].ToString();
-                }
+                DataTable dbdatasec = new DataTable();
+                dgv.Fill(dbdatasec);
+                BindingSource bsource = new BindingSource();
+
+                bsource.DataSource = dbdatasec;
+                dataGridView1.DataSource = bsource;
+                dgv.Update(dbdatasec);
             }
             catch (Exception ex)
             {
@@ -456,23 +426,23 @@ namespace IMS_PESO
             }
             finally
             {
-                conn.Close();
+                conn.Close(); ;
             }
         }
 
         private void label9_TextChanged(object sender, EventArgs e)
         {
-            //if (label9.Text != "~code~" && !String.IsNullOrWhiteSpace(label9.Text))
-            //{
-            //    button6.Enabled = false;
-            //    button1.Enabled = true;
-            //    button2.Enabled = true;
-            //}
-            //else
-            //{
-            //    button1.Enabled = false;
-            //    button2.Enabled = false;
-            //}
+            if (label9.Text != "~code~" && !String.IsNullOrWhiteSpace(label9.Text))
+            {
+                button6.Enabled = false;
+                button1.Enabled = true;
+                button2.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+            }
             //MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             //MySqlDataReader myreader;
             //string query = @"select
@@ -515,7 +485,7 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            auth a = new auth();
+            _auth a = new _auth();
             a.ShowDialog();
             if (a.upflag == "1")
             {
@@ -525,15 +495,17 @@ namespace IMS_PESO
                 }
                 else
                 {
-                    update();
-                    getEvent();
+                    _hsSchoolar b = new _hsSchoolar();
+                    b.label2.Text = label9.Text;
+                    b.ShowDialog();
                 }
-                this.Close();
             }
             else
             {
                 MessageBox.Show(this, "Oops, Wrong Password :P", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            getAttendee();
+            label9.Text = "~code~";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -554,6 +526,11 @@ namespace IMS_PESO
                 initMovable.ReleaseCapture();
                 initMovable.SendMessage(Handle, initMovable.WM_NCLBUTTONDOWN, initMovable.HT_CAPTION, 0);
             }
+        }
+
+        private void dataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            label9.Text = this.dataGridView1.CurrentRow.Cells["CODE"].Value.ToString();
         }
     }
 }

@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.radioButton26 = new System.Windows.Forms.RadioButton();
-            this.radioButton25 = new System.Windows.Forms.RadioButton();
             this.textBox30 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
             this.textBox29 = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.preferedOccupation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.radioButton26 = new System.Windows.Forms.RadioButton();
+            this.radioButton25 = new System.Windows.Forms.RadioButton();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox12.SuspendLayout();
@@ -78,6 +78,14 @@
             this.groupBox12.TabIndex = 58;
             this.groupBox12.TabStop = false;
             // 
+            // textBox30
+            // 
+            this.textBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox30.Location = new System.Drawing.Point(801, 259);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(164, 24);
+            this.textBox30.TabIndex = 78;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(855, 71);
@@ -87,38 +95,6 @@
             this.button2.Text = "Add to pending list";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // radioButton26
-            // 
-            this.radioButton26.AutoSize = true;
-            this.radioButton26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.radioButton26.Location = new System.Drawing.Point(725, 39);
-            this.radioButton26.Name = "radioButton26";
-            this.radioButton26.Size = new System.Drawing.Size(213, 22);
-            this.radioButton26.TabIndex = 76;
-            this.radioButton26.TabStop = true;
-            this.radioButton26.Text = "Overseas, specific countries";
-            this.radioButton26.UseVisualStyleBackColor = true;
-            // 
-            // radioButton25
-            // 
-            this.radioButton25.AutoSize = true;
-            this.radioButton25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.radioButton25.Location = new System.Drawing.Point(481, 39);
-            this.radioButton25.Name = "radioButton25";
-            this.radioButton25.Size = new System.Drawing.Size(238, 22);
-            this.radioButton25.TabIndex = 75;
-            this.radioButton25.TabStop = true;
-            this.radioButton25.Text = "Local, specific cities/municipality";
-            this.radioButton25.UseVisualStyleBackColor = true;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox30.Location = new System.Drawing.Point(801, 259);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(164, 24);
-            this.textBox30.TabIndex = 78;
             // 
             // label46
             // 
@@ -137,100 +113,6 @@
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(164, 24);
             this.textBox29.TabIndex = 76;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(353, 261);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(100, 20);
-            this.label45.TabIndex = 77;
-            this.label45.Text = "Passport No.";
-            // 
-            // textBox28
-            // 
-            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(140, 259);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(164, 24);
-            this.textBox28.TabIndex = 75;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(6, 261);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(128, 20);
-            this.label44.TabIndex = 75;
-            this.label44.Text = "Expected Salary:";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(477, 16);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(182, 20);
-            this.label43.TabIndex = 72;
-            this.label43.Text = "PREFERED LOCATION";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(6, 73);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(22, 20);
-            this.label39.TabIndex = 61;
-            this.label39.Text = "1.";
-            // 
-            // textBox24
-            // 
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(28, 71);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(330, 24);
-            this.textBox24.TabIndex = 60;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(477, 73);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(22, 20);
-            this.label33.TabIndex = 55;
-            this.label33.Text = "1.";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(6, 16);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(206, 20);
-            this.label37.TabIndex = 54;
-            this.label37.Text = "PREFERED OCCUPATION";
-            // 
-            // textBox21
-            // 
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(499, 71);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(350, 24);
-            this.textBox21.TabIndex = 51;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "~code~";
             // 
             // dataGridView1
             // 
@@ -260,6 +142,124 @@
             this.location.HeaderText = "Prefered Location";
             this.location.Name = "location";
             this.location.ReadOnly = true;
+            // 
+            // radioButton26
+            // 
+            this.radioButton26.AutoSize = true;
+            this.radioButton26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.radioButton26.Location = new System.Drawing.Point(725, 39);
+            this.radioButton26.Name = "radioButton26";
+            this.radioButton26.Size = new System.Drawing.Size(213, 22);
+            this.radioButton26.TabIndex = 76;
+            this.radioButton26.TabStop = true;
+            this.radioButton26.Text = "Overseas, specific countries";
+            this.radioButton26.UseVisualStyleBackColor = true;
+            // 
+            // radioButton25
+            // 
+            this.radioButton25.AutoSize = true;
+            this.radioButton25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.radioButton25.Location = new System.Drawing.Point(481, 39);
+            this.radioButton25.Name = "radioButton25";
+            this.radioButton25.Size = new System.Drawing.Size(238, 22);
+            this.radioButton25.TabIndex = 75;
+            this.radioButton25.TabStop = true;
+            this.radioButton25.Text = "Local, specific cities/municipality";
+            this.radioButton25.UseVisualStyleBackColor = true;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(353, 261);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(100, 20);
+            this.label45.TabIndex = 77;
+            this.label45.Text = "Passport No.";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(477, 16);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(182, 20);
+            this.label43.TabIndex = 72;
+            this.label43.Text = "PREFERED LOCATION";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(6, 73);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(22, 20);
+            this.label39.TabIndex = 61;
+            this.label39.Text = "1.";
+            // 
+            // textBox24
+            // 
+            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox24.Location = new System.Drawing.Point(28, 71);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(330, 24);
+            this.textBox24.TabIndex = 60;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox28.Location = new System.Drawing.Point(140, 259);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(164, 24);
+            this.textBox28.TabIndex = 75;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(477, 73);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(22, 20);
+            this.label33.TabIndex = 55;
+            this.label33.Text = "1.";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(6, 261);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(128, 20);
+            this.label44.TabIndex = 75;
+            this.label44.Text = "Expected Salary:";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(6, 16);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(206, 20);
+            this.label37.TabIndex = 54;
+            this.label37.Text = "PREFERED OCCUPATION";
+            // 
+            // textBox21
+            // 
+            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox21.Location = new System.Drawing.Point(499, 71);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(350, 24);
+            this.textBox21.TabIndex = 51;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(69, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "~code~";
             // 
             // label2
             // 
@@ -302,6 +302,7 @@
             this.Name = "jobPreference";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PESO IMS   ||   II - Job Preference";
+            this.Load += new System.EventHandler(this.jobPreference_Load);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

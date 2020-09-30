@@ -59,7 +59,6 @@ D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.skill.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.contactList.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.NSRPUpdate.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.childLabor.resources
-D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.auth.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.childLaborFilter.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.SPES.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.spesFilter.resources
@@ -67,3 +66,14 @@ D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.HSchoolar.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.sraFilter.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.SRA.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.hsSchoolarFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.OFW.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.ofwFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.ofwForm.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.jobFair.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._jobFairFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._auth.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._ofwFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._hsSchoolar.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._collegeSchoolarFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._collegeSchoolar.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.collegeSchoolarForm.resources

@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class auth
+    partial class _auth
     {
         /// <summary>
         /// Required designer variable.

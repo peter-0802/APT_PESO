@@ -61,7 +61,7 @@ namespace IMS_PESO
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(ds, ds.Tables["childLaborReport"].TableName);
-                cr_spesReport rep = new cr_spesReport();
+                _cr_spesReport rep = new _cr_spesReport();
                 rep.SetDataSource(ds);
                 a.crystalReportViewer1.ReportSource = rep;
                 a.ShowDialog();

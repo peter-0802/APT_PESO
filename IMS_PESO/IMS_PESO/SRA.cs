@@ -42,7 +42,7 @@ namespace IMS_PESO
         }
         private void getEvent()
         {
-            string query = @"select agency `agency`, event_date `DATE` from sra group by agency";
+            string query = @"select sra_no `SRA NO.`, event_date `DATE` from sra group by sra_no";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -198,8 +198,8 @@ namespace IMS_PESO
             try
             {
 
-                myCommand.Parameters.AddWithValue("@event", label9.Text);
-                string qD = @"delete from sra where agency = @agency;";
+                myCommand.Parameters.AddWithValue("@sra", label9.Text);
+                string qD = @"delete from sra where sra_no = @sra;";
                 myCommand.CommandText = qD;
                 myCommand.ExecuteNonQuery();
 
@@ -207,24 +207,36 @@ namespace IMS_PESO
                 {
                     myCommand = conn.CreateCommand();
                     if (row.IsNewRow) continue;
-                    myCommand.Parameters.AddWithValue("@agency", textBox1.Text);
+                    myCommand.Parameters.AddWithValue("@acency", textBox1.Text);
+                    myCommand.Parameters.AddWithValue("@sra", textBox2.Text);
+                    myCommand.Parameters.AddWithValue("@venue", textBox4.Text);
                     myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
-                    myCommand.Parameters.AddWithValue("@veneu", textBox2.Text);
                     myCommand.Parameters.AddWithValue("@host", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@branch", textBox5.Text);
+                    myCommand.Parameters.AddWithValue("@rep_no", textBox6.Text);
+
                     myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
                     myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
                     myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
+
+                    myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
+                    myCommand.Parameters.AddWithValue("@age", row.Cells["age"].Value);
                     myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
+
+                    myCommand.Parameters.AddWithValue("@position", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@jobsite", row.Cells["jobsite"].Value);
+                    myCommand.Parameters.AddWithValue("@remarks", row.Cells["remarks"].Value);
+
                     myCommand.Parameters.AddWithValue("@notes", "notes");
-                    string query = @"insert into sra
-                                        (agency, event_date, host, veneu, surname, firstname, middlename, gender, notes)
+                    string query = @"insert ignore into sra
+                                        (Agency, sra_no, veneu, event_date, host, address_branch, rep_contact, surname, firstname, middlename, address, age, gender, position, jobsite, remarks, notes)
                                         values
-                                        (@agency, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @notes)";
+                                        (@acency, @sra, @venue, @date, @host, @branch, @rep_no, @surname, @firstname, @middlename, @address, @age, @gender, @position, @jobsite, @remarks, @notes)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Record Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Record Updated!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -366,7 +378,7 @@ namespace IMS_PESO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            auth a = new auth();
+            _auth a = new _auth();
             a.ShowDialog();
             if (a.upflag == "1")
             {
@@ -386,7 +398,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@agency", label9.Text);
-                        string qD = @"delete from sra where agency = @agency;";
+                        string qD = @"delete from sra where sra_no = @agency;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -439,9 +451,14 @@ namespace IMS_PESO
                         surname,
                         firstname,
                         middlename,
-                        gender
+                        address,
+                        age,
+                        gender,
+                        position,
+                        jobsite,
+                        remarks
                         from sra
-                        where agency = '{0}'";
+                        where sra_no = '{0}'";
             string FinalQuery = string.Format(query, label9.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
@@ -458,6 +475,11 @@ namespace IMS_PESO
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["gender"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["address"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["age"].Value = dbdatasec1.Rows[i]["age"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["position"].Value = dbdatasec1.Rows[i]["position"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["jobsite"].Value = dbdatasec1.Rows[i]["jobsite"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["remarks"].Value = dbdatasec1.Rows[i]["remarks"].ToString();
                 }
             }
             catch (Exception ex)
@@ -487,12 +509,15 @@ namespace IMS_PESO
             MySqlDataReader myreader;
             string query = @"select
                                 agency,
+                                sra_no,
                                 event_date,
+                                veneu,
                                 host,
-                                veneu
+                                address_branch,
+                                rep_contact
                                 from sra
-                                where agency = '{0}'
-                                group by agency";
+                                where sra_no = '{0}'
+                                group by sra_no";
             string finalQuery = string.Format(query, label9.Text);
             MySqlCommand cmdmdlr = new MySqlCommand(finalQuery, conn);
             try
@@ -502,17 +527,26 @@ namespace IMS_PESO
 
                 if (myreader.Read())
                 {
+                    string date = myreader.GetString("event_date");
+                    dateTimePicker1.Text = date;
+
                     string eevent = myreader.GetString("agency");
                     textBox1.Text = eevent;
 
-                    string date = myreader.GetString("event_date");
-                    dateTimePicker1.Text = date;
+                    string sra_no = myreader.GetString("sra_no");
+                    textBox2.Text = sra_no;
+
+                    string veneu = myreader.GetString("veneu");
+                    textBox4.Text = veneu;
 
                     string host = myreader.GetString("host");
                     textBox3.Text = host;
 
-                    string veneu = myreader.GetString("veneu");
-                    textBox2.Text = veneu;
+                    string badress = myreader.GetString("address_branch");
+                    textBox5.Text = badress;
+
+                    string rep_contact = myreader.GetString("rep_contact");
+                    textBox6.Text = rep_contact;
                 }
                 getAttendee();
             }
@@ -525,7 +559,7 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            auth a = new auth();
+            _auth a = new _auth();
             a.ShowDialog();
             if (a.upflag == "1")
             {

@@ -58,16 +58,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobsite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobsite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -127,7 +127,7 @@
             this.textBox1.Location = new System.Drawing.Point(122, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(326, 26);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 2;
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
@@ -157,7 +157,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(1035, 83);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(153, 26);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.TabIndex = 1;
             // 
             // label4
             // 
@@ -175,7 +175,7 @@
             this.textBox3.Location = new System.Drawing.Point(558, 51);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(304, 26);
-            this.textBox3.TabIndex = 4;
+            this.textBox3.TabIndex = 5;
             // 
             // label5
             // 
@@ -197,7 +197,7 @@
             this.button6.Location = new System.Drawing.Point(15, 638);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(270, 50);
-            this.button6.TabIndex = 7;
+            this.button6.TabIndex = 9;
             this.button6.Text = "Save Records";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button6.UseVisualStyleBackColor = false;
@@ -269,7 +269,7 @@
             this.button1.Location = new System.Drawing.Point(304, 638);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(270, 50);
-            this.button1.TabIndex = 25;
+            this.button1.TabIndex = 10;
             this.button1.Text = "Update Records";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button1.UseVisualStyleBackColor = false;
@@ -286,8 +286,8 @@
             this.button2.Location = new System.Drawing.Point(592, 638);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(270, 50);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Save Records";
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Delete Records";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -324,7 +324,7 @@
             this.button3.Location = new System.Drawing.Point(885, 638);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(303, 50);
-            this.button3.TabIndex = 29;
+            this.button3.TabIndex = 12;
             this.button3.Text = "Reports";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button3.UseVisualStyleBackColor = false;
@@ -336,7 +336,7 @@
             this.textBox4.Location = new System.Drawing.Point(122, 115);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(326, 26);
-            this.textBox4.TabIndex = 30;
+            this.textBox4.TabIndex = 4;
             // 
             // label10
             // 
@@ -354,7 +354,7 @@
             this.textBox5.Location = new System.Drawing.Point(558, 86);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(304, 26);
-            this.textBox5.TabIndex = 32;
+            this.textBox5.TabIndex = 6;
             // 
             // label11
             // 
@@ -372,7 +372,7 @@
             this.textBox6.Location = new System.Drawing.Point(604, 118);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(258, 26);
-            this.textBox6.TabIndex = 34;
+            this.textBox6.TabIndex = 7;
             // 
             // label12
             // 
@@ -384,10 +384,101 @@
             this.label12.TabIndex = 35;
             this.label12.Text = "Rep. Contact:";
             // 
+            // remarks
+            // 
+            this.remarks.HeaderText = "REMARKS";
+            this.remarks.Name = "remarks";
+            this.remarks.Width = 150;
+            // 
+            // jobsite
+            // 
+            this.jobsite.HeaderText = "JOBSITE";
+            this.jobsite.Name = "jobsite";
+            this.jobsite.Width = 150;
+            // 
+            // position
+            // 
+            this.position.HeaderText = "POSITION APPLIED";
+            this.position.Name = "position";
+            this.position.Width = 150;
+            // 
+            // gender
+            // 
+            this.gender.HeaderText = "GENDER";
+            this.gender.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
+            this.gender.Name = "gender";
+            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.gender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // age
+            // 
+            this.age.HeaderText = "AGE";
+            this.age.Name = "age";
+            this.age.Width = 50;
+            // 
+            // address
+            // 
+            this.address.HeaderText = "ADDRESS";
+            this.address.Items.AddRange(new object[] {
+            "BACUNGAN",
+            "BALNATE",
+            "BARAYONG",
+            "BLOCON",
+            "DALAWINON",
+            "DALUMAY",
+            "GLAMANG",
+            "KANAPOLO",
+            "KASUGA",
+            "LOWER BALA",
+            "MABINI",
+            "MAIBO",
+            "MALAWANIT",
+            "MALONGON",
+            "NEW ILOCOS",
+            "NEW OPON",
+            "POBLACION",
+            "SAN ISIDRO",
+            "SAN MIGUEL",
+            "TACUL",
+            "TAGAYTAY",
+            "UPPER BALA"});
+            this.address.Name = "address";
+            this.address.Width = 150;
+            // 
+            // middlename
+            // 
+            this.middlename.FillWeight = 150.722F;
+            this.middlename.HeaderText = "MIDDLE NAME";
+            this.middlename.Name = "middlename";
+            this.middlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.middlename.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.middlename.Width = 150;
+            // 
+            // firstname
+            // 
+            this.firstname.FillWeight = 36.71586F;
+            this.firstname.HeaderText = "FIRST NAME";
+            this.firstname.Name = "firstname";
+            this.firstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.firstname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.firstname.Width = 150;
+            // 
+            // surname
+            // 
+            this.surname.FillWeight = 9.516426F;
+            this.surname.HeaderText = "SURNAME";
+            this.surname.Name = "surname";
+            this.surname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.surname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.surname.Width = 150;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -420,100 +511,10 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView1.Size = new System.Drawing.Size(847, 418);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowLeave);
-            // 
-            // surname
-            // 
-            this.surname.FillWeight = 9.516426F;
-            this.surname.HeaderText = "SURNAME";
-            this.surname.Name = "surname";
-            this.surname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.surname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.surname.Width = 150;
-            // 
-            // firstname
-            // 
-            this.firstname.FillWeight = 36.71586F;
-            this.firstname.HeaderText = "FIRST NAME";
-            this.firstname.Name = "firstname";
-            this.firstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.firstname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.firstname.Width = 150;
-            // 
-            // middlename
-            // 
-            this.middlename.FillWeight = 150.722F;
-            this.middlename.HeaderText = "MIDDLE NAME";
-            this.middlename.Name = "middlename";
-            this.middlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.middlename.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.middlename.Width = 150;
-            // 
-            // address
-            // 
-            this.address.HeaderText = "ADDRESS";
-            this.address.Items.AddRange(new object[] {
-            "BACUNGAN",
-            "BALNATE",
-            "BARAYONG",
-            "BLOCON",
-            "DALAWINON",
-            "DALUMAY",
-            "GLAMANG",
-            "KANAPOLO",
-            "KASUGA",
-            "LOWER BALA",
-            "MABINI",
-            "MAIBO",
-            "MALAWANIT",
-            "MALONGON",
-            "NEW ILOCOS",
-            "NEW OPON",
-            "POBLACION",
-            "SAN ISIDRO",
-            "SAN MIGUEL",
-            "TACUL",
-            "TAGAYTAY",
-            "UPPER BALA"});
-            this.address.Name = "address";
-            this.address.Width = 150;
-            // 
-            // age
-            // 
-            this.age.HeaderText = "AGE";
-            this.age.Name = "age";
-            this.age.Width = 50;
-            // 
-            // gender
-            // 
-            this.gender.HeaderText = "GENDER";
-            this.gender.Items.AddRange(new object[] {
-            "MALE",
-            "FEMALE"});
-            this.gender.Name = "gender";
-            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.gender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // position
-            // 
-            this.position.HeaderText = "POSITION APPLIED";
-            this.position.Name = "position";
-            this.position.Width = 150;
-            // 
-            // jobsite
-            // 
-            this.jobsite.HeaderText = "JOBSITE";
-            this.jobsite.Name = "jobsite";
-            this.jobsite.Width = 150;
-            // 
-            // remarks
-            // 
-            this.remarks.HeaderText = "REMARKS";
-            this.remarks.Name = "remarks";
-            this.remarks.Width = 150;
             // 
             // SRA
             // 
@@ -588,15 +589,15 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn middlename;
-        private System.Windows.Forms.DataGridViewComboBoxColumn address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn age;
-        private System.Windows.Forms.DataGridViewComboBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn position;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobsite;
         private System.Windows.Forms.DataGridViewTextBoxColumn remarks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobsite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn position;
+        private System.Windows.Forms.DataGridViewComboBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.DataGridViewComboBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middlename;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

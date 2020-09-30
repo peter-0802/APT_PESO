@@ -153,5 +153,10 @@ namespace IMS_PESO
             insert();
             this.Close();
         }
+
+        private void jobPreference_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

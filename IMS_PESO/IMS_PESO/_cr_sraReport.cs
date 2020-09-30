@@ -16,14 +16,14 @@ namespace IMS_PESO {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class cr_sraReport : ReportClass {
+    public class _cr_sraReport : ReportClass {
         
-        public cr_sraReport() {
+        public _cr_sraReport() {
         }
         
         public override string ResourceName {
             get {
-                return "cr_sraReport.rpt";
+                return "_cr_sraReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace IMS_PESO {
         
         public override string FullResourceName {
             get {
-                return "IMS_PESO.cr_sraReport.rpt";
+                return "IMS_PESO._cr_sraReport.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace IMS_PESO {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedcr_sraReport : Component, ICachedReport {
+    public class Cached_cr_sraReport : Component, ICachedReport {
         
-        public Cachedcr_sraReport() {
+        public Cached_cr_sraReport() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace IMS_PESO {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            cr_sraReport rpt = new cr_sraReport();
+            _cr_sraReport rpt = new _cr_sraReport();
             rpt.Site = this.Site;
             return rpt;
         }

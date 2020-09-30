@@ -41,7 +41,7 @@ namespace IMS_PESO
             {
                 using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
                 {
-                    string query = @"select username, password
+                    string query = @"select username, password, designation
                                       from accounts
                                       where username = @username and password = @password";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -59,6 +59,8 @@ namespace IMS_PESO
                     {
                         this.Hide();
                         Dashboard a = new Dashboard();
+                        a.label3.Text = textBox1.Text;
+                        a.label4.Text = myreader.GetString("designation").Trim().ToString() ;
                         a.Show();
                     }
                     else
