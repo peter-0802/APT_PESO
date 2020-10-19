@@ -58,7 +58,7 @@ namespace IMS_PESO
                     if (count == 1)
                     {
                         this.Hide();
-                        Dashboard a = new Dashboard();
+                        _Dashboard a = new _Dashboard();
                         a.label3.Text = textBox1.Text;
                         a.label4.Text = myreader.GetString("designation").Trim().ToString() ;
                         a.Show();

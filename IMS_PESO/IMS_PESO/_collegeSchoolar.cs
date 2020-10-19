@@ -238,7 +238,7 @@ namespace IMS_PESO
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            collegeSchoolarForm a = new collegeSchoolarForm();
+            _collegeSchoolarForm a = new _collegeSchoolarForm();
             a.ShowDialog();
             getAttendee();
             //if (String.IsNullOrWhiteSpace(textBox1.Text) || String.IsNullOrWhiteSpace(textBox2.Text) || String.IsNullOrWhiteSpace(textBox3.Text))
@@ -530,7 +530,7 @@ namespace IMS_PESO
                 }
                 else
                 {
-                    collegeSchoolarForm b = new collegeSchoolarForm();
+                    _collegeSchoolarForm b = new _collegeSchoolarForm();
                     b.label2.Text = label9.Text;
                     b.ShowDialog();
                 }

@@ -24,7 +24,7 @@ namespace IMS_PESO
 
         private void button6_Click(object sender, EventArgs e)
         {
-            report a = new report();
+            _report a = new _report();
             string iQry = @"SELECT
                             date `DATE`,
                             code `CODE`,

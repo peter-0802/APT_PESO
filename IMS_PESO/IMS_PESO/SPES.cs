@@ -164,7 +164,7 @@ namespace IMS_PESO
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Record Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Record Updated!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -213,7 +213,7 @@ namespace IMS_PESO
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Contacts dded to masterlist!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Contacts Added to masterlist!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
