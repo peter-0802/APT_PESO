@@ -34,6 +34,7 @@ namespace IMS_PESO
             Region rg = new Region(gp);
             pictureBox1.Region = rg;
             getContactList();
+            label4.MaximumSize = new Size(200, 0);
         }
         //Setting Upper Panel to dragable (refs. initMovable.cs and mousedown event on panel)
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -92,6 +93,22 @@ namespace IMS_PESO
             {
                 button6.Enabled = true;
             }
+            else if (label4.Text != "~value~" && label4.Text == "SPES Focal Person")
+            {
+                button1.Enabled = true;
+            }
+            else if (label4.Text != "~value~" && label4.Text == "OFW Focal Person")
+            {
+                button12.Enabled = true;
+            }
+            else if (label4.Text != "~value~" && label4.Text == "RWA Focal Person")
+            {
+                button10.Enabled = true;
+            }
+            else if (label4.Text != "~value~" && label4.Text == "PWD Focal Person")
+            {
+                button15.Enabled = true;
+            }
             else if (label4.Text != "~value~" && (label4.Text == "Administrator" || label4.Text == "tester"))
             {
                 button2.Enabled = true;
@@ -101,6 +118,8 @@ namespace IMS_PESO
                 button12.Enabled = true;
                 button10.Enabled = true;
                 button6.Enabled = true;
+                button15.Enabled = true;
+                button1.Enabled = true;
             }
             else
             {
@@ -263,6 +282,15 @@ namespace IMS_PESO
         }
 
         private void button18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
