@@ -293,11 +293,11 @@
     <Compile Include="spesFilter.Designer.cs">
       <DependentUpon>spesFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="SPES.cs">
+    <Compile Include="_SPES.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SPES.Designer.cs">
-      <DependentUpon>SPES.cs</DependentUpon>
+    <Compile Include="_SPES.Designer.cs">
+      <DependentUpon>_SPES.cs</DependentUpon>
     </Compile>
     <Compile Include="_childLabor.cs">
       <SubType>Form</SubType>
@@ -522,8 +522,8 @@
     <EmbeddedResource Include="spesFilter.resx">
       <DependentUpon>spesFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SPES.resx">
-      <DependentUpon>SPES.cs</DependentUpon>
+    <EmbeddedResource Include="_SPES.resx">
+      <DependentUpon>_SPES.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_childLabor.resx">
       <DependentUpon>_childLabor.cs</DependentUpon>
