@@ -246,41 +246,6 @@ namespace IMS_PESO
             _ofwForm a = new _ofwForm();
             a.ShowDialog();
             getEvent();
-            //if (String.IsNullOrWhiteSpace(textBox1.Text) || String.IsNullOrWhiteSpace(textBox2.Text) || String.IsNullOrWhiteSpace(textBox3.Text))
-            //{
-            //    MessageBox.Show(this, "Looks like some fields are empty :-(", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            //    MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-            //    MySqlDataReader myreader;
-            //    string query = @"select event from spes where event = '{0}'";
-            //    string q2 = string.Format(query, textBox1.Text);
-            //    MySqlCommand cmdmdlr = new MySqlCommand(q2, conn);
-            //    try
-            //    {
-            //        conn.Open();
-            //        myreader = cmdmdlr.ExecuteReader();
-
-            //        if (myreader.Read())
-            //        {
-            //            MessageBox.Show(this, "This event already exist please change event title :-)", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            textBox1.Focus();
-            //        }
-            //        else
-            //        {
-            //            insert();
-            //            insertToContact();
-            //            this.Close();
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //    finally { conn.Close(); }
-            //}
-            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

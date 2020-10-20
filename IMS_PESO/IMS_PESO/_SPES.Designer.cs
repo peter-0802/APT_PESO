@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class SPES
+    partial class _SPES
     {
         /// <summary>
         /// Required designer variable.

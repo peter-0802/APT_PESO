@@ -138,7 +138,7 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SPES a = new SPES();
+            _SPES a = new _SPES();
             a.ShowDialog();
             getContactList();
         }

@@ -133,6 +133,51 @@ namespace IMS_PESO
                 conn.Close();
             }
         }
+        private void insertToContact()
+        {
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            conn.Open();
+            MySqlCommand myCommand = conn.CreateCommand();
+            MySqlTransaction myTrans;
+            myTrans = conn.BeginTransaction();
+            myCommand.Connection = conn;
+            myCommand.Transaction = myTrans;
+            try
+            {
+                myCommand = conn.CreateCommand();
+                myCommand.Parameters.AddWithValue("@surname", textBox1.Text);
+                myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
+                myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
+                myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
+                string query = @"insert into contacts
+                                        (code, surname, firstname, middlename, sex)
+                                        values
+                                        ((select if (count(id) <= 0, 'CON - 1', concat('CON - ', max(id) + 1)) code from contacts as code), @surname, @firstname, @middlename, @gender)";
+                myCommand.CommandText = query;
+                myCommand.ExecuteNonQuery();
+                myTrans.Commit();
+                MessageBox.Show(this, "Contacts added to masterlist!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exg)
+            {
+                try
+                {
+                    myTrans.Rollback();
+                }
+                catch (Exception ex)
+                {
+                    if (myTrans.Connection != null)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                MessageBox.Show(exg.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         private void update()
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -201,6 +246,7 @@ namespace IMS_PESO
             if (label2.Text == "~code~")
             {
                 insert();
+                insertToContact();
                 a.ClearTextBoxes(this.Controls);
                 comboBox1.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;
