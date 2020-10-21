@@ -311,11 +311,11 @@
     <Compile Include="childLaborFilter.Designer.cs">
       <DependentUpon>childLaborFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="contactList.cs">
+    <Compile Include="_contactList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="contactList.Designer.cs">
-      <DependentUpon>contactList.cs</DependentUpon>
+    <Compile Include="_contactList.Designer.cs">
+      <DependentUpon>_contactList.cs</DependentUpon>
     </Compile>
     <Compile Include="cr_childLaborReport.cs">
       <AutoGen>True</AutoGen>
@@ -419,6 +419,12 @@
     </Compile>
     <Compile Include="work_exp.Designer.cs">
       <DependentUpon>work_exp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_todoAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_todoAdd.Designer.cs">
+      <DependentUpon>_todoAdd.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="cr_testGraph.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -531,8 +537,8 @@
     <EmbeddedResource Include="childLaborFilter.resx">
       <DependentUpon>childLaborFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="contactList.resx">
-      <DependentUpon>contactList.cs</DependentUpon>
+    <EmbeddedResource Include="_contactList.resx">
+      <DependentUpon>_contactList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cr_childLaborReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -590,6 +596,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="work_exp.resx">
       <DependentUpon>work_exp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_todoAdd.resx">
+      <DependentUpon>_todoAdd.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dataset.xsc">
       <DependentUpon>dataset.xsd</DependentUpon>

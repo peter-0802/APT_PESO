@@ -33,7 +33,9 @@ namespace IMS_PESO
             gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
             Region rg = new Region(gp);
             pictureBox1.Region = rg;
-            getContactList();
+
+            loadTask();
+
             label4.MaximumSize = new Size(200, 0);
         }
         //Setting Upper Panel to dragable (refs. initMovable.cs and mousedown event on panel)
@@ -45,34 +47,7 @@ namespace IMS_PESO
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private void getContactList()
-        {
-            string query;
-            query = @"select code `CODE`, surname `SURNAME`, firstname `FIRSTNAME`, middlename `MIDDLE NAME` from contacts";
-            string FinalQuery = string.Format(query);
-            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-            MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
-            try
-            {
-                MySqlDataAdapter dgv = new MySqlDataAdapter();
-                dgv.SelectCommand = cmd;
-                DataTable dbdatasec = new DataTable();
-                dgv.Fill(dbdatasec);
-                BindingSource bsource = new BindingSource();
-
-                bsource.DataSource = dbdatasec;
-                dataGridView1.DataSource = bsource;
-                dgv.Update(dbdatasec);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -109,6 +84,10 @@ namespace IMS_PESO
             {
                 button15.Enabled = true;
             }
+            else if (label4.Text != "~value~" && label4.Text == "NSRP Focal Person")
+            {
+                button3.Enabled = true;
+            }
             else if (label4.Text != "~value~" && (label4.Text == "Administrator" || label4.Text == "tester"))
             {
                 button2.Enabled = true;
@@ -120,10 +99,40 @@ namespace IMS_PESO
                 button6.Enabled = true;
                 button15.Enabled = true;
                 button1.Enabled = true;
+                button3.Enabled = true;
             }
             else
             {
                 return;
+            }
+        }
+
+        private void loadTask()
+        {
+            string query;
+            query = @"select title `TITLE`, `desc` `DESCRIPTION`, assignee `ASSIGNEE` from todo";
+            string FinalQuery = string.Format(query);
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
+            try
+            {
+                MySqlDataAdapter dgv = new MySqlDataAdapter();
+                dgv.SelectCommand = cmd;
+                DataTable dbdatasec = new DataTable();
+                dgv.Fill(dbdatasec);
+                BindingSource bsource = new BindingSource();
+
+                bsource.DataSource = dbdatasec;
+                dataGridView1.DataSource = bsource;
+                dgv.Update(dbdatasec);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
@@ -140,14 +149,12 @@ namespace IMS_PESO
         {
             _SPES a = new _SPES();
             a.ShowDialog();
-            getContactList();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             _SRA a = new _SRA();
             a.ShowDialog();
-            getContactList();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -165,7 +172,7 @@ namespace IMS_PESO
             }
         private void button4_Click(object sender, EventArgs e)
         {
-            contactList a = new contactList();
+            _contactList a = new _contactList();
             a.ShowDialog();
         }
 
@@ -185,14 +192,12 @@ namespace IMS_PESO
         {
             _childLabor a = new _childLabor();
             a.ShowDialog();
-            getContactList();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             _collegeSchoolar a = new _collegeSchoolar();
             a.ShowDialog();
-            getContactList();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -215,21 +220,18 @@ namespace IMS_PESO
         {
             _RWA a = new _RWA();
             a.ShowDialog();
-            getContactList();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             _HSschoolar a = new _HSschoolar();
             a.ShowDialog();
-            getContactList();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             _jobFair a = new _jobFair();
             a.ShowDialog();
-            getContactList();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -256,7 +258,6 @@ namespace IMS_PESO
         {
             _OFW a = new _OFW();
             a.ShowDialog();
-            getContactList();
         }
 
         private void button5_MouseHover(object sender, EventArgs e)
@@ -267,8 +268,7 @@ namespace IMS_PESO
         private void button15_Click(object sender, EventArgs e)
         {
             _PWD a = new _PWD();
-            a.Show();
-            getContactList();
+            a.ShowDialog();
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -293,6 +293,19 @@ namespace IMS_PESO
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            _contactList a = new _contactList();
+            a.ShowDialog();
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            _todoAdd a = new _todoAdd();
+            a.ShowDialog();
+            loadTask();
         }
     }
 }
