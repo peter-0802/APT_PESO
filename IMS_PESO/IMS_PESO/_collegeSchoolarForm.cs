@@ -63,9 +63,9 @@ namespace IMS_PESO
                     string contact_no = myreader.GetString("contact");
                     textBox8.Text = contact_no;
                     string school = myreader.GetString("school");
-                    comboBox3.Text = school;
+                    textBox6.Text = school;
                     string year = myreader.GetString("yearlevel");
-                    comboBox4.Text = year;
+                    textBox7.Text = year;
                     string ave = myreader.GetString("ave");
                     textBox10.Text = ave;
                     string status = myreader.GetString("status");
@@ -100,8 +100,8 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@father", textBox4.Text);
                 myCommand.Parameters.AddWithValue("@address", textBox5.Text);
                 myCommand.Parameters.AddWithValue("@contact", textBox8.Text);
-                myCommand.Parameters.AddWithValue("@school", comboBox3.Text);
-                myCommand.Parameters.AddWithValue("@yearlevel", comboBox4.Text);
+                myCommand.Parameters.AddWithValue("@school", textBox6.Text);
+                myCommand.Parameters.AddWithValue("@yearlevel", textBox7.Text);
                 myCommand.Parameters.AddWithValue("@ave", textBox10.Text);
                 myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
                 string query = @"insert into colschoolar
@@ -206,8 +206,8 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@father", textBox4.Text);
                 myCommand.Parameters.AddWithValue("@address", textBox5.Text);
                 myCommand.Parameters.AddWithValue("@contact", textBox8.Text);
-                myCommand.Parameters.AddWithValue("@school", comboBox3.Text);
-                myCommand.Parameters.AddWithValue("@yearlevel", comboBox4.Text);
+                myCommand.Parameters.AddWithValue("@school", textBox6.Text);
+                myCommand.Parameters.AddWithValue("@yearlevel", textBox7.Text);
                 myCommand.Parameters.AddWithValue("@ave", textBox10.Text);
                 myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
                 string query = @"insert into colschoolar
@@ -250,8 +250,6 @@ namespace IMS_PESO
                 a.ClearTextBoxes(this.Controls);
                 comboBox1.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;
-                comboBox3.SelectedIndex = -1;
-                comboBox4.SelectedIndex = -1;
             }
             else
             {
@@ -259,8 +257,6 @@ namespace IMS_PESO
                 a.ClearTextBoxes(this.Controls);
                 comboBox1.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;
-                comboBox3.SelectedIndex = -1;
-                comboBox4.SelectedIndex = -1;
             }
             
         }

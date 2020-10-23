@@ -58,8 +58,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -368,56 +368,31 @@
             this.label17.TabIndex = 112;
             this.label17.Text = "Status:";
             // 
-            // comboBox3
+            // textBox6
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 18;
-            this.comboBox3.Items.AddRange(new object[] {
-            "BANGKAL NHS",
-            "BARAYONG NHS",
-            "HOLY CROSS OF MAG., INC.",
-            "KASUGA NHS",
-            "LO. BALA NHS",
-            "MAGSAYSAY ACADEMY, INC.",
-            "MARBER NHS",
-            "MATANAO NHS",
-            "NEW KATIPUNAN NHS",
-            "SALUD CAGAS TVHS",
-            "SAN ISIDRO NHS",
-            "TACUL AHS",
-            "TACUL AHS-MAIBO EXT."});
-            this.comboBox3.Location = new System.Drawing.Point(141, 333);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(348, 26);
-            this.comboBox3.TabIndex = 11;
+            this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(141, 333);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(348, 26);
+            this.textBox6.TabIndex = 11;
             // 
-            // comboBox4
+            // textBox7
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.ItemHeight = 18;
-            this.comboBox4.Items.AddRange(new object[] {
-            "GRADE 7",
-            "GRADE 8",
-            "GRADE 9",
-            "GRADE 10",
-            "GRADE 11",
-            "GRADE 12"});
-            this.comboBox4.Location = new System.Drawing.Point(141, 365);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(348, 26);
-            this.comboBox4.TabIndex = 12;
+            this.textBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(142, 365);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(348, 26);
+            this.textBox7.TabIndex = 12;
             // 
-            // _hsSchoolar
+            // _collegeSchoolarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 524);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox4);
@@ -451,7 +426,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "_hsSchoolar";
+            this.Name = "_collegeSchoolarForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -494,7 +469,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
