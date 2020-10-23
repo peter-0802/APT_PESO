@@ -40,11 +40,12 @@ namespace IMS_PESO
                         event,
                         host,
                         veneu,
-                        surname,
-                        firstname,
-                        middlename,
+                        concat(surname, firstname, middlename) `name`,
+                        address,
                         gender,
-                        concat(surname, firstname, middlename) `test`
+                        age,
+                        contact,
+                        type
                         FROM spes
                         where event_date between '{0}' and '{1}'
                         and event like '%%{2}%%'
@@ -60,7 +61,7 @@ namespace IMS_PESO
                 MySqlCommand cmd = new MySqlCommand(qry, conn);
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
-                adapter.Fill(ds, ds.Tables["childLaborReport"].TableName);
+                adapter.Fill(ds, ds.Tables["spesReport"].TableName);
                 _cr_spesReport rep = new _cr_spesReport();
                 rep.SetDataSource(ds);
                 a.crystalReportViewer1.ReportSource = rep;

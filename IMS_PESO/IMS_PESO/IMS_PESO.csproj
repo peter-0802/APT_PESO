@@ -311,11 +311,11 @@
     <Compile Include="_HSschoolar.Designer.cs">
       <DependentUpon>_HSschoolar.cs</DependentUpon>
     </Compile>
-    <Compile Include="spesFilter.cs">
+    <Compile Include="_spesFilter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="spesFilter.Designer.cs">
-      <DependentUpon>spesFilter.cs</DependentUpon>
+    <Compile Include="_spesFilter.Designer.cs">
+      <DependentUpon>_spesFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="_SPES.cs">
       <SubType>Form</SubType>
@@ -562,8 +562,8 @@
     <EmbeddedResource Include="_HSschoolar.resx">
       <DependentUpon>_HSschoolar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="spesFilter.resx">
-      <DependentUpon>spesFilter.cs</DependentUpon>
+    <EmbeddedResource Include="_spesFilter.resx">
+      <DependentUpon>_spesFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_SPES.resx">
       <DependentUpon>_SPES.cs</DependentUpon>

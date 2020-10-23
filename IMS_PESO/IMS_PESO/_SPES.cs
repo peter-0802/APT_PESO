@@ -434,7 +434,11 @@ namespace IMS_PESO
                         surname,
                         firstname,
                         middlename,
-                        gender
+                        gender,
+                        address,
+                        age,
+                        contact,
+                        type
                         from spes
                         where event = '{0}'";
             string FinalQuery = string.Format(query, label9.Text);
@@ -453,6 +457,10 @@ namespace IMS_PESO
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["gender"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["address"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["age"].Value = dbdatasec1.Rows[i]["age"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["contact"].Value = dbdatasec1.Rows[i]["contact"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["type"].Value = dbdatasec1.Rows[i]["type"].ToString();
                 }
             }
             catch (Exception ex)
@@ -543,7 +551,7 @@ namespace IMS_PESO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            spesFilter a = new spesFilter();
+            _spesFilter a = new _spesFilter();
             a.ShowDialog();
         }
 
