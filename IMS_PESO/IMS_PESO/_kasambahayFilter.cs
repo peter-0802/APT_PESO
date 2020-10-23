@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class _ofwFilter : Form
+    public partial class _kasambahayFilter : Form
     {
         DBConn DB = new DBConn();
-        public _ofwFilter()
+        public _kasambahayFilter()
         {
             try
             {
@@ -41,13 +41,10 @@ namespace IMS_PESO
                         concat(surname, ', ', firstname, ' ', middlename) name,
                         address,
                         gender,
-                        country,
-                        passport,
-                        type,
                         contact_no,
                         status,
                         remarks
-                        from ofw
+                        from kasambahay
                         where date between '{0}' and '{1}'";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
 
@@ -58,8 +55,8 @@ namespace IMS_PESO
                 MySqlCommand cmd = new MySqlCommand(qry, conn);
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
-                adapter.Fill(ds, ds.Tables["ofwReport"].TableName);
-                _cr_ofw rep = new _cr_ofw();
+                adapter.Fill(ds, ds.Tables["kasReport"].TableName);
+                _cr_kasReport rep = new _cr_kasReport();
                 rep.SetDataSource(ds);
                 a.crystalReportViewer1.ReportSource = rep;
                 a.ShowDialog();

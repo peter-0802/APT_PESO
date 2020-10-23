@@ -59,7 +59,7 @@ namespace IMS_PESO
                     textBox4.Text = father;
 
                     string address = myreader.GetString("address");
-                    textBox5.Text = address;
+                    comboBox5.Text = address;
                     string contact_no = myreader.GetString("contact");
                     textBox8.Text = contact_no;
                     string school = myreader.GetString("school");
@@ -98,7 +98,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@dob", dateTimePicker2.Text);
                 myCommand.Parameters.AddWithValue("@mother", textBox9.Text);
                 myCommand.Parameters.AddWithValue("@father", textBox4.Text);
-                myCommand.Parameters.AddWithValue("@address", textBox5.Text);
+                myCommand.Parameters.AddWithValue("@address", comboBox5.Text);
                 myCommand.Parameters.AddWithValue("@contact", textBox8.Text);
                 myCommand.Parameters.AddWithValue("@school", textBox6.Text);
                 myCommand.Parameters.AddWithValue("@yearlevel", textBox7.Text);
@@ -204,7 +204,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@dob", dateTimePicker2.Text);
                 myCommand.Parameters.AddWithValue("@mother", textBox9.Text);
                 myCommand.Parameters.AddWithValue("@father", textBox4.Text);
-                myCommand.Parameters.AddWithValue("@address", textBox5.Text);
+                myCommand.Parameters.AddWithValue("@address", comboBox5.Text);
                 myCommand.Parameters.AddWithValue("@contact", textBox8.Text);
                 myCommand.Parameters.AddWithValue("@school", textBox6.Text);
                 myCommand.Parameters.AddWithValue("@yearlevel", textBox7.Text);

@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class _hsSchoolarForm : Form
+    public partial class _kasambahayForm : Form
     {
         DBConn DB = new DBConn();
-        public _hsSchoolarForm()
+        public _kasambahayForm()
         {
             try
             {
@@ -30,7 +30,7 @@ namespace IMS_PESO
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlDataReader myreader;
-            string query = @"select * from hsshcoolar where code = '{0}'";
+            string query = @"select * from kasambahay where code = '{0}'";
             string finalQuery = string.Format(query, label2.Text);
             MySqlCommand cmdmdlr = new MySqlCommand(finalQuery, conn);
             try
@@ -50,26 +50,14 @@ namespace IMS_PESO
                     textBox3.Text = middlename;
                     string gender = myreader.GetString("gender");
                     comboBox2.Text = gender;
-                    string dob = myreader.GetString("dob");
-                    dateTimePicker2.Text = dob;
-                    string mother = myreader.GetString("mother");
-                    textBox9.Text = mother;
-
-                    string father = myreader.GetString("father");
-                    textBox4.Text = father;
-
                     string address = myreader.GetString("address");
-                    comboBox5.Text = address;
-                    string contact_no = myreader.GetString("contact");
+                    comboBox3.Text = address;
+                    string contact_no = myreader.GetString("contact_no");
                     textBox8.Text = contact_no;
-                    string school = myreader.GetString("school");
-                    comboBox3.Text = school;
-                    string year = myreader.GetString("yearlevel");
-                    comboBox4.Text = year;
-                    string ave = myreader.GetString("ave");
-                    textBox10.Text = ave;
                     string status = myreader.GetString("status");
                     comboBox1.Text = status;
+                    string remarks = myreader.GetString("remarks");
+                    textBox10.Text = remarks;
                 }
             }
             catch (Exception ex)
@@ -89,25 +77,20 @@ namespace IMS_PESO
             myCommand.Transaction = myTrans;
             try
             {
-                myCommand = conn.CreateCommand();
-                myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
-                myCommand.Parameters.AddWithValue("@surname", textBox1.Text);
-                myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
-                myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
-                myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
-                myCommand.Parameters.AddWithValue("@dob", dateTimePicker2.Text);
-                myCommand.Parameters.AddWithValue("@mother", textBox9.Text);
-                myCommand.Parameters.AddWithValue("@father", textBox4.Text);
-                myCommand.Parameters.AddWithValue("@address", comboBox5.Text);
-                myCommand.Parameters.AddWithValue("@contact", textBox8.Text);
-                myCommand.Parameters.AddWithValue("@school", comboBox3.Text);
-                myCommand.Parameters.AddWithValue("@yearlevel", comboBox4.Text);
-                myCommand.Parameters.AddWithValue("@ave", textBox10.Text);
-                myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
-                string query = @"insert into hsshcoolar
-                                        (code, date ,surname, firstname, middlename, gender, dob, mother, father, address, contact, school, yearlevel, ave, status)
+                    myCommand = conn.CreateCommand();
+                    myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                    myCommand.Parameters.AddWithValue("@surname", textBox1.Text);
+                    myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
+                    myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@address", comboBox3.Text);
+                    myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
+                    myCommand.Parameters.AddWithValue("@contact_no", textBox8.Text);
+                    myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
+                    myCommand.Parameters.AddWithValue("@remarks", textBox10.Text);
+                    string query = @"insert ignore into kasambahay
+                                        (date, code, surname, firstname, middlename, address, gender, contact_no, status, remarks)
                                         values
-                                        ((select if (count(id) <= 0, 'HSS - 1', concat('HSS - ', max(id) + 1)) code from hsshcoolar as code), @date, @surname, @firstname, @middlename, @gender, @dob, @mother, @father, @address, @contact, @school, @yearlevel, @ave, @status)";
+                                        (@date, (select if (count(id) <= 0, 'KAS - 1', concat('KAS - ', max(id) + 1)) code from kasambahay as code), @surname, @firstname, @middlename, @address, @gender, @contact_no, @status, @remarks)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -133,6 +116,7 @@ namespace IMS_PESO
                 conn.Close();
             }
         }
+
         private void insertToContact()
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -178,6 +162,7 @@ namespace IMS_PESO
                 conn.Close();
             }
         }
+
         private void update()
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -190,7 +175,7 @@ namespace IMS_PESO
             try
             {
                 myCommand.Parameters.AddWithValue("@code", label2.Text);
-                string qD = @"delete from hsshcoolar where code = @code;";
+                string qD = @"delete from kasambahay where code = @code;";
                 myCommand.CommandText = qD;
                 myCommand.ExecuteNonQuery();
 
@@ -200,20 +185,15 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@surname", textBox1.Text);
                 myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
                 myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
+                myCommand.Parameters.AddWithValue("@address", comboBox3.Text);
                 myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
-                myCommand.Parameters.AddWithValue("@dob", dateTimePicker2.Text);
-                myCommand.Parameters.AddWithValue("@mother", textBox9.Text);
-                myCommand.Parameters.AddWithValue("@father", textBox4.Text);
-                myCommand.Parameters.AddWithValue("@address", comboBox5.Text);
-                myCommand.Parameters.AddWithValue("@contact", textBox8.Text);
-                myCommand.Parameters.AddWithValue("@school", comboBox3.Text);
-                myCommand.Parameters.AddWithValue("@yearlevel", comboBox4.Text);
-                myCommand.Parameters.AddWithValue("@ave", textBox10.Text);
+                myCommand.Parameters.AddWithValue("@contact_no", textBox8.Text);
                 myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
-                string query = @"insert into hsshcoolar
-                                        (code, date ,surname, firstname, middlename, gender, dob, mother, father, address, contact, school, yearlevel, ave, status)
+                myCommand.Parameters.AddWithValue("@remarks", textBox10.Text);
+                string query = @"insert ignore into kasambahay
+                                        (date, code, surname, firstname, middlename, address, gender, contact_no, status, remarks)
                                         values
-                                        (@code, @date, @surname, @firstname, @middlename, @gender, @dob, @mother, @father, @address, @contact, @school, @yearlevel, @ave, @status)";
+                                        (@date, (select if (count(id) <= 0, 'KAS - 1', concat('KAS - ', max(id) + 1)) code from kasambahay as code), @surname, @firstname, @middlename, @address, @gender, @contact_no, @status, @remarks)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -238,29 +218,20 @@ namespace IMS_PESO
             {
                 conn.Close();
             }
-            this.Close();
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            utility a = new utility();
             if (label2.Text == "~code~")
             {
                 insert();
                 insertToContact();
+                utility a = new utility();
                 a.ClearTextBoxes(this.Controls);
-                comboBox1.SelectedIndex = -1;
-                comboBox2.SelectedIndex = -1;
-                comboBox3.SelectedIndex = -1;
-                comboBox4.SelectedIndex = -1;
             }
             else
             {
                 update();
-                a.ClearTextBoxes(this.Controls);
-                comboBox1.SelectedIndex = -1;
-                comboBox2.SelectedIndex = -1;
-                comboBox3.SelectedIndex = -1;
-                comboBox4.SelectedIndex = -1;
+                this.Close();
             }
             
         }

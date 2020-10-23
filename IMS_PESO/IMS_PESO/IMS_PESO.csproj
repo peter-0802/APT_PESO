@@ -118,11 +118,35 @@
       <DependentUpon>_cr_GraphStat.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="_cr_kasReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_cr_kasReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="_cr_pwd.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_cr_pwd.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_kasambahay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_kasambahay.Designer.cs">
+      <DependentUpon>_kasambahay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_kasambahayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_kasambahayForm.Designer.cs">
+      <DependentUpon>_kasambahayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_kasambahayFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_kasambahayFilter.Designer.cs">
+      <DependentUpon>_kasambahayFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="_pwdFilter.cs">
       <SubType>Form</SubType>
@@ -434,9 +458,22 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>_cr_GraphStat.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="_cr_kasReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>_cr_kasReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="_cr_pwd.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>_cr_pwd.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_kasambahay.resx">
+      <DependentUpon>_kasambahay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_kasambahayForm.resx">
+      <DependentUpon>_kasambahayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_kasambahayFilter.resx">
+      <DependentUpon>_kasambahayFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_pwdFilter.resx">
       <DependentUpon>_pwdFilter.cs</DependentUpon>

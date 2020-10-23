@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class _hsSchoolarForm
+    partial class _kasambahayForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +35,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,16 +48,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -123,37 +112,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 272);
+            this.label4.Location = new System.Drawing.Point(22, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 18);
             this.label4.TabIndex = 18;
             this.label4.Text = "Address:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 336);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 18);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "School:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 368);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 18);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Year Level:";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 304);
+            this.label8.Location = new System.Drawing.Point(22, 208);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 18);
             this.label8.TabIndex = 24;
@@ -163,38 +132,39 @@
             // 
             this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(141, 301);
+            this.textBox8.Location = new System.Drawing.Point(142, 205);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(348, 26);
-            this.textBox8.TabIndex = 10;
+            this.textBox8.TabIndex = 7;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 432);
+            this.label9.Location = new System.Drawing.Point(22, 240);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 18);
+            this.label9.Size = new System.Drawing.Size(65, 18);
             this.label9.TabIndex = 26;
+            this.label9.Text = "Status:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(22, 400);
+            this.label10.Location = new System.Drawing.Point(22, 272);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 18);
+            this.label10.Size = new System.Drawing.Size(84, 18);
             this.label10.TabIndex = 28;
-            this.label10.Text = "G. Average:";
+            this.label10.Text = "Remarks:";
             // 
             // textBox10
             // 
             this.textBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(142, 397);
+            this.textBox10.Location = new System.Drawing.Point(142, 269);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(348, 26);
-            this.textBox10.TabIndex = 13;
+            this.textBox10.TabIndex = 9;
             // 
             // comboBox1
             // 
@@ -203,12 +173,12 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 18;
             this.comboBox1.Items.AddRange(new object[] {
-            "OLD SCHOOLAR",
-            "NEW SCHOOLAR"});
-            this.comboBox1.Location = new System.Drawing.Point(141, 429);
+            "ACTIVE",
+            "INACTIVE"});
+            this.comboBox1.Location = new System.Drawing.Point(142, 237);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(348, 26);
-            this.comboBox1.TabIndex = 14;
+            this.comboBox1.TabIndex = 8;
             // 
             // button6
             // 
@@ -217,10 +187,10 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(141, 461);
+            this.button6.Location = new System.Drawing.Point(142, 310);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(348, 50);
-            this.button6.TabIndex = 15;
+            this.button6.TabIndex = 10;
             this.button6.Text = "Save Records";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button6.UseVisualStyleBackColor = false;
@@ -291,74 +261,6 @@
             this.comboBox2.Size = new System.Drawing.Size(348, 26);
             this.comboBox2.TabIndex = 5;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(22, 176);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 18);
-            this.label14.TabIndex = 106;
-            this.label14.Text = "Date of Birth:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(141, 173);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(349, 26);
-            this.dateTimePicker2.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(22, 240);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(129, 18);
-            this.label15.TabIndex = 111;
-            this.label15.Text = "Father\'s Name:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(160, 237);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(330, 26);
-            this.textBox4.TabIndex = 8;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(22, 208);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 18);
-            this.label16.TabIndex = 110;
-            this.label16.Text = "Mother\'s Name:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(160, 205);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(330, 26);
-            this.textBox9.TabIndex = 7;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(22, 432);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 18);
-            this.label17.TabIndex = 112;
-            this.label17.Text = "Status:";
-            // 
             // comboBox3
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -366,49 +268,6 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.ItemHeight = 18;
             this.comboBox3.Items.AddRange(new object[] {
-            "BANGKAL NHS",
-            "BARAYONG NHS",
-            "HOLY CROSS OF MAG., INC.",
-            "KASUGA NHS",
-            "LO. BALA NHS",
-            "MAGSAYSAY ACADEMY, INC.",
-            "MARBER NHS",
-            "MATANAO NHS",
-            "NEW KATIPUNAN NHS",
-            "SALUD CAGAS TVHS",
-            "SAN ISIDRO NHS",
-            "TACUL AHS",
-            "TACUL AHS-MAIBO EXT."});
-            this.comboBox3.Location = new System.Drawing.Point(141, 333);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(348, 26);
-            this.comboBox3.TabIndex = 11;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.ItemHeight = 18;
-            this.comboBox4.Items.AddRange(new object[] {
-            "GRADE 7",
-            "GRADE 8",
-            "GRADE 9",
-            "GRADE 10",
-            "GRADE 11",
-            "GRADE 12"});
-            this.comboBox4.Location = new System.Drawing.Point(141, 365);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(348, 26);
-            this.comboBox4.TabIndex = 12;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.ItemHeight = 18;
-            this.comboBox5.Items.AddRange(new object[] {
             "BACUNGAN",
             "BALNATE",
             "BARAYONG",
@@ -431,26 +290,17 @@
             "TACUL",
             "TAGAYTAY",
             "UPPER BALA"});
-            this.comboBox5.Location = new System.Drawing.Point(141, 269);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(348, 26);
-            this.comboBox5.TabIndex = 113;
+            this.comboBox3.Location = new System.Drawing.Point(142, 173);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(348, 26);
+            this.comboBox3.TabIndex = 6;
             // 
-            // _hsSchoolarForm
+            // _kasambahayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 524);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
+            this.ClientSize = new System.Drawing.Size(513, 378);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -464,8 +314,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
@@ -476,7 +324,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "_hsSchoolarForm";
+            this.Name = "_kasambahayForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -496,8 +344,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label9;
@@ -511,15 +357,6 @@
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
     }
 }

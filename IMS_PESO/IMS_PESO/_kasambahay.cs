@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class _OFW : Form
+    public partial class _kasambahay : Form
     {
         DBConn DB = new DBConn();
-        public _OFW()
+        public _kasambahay()
         {
             try
             {
@@ -49,13 +49,10 @@ namespace IMS_PESO
                                 firstname `FIRST NAME`,
                                 middlename `MIDDLE NAME`,
                                 address `ADDRESS`,
-                                country `COUNTRY`,
-                                passport `PASSPORT`,
-                                type `TYPE`,
                                 contact_no `COMTACT NO.`,
                                 `status` `STATUS`,
                                 remarks `REMARKS`
-                                FROM ofw";
+                                FROM kasambahay";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -244,7 +241,7 @@ namespace IMS_PESO
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            _ofwForm a = new _ofwForm();
+            _kasambahayForm a = new _kasambahayForm();
             a.ShowDialog();
             getEvent();
         }
@@ -349,7 +346,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from ofw where code = @code;";
+                        string qD = @"delete from kasambahay where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -452,7 +449,7 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _ofwForm a = new _ofwForm();
+            _kasambahayForm a = new _kasambahayForm();
             a.label2.Text = this.label9.Text;
             a.ShowDialog();
             getEvent();
@@ -461,7 +458,7 @@ namespace IMS_PESO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            _ofwFilter a = new _ofwFilter();
+            _kasambahayFilter a = new _kasambahayFilter();
             a.ShowDialog();
         }
 
@@ -496,12 +493,10 @@ namespace IMS_PESO
                                 firstname `FIRST NAME`,
                                 middlename `MIDDLE NAME`,
                                 address `ADDRESS`,
-                                country `COUNTRY`,
-                                passport `PASSPORT`,
                                 contact_no `COMTACT NO.`,
                                 `status` `STATUS`,
                                 remarks `REMARKS`
-                                FROM ofw where surname like '%%{0}%%' or code like '%%{0}%%' or firstname like '%%{0}%%' or middlename like '%%{0}%%'";
+                                FROM kasambahay where surname like '%%{0}%%' or code like '%%{0}%%' or firstname like '%%{0}%%' or middlename like '%%{0}%%'";
                 string FinalQuery = string.Format(query, textBox1.Text);
                 MySqlConnection conn = new MySqlConnection(DBConn.connstring);
                 MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);

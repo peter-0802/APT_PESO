@@ -56,6 +56,8 @@ namespace IMS_PESO
                     textBox6.Text = country;
                     string passport = myreader.GetString("passport");
                     textBox7.Text = passport;
+                    string type = myreader.GetString("type");
+                    comboBox3.Text = type;
                     string contact_no = myreader.GetString("contact_no");
                     textBox8.Text = contact_no;
                     string status = myreader.GetString("status");
@@ -90,13 +92,14 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
                     myCommand.Parameters.AddWithValue("@country", textBox6.Text);
                     myCommand.Parameters.AddWithValue("@passport", textBox7.Text);
+                    myCommand.Parameters.AddWithValue("@type", comboBox3.Text);
                     myCommand.Parameters.AddWithValue("@contact_no", textBox8.Text);
                     myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
                     myCommand.Parameters.AddWithValue("@remarks", textBox10.Text);
                     string query = @"insert ignore into ofw
-                                        (date, code, surname, firstname, middlename, address, gender, country, passport, contact_no, status, remarks)
+                                        (date, code, surname, firstname, middlename, address, gender, country, passport, type, contact_no, status, remarks)
                                         values
-                                        (@date, (select if (count(id) <= 0, 'OFW - 1', concat('OFW - ', max(id) + 1)) code from ofw as code), @surname, @firstname, @middlename, @address, @gender, @country, @passport, @contact_no, @status, @remarks)";
+                                        (@date, (select if (count(id) <= 0, 'OFW - 1', concat('OFW - ', max(id) + 1)) code from ofw as code), @surname, @firstname, @middlename, @address, @gender, @country, @passport, @type, @contact_no, @status, @remarks)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -139,7 +142,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
                 myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
                 myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
-                string query = @"insert into contacts
+                string query = @"insert ignore into contacts
                                         (code, surname, firstname, middlename, sex)
                                         values
                                         ((select if (count(id) <= 0, 'CON - 1', concat('CON - ', max(id) + 1)) code from contacts as code), @surname, @firstname, @middlename, @gender)";
@@ -195,13 +198,14 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
                 myCommand.Parameters.AddWithValue("@country", textBox6.Text);
                 myCommand.Parameters.AddWithValue("@passport", textBox7.Text);
+                myCommand.Parameters.AddWithValue("@type", comboBox3.Text);
                 myCommand.Parameters.AddWithValue("@contact_no", textBox8.Text);
                 myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
                 myCommand.Parameters.AddWithValue("@remarks", textBox10.Text);
                 string query = @"insert ignore into ofw
-                                        (date, code, surname, firstname, middlename, address, gender, country, passport, contact_no, status, remarks)
+                                        (date, code, surname, firstname, middlename, address, gender, country, passport, type, contact_no, status, remarks)
                                         values
-                                        (@date, (select if (count(id) <= 0, 'OFW - 1', concat('OFW - ', max(id) + 1)) code from ofw as code), @surname, @firstname, @middlename, @address, @gender, @country, @passport, @contact_no, @status, @remarks)";
+                                        (@date, (select if (count(id) <= 0, 'OFW - 1', concat('OFW - ', max(id) + 1)) code from ofw as code), @surname, @firstname, @middlename, @address, @gender, @country, @passport, @type, @contact_no, @status, @remarks)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();

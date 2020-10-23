@@ -54,6 +54,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button13 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -431,11 +432,29 @@
             this.dataGridView1.TabIndex = 35;
             this.dataGridView1.Visible = false;
             // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button13.Enabled = false;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(467, 476);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(202, 100);
+            this.button13.TabIndex = 36;
+            this.button13.Text = "Kasambahay";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click_1);
+            // 
             // _Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button3);
@@ -496,6 +515,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button13;
     }
 }
 

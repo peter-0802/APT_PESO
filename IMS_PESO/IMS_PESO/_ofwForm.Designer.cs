@@ -53,6 +53,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -173,7 +175,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(22, 272);
+            this.label8.Location = new System.Drawing.Point(22, 304);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 18);
             this.label8.TabIndex = 24;
@@ -183,16 +185,16 @@
             // 
             this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(142, 269);
+            this.textBox8.Location = new System.Drawing.Point(142, 301);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(348, 26);
-            this.textBox8.TabIndex = 9;
+            this.textBox8.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(22, 304);
+            this.label9.Location = new System.Drawing.Point(22, 336);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 18);
             this.label9.TabIndex = 26;
@@ -202,7 +204,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(22, 336);
+            this.label10.Location = new System.Drawing.Point(22, 368);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 18);
             this.label10.TabIndex = 28;
@@ -212,10 +214,10 @@
             // 
             this.textBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(142, 333);
+            this.textBox10.Location = new System.Drawing.Point(142, 365);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(348, 26);
-            this.textBox10.TabIndex = 11;
+            this.textBox10.TabIndex = 12;
             // 
             // comboBox1
             // 
@@ -226,10 +228,10 @@
             this.comboBox1.Items.AddRange(new object[] {
             "ACTIVE",
             "INACTIVE"});
-            this.comboBox1.Location = new System.Drawing.Point(142, 301);
+            this.comboBox1.Location = new System.Drawing.Point(142, 333);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(348, 26);
-            this.comboBox1.TabIndex = 10;
+            this.comboBox1.TabIndex = 11;
             // 
             // button6
             // 
@@ -238,10 +240,10 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(142, 374);
+            this.button6.Location = new System.Drawing.Point(142, 406);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(348, 50);
-            this.button6.TabIndex = 12;
+            this.button6.TabIndex = 13;
             this.button6.Text = "Save Records";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button6.UseVisualStyleBackColor = false;
@@ -312,11 +314,37 @@
             this.comboBox2.Size = new System.Drawing.Size(348, 26);
             this.comboBox2.TabIndex = 5;
             // 
-            // ofwForm
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(22, 272);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 18);
+            this.label14.TabIndex = 106;
+            this.label14.Text = "Type:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.ItemHeight = 18;
+            this.comboBox3.Items.AddRange(new object[] {
+            "LAND BASE",
+            "SEA BASE"});
+            this.comboBox3.Location = new System.Drawing.Point(142, 269);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(348, 26);
+            this.comboBox3.TabIndex = 9;
+            // 
+            // _ofwForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 441);
+            this.ClientSize = new System.Drawing.Size(513, 471);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -345,7 +373,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ofwForm";
+            this.Name = "_ofwForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -383,5 +411,7 @@
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

@@ -75,6 +75,7 @@ namespace IMS_PESO
             else if (label4.Text != "~value~" && label4.Text == "OFW Focal Person")
             {
                 button12.Enabled = true;
+                button13.Enabled = true;
             }
             else if (label4.Text != "~value~" && label4.Text == "RWA Focal Person")
             {
@@ -100,6 +101,7 @@ namespace IMS_PESO
                 button15.Enabled = true;
                 button1.Enabled = true;
                 button3.Enabled = true;
+                button13.Enabled = true;
             }
             else
             {
@@ -306,6 +308,12 @@ namespace IMS_PESO
             _todoAdd a = new _todoAdd();
             a.ShowDialog();
             loadTask();
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            _kasambahay a = new _kasambahay();
+            a.ShowDialog();
         }
     }
 }
