@@ -42,7 +42,8 @@ namespace IMS_PESO
                             acronym `ACRONYM`,
                             tin `TIN`,
                             contact_person `CONTACT_PERSON`,
-                            tel `TEL`
+                            tel `TEL`,
+                            type `TYPE`
                             from rwa
                         where date between '{0}' and '{1}'";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);

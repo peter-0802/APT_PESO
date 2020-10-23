@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class spesFilter : Form
+    public partial class _spesFilter : Form
     {
         DBConn DB = new DBConn();
-        public spesFilter()
+        public _spesFilter()
         {
             try
             {

@@ -2992,6 +2992,8 @@ namespace IMS_PESO {
             
             private global::System.Data.DataColumn columnTEL;
             
+            private global::System.Data.DataColumn columnTYPE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public rwaReportDataTable() {
@@ -3083,6 +3085,14 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TYPEColumn {
+                get {
+                    return this.columnTYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3118,7 +3128,7 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public rwaReportRow AddrwaReportRow(System.DateTime DATE, string CODE, string ESTABLISHMENT, string ACRONYM, string TIN, string CONTACT_PERSON, string TEL) {
+            public rwaReportRow AddrwaReportRow(System.DateTime DATE, string CODE, string ESTABLISHMENT, string ACRONYM, string TIN, string CONTACT_PERSON, string TEL, string TYPE) {
                 rwaReportRow rowrwaReportRow = ((rwaReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DATE,
@@ -3127,7 +3137,8 @@ namespace IMS_PESO {
                         ACRONYM,
                         TIN,
                         CONTACT_PERSON,
-                        TEL};
+                        TEL,
+                        TYPE};
                 rowrwaReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrwaReportRow);
                 return rowrwaReportRow;
@@ -3157,6 +3168,7 @@ namespace IMS_PESO {
                 this.columnTIN = base.Columns["TIN"];
                 this.columnCONTACT_PERSON = base.Columns["CONTACT_PERSON"];
                 this.columnTEL = base.Columns["TEL"];
+                this.columnTYPE = base.Columns["TYPE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3176,6 +3188,8 @@ namespace IMS_PESO {
                 base.Columns.Add(this.columnCONTACT_PERSON);
                 this.columnTEL = new global::System.Data.DataColumn("TEL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEL);
+                this.columnTYPE = new global::System.Data.DataColumn("TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTYPE);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6446,6 +6460,22 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TYPE {
+                get {
+                    try {
+                        return ((string)(this[this.tablerwaReport.TYPEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TYPE\' in table \'rwaReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerwaReport.TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDATENull() {
                 return this.IsNull(this.tablerwaReport.DATEColumn);
             }
@@ -6526,6 +6556,18 @@ namespace IMS_PESO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTELNull() {
                 this[this.tablerwaReport.TELColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTYPENull() {
+                return this.IsNull(this.tablerwaReport.TYPEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTYPENull() {
+                this[this.tablerwaReport.TYPEColumn] = global::System.Convert.DBNull;
             }
         }
         

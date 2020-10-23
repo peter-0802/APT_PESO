@@ -4,6 +4,10 @@
 
     public partial class dataset
     {
+        partial class rwaReportDataTable
+        {
+        }
+
         partial class pwdReportDataTable
         {
         }

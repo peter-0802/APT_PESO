@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class spesFilter
+    partial class _spesFilter
     {
         /// <summary>
         /// Required designer variable.

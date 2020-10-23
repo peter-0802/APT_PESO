@@ -38,10 +38,6 @@
             this.button16 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -57,6 +53,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -124,8 +128,6 @@
             // 
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,7 +141,11 @@
             this.surname,
             this.firstname,
             this.middlename,
-            this.gender});
+            this.gender,
+            this.address,
+            this.age,
+            this.contact,
+            this.type});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,36 +162,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowLeave);
-            // 
-            // surname
-            // 
-            this.surname.HeaderText = "SURNAME";
-            this.surname.Name = "surname";
-            this.surname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.surname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // firstname
-            // 
-            this.firstname.HeaderText = "FIRST NAME";
-            this.firstname.Name = "firstname";
-            this.firstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.firstname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // middlename
-            // 
-            this.middlename.HeaderText = "MIDDLE NAME";
-            this.middlename.Name = "middlename";
-            this.middlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.middlename.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // gender
-            // 
-            this.gender.HeaderText = "GENDER";
-            this.gender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.gender.Name = "gender";
-            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // textBox2
             // 
@@ -387,7 +363,97 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // SPES
+            // surname
+            // 
+            this.surname.FillWeight = 44.91021F;
+            this.surname.HeaderText = "SURNAME";
+            this.surname.Name = "surname";
+            this.surname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.surname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.surname.Width = 200;
+            // 
+            // firstname
+            // 
+            this.firstname.FillWeight = 44.91021F;
+            this.firstname.HeaderText = "FIRST NAME";
+            this.firstname.Name = "firstname";
+            this.firstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.firstname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.firstname.Width = 200;
+            // 
+            // middlename
+            // 
+            this.middlename.FillWeight = 44.91021F;
+            this.middlename.HeaderText = "MIDDLE NAME";
+            this.middlename.Name = "middlename";
+            this.middlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.middlename.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.middlename.Width = 200;
+            // 
+            // gender
+            // 
+            this.gender.FillWeight = 44.91021F;
+            this.gender.HeaderText = "GENDER";
+            this.gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.gender.Name = "gender";
+            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // address
+            // 
+            this.address.FillWeight = 489.9296F;
+            this.address.HeaderText = "ADDRESS";
+            this.address.Items.AddRange(new object[] {
+            "BACUNGAN",
+            "BALNATE",
+            "BARAYONG",
+            "BLOCON",
+            "DALAWINON",
+            "DALUMAY",
+            "GLAMANG",
+            "KANAPOLO",
+            "KASUGA",
+            "LOWER BALA",
+            "MABINI",
+            "MAIBO",
+            "MALAWANIT",
+            "MALONGON",
+            "NEW ILOCOS",
+            "NEW OPON",
+            "POBLACION",
+            "SAN ISIDRO",
+            "SAN MIGUEL",
+            "TACUL",
+            "TAGAYTAY",
+            "UPPER BALA"});
+            this.address.Name = "address";
+            this.address.Width = 200;
+            // 
+            // age
+            // 
+            this.age.FillWeight = 40.60914F;
+            this.age.HeaderText = "AGE";
+            this.age.Name = "age";
+            // 
+            // contact
+            // 
+            this.contact.FillWeight = 44.91021F;
+            this.contact.HeaderText = "CONTACT NO.";
+            this.contact.Name = "contact";
+            this.contact.Width = 200;
+            // 
+            // type
+            // 
+            this.type.FillWeight = 44.91021F;
+            this.type.HeaderText = "TYPE";
+            this.type.Items.AddRange(new object[] {
+            "STUDENT",
+            "OUT OF SCHOOL YOUTH"});
+            this.type.Name = "type";
+            this.type.Width = 200;
+            // 
+            // _SPES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -414,7 +480,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SPES";
+            this.Name = "_SPES";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Child Labor";
             this.Load += new System.EventHandler(this.childLabor_Load);
@@ -441,10 +507,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn middlename;
-        private System.Windows.Forms.DataGridViewComboBoxColumn gender;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -453,5 +515,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middlename;
+        private System.Windows.Forms.DataGridViewComboBoxColumn gender;
+        private System.Windows.Forms.DataGridViewComboBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contact;
+        private System.Windows.Forms.DataGridViewComboBoxColumn type;
     }
 }

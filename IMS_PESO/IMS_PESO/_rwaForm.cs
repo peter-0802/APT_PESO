@@ -66,8 +66,8 @@ namespace IMS_PESO
                     textBox4.Text = position;
                     string tel = myreader.GetString("tel");
                     textBox5.Text = tel;
-                    string fax = myreader.GetString("fax");
-                    textBox9.Text = fax;
+                    string fax = myreader.GetString("type");
+                    comboBox1.Text = fax;
                     string email = myreader.GetString("email");
                     textBox11.Text = email;
                 }
@@ -103,12 +103,12 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@contact_person", textBox10.Text);
                     myCommand.Parameters.AddWithValue("@position", textBox4.Text);
                     myCommand.Parameters.AddWithValue("@tel", textBox5.Text);
-                    myCommand.Parameters.AddWithValue("@fax", textBox9.Text);
+                    myCommand.Parameters.AddWithValue("@type", comboBox1.Text);
                     myCommand.Parameters.AddWithValue("@email", textBox11.Text);
                 string query = @"insert into rwa
-                                        (date, code, establishment_name, acronym, tin, employer_type, work_force, business_line, address, municipality, province, contact_person, position, tel, fax, email)
+                                        (date, code, establishment_name, acronym, tin, employer_type, work_force, business_line, address, municipality, province, contact_person, position, tel, type, email)
                                         values
-                                        (@date, (select if (count(id) <= 0, 'RWA - 1', concat('RWA - ', max(id) + 1)) code from rwa as code), @establishment_name, @acronym, @tin, @employer_type, @work_force, @business_line, @address, @municipality, @province, @contact_person, @position, @tel, @fax, @email)";
+                                        (@date, (select if (count(id) <= 0, 'RWA - 1', concat('RWA - ', max(id) + 1)) code from rwa as code), @establishment_name, @acronym, @tin, @employer_type, @work_force, @business_line, @address, @municipality, @province, @contact_person, @position, @tel, @type, @email)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -165,12 +165,12 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@contact_person", textBox10.Text);
                 myCommand.Parameters.AddWithValue("@position", textBox4.Text);
                 myCommand.Parameters.AddWithValue("@tel", textBox5.Text);
-                myCommand.Parameters.AddWithValue("@fax", textBox9.Text);
+                myCommand.Parameters.AddWithValue("@type", comboBox1.Text);
                 myCommand.Parameters.AddWithValue("@email", textBox11.Text);
                 string query = @"insert into rwa
-                                        (date, code, establishment_name, acronym, tin, employer_type, work_force, business_line, address, municipality, province, contact_person, position, tel, fax, email)
+                                        (date, code, establishment_name, acronym, tin, employer_type, work_force, business_line, address, municipality, province, contact_person, position, tel, type, email)
                                         values
-                                        (@date, @code, @establishment_name, @acronym, @tin, @employer_type, @work_force, @business_line, @address, @municipality, @province, @contact_person, @position, @tel, @fax, @email)";
+                                        (@date, @code, @establishment_name, @acronym, @tin, @employer_type, @work_force, @business_line, @address, @municipality, @province, @contact_person, @position, @tel, @type, @email)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -223,6 +223,11 @@ namespace IMS_PESO
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

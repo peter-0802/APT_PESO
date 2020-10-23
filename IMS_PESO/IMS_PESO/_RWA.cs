@@ -57,7 +57,7 @@ namespace IMS_PESO
                                 contact_person `CONTACT PERSON`,
                                 position `POSITION`,
                                 tel `TEL/MOBILE NO.`,
-                                fax `FAX`,
+                                type `TYPE`,
                                 email `EMAIL`
                                 from rwa";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);

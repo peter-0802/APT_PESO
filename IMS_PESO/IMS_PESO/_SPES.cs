@@ -93,12 +93,18 @@ namespace IMS_PESO
                         myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
                         myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
                         myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
+                        myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
                         myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
+                        myCommand.Parameters.AddWithValue("@age", row.Cells["age"].Value);
+                        myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                        myCommand.Parameters.AddWithValue("@type", row.Cells["type"].Value);
+
+                    
                         myCommand.Parameters.AddWithValue("@notes", "notes");
                         string query = @"insert into spes
-                                        (event, event_date, host, veneu, surname, firstname, middlename, gender, notes)
+                                        (event, event_date, host, veneu, surname, firstname, middlename, address,  gender, age, contact, type)
                                         values
-                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @notes)";
+                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @address,  @gender, @age, @contact, @type)";
                         myCommand.CommandText = query;
                         myCommand.ExecuteNonQuery();
                 }
@@ -137,12 +143,6 @@ namespace IMS_PESO
             myCommand.Transaction = myTrans;
             try
             {
-
-                myCommand.Parameters.AddWithValue("@event", label9.Text);
-                string qD = @"delete from spes where event = @event;";
-                myCommand.CommandText = qD;
-                myCommand.ExecuteNonQuery();
-
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     myCommand = conn.CreateCommand();
@@ -154,17 +154,23 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
                     myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
                     myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
+                    myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
                     myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
+                    myCommand.Parameters.AddWithValue("@age", row.Cells["age"].Value);
+                    myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                    myCommand.Parameters.AddWithValue("@type", row.Cells["type"].Value);
+
+
                     myCommand.Parameters.AddWithValue("@notes", "notes");
-                    string query = @"insert ignore into spes
-                                        (event, event_date, host, veneu, surname, firstname, middlename, gender, notes)
+                    string query = @"insert into spes
+                                        (event, event_date, host, veneu, surname, firstname, middlename, address,  gender, age, contact, type)
                                         values
-                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @notes)";
+                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @address,  @gender, @age, @contact, @type)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Record Updated!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Record Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {

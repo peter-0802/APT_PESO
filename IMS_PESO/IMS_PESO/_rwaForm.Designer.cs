@@ -57,10 +57,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -361,18 +361,9 @@
             this.label16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(22, 432);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 18);
+            this.label16.Size = new System.Drawing.Size(52, 18);
             this.label16.TabIndex = 111;
-            this.label16.Text = "Fax No:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(195, 429);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(348, 26);
-            this.textBox9.TabIndex = 14;
+            this.label16.Text = "Type:";
             // 
             // label17
             // 
@@ -402,16 +393,31 @@
             this.textBox12.Size = new System.Drawing.Size(348, 26);
             this.textBox12.TabIndex = 10;
             // 
-            // rwaForm
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 18;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Registered",
+            "Unregistered"});
+            this.comboBox1.Location = new System.Drawing.Point(195, 429);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(348, 26);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // _rwaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 560);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label14);
@@ -443,7 +449,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "rwaForm";
+            this.Name = "_rwaForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -485,9 +491,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
