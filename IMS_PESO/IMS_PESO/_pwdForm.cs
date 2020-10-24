@@ -50,8 +50,14 @@ namespace IMS_PESO
                     textBox3.Text = middlename;
                     string gender = myreader.GetString("gender");
                     comboBox2.Text = gender;
+
+                    string age = myreader.GetString("age");
+                    textBox4.Text = age;
+                    string contact = myreader.GetString("contact");
+                    textBox7.Text = contact;
+
                     string address = myreader.GetString("address");
-                    textBox5.Text = address;
+                    comboBox3.Text = address;
                     string disability = myreader.GetString("disability");
                     textBox6.Text = disability;
                     string remarks = myreader.GetString("remarks");
@@ -80,14 +86,16 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@surname", textBox1.Text);
                     myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
                     myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
-                    myCommand.Parameters.AddWithValue("@address", textBox5.Text);
+                    myCommand.Parameters.AddWithValue("@address", comboBox3.Text);
                     myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
+                    myCommand.Parameters.AddWithValue("@age", textBox4.Text);
+                    myCommand.Parameters.AddWithValue("@contact", textBox7.Text);
                     myCommand.Parameters.AddWithValue("@disability", textBox6.Text);
                     myCommand.Parameters.AddWithValue("@remarks", textBox10.Text);
                     string query = @"insert ignore into pwd
-                                        (date, code, surname, firstname, middlename, address, gender, disability, remarks)
+                                        (date, code, surname, firstname, middlename, address, gender, age, contact, disability, remarks)
                                         values
-                                        (@date, (select if (count(id) <= 0, 'PWD - 1', concat('PWD - ', max(id) + 1)) code from pwd as code), @surname, @firstname, @middlename, @address, @gender, @disability, @remarks)";
+                                        (@date, (select if (count(id) <= 0, 'PWD - 1', concat('PWD - ', max(id) + 1)) code from pwd as code), @surname, @firstname, @middlename, @address, @gender, @age, @contact, @disability, @remarks)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -180,14 +188,16 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@surname", textBox1.Text);
                 myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
                 myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
-                myCommand.Parameters.AddWithValue("@address", textBox5.Text);
+                myCommand.Parameters.AddWithValue("@address", comboBox3.Text);
                 myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
+                myCommand.Parameters.AddWithValue("@age", textBox4.Text);
+                myCommand.Parameters.AddWithValue("@contact", textBox7.Text);
                 myCommand.Parameters.AddWithValue("@disability", textBox6.Text);
                 myCommand.Parameters.AddWithValue("@remarks", textBox10.Text);
                 string query = @"insert into pwd
-                                        (date, code, surname, firstname, middlename, address, gender, disability, remarks)
+                                        (date, code, surname, firstname, middlename, address, gender, age, contact, disability, remarks)
                                         values
-                                        (@date, @code, @surname, @firstname, @middlename, @address, @gender, @disability, @remarks)";
+                                        (@date, @code, @surname, @firstname, @middlename, @address, @gender, @age, @contact, @disability, @remarks)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();

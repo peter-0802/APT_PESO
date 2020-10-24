@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class childLaborFilter
+    partial class _childLaborFilter
     {
         /// <summary>
         /// Required designer variable.

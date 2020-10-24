@@ -10,9 +10,9 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class childLaborFilter : Form
+    public partial class _childLaborFilter : Form
     {
-        public childLaborFilter()
+        public _childLaborFilter()
         {
             InitializeComponent();
         }
@@ -30,11 +30,13 @@ namespace IMS_PESO
                         event,
                         host,
                         veneu,
-                        surname,
-                        firstname,
-                        middlename,
+                        concat(surname, ', ', firstname, ' ', middlename) `name`,
                         gender,
-                        concat(surname, firstname, middlename) `test`
+                        purok,
+                        address,
+                        dob,
+                        contact,
+                        work_type
                         FROM child_labor
                         where event_date between '{0}' and '{1}'
                         and event like '%%{2}%%'
@@ -52,7 +54,7 @@ namespace IMS_PESO
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(ds, ds.Tables[datasetTable].TableName);
-                cr_childLaborReport rep = new cr_childLaborReport();
+                _cr_childLaborReport rep = new _cr_childLaborReport();
                 rep.SetDataSource(ds);
                 a.crystalReportViewer1.ReportSource = rep;
                 a.ShowDialog();

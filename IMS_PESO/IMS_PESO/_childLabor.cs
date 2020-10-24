@@ -94,11 +94,15 @@ namespace IMS_PESO
                         myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
                         myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
                         myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
-                        myCommand.Parameters.AddWithValue("@notes", "notes");
+                        myCommand.Parameters.AddWithValue("@purok", row.Cells["purok"].Value);
+                        myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
+                        myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
+                        myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                        myCommand.Parameters.AddWithValue("@work_type", row.Cells["work_type"].Value);
                         string query = @"insert into child_labor
-                                        (event, event_date, host, veneu, surname, firstname, middlename, gender, notes)
+                                        (event, event_date, host, veneu, surname, firstname, middlename, gender, purok, address, dob, contact, work_type)
                                         values
-                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @notes)";
+                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @purok, @address, @dob, @contact, @work_type)";
                         myCommand.CommandText = query;
                         myCommand.ExecuteNonQuery();
                 }
@@ -203,11 +207,15 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
                     myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
                     myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
-                    myCommand.Parameters.AddWithValue("@notes", "notes");
+                    myCommand.Parameters.AddWithValue("@purok", row.Cells["purok"].Value);
+                    myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
+                    myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
+                    myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                    myCommand.Parameters.AddWithValue("@work_type", row.Cells["work_type"].Value);
                     string query = @"insert into child_labor
-                                        (event, event_date, host, veneu, surname, firstname, middlename, gender, notes)
+                                        (event, event_date, host, veneu, surname, firstname, middlename, gender, purok, address, dob, contact, work_type)
                                         values
-                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @notes)";
+                                        (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @purok, @address, @dob, @contact, @work_type)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 }
@@ -427,7 +435,12 @@ namespace IMS_PESO
                         surname,
                         firstname,
                         middlename,
-                        gender
+                        gender,
+                        purok,
+                        address,
+                        dob,
+                        contact,
+                        work_type
                         from child_labor
                         where event = '{0}'";
             string FinalQuery = string.Format(query, label9.Text);
@@ -446,6 +459,11 @@ namespace IMS_PESO
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["gender"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["purok"].Value = dbdatasec1.Rows[i]["purok"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["address"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["dob"].Value = dbdatasec1.Rows[i]["dob"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["contact"].Value = dbdatasec1.Rows[i]["contact"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["work_type"].Value = dbdatasec1.Rows[i]["work_type"].ToString();
                 }
             }
             catch (Exception ex)
@@ -536,7 +554,7 @@ namespace IMS_PESO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            childLaborFilter a = new childLaborFilter();
+            _childLaborFilter a = new _childLaborFilter();
             a.ShowDialog();
         }
 

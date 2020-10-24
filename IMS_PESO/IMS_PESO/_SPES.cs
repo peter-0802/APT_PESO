@@ -143,6 +143,12 @@ namespace IMS_PESO
             myCommand.Transaction = myTrans;
             try
             {
+
+                myCommand.Parameters.AddWithValue("@event", label9.Text);
+                string qD = @"delete from spes where event = @event;";
+                myCommand.CommandText = qD;
+                myCommand.ExecuteNonQuery();
+
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     myCommand = conn.CreateCommand();

@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.button16 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -57,6 +53,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.purok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.work_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -81,7 +86,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 30);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 10000;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // label3
@@ -123,30 +128,33 @@
             // 
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.surname,
             this.firstname,
             this.middlename,
-            this.gender});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.gender,
+            this.purok,
+            this.address,
+            this.dob,
+            this.contact,
+            this.work_type});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(15, 151);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -155,36 +163,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowLeave);
-            // 
-            // surname
-            // 
-            this.surname.HeaderText = "SURNAME";
-            this.surname.Name = "surname";
-            this.surname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.surname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // firstname
-            // 
-            this.firstname.HeaderText = "FIRST NAME";
-            this.firstname.Name = "firstname";
-            this.firstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.firstname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // middlename
-            // 
-            this.middlename.HeaderText = "MIDDLE NAME";
-            this.middlename.Name = "middlename";
-            this.middlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.middlename.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // gender
-            // 
-            this.gender.HeaderText = "GENDER";
-            this.gender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.gender.Name = "gender";
-            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // textBox2
             // 
@@ -287,23 +265,23 @@
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.Location = new System.Drawing.Point(885, 92);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -387,6 +365,90 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // surname
+            // 
+            this.surname.HeaderText = "SURNAME";
+            this.surname.Name = "surname";
+            this.surname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.surname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.surname.Width = 201;
+            // 
+            // firstname
+            // 
+            this.firstname.HeaderText = "FIRST NAME";
+            this.firstname.Name = "firstname";
+            this.firstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.firstname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.firstname.Width = 201;
+            // 
+            // middlename
+            // 
+            this.middlename.HeaderText = "MIDDLE NAME";
+            this.middlename.Name = "middlename";
+            this.middlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.middlename.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.middlename.Width = 201;
+            // 
+            // gender
+            // 
+            this.gender.HeaderText = "GENDER";
+            this.gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.gender.Name = "gender";
+            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // purok
+            // 
+            this.purok.HeaderText = "PUROK";
+            this.purok.Name = "purok";
+            // 
+            // address
+            // 
+            this.address.HeaderText = "ADDRESS";
+            this.address.Items.AddRange(new object[] {
+            "BACUNGAN",
+            "BALNATE",
+            "BARAYONG",
+            "BLOCON",
+            "DALAWINON",
+            "DALUMAY",
+            "GLAMANG",
+            "KANAPOLO",
+            "KASUGA",
+            "LOWER BALA",
+            "MABINI",
+            "MAIBO",
+            "MALAWANIT",
+            "MALONGON",
+            "NEW ILOCOS",
+            "NEW OPON",
+            "POBLACION",
+            "SAN ISIDRO",
+            "SAN MIGUEL",
+            "TACUL",
+            "TAGAYTAY",
+            "UPPER BALA"});
+            this.address.Name = "address";
+            this.address.Width = 200;
+            // 
+            // dob
+            // 
+            this.dob.HeaderText = "BIRTHDAY";
+            this.dob.Name = "dob";
+            // 
+            // contact
+            // 
+            this.contact.HeaderText = "CONTACT";
+            this.contact.Name = "contact";
+            this.contact.Width = 150;
+            // 
+            // work_type
+            // 
+            this.work_type.HeaderText = "NATURE OF WORK";
+            this.work_type.Name = "work_type";
+            this.work_type.Width = 200;
+            // 
             // _childLabor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,10 +503,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn middlename;
-        private System.Windows.Forms.DataGridViewComboBoxColumn gender;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -453,5 +511,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middlename;
+        private System.Windows.Forms.DataGridViewComboBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purok;
+        private System.Windows.Forms.DataGridViewComboBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn work_type;
     }
 }

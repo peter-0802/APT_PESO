@@ -637,13 +637,19 @@ namespace IMS_PESO {
             
             private global::System.Data.DataColumn columnveneu;
             
-            private global::System.Data.DataColumn columnsurname;
-            
-            private global::System.Data.DataColumn columnfirstname;
-            
-            private global::System.Data.DataColumn columnmiddlename;
+            private global::System.Data.DataColumn columnname;
             
             private global::System.Data.DataColumn columngender;
+            
+            private global::System.Data.DataColumn columnpurok;
+            
+            private global::System.Data.DataColumn columnaddress;
+            
+            private global::System.Data.DataColumn columndob;
+            
+            private global::System.Data.DataColumn columncontact;
+            
+            private global::System.Data.DataColumn columnwork_type;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -712,25 +718,9 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn surnameColumn {
+            public global::System.Data.DataColumn nameColumn {
                 get {
-                    return this.columnsurname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn firstnameColumn {
-                get {
-                    return this.columnfirstname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn middlenameColumn {
-                get {
-                    return this.columnmiddlename;
+                    return this.columnname;
                 }
             }
             
@@ -739,6 +729,46 @@ namespace IMS_PESO {
             public global::System.Data.DataColumn genderColumn {
                 get {
                     return this.columngender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn purokColumn {
+                get {
+                    return this.columnpurok;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn addressColumn {
+                get {
+                    return this.columnaddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn dobColumn {
+                get {
+                    return this.columndob;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn contactColumn {
+                get {
+                    return this.columncontact;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn work_typeColumn {
+                get {
+                    return this.columnwork_type;
                 }
             }
             
@@ -779,17 +809,20 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public childLaborReportRow AddchildLaborReportRow(string event_date, string _event, string host, string veneu, string surname, string firstname, string middlename, string gender) {
+            public childLaborReportRow AddchildLaborReportRow(string event_date, string _event, string host, string veneu, string name, string gender, string purok, string address, string dob, string contact, string work_type) {
                 childLaborReportRow rowchildLaborReportRow = ((childLaborReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         event_date,
                         _event,
                         host,
                         veneu,
-                        surname,
-                        firstname,
-                        middlename,
-                        gender};
+                        name,
+                        gender,
+                        purok,
+                        address,
+                        dob,
+                        contact,
+                        work_type};
                 rowchildLaborReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowchildLaborReportRow);
                 return rowchildLaborReportRow;
@@ -816,10 +849,13 @@ namespace IMS_PESO {
                 this.columnevent = base.Columns["event"];
                 this.columnhost = base.Columns["host"];
                 this.columnveneu = base.Columns["veneu"];
-                this.columnsurname = base.Columns["surname"];
-                this.columnfirstname = base.Columns["firstname"];
-                this.columnmiddlename = base.Columns["middlename"];
+                this.columnname = base.Columns["name"];
                 this.columngender = base.Columns["gender"];
+                this.columnpurok = base.Columns["purok"];
+                this.columnaddress = base.Columns["address"];
+                this.columndob = base.Columns["dob"];
+                this.columncontact = base.Columns["contact"];
+                this.columnwork_type = base.Columns["work_type"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -836,14 +872,20 @@ namespace IMS_PESO {
                 base.Columns.Add(this.columnhost);
                 this.columnveneu = new global::System.Data.DataColumn("veneu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnveneu);
-                this.columnsurname = new global::System.Data.DataColumn("surname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsurname);
-                this.columnfirstname = new global::System.Data.DataColumn("firstname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfirstname);
-                this.columnmiddlename = new global::System.Data.DataColumn("middlename", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmiddlename);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
                 this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngender);
+                this.columnpurok = new global::System.Data.DataColumn("purok", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpurok);
+                this.columnaddress = new global::System.Data.DataColumn("address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaddress);
+                this.columndob = new global::System.Data.DataColumn("dob", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndob);
+                this.columncontact = new global::System.Data.DataColumn("contact", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontact);
+                this.columnwork_type = new global::System.Data.DataColumn("work_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwork_type);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4775,49 +4817,17 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string surname {
+            public string name {
                 get {
                     try {
-                        return ((string)(this[this.tablechildLaborReport.surnameColumn]));
+                        return ((string)(this[this.tablechildLaborReport.nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'surname\' in table \'childLaborReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'name\' in table \'childLaborReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablechildLaborReport.surnameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string firstname {
-                get {
-                    try {
-                        return ((string)(this[this.tablechildLaborReport.firstnameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'firstname\' in table \'childLaborReport\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablechildLaborReport.firstnameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string middlename {
-                get {
-                    try {
-                        return ((string)(this[this.tablechildLaborReport.middlenameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'middlename\' in table \'childLaborReport\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablechildLaborReport.middlenameColumn] = value;
+                    this[this.tablechildLaborReport.nameColumn] = value;
                 }
             }
             
@@ -4834,6 +4844,86 @@ namespace IMS_PESO {
                 }
                 set {
                     this[this.tablechildLaborReport.genderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string purok {
+                get {
+                    try {
+                        return ((string)(this[this.tablechildLaborReport.purokColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'purok\' in table \'childLaborReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablechildLaborReport.purokColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string address {
+                get {
+                    try {
+                        return ((string)(this[this.tablechildLaborReport.addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'address\' in table \'childLaborReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablechildLaborReport.addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string dob {
+                get {
+                    try {
+                        return ((string)(this[this.tablechildLaborReport.dobColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dob\' in table \'childLaborReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablechildLaborReport.dobColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string contact {
+                get {
+                    try {
+                        return ((string)(this[this.tablechildLaborReport.contactColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'contact\' in table \'childLaborReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablechildLaborReport.contactColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string work_type {
+                get {
+                    try {
+                        return ((string)(this[this.tablechildLaborReport.work_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'work_type\' in table \'childLaborReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablechildLaborReport.work_typeColumn] = value;
                 }
             }
             
@@ -4887,38 +4977,14 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IssurnameNull() {
-                return this.IsNull(this.tablechildLaborReport.surnameColumn);
+            public bool IsnameNull() {
+                return this.IsNull(this.tablechildLaborReport.nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetsurnameNull() {
-                this[this.tablechildLaborReport.surnameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsfirstnameNull() {
-                return this.IsNull(this.tablechildLaborReport.firstnameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetfirstnameNull() {
-                this[this.tablechildLaborReport.firstnameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsmiddlenameNull() {
-                return this.IsNull(this.tablechildLaborReport.middlenameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetmiddlenameNull() {
-                this[this.tablechildLaborReport.middlenameColumn] = global::System.Convert.DBNull;
+            public void SetnameNull() {
+                this[this.tablechildLaborReport.nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4931,6 +4997,66 @@ namespace IMS_PESO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetgenderNull() {
                 this[this.tablechildLaborReport.genderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IspurokNull() {
+                return this.IsNull(this.tablechildLaborReport.purokColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetpurokNull() {
+                this[this.tablechildLaborReport.purokColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsaddressNull() {
+                return this.IsNull(this.tablechildLaborReport.addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetaddressNull() {
+                this[this.tablechildLaborReport.addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdobNull() {
+                return this.IsNull(this.tablechildLaborReport.dobColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdobNull() {
+                this[this.tablechildLaborReport.dobColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscontactNull() {
+                return this.IsNull(this.tablechildLaborReport.contactColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcontactNull() {
+                this[this.tablechildLaborReport.contactColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iswork_typeNull() {
+                return this.IsNull(this.tablechildLaborReport.work_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setwork_typeNull() {
+                this[this.tablechildLaborReport.work_typeColumn] = global::System.Convert.DBNull;
             }
         }
         

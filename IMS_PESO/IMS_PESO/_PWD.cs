@@ -50,6 +50,8 @@ namespace IMS_PESO
                                 middlename `MIDDLE NAME`,
                                 address `ADDRESS`,
                                 gender `GENDER`,
+                                age `AGE`,
+                                contact `CONTACT`,
                                 disability `DISABILITY`,
                                 remarks `REMARKS`
                                 FROM pwd";
