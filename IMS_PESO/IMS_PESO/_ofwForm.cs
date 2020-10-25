@@ -51,7 +51,7 @@ namespace IMS_PESO
                     string gender = myreader.GetString("gender");
                     comboBox2.Text = gender;
                     string address = myreader.GetString("address");
-                    textBox5.Text = address;
+                    comboBox5.Text = address;
                     string country = myreader.GetString("country");
                     textBox6.Text = country;
                     string passport = myreader.GetString("passport");
@@ -88,7 +88,7 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@surname", textBox1.Text);
                     myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
                     myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
-                    myCommand.Parameters.AddWithValue("@address", textBox5.Text);
+                    myCommand.Parameters.AddWithValue("@address", comboBox5.Text);
                     myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
                     myCommand.Parameters.AddWithValue("@country", textBox6.Text);
                     myCommand.Parameters.AddWithValue("@passport", textBox7.Text);
@@ -194,7 +194,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@surname", textBox1.Text);
                 myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
                 myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
-                myCommand.Parameters.AddWithValue("@address", textBox5.Text);
+                myCommand.Parameters.AddWithValue("@address", comboBox5.Text);
                 myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
                 myCommand.Parameters.AddWithValue("@country", textBox6.Text);
                 myCommand.Parameters.AddWithValue("@passport", textBox7.Text);

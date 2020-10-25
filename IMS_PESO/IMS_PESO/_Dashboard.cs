@@ -102,6 +102,7 @@ namespace IMS_PESO
                 button1.Enabled = true;
                 button3.Enabled = true;
                 button13.Enabled = true;
+                button4.Enabled = true;
             }
             else
             {
@@ -313,6 +314,12 @@ namespace IMS_PESO
         private void button13_Click_1(object sender, EventArgs e)
         {
             _kasambahay a = new _kasambahay();
+            a.ShowDialog();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            _addUser a = new _addUser();
             a.ShowDialog();
         }
     }

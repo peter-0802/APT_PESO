@@ -44,8 +44,9 @@ namespace IMS_PESO
                         disability,
                         remarks
                         from pwd
-                        where date between '{0}' and '{1}'";
-            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
+                        where date between '{0}' and '{1}'
+                        and school like '%%{2}%%'";
+            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text);
 
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))

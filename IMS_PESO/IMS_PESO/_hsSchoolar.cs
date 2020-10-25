@@ -510,7 +510,7 @@ namespace IMS_PESO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            hsSchoolarFilter a = new hsSchoolarFilter();
+            _hsSchoolarFilter a = new _hsSchoolarFilter();
             a.ShowDialog();
         }
 

@@ -41,8 +41,11 @@ namespace IMS_PESO
                             status `STATUS`
                             FROM colschoolar
                             where date between '{0}' and '{1}'
+                            and address like '%%{2}%%'
+                            and school like '%%{3}%%'
+                            and status like '%%{4}%%'
                             group by code";
-            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
+            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text, textBox6.Text, comboBox1.Text);
             string datasetTable = "colReport";
 
             dataset ds = new dataset();
@@ -53,11 +56,17 @@ namespace IMS_PESO
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(ds, ds.Tables[datasetTable].TableName);
-                _cr_colReport rep = new _cr_colReport();
+                //_cr_colReport rep = new _cr_colReport();
+                _cr_colReport2 rep = new _cr_colReport2();
                 rep.SetDataSource(ds);
                 a.crystalReportViewer1.ReportSource = rep;
                 a.ShowDialog();
             }
+        }
+
+        private void _collegeSchoolarFilter_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

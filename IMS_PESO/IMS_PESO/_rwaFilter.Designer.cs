@@ -91,11 +91,11 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // _ofwFilter
+            // _rwaFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 142);
+            this.ClientSize = new System.Drawing.Size(422, 196);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
@@ -103,7 +103,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "_ofwFilter";
+            this.Name = "_rwaFilter";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Report Filter";

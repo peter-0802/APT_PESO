@@ -10,9 +10,9 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class hsSchoolarFilter : Form
+    public partial class _hsSchoolarFilter : Form
     {
-        public hsSchoolarFilter()
+        public _hsSchoolarFilter()
         {
             InitializeComponent();
         }
@@ -41,8 +41,11 @@ namespace IMS_PESO
                             status `STATUS`
                             FROM hsshcoolar
                             where date between '{0}' and '{1}'
+                            and address like '%%{2}%%'
+                            and school like '%%{3}%%'
+                            and status like '%%{4}%%'
                             group by code";
-            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
+            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text, textBox6.Text, comboBox1.Text);
             string datasetTable = "hsReport";
 
             dataset ds = new dataset();

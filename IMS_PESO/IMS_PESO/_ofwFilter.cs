@@ -48,8 +48,11 @@ namespace IMS_PESO
                         status,
                         remarks
                         from ofw
-                        where date between '{0}' and '{1}'";
-            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
+                        where date between '{0}' and '{1}'
+                        and address like '%%{2}%%'
+                        and status like '%%{3}%%'
+                        ";
+            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text, comboBox2.Text);
 
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
@@ -67,6 +70,11 @@ namespace IMS_PESO
         }
         
         private void spesFilter_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

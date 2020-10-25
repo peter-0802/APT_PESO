@@ -409,7 +409,7 @@
             this.comboBox5.Location = new System.Drawing.Point(141, 269);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(348, 26);
-            this.comboBox5.TabIndex = 114;
+            this.comboBox5.TabIndex = 9;
             // 
             // _collegeSchoolarForm
             // 

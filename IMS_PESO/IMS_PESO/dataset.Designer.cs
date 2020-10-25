@@ -2668,6 +2668,8 @@ namespace IMS_PESO {
             
             private global::System.Data.DataColumn columnFATHERNAME;
             
+            private global::System.Data.DataColumn columnADDRESS;
+            
             private global::System.Data.DataColumn columnCONTACT;
             
             private global::System.Data.DataColumn columnSCHOOL;
@@ -2769,6 +2771,14 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ADDRESSColumn {
+                get {
+                    return this.columnADDRESS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn CONTACTColumn {
                 get {
                     return this.columnCONTACT;
@@ -2844,7 +2854,7 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public colReportRow AddcolReportRow(System.DateTime DATE, string CODE, string NAME, string GENDER, System.DateTime BOD, string MOTHERNAME, string FATHERNAME, string CONTACT, string SCHOOL, string YEAR, string AVE, string STATUS) {
+            public colReportRow AddcolReportRow(System.DateTime DATE, string CODE, string NAME, string GENDER, System.DateTime BOD, string MOTHERNAME, string FATHERNAME, string ADDRESS, string CONTACT, string SCHOOL, string YEAR, string AVE, string STATUS) {
                 colReportRow rowcolReportRow = ((colReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DATE,
@@ -2854,6 +2864,7 @@ namespace IMS_PESO {
                         BOD,
                         MOTHERNAME,
                         FATHERNAME,
+                        ADDRESS,
                         CONTACT,
                         SCHOOL,
                         YEAR,
@@ -2888,6 +2899,7 @@ namespace IMS_PESO {
                 this.columnBOD = base.Columns["BOD"];
                 this.columnMOTHERNAME = base.Columns["MOTHERNAME"];
                 this.columnFATHERNAME = base.Columns["FATHERNAME"];
+                this.columnADDRESS = base.Columns["ADDRESS"];
                 this.columnCONTACT = base.Columns["CONTACT"];
                 this.columnSCHOOL = base.Columns["SCHOOL"];
                 this.columnYEAR = base.Columns["YEAR"];
@@ -2912,6 +2924,8 @@ namespace IMS_PESO {
                 base.Columns.Add(this.columnMOTHERNAME);
                 this.columnFATHERNAME = new global::System.Data.DataColumn("FATHERNAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFATHERNAME);
+                this.columnADDRESS = new global::System.Data.DataColumn("ADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnADDRESS);
                 this.columnCONTACT = new global::System.Data.DataColumn("CONTACT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCONTACT);
                 this.columnSCHOOL = new global::System.Data.DataColumn("SCHOOL", typeof(string), null, global::System.Data.MappingType.Element);
@@ -6648,6 +6662,22 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ADDRESS {
+                get {
+                    try {
+                        return ((string)(this[this.tablecolReport.ADDRESSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ADDRESS\' in table \'colReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecolReport.ADDRESSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CONTACT {
                 get {
                     try {
@@ -6808,6 +6838,18 @@ namespace IMS_PESO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFATHERNAMENull() {
                 this[this.tablecolReport.FATHERNAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsADDRESSNull() {
+                return this.IsNull(this.tablecolReport.ADDRESSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetADDRESSNull() {
+                this[this.tablecolReport.ADDRESSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

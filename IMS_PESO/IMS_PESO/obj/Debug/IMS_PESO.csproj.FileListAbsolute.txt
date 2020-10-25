@@ -52,7 +52,6 @@ D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._ofwForm.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._jobFair.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._sraFilter.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._SRA.resources
-D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO.hsSchoolarFilter.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._HSschoolar.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._childLabor.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._Dashboard.resources
@@ -87,3 +86,5 @@ D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._kasambahayForm.resour
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._kasambahayFilter.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._spesFilter.resources
 D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._childLaborFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._hsSchoolarFilter.resources
+D:\Projects\APT_PESO\IMS_PESO\IMS_PESO\obj\Debug\IMS_PESO._addUser.resources
