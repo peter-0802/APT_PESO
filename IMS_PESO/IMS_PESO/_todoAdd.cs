@@ -39,9 +39,9 @@ namespace IMS_PESO
             try
             {
                 myCommand = conn.CreateCommand();
-                myCommand.Parameters.AddWithValue("@title", textBox5.Text);
-                myCommand.Parameters.AddWithValue("@desc", richTextBox1.Text);
-                myCommand.Parameters.AddWithValue("@assignee", textBox1.Text);
+                myCommand.Parameters.AddWithValue("@title", textBox6.Text);
+                myCommand.Parameters.AddWithValue("@desc", textBox2.Text);
+                myCommand.Parameters.AddWithValue("@assignee", textBox3.Text);
                 string query = @"insert into todo
                                         (title, `desc`, assignee)
                                         values
@@ -50,6 +50,9 @@ namespace IMS_PESO
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();
                 MessageBox.Show(this, "Task Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBox6.Text = string.Empty;
+                textBox2.Text = string.Empty;
+                textBox3.Text = string.Empty;
             }
             catch (Exception exg)
             {
@@ -72,5 +75,10 @@ namespace IMS_PESO
             }
             this.Close();
     }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

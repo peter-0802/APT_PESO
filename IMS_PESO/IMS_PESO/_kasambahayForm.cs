@@ -133,7 +133,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
                 myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
                 myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
-                string query = @"insert into contacts
+                string query = @"insert ignore into contacts
                                         (code, surname, firstname, middlename, sex)
                                         values
                                         ((select if (count(id) <= 0, 'CON - 1', concat('CON - ', max(id) + 1)) code from contacts as code), @surname, @firstname, @middlename, @gender)";

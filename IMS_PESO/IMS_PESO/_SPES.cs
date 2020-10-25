@@ -101,7 +101,7 @@ namespace IMS_PESO
 
                     
                         myCommand.Parameters.AddWithValue("@notes", "notes");
-                        string query = @"insert into spes
+                        string query = @"insert ignore into spes
                                         (event, event_date, host, veneu, surname, firstname, middlename, address,  gender, age, contact, type)
                                         values
                                         (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @address,  @gender, @age, @contact, @type)";
@@ -168,7 +168,7 @@ namespace IMS_PESO
 
 
                     myCommand.Parameters.AddWithValue("@notes", "notes");
-                    string query = @"insert into spes
+                    string query = @"insert ignore into spes
                                         (event, event_date, host, veneu, surname, firstname, middlename, address,  gender, age, contact, type)
                                         values
                                         (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @address,  @gender, @age, @contact, @type)";

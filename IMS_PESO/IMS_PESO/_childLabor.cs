@@ -99,7 +99,7 @@ namespace IMS_PESO
                         myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
                         myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
                         myCommand.Parameters.AddWithValue("@work_type", row.Cells["work_type"].Value);
-                        string query = @"insert into child_labor
+                        string query = @"insert ignore into child_labor
                                         (event, event_date, host, veneu, surname, firstname, middlename, gender, purok, address, dob, contact, work_type)
                                         values
                                         (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @purok, @address, @dob, @contact, @work_type)";
@@ -212,7 +212,7 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
                     myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
                     myCommand.Parameters.AddWithValue("@work_type", row.Cells["work_type"].Value);
-                    string query = @"insert into child_labor
+                    string query = @"insert ignore into child_labor
                                         (event, event_date, host, veneu, surname, firstname, middlename, gender, purok, address, dob, contact, work_type)
                                         values
                                         (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @purok, @address, @dob, @contact, @work_type)";

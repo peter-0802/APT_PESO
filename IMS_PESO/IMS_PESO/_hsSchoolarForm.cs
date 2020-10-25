@@ -104,7 +104,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@yearlevel", comboBox4.Text);
                 myCommand.Parameters.AddWithValue("@ave", textBox10.Text);
                 myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
-                string query = @"insert into hsshcoolar
+                string query = @"insert ignore into hsshcoolar
                                         (code, date ,surname, firstname, middlename, gender, dob, mother, father, address, contact, school, yearlevel, ave, status)
                                         values
                                         ((select if (count(id) <= 0, 'HSS - 1', concat('HSS - ', max(id) + 1)) code from hsshcoolar as code), @date, @surname, @firstname, @middlename, @gender, @dob, @mother, @father, @address, @contact, @school, @yearlevel, @ave, @status)";
@@ -149,7 +149,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@firstname", textBox2.Text);
                 myCommand.Parameters.AddWithValue("@middlename", textBox3.Text);
                 myCommand.Parameters.AddWithValue("@gender", comboBox2.Text);
-                string query = @"insert into contacts
+                string query = @"insert ignore into contacts
                                         (code, surname, firstname, middlename, sex)
                                         values
                                         ((select if (count(id) <= 0, 'CON - 1', concat('CON - ', max(id) + 1)) code from contacts as code), @surname, @firstname, @middlename, @gender)";
@@ -210,7 +210,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@yearlevel", comboBox4.Text);
                 myCommand.Parameters.AddWithValue("@ave", textBox10.Text);
                 myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
-                string query = @"insert into hsshcoolar
+                string query = @"insert ignore into hsshcoolar
                                         (code, date ,surname, firstname, middlename, gender, dob, mother, father, address, contact, school, yearlevel, ave, status)
                                         values
                                         (@code, @date, @surname, @firstname, @middlename, @gender, @dob, @mother, @father, @address, @contact, @school, @yearlevel, @ave, @status)";
