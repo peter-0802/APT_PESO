@@ -84,9 +84,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 18);
+            this.label1.Size = new System.Drawing.Size(252, 18);
             this.label1.TabIndex = 31;
-            this.label1.Text = "PESO - MAGSAYSAY IMS v1.xx";
+            this.label1.Text = "PESO - MAGSAYSAY IMS v1.01";
             // 
             // button16
             // 
@@ -406,7 +406,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(160, 48);
             this.button11.TabIndex = 32;
-            this.button11.Text = "Settings";
+            this.button11.Text = "Add Task";
             this.button11.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click_1);
@@ -467,7 +467,7 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(491, 48);
             this.button18.TabIndex = 38;
-            this.button18.Text = "Settings";
+            this.button18.Text = "Mark as Done";
             this.button18.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button18.UseVisualStyleBackColor = false;
             // 
@@ -482,7 +482,7 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(160, 48);
             this.button17.TabIndex = 37;
-            this.button17.Text = "Settings";
+            this.button17.Text = "Delete Task";
             this.button17.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button17.UseVisualStyleBackColor = false;
             // 
@@ -497,7 +497,7 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(160, 48);
             this.button14.TabIndex = 36;
-            this.button14.Text = "Settings";
+            this.button14.Text = "Update Task";
             this.button14.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button14.UseVisualStyleBackColor = false;
             // 
