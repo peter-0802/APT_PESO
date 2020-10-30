@@ -59,6 +59,7 @@ namespace IMS_PESO
         private void contactList_Load(object sender, EventArgs e)
         {
             getContactList();
+            DataGridViewColumnSelector cs = new DataGridViewColumnSelector(dataGridView1);
         }
        
         
@@ -309,6 +310,12 @@ namespace IMS_PESO
                 return;
             }
             delete();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            _nsrpForm a = new _nsrpForm();
+            a.Show();
         }
     }
 }

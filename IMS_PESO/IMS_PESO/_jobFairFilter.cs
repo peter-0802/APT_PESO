@@ -29,29 +29,28 @@ namespace IMS_PESO
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             _report a = new _report();
             string iQry = @"SELECT
-                        (select min(event_date) from jobfair where event_date between '{0}' and '{1}') `min`,
-                        (select max(event_date) from jobfair where event_date between '{0}' and '{1}') `max`,
+                        (select min(event_date) from jobfair2 where event_date between '{0}' and '{1}') `min`,
+                        (select max(event_date) from jobfair2 where event_date between '{0}' and '{1}') `max`,
+                        event_date,
                         host,
                         concat(surname, ', ', firstname, ' ', middlename) `name`,
-                        address,
-                        gender,
-                        tel_no,
-                        job_position,
+                        brgy `address`,
+                        sex `gender`,
+                        cp_no `tel_no`,
+                        position `job_position`,
                         hiring_company,
-                        location,
+                        jobsite `location`,
                         `status`,
                         remarks
-                        FROM jobfair
+                        FROM jobfair2
                         where event_date between '{0}' and '{1}'
-                        and host like '%%{2}%%'
-                        group by event_date";
+                        and host like '%%{2}%%'";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text);
 
             dataset ds = new dataset();

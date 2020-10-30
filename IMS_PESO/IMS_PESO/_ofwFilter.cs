@@ -39,17 +39,17 @@ namespace IMS_PESO
                         date,
                         code,
                         concat(surname, ', ', firstname, ' ', middlename) name,
-                        address,
-                        gender,
+                        brgy `address`,
+                        sex `gender`,
                         country,
                         passport,
                         type,
-                        contact_no,
+                        cp_no `contact_no`,
                         status,
                         remarks
-                        from ofw
+                        from ofw2
                         where date between '{0}' and '{1}'
-                        and address like '%%{2}%%'
+                        and brgy like '%%{2}%%'
                         and status like '%%{3}%%'
                         ";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text, comboBox2.Text);

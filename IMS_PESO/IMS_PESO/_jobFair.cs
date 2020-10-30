@@ -42,7 +42,7 @@ namespace IMS_PESO
         }
         private void getEvent()
         {
-            string query = @"select code `Code`, event_date `DATE` from jobfair group by code";
+            string query = @"select code `Code`, event_date `DATE` from jobfair2 group by code";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -143,7 +143,7 @@ namespace IMS_PESO
             {
 
                 myCommand.Parameters.AddWithValue("@code", label9.Text);
-                string qD = @"delete from jobfair where code = @code;";
+                string qD = @"delete from jobfair2 where code = @code;";
                 myCommand.CommandText = qD;
                 myCommand.ExecuteNonQuery();
 
@@ -151,24 +151,41 @@ namespace IMS_PESO
                 {
                     myCommand = conn.CreateCommand();
                     if (row.IsNewRow) continue;
-                    myCommand.Parameters.AddWithValue("@code", label9.Text);
                     myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                    myCommand.Parameters.AddWithValue("@code", label9.Text);
                     myCommand.Parameters.AddWithValue("@host", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
                     myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
                     myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
                     myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
+                    myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
+                    myCommand.Parameters.AddWithValue("@age", row.Cells["age"].Value);
+                    myCommand.Parameters.AddWithValue("@civil", row.Cells["civil"].Value);
+                    myCommand.Parameters.AddWithValue("@religion", row.Cells["religion"].Value);
                     myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
-                    myCommand.Parameters.AddWithValue("@tel_no", row.Cells["tel_no"].Value);
-                    myCommand.Parameters.AddWithValue("@job_position", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@municipality", "MAGSAYSAY");
+                    myCommand.Parameters.AddWithValue("@province", "DAVAO DEL SUR");
+                    myCommand.Parameters.AddWithValue("@email", row.Cells["email"].Value);
+                    myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                    myCommand.Parameters.AddWithValue("@pppp", row.Cells["pppp"].Value);
+                    myCommand.Parameters.AddWithValue("@emp_status", row.Cells["emp_status"].Value);
+                    myCommand.Parameters.AddWithValue("@job_pre", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@educ_level", row.Cells["educ_level"].Value);
+                    myCommand.Parameters.AddWithValue("@skills", row.Cells["skills"].Value);
+                    myCommand.Parameters.AddWithValue("@position", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@jobsite", row.Cells["location"].Value);
                     myCommand.Parameters.AddWithValue("@hiring_company", row.Cells["company"].Value);
-                    myCommand.Parameters.AddWithValue("@location", row.Cells["location"].Value);
                     myCommand.Parameters.AddWithValue("@status", row.Cells["status"].Value);
                     myCommand.Parameters.AddWithValue("@remarks", row.Cells["remarks"].Value);
-                    string query = @"insert ignore into jobfair
-                                        (code, event_date, host, surname, firstname, middlename, gender, address, tel_no, job_position, hiring_company, location, status, remarks)
+                    myCommand.Parameters.AddWithValue("@from", "JOB FAIR");
+                    string query = @"insert ignore into jobfair2
+                                        (code, event_date, host,
+                                         surname, firstname, middlename, dob, age, sex, civil_status, religion,
+                                         brgy, municipality, province, email, cp_no, 4ps, emp_status, job_pre, educ_level, skills, position, jobsite, hiring_company, status, remarks, `from`)
                                         values
-                                        (@code, @date, @host, @surname, @firstname, @middlename, @gender, @address, @tel_no, @job_position, @hiring_company, @location, @status, @remarks)";
+                                        (@code, @date, @host,
+                                         @surname, @firstname, @middlename, @dob, @age, @gender, @civil, @religion,
+                                         @address, @municipality, @province, @email, @contact, @pppp, @emp_status, @job_pre, @educ_level, @skills, @position, @jobsite, @hiring_company, @status, @remarks, @from)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 }
@@ -245,6 +262,114 @@ namespace IMS_PESO
                 conn.Close();
             }
         }
+
+        private void insertToContact2()
+        {
+            string code = null;
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            try
+            {
+                string querya = @"select if (count(id) <= 0, 'JF - 1', concat('JF - ', max(id) + 1)) code from jobfair2 as code limit 1";
+                MySqlCommand cmd = new MySqlCommand(querya, conn);
+                MySqlDataReader myreader;
+                conn.Open();
+                myreader = cmd.ExecuteReader();
+                int count = 0;
+                if (myreader.Read())
+                {
+                    count = count + 1;
+                }
+                if (count == 1)
+                {
+                    code = myreader.GetString("code");
+                }
+                else
+                {
+                    conn.Close();
+                }
+            }
+            catch (Exception ed)
+            {
+                MessageBox.Show(ed.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            conn.Open();
+            MySqlCommand myCommand = conn.CreateCommand();
+            MySqlTransaction myTrans;
+            myTrans = conn.BeginTransaction();
+            myCommand.Connection = conn;
+            myCommand.Transaction = myTrans;
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    myCommand = conn.CreateCommand();
+                    if (row.IsNewRow) continue;
+                    myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                    myCommand.Parameters.AddWithValue("@code", code);
+                    myCommand.Parameters.AddWithValue("@host", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
+                    myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
+                    myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
+                    myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
+                    myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
+                    myCommand.Parameters.AddWithValue("@age", row.Cells["age"].Value);
+                    myCommand.Parameters.AddWithValue("@civil", row.Cells["civil"].Value);
+                    myCommand.Parameters.AddWithValue("@religion", row.Cells["religion"].Value);
+                    myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
+                    myCommand.Parameters.AddWithValue("@municipality", "MAGSAYSAY");
+                    myCommand.Parameters.AddWithValue("@province", "DAVAO DEL SUR");
+                    myCommand.Parameters.AddWithValue("@email", row.Cells["email"].Value);
+                    myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                    myCommand.Parameters.AddWithValue("@pppp", row.Cells["pppp"].Value);
+                    myCommand.Parameters.AddWithValue("@emp_status", row.Cells["emp_status"].Value);
+                    myCommand.Parameters.AddWithValue("@job_pre", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@educ_level", row.Cells["educ_level"].Value);
+                    myCommand.Parameters.AddWithValue("@skills", row.Cells["skills"].Value);
+                    myCommand.Parameters.AddWithValue("@position", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@jobsite", row.Cells["location"].Value);
+                    myCommand.Parameters.AddWithValue("@hiring_company", row.Cells["company"].Value);
+                    myCommand.Parameters.AddWithValue("@status", row.Cells["status"].Value);
+                    myCommand.Parameters.AddWithValue("@remarks", row.Cells["remarks"].Value);
+                    myCommand.Parameters.AddWithValue("@from", "JOB FAIR");
+                    string query = @"insert ignore into jobfair2
+                                        (code, event_date, host,
+                                         surname, firstname, middlename, dob, age, sex, civil_status, religion,
+                                         brgy, municipality, province, email, cp_no, 4ps, emp_status, job_pre, educ_level, skills, position, jobsite, hiring_company, status, remarks, `from`)
+                                        values
+                                        (@code, @date, @host,
+                                         @surname, @firstname, @middlename, @dob, @age, @gender, @civil, @religion,
+                                         @address, @municipality, @province, @email, @contact, @pppp, @emp_status, @job_pre, @educ_level, @skills, @position, @jobsite, @hiring_company, @status, @remarks, @from)";
+                    myCommand.CommandText = query;
+                    myCommand.ExecuteNonQuery();
+                }
+                myTrans.Commit();
+                MessageBox.Show(this, "Contacts Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exg)
+            {
+                try
+                {
+                    myTrans.Rollback();
+                }
+                catch (Exception ex)
+                {
+                    if (myTrans.Connection != null)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                MessageBox.Show(exg.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(textBox3.Text))
@@ -253,8 +378,9 @@ namespace IMS_PESO
             }
             else
             {
-                        insert();
-                        insertToContact();
+                        //insert();
+                        //insertToContact();
+                        insertToContact2();
                         this.Close();
             }
             
@@ -361,7 +487,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from jobfair where code = @code;";
+                        string qD = @"delete from jobfair2 where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -410,20 +536,7 @@ namespace IMS_PESO
             this.dataGridView1.DataSource = null;
             this.dataGridView1.Rows.Clear();
             string query;
-            query = @"SELECT
-                        surname,
-                        firstname,
-                        middlename,
-                        address,
-                        gender,
-                        tel_no,
-                        job_position,
-                        hiring_company,
-                        location,
-                        status,
-                        remarks
-                        from jobfair
-                        where code = '{0}'";
+            query = @"SELECT * from jobfair2 where code = '{0}'";
             string FinalQuery = string.Format(query, label9.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
@@ -439,12 +552,23 @@ namespace IMS_PESO
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["surname"].Value = dbdatasec1.Rows[i]["surname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["gender"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["address"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["tel_no"].Value = dbdatasec1.Rows[i]["tel_no"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["position"].Value = dbdatasec1.Rows[i]["job_position"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["dob"].Value = dbdatasec1.Rows[i]["dob"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["sex"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["brgy"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["age"].Value = dbdatasec1.Rows[i]["age"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["religion"].Value = dbdatasec1.Rows[i]["religion"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["sex"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["civil"].Value = dbdatasec1.Rows[i]["civil_status"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["brgy"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["email"].Value = dbdatasec1.Rows[i]["email"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["contact"].Value = dbdatasec1.Rows[i]["cp_no"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["pppp"].Value = dbdatasec1.Rows[i]["4ps"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["emp_status"].Value = dbdatasec1.Rows[i]["emp_status"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["educ_level"].Value = dbdatasec1.Rows[i]["educ_level"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["skills"].Value = dbdatasec1.Rows[i]["skills"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["position"].Value = dbdatasec1.Rows[i]["position"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["location"].Value = dbdatasec1.Rows[i]["jobsite"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["company"].Value = dbdatasec1.Rows[i]["hiring_company"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["location"].Value = dbdatasec1.Rows[i]["location"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["status"].Value = dbdatasec1.Rows[i]["status"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["remarks"].Value = dbdatasec1.Rows[i]["remarks"].ToString();
                 }
@@ -478,7 +602,7 @@ namespace IMS_PESO
                                 code,
                                 host,
                                 event_date
-                                from jobfair
+                                from jobfair2
                                 where code = '{0}'
                                 group by code";
             string finalQuery = string.Format(query, label9.Text);

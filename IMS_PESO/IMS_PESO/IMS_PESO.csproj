@@ -166,6 +166,30 @@
     <Compile Include="_kasambahayFilter.Designer.cs">
       <DependentUpon>_kasambahayFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="_collegeSchoolarForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_collegeSchoolarForm2.Designer.cs">
+      <DependentUpon>_collegeSchoolarForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_nsrpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_nsrpForm.Designer.cs">
+      <DependentUpon>_nsrpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_kasambahayForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_kasambahayForm2.Designer.cs">
+      <DependentUpon>_kasambahayForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_ofwForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_ofwForm2.Designer.cs">
+      <DependentUpon>_ofwForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="_pwdFilter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,6 +527,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_kasambahayFilter.resx">
       <DependentUpon>_kasambahayFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_collegeSchoolarForm2.resx">
+      <DependentUpon>_collegeSchoolarForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_nsrpForm.resx">
+      <DependentUpon>_nsrpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_kasambahayForm2.resx">
+      <DependentUpon>_kasambahayForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_ofwForm2.resx">
+      <DependentUpon>_ofwForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_pwdFilter.resx">
       <DependentUpon>_pwdFilter.cs</DependentUpon>

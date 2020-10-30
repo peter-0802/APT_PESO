@@ -1867,6 +1867,8 @@ namespace IMS_PESO {
             
             private global::System.Data.DataColumn columnmax;
             
+            private global::System.Data.DataColumn columnevent_date;
+            
             private global::System.Data.DataColumn columnhost;
             
             private global::System.Data.DataColumn columnname;
@@ -1933,6 +1935,14 @@ namespace IMS_PESO {
             public global::System.Data.DataColumn maxColumn {
                 get {
                     return this.columnmax;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn event_dateColumn {
+                get {
+                    return this.columnevent_date;
                 }
             }
             
@@ -2053,11 +2063,12 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public jobFairRow AddjobFairRow(System.DateTime min, System.DateTime max, string host, string name, string address, string gender, string tel_no, string job_position, string hiring_company, string location, string status, string remarks) {
+            public jobFairRow AddjobFairRow(System.DateTime min, System.DateTime max, System.DateTime event_date, string host, string name, string address, string gender, string tel_no, string job_position, string hiring_company, string location, string status, string remarks) {
                 jobFairRow rowjobFairRow = ((jobFairRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         min,
                         max,
+                        event_date,
                         host,
                         name,
                         address,
@@ -2092,6 +2103,7 @@ namespace IMS_PESO {
             internal void InitVars() {
                 this.columnmin = base.Columns["min"];
                 this.columnmax = base.Columns["max"];
+                this.columnevent_date = base.Columns["event_date"];
                 this.columnhost = base.Columns["host"];
                 this.columnname = base.Columns["name"];
                 this.columnaddress = base.Columns["address"];
@@ -2111,6 +2123,8 @@ namespace IMS_PESO {
                 base.Columns.Add(this.columnmin);
                 this.columnmax = new global::System.Data.DataColumn("max", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmax);
+                this.columnevent_date = new global::System.Data.DataColumn("event_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnevent_date);
                 this.columnhost = new global::System.Data.DataColumn("host", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhost);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5908,6 +5922,22 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime event_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablejobFair.event_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'event_date\' in table \'jobFair\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobFair.event_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string host {
                 get {
                     try {
@@ -6088,6 +6118,18 @@ namespace IMS_PESO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetmaxNull() {
                 this[this.tablejobFair.maxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isevent_dateNull() {
+                return this.IsNull(this.tablejobFair.event_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setevent_dateNull() {
+                this[this.tablejobFair.event_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

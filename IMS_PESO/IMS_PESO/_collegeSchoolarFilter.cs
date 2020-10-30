@@ -29,19 +29,19 @@ namespace IMS_PESO
                             date `DATE`,
                             code `CODE`,
                             concat(surname, ', ', firstname, ' ', middlename) `NAME`,
-                            gender `GENDER`,
+                            sex `GENDER`,
                             dob `BOD`,
                             mother `MOTHERNAME`,
                             father `FATHERNAME`,
-                            address `ADDRESS`,
-                            contact `CONTACT`,
+                            brgy `ADDRESS`,
+                            cp_no `CONTACT`,
                             school `SCHOOL`,
                             yearlevel `YEAR`,
                             ave `AVE`,
                             status `STATUS`
-                            FROM colschoolar
+                            FROM schoolar_coll
                             where date between '{0}' and '{1}'
-                            and address like '%%{2}%%'
+                            and brgy like '%%{2}%%'
                             and school like '%%{3}%%'
                             and status like '%%{4}%%'
                             group by code";

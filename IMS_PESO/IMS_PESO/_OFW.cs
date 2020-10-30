@@ -48,14 +48,14 @@ namespace IMS_PESO
                                 surname `SURNAME`,
                                 firstname `FIRST NAME`,
                                 middlename `MIDDLE NAME`,
-                                address `ADDRESS`,
+                                brgy `ADDRESS`,
                                 country `COUNTRY`,
                                 passport `PASSPORT`,
                                 type `TYPE`,
-                                contact_no `COMTACT NO.`,
+                                cp_no `COMTACT NO.`,
                                 `status` `STATUS`,
                                 remarks `REMARKS`
-                                FROM ofw";
+                                FROM ofw2";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -244,7 +244,7 @@ namespace IMS_PESO
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            _ofwForm a = new _ofwForm();
+            _ofwForm2 a = new _ofwForm2();
             a.ShowDialog();
             getEvent();
         }
@@ -349,7 +349,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from ofw where code = @code;";
+                        string qD = @"delete from ofw2 where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -452,7 +452,7 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _ofwForm a = new _ofwForm();
+            _ofwForm2 a = new _ofwForm2();
             a.label2.Text = this.label9.Text;
             a.ShowDialog();
             getEvent();

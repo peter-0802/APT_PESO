@@ -238,7 +238,7 @@ namespace IMS_PESO
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            _collegeSchoolarForm a = new _collegeSchoolarForm();
+            _collegeSchoolarForm2 a = new _collegeSchoolarForm2();
             a.ShowDialog();
             getAttendee();
         }
@@ -344,7 +344,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from colschoolar where code = @code;";
+                        string qD = @"delete from schoolar_coll where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -395,17 +395,17 @@ namespace IMS_PESO
                             surname `SURNAME`,
                             firstname `FIRST NAME`,
                             middlename `MIDDLE NAME`,
-                            gender `GENDER`,
+                            sex `GENDER`,
                             dob `BIRTH DATE`,
                             mother `MOTHERS NAME`,
                             father `FATHERS NAME`,
-                            address `ADDRESS`,
-                            contact `CONTACT`,
+                            brgy `ADDRESS`,
+                            cp_no `CONTACT`,
                             school `SCHOOL`,
                             yearlevel `YEAR LEVEL`,
                             ave `AVERAGE`,
                             status `STATUS`
-                            FROM colschoolar";
+                            FROM schoolar_coll";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -495,7 +495,7 @@ namespace IMS_PESO
                 }
                 else
                 {
-                    _collegeSchoolarForm b = new _collegeSchoolarForm();
+                    _collegeSchoolarForm2 b = new _collegeSchoolarForm2();
                     b.label2.Text = label9.Text;
                     b.ShowDialog();
                 }

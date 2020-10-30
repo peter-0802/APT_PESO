@@ -42,7 +42,7 @@ namespace IMS_PESO
         }
         private void getEvent()
         {
-            string query = @"select sra_no `SRA NO.`, event_date `DATE` from sra group by sra_no";
+            string query = @"select sra_no `SRA NO.`, event_date `DATE` from sra2 group by sra_no";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -186,6 +186,84 @@ namespace IMS_PESO
                 conn.Close();
             }
         }
+        private void insertToContact2()
+        {
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            conn.Open();
+            MySqlCommand myCommand = conn.CreateCommand();
+            MySqlTransaction myTrans;
+            myTrans = conn.BeginTransaction();
+            myCommand.Connection = conn;
+            myCommand.Transaction = myTrans;
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    myCommand = conn.CreateCommand();
+                    if (row.IsNewRow) continue;
+                    myCommand.Parameters.AddWithValue("@acency", textBox1.Text);
+                    myCommand.Parameters.AddWithValue("@sra", textBox2.Text);
+                    myCommand.Parameters.AddWithValue("@venue", textBox4.Text);
+                    myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                    myCommand.Parameters.AddWithValue("@host", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@branch", textBox5.Text);
+                    myCommand.Parameters.AddWithValue("@rep_no", textBox6.Text);
+                    myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
+                    myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
+                    myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
+                    myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
+                    myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
+                    myCommand.Parameters.AddWithValue("@age", row.Cells["age"].Value);
+                    myCommand.Parameters.AddWithValue("@civil", row.Cells["civil"].Value);
+                    myCommand.Parameters.AddWithValue("@religion", row.Cells["religion"].Value);
+                    myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
+                    myCommand.Parameters.AddWithValue("@municipality", "MAGSAYSAY");
+                    myCommand.Parameters.AddWithValue("@province", "DAVAO DEL SUR");
+                    myCommand.Parameters.AddWithValue("@email", row.Cells["email"].Value);
+                    myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                    myCommand.Parameters.AddWithValue("@pppp", row.Cells["pppp"].Value);
+                    myCommand.Parameters.AddWithValue("@emp_status", row.Cells["emp_status"].Value);
+                    myCommand.Parameters.AddWithValue("@job_pre", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@educ_level", row.Cells["educ_level"].Value);
+                    myCommand.Parameters.AddWithValue("@skills", row.Cells["skills"].Value);
+                    myCommand.Parameters.AddWithValue("@position", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@jobsite", row.Cells["jobsite"].Value);
+                    myCommand.Parameters.AddWithValue("@remarks", row.Cells["remarks"].Value);
+                    myCommand.Parameters.AddWithValue("@from", "SRA");
+                    string query = @"insert ignore into sra2
+                                        (Agency, sra_no, veneu, event_date, host, address_branch, rep_contact,
+                                         surname, firstname, middlename, dob, age, sex, civil_status, religion,
+                                         brgy, municipality, province, email, cp_no, 4ps, emp_status, job_pre, educ_level, skills, position, jobsite, remarks, `from`)
+                                        values
+                                        (@acency, @sra, @venue, @date, @host, @branch, @rep_no,
+                                         @surname, @firstname, @middlename, @dob, @age, @gender, @civil, @religion,
+                                         @address, @municipality, @province, @email, @contact, @pppp, @emp_status, @job_pre, @educ_level, @skills, @position, @jobsite, @remarks, @from)";
+                    myCommand.CommandText = query;
+                    myCommand.ExecuteNonQuery();
+                }
+                myTrans.Commit();
+                MessageBox.Show(this, "Contacts Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exg)
+            {
+                try
+                {
+                    myTrans.Rollback();
+                }
+                catch (Exception ex)
+                {
+                    if (myTrans.Connection != null)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                MessageBox.Show(exg.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         private void update()
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -199,7 +277,7 @@ namespace IMS_PESO
             {
 
                 myCommand.Parameters.AddWithValue("@sra", label9.Text);
-                string qD = @"delete from sra where sra_no = @sra;";
+                string qD = @"delete from sra2 where sra_no = @sra;";
                 myCommand.CommandText = qD;
                 myCommand.ExecuteNonQuery();
 
@@ -214,24 +292,36 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@host", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@branch", textBox5.Text);
                     myCommand.Parameters.AddWithValue("@rep_no", textBox6.Text);
-
                     myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
                     myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
                     myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
-
-                    myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
-                    myCommand.Parameters.AddWithValue("@age", row.Cells["age"].Value);
                     myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
-
+                    myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
+                    myCommand.Parameters.AddWithValue("@age", row.Cells["age"].Value);
+                    myCommand.Parameters.AddWithValue("@civil", row.Cells["civil"].Value);
+                    myCommand.Parameters.AddWithValue("@religion", row.Cells["religion"].Value);
+                    myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
+                    myCommand.Parameters.AddWithValue("@municipality", "MAGSAYSAY");
+                    myCommand.Parameters.AddWithValue("@province", "DAVAO DEL SUR");
+                    myCommand.Parameters.AddWithValue("@email", row.Cells["email"].Value);
+                    myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                    myCommand.Parameters.AddWithValue("@pppp", row.Cells["pppp"].Value);
+                    myCommand.Parameters.AddWithValue("@emp_status", row.Cells["emp_status"].Value);
+                    myCommand.Parameters.AddWithValue("@job_pre", row.Cells["position"].Value);
+                    myCommand.Parameters.AddWithValue("@educ_level", row.Cells["educ_level"].Value);
+                    myCommand.Parameters.AddWithValue("@skills", row.Cells["skills"].Value);
                     myCommand.Parameters.AddWithValue("@position", row.Cells["position"].Value);
                     myCommand.Parameters.AddWithValue("@jobsite", row.Cells["jobsite"].Value);
                     myCommand.Parameters.AddWithValue("@remarks", row.Cells["remarks"].Value);
-
-                    myCommand.Parameters.AddWithValue("@notes", "notes");
-                    string query = @"insert ignore into sra
-                                        (Agency, sra_no, veneu, event_date, host, address_branch, rep_contact, surname, firstname, middlename, address, age, gender, position, jobsite, remarks, notes)
+                    myCommand.Parameters.AddWithValue("@from", "SRA");
+                    string query = @"insert ignore into sra2
+                                        (Agency, sra_no, veneu, event_date, host, address_branch, rep_contact,
+                                         surname, firstname, middlename, dob, age, sex, civil_status, religion,
+                                         brgy, municipality, province, email, cp_no, 4ps, emp_status, job_pre, educ_level, skills, position, jobsite, remarks, `from`)
                                         values
-                                        (@acency, @sra, @venue, @date, @host, @branch, @rep_no, @surname, @firstname, @middlename, @address, @age, @gender, @position, @jobsite, @remarks, @notes)";
+                                        (@acency, @sra, @venue, @date, @host, @branch, @rep_no,
+                                         @surname, @firstname, @middlename, @dob, @age, @gender, @civil, @religion,
+                                         @address, @municipality, @province, @email, @contact, @pppp, @emp_status, @job_pre, @educ_level, @skills, @position, @jobsite, @remarks, @from)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 }
@@ -284,8 +374,9 @@ namespace IMS_PESO
                     }
                     else
                     {
-                        insert();
-                        insertToContact();
+                        //insert();
+                        //insertToContact();
+                        insertToContact2();
                         this.Close();
                     }
                 }
@@ -397,8 +488,8 @@ namespace IMS_PESO
                     myCommand.Transaction = myTrans;
                     try
                     {
-                        myCommand.Parameters.AddWithValue("@agency", label9.Text);
-                        string qD = @"delete from sra where sra_no = @agency;";
+                        myCommand.Parameters.AddWithValue("@sra", label9.Text);
+                        string qD = @"delete from sra2 where sra_no = @sra;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -447,18 +538,7 @@ namespace IMS_PESO
             this.dataGridView1.DataSource = null;
             this.dataGridView1.Rows.Clear();
             string query;
-            query = @"SELECT
-                        surname,
-                        firstname,
-                        middlename,
-                        address,
-                        age,
-                        gender,
-                        position,
-                        jobsite,
-                        remarks
-                        from sra
-                        where sra_no = '{0}'";
+            query = @"SELECT * from sra2 where sra_no = '{0}'";
             string FinalQuery = string.Format(query, label9.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
@@ -474,9 +554,20 @@ namespace IMS_PESO
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["surname"].Value = dbdatasec1.Rows[i]["surname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["gender"].ToString();
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["address"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["dob"].Value = dbdatasec1.Rows[i]["dob"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["sex"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["brgy"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["age"].Value = dbdatasec1.Rows[i]["age"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["religion"].Value = dbdatasec1.Rows[i]["religion"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["gender"].Value = dbdatasec1.Rows[i]["sex"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["civil"].Value = dbdatasec1.Rows[i]["civil_status"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["address"].Value = dbdatasec1.Rows[i]["brgy"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["email"].Value = dbdatasec1.Rows[i]["email"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["contact"].Value = dbdatasec1.Rows[i]["cp_no"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["pppp"].Value = dbdatasec1.Rows[i]["4ps"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["emp_status"].Value = dbdatasec1.Rows[i]["emp_status"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["educ_level"].Value = dbdatasec1.Rows[i]["educ_level"].ToString();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["skills"].Value = dbdatasec1.Rows[i]["skills"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["position"].Value = dbdatasec1.Rows[i]["position"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["jobsite"].Value = dbdatasec1.Rows[i]["jobsite"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["remarks"].Value = dbdatasec1.Rows[i]["remarks"].ToString();
@@ -515,7 +606,7 @@ namespace IMS_PESO
                                 host,
                                 address_branch,
                                 rep_contact
-                                from sra
+                                from sra2
                                 where sra_no = '{0}'
                                 group by sra_no";
             string finalQuery = string.Format(query, label9.Text);

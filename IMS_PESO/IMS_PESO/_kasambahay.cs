@@ -48,11 +48,11 @@ namespace IMS_PESO
                                 surname `SURNAME`,
                                 firstname `FIRST NAME`,
                                 middlename `MIDDLE NAME`,
-                                address `ADDRESS`,
-                                contact_no `COMTACT NO.`,
+                                brgy `ADDRESS`,
+                                cp_no `COMTACT NO.`,
                                 `status` `STATUS`,
                                 remarks `REMARKS`
-                                FROM kasambahay";
+                                FROM kasambahay2";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -241,7 +241,7 @@ namespace IMS_PESO
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            _kasambahayForm a = new _kasambahayForm();
+            _kasambahayForm2 a = new _kasambahayForm2();
             a.ShowDialog();
             getEvent();
         }
@@ -449,7 +449,7 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _kasambahayForm a = new _kasambahayForm();
+            _kasambahayForm2 a = new _kasambahayForm2();
             a.label2.Text = this.label9.Text;
             a.ShowDialog();
             getEvent();
