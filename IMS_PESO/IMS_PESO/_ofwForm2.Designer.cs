@@ -44,6 +44,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.type = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pppp = new System.Windows.Forms.TextBox();
             this.age = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -78,7 +79,6 @@
             this.civil = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pppp = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +100,7 @@
             this.country.Location = new System.Drawing.Point(134, 19);
             this.country.Name = "country";
             this.country.Size = new System.Drawing.Size(348, 26);
-            this.country.TabIndex = 7;
+            this.country.TabIndex = 17;
             // 
             // label7
             // 
@@ -119,7 +119,7 @@
             this.passport.Location = new System.Drawing.Point(134, 51);
             this.passport.Name = "passport";
             this.passport.Size = new System.Drawing.Size(348, 26);
-            this.passport.TabIndex = 8;
+            this.passport.TabIndex = 18;
             // 
             // label9
             // 
@@ -148,7 +148,7 @@
             this.remarks.Location = new System.Drawing.Point(134, 147);
             this.remarks.Name = "remarks";
             this.remarks.Size = new System.Drawing.Size(348, 26);
-            this.remarks.TabIndex = 12;
+            this.remarks.TabIndex = 21;
             // 
             // status
             // 
@@ -162,7 +162,7 @@
             this.status.Location = new System.Drawing.Point(134, 115);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(348, 26);
-            this.status.TabIndex = 11;
+            this.status.TabIndex = 20;
             // 
             // button6
             // 
@@ -171,10 +171,10 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(659, 242);
+            this.button6.Location = new System.Drawing.Point(134, 179);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(348, 50);
-            this.button6.TabIndex = 13;
+            this.button6.TabIndex = 22;
             this.button6.Text = "Save Records";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button6.UseVisualStyleBackColor = false;
@@ -243,7 +243,7 @@
             this.type.Location = new System.Drawing.Point(134, 83);
             this.type.Name = "type";
             this.type.Size = new System.Drawing.Size(348, 26);
-            this.type.TabIndex = 9;
+            this.type.TabIndex = 19;
             // 
             // groupBox1
             // 
@@ -289,6 +289,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "NSRP FIELDS";
             // 
+            // pppp
+            // 
+            this.pppp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.pppp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pppp.Location = new System.Drawing.Point(369, 311);
+            this.pppp.Name = "pppp";
+            this.pppp.Size = new System.Drawing.Size(104, 26);
+            this.pppp.TabIndex = 13;
+            // 
             // age
             // 
             this.age.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -296,7 +305,7 @@
             this.age.Location = new System.Drawing.Point(369, 119);
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(104, 26);
-            this.age.TabIndex = 120;
+            this.age.TabIndex = 5;
             // 
             // label27
             // 
@@ -377,7 +386,7 @@
             this.gender.Location = new System.Drawing.Point(369, 151);
             this.gender.Name = "gender";
             this.gender.Size = new System.Drawing.Size(104, 26);
-            this.gender.TabIndex = 5;
+            this.gender.TabIndex = 7;
             // 
             // label4
             // 
@@ -406,7 +415,7 @@
             this.contact.Location = new System.Drawing.Point(125, 311);
             this.contact.Name = "contact";
             this.contact.Size = new System.Drawing.Size(187, 26);
-            this.contact.TabIndex = 11;
+            this.contact.TabIndex = 12;
             // 
             // label15
             // 
@@ -511,7 +520,7 @@
             this.email.Location = new System.Drawing.Point(125, 279);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(348, 26);
-            this.email.TabIndex = 10;
+            this.email.TabIndex = 11;
             // 
             // label21
             // 
@@ -541,7 +550,7 @@
             this.birthplace.Location = new System.Drawing.Point(125, 215);
             this.birthplace.Name = "birthplace";
             this.birthplace.Size = new System.Drawing.Size(348, 26);
-            this.birthplace.TabIndex = 8;
+            this.birthplace.TabIndex = 9;
             // 
             // address
             // 
@@ -575,7 +584,7 @@
             this.address.Location = new System.Drawing.Point(125, 247);
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(348, 26);
-            this.address.TabIndex = 9;
+            this.address.TabIndex = 10;
             // 
             // religion
             // 
@@ -590,7 +599,7 @@
             this.religion.Location = new System.Drawing.Point(125, 183);
             this.religion.Name = "religion";
             this.religion.Size = new System.Drawing.Size(348, 26);
-            this.religion.TabIndex = 7;
+            this.religion.TabIndex = 8;
             // 
             // label23
             // 
@@ -656,6 +665,7 @@
             this.groupBox2.Controls.Add(this.passport);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.remarks);
             this.groupBox2.Controls.Add(this.label10);
@@ -663,19 +673,10 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(525, 48);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(504, 188);
+            this.groupBox2.Size = new System.Drawing.Size(504, 241);
             this.groupBox2.TabIndex = 1015;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "OFW FIELDS";
-            // 
-            // pppp
-            // 
-            this.pppp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.pppp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pppp.Location = new System.Drawing.Point(369, 311);
-            this.pppp.Name = "pppp";
-            this.pppp.Size = new System.Drawing.Size(104, 26);
-            this.pppp.TabIndex = 121;
             // 
             // _ofwForm2
             // 
@@ -688,7 +689,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

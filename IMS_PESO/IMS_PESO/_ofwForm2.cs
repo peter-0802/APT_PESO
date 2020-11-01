@@ -40,30 +40,52 @@ namespace IMS_PESO
 
                 if (myreader.Read())
                 {
-                    //string date = myreader.GetString("date");
-                    //dateTimePicker1.Text = date;
-                    //string surname = myreader.GetString("surname");
-                    //textBox1.Text = surname;
-                    //string firstname = myreader.GetString("firstname");
-                    //textBox2.Text = firstname;
-                    //string middlename = myreader.GetString("middlename");
-                    //textBox3.Text = middlename;
-                    //string gender = myreader.GetString("gender");
-                    //comboBox2.Text = gender;
-                    //string address = myreader.GetString("address");
-                    //comboBox5.Text = address;
-                    //string country = myreader.GetString("country");
-                    //this.country.Text = country;
-                    //string passport = myreader.GetString("passport");
-                    //this.passport.Text = passport;
-                    //string type = myreader.GetString("type");
-                    //this.type.Text = type;
-                    //string contact_no = myreader.GetString("contact_no");
-                    //cont.Text = contact_no;
-                    //string status = myreader.GetString("status");
-                    //this.status.Text = status;
-                    //string remarks = myreader.GetString("remarks");
-                    //this.remarks.Text = remarks;
+                    string date = myreader.GetString("date");
+                    dateTimePicker1.Text = date;
+                    string surname = myreader.GetString("surname");
+                    this.surname.Text = surname;
+                    string firstname = myreader.GetString("firstname");
+                    this.firstname.Text = firstname;
+                    string middlename = myreader.GetString("middlename");
+                    this.middlename.Text = middlename;
+                    string dob = myreader.GetString("dob");
+                    this.dob.Text = dob;
+                    string age = myreader.GetString("age");
+                    this.age.Text = age;
+                    string gender = myreader.GetString("sex");
+                    this.gender.Text = gender;
+                    string civil = myreader.GetString("civil_status");
+                    this.civil.Text = civil;
+                    string religion = myreader.GetString("religion");
+                    this.religion.Text = religion;
+                    string bplace = myreader.GetString("birthplace");
+                    this.birthplace.Text = bplace;
+                    string address = myreader.GetString("brgy");
+                    this.address.Text = address;
+                    string email = myreader.GetString("email");
+                    this.email.Text = email;
+                    string contact_no = myreader.GetString("cp_no");
+                    this.contact.Text = contact_no;
+                    string pppp = myreader.GetString("4ps");
+                    this.pppp.Text = pppp;
+                    string emp_status = myreader.GetString("emp_status");
+                    this.emp_status.Text = emp_status;
+                    string job_pre = myreader.GetString("job_pre");
+                    this.job.Text = job_pre;
+                    string educ = myreader.GetString("educ_level");
+                    this.educ.Text = educ;
+                    string skills = myreader.GetString("skills");
+                    this.skills.Text = skills;
+                    string country = myreader.GetString("country");
+                    this.country.Text = country;
+                    string pass = myreader.GetString("passport");
+                    this.passport.Text = pass;
+                    string type = myreader.GetString("type");
+                    this.type.Text = type;
+                    string status = myreader.GetString("status");
+                    this.status.Text = status;
+                    string remarks = myreader.GetString("remarks");
+                    this.remarks.Text = remarks;
                 }
             }
             catch (Exception ex)

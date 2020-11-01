@@ -78,10 +78,10 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pppp = new System.Windows.Forms.TextBox();
             this.age = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pppp = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +170,7 @@
             this.contact.Location = new System.Drawing.Point(125, 311);
             this.contact.Name = "contact";
             this.contact.Size = new System.Drawing.Size(187, 26);
-            this.contact.TabIndex = 11;
+            this.contact.TabIndex = 12;
             // 
             // label7
             // 
@@ -236,10 +236,10 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(647, 280);
+            this.button6.Location = new System.Drawing.Point(126, 218);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(360, 50);
-            this.button6.TabIndex = 17;
+            this.button6.Size = new System.Drawing.Size(348, 50);
+            this.button6.TabIndex = 23;
             this.button6.Text = "Save Records";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button6.UseVisualStyleBackColor = false;
@@ -253,7 +253,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(845, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(162, 26);
-            this.dateTimePicker1.TabIndex = 999;
+            this.dateTimePicker1.TabIndex = 1;
             // 
             // label11
             // 
@@ -308,7 +308,7 @@
             this.gender.Location = new System.Drawing.Point(369, 151);
             this.gender.Name = "gender";
             this.gender.Size = new System.Drawing.Size(104, 26);
-            this.gender.TabIndex = 5;
+            this.gender.TabIndex = 7;
             // 
             // label14
             // 
@@ -352,7 +352,7 @@
             this.address.Location = new System.Drawing.Point(125, 247);
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(348, 26);
-            this.address.TabIndex = 9;
+            this.address.TabIndex = 10;
             // 
             // label15
             // 
@@ -413,7 +413,7 @@
             this.religion.Location = new System.Drawing.Point(125, 183);
             this.religion.Name = "religion";
             this.religion.Size = new System.Drawing.Size(348, 26);
-            this.religion.TabIndex = 7;
+            this.religion.TabIndex = 8;
             // 
             // label17
             // 
@@ -442,7 +442,7 @@
             this.birthplace.Location = new System.Drawing.Point(125, 215);
             this.birthplace.Name = "birthplace";
             this.birthplace.Size = new System.Drawing.Size(348, 26);
-            this.birthplace.TabIndex = 8;
+            this.birthplace.TabIndex = 9;
             // 
             // label19
             // 
@@ -461,7 +461,7 @@
             this.email.Location = new System.Drawing.Point(125, 279);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(348, 26);
-            this.email.TabIndex = 10;
+            this.email.TabIndex = 11;
             // 
             // label20
             // 
@@ -499,7 +499,7 @@
             this.father.Location = new System.Drawing.Point(144, 52);
             this.father.Name = "father";
             this.father.Size = new System.Drawing.Size(330, 26);
-            this.father.TabIndex = 1001;
+            this.father.TabIndex = 18;
             // 
             // label21
             // 
@@ -518,7 +518,7 @@
             this.mother.Location = new System.Drawing.Point(144, 20);
             this.mother.Name = "mother";
             this.mother.Size = new System.Drawing.Size(330, 26);
-            this.mother.TabIndex = 1000;
+            this.mother.TabIndex = 17;
             // 
             // year_level
             // 
@@ -527,7 +527,7 @@
             this.year_level.Location = new System.Drawing.Point(127, 116);
             this.year_level.Name = "year_level";
             this.year_level.Size = new System.Drawing.Size(348, 26);
-            this.year_level.TabIndex = 1005;
+            this.year_level.TabIndex = 20;
             this.year_level.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // school
@@ -537,7 +537,7 @@
             this.school.Location = new System.Drawing.Point(126, 84);
             this.school.Name = "school";
             this.school.Size = new System.Drawing.Size(348, 26);
-            this.school.TabIndex = 1004;
+            this.school.TabIndex = 19;
             this.school.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
             // label22
@@ -563,7 +563,7 @@
             this.status.Location = new System.Drawing.Point(126, 180);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(348, 26);
-            this.status.TabIndex = 1007;
+            this.status.TabIndex = 22;
             this.status.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label23
@@ -584,7 +584,7 @@
             this.average.Location = new System.Drawing.Point(127, 148);
             this.average.Name = "average";
             this.average.Size = new System.Drawing.Size(348, 26);
-            this.average.TabIndex = 1006;
+            this.average.TabIndex = 21;
             this.average.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // label24
@@ -663,6 +663,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "NSRP FIELDS";
             // 
+            // pppp
+            // 
+            this.pppp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.pppp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pppp.Location = new System.Drawing.Point(369, 311);
+            this.pppp.Name = "pppp";
+            this.pppp.Size = new System.Drawing.Size(104, 26);
+            this.pppp.TabIndex = 13;
+            // 
             // age
             // 
             this.age.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -670,7 +679,7 @@
             this.age.Location = new System.Drawing.Point(369, 119);
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(104, 26);
-            this.age.TabIndex = 120;
+            this.age.TabIndex = 5;
             // 
             // label27
             // 
@@ -691,6 +700,7 @@
             this.groupBox2.Controls.Add(this.school);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.status);
             this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.label23);
@@ -699,19 +709,10 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(520, 48);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(487, 226);
+            this.groupBox2.Size = new System.Drawing.Size(487, 273);
             this.groupBox2.TabIndex = 1014;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "College Schoolar Fields";
-            // 
-            // pppp
-            // 
-            this.pppp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.pppp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pppp.Location = new System.Drawing.Point(369, 311);
-            this.pppp.Name = "pppp";
-            this.pppp.Size = new System.Drawing.Size(104, 26);
-            this.pppp.TabIndex = 121;
             // 
             // _collegeSchoolarForm2
             // 
@@ -725,7 +726,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -733,7 +733,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "NSRP | Add / Alter";
+            this.Text = "4";
             this.Load += new System.EventHandler(this.ofwForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
