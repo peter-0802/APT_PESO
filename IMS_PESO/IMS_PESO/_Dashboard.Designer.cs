@@ -470,6 +470,7 @@
             this.button18.Text = "Mark as Done";
             this.button18.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click_1);
             // 
             // button17
             // 

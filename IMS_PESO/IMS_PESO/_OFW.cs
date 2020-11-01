@@ -452,11 +452,20 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _ofwForm2 a = new _ofwForm2();
-            a.label2.Text = this.label9.Text;
-            a.ShowDialog();
-            getEvent();
-            label9.Text = "~code~";
+            _auth b = new _auth();
+            b.ShowDialog();
+            if (b.upflag == "1")
+            {
+                _ofwForm2 a = new _ofwForm2();
+                a.label2.Text = this.label9.Text;
+                a.ShowDialog();
+                getEvent();
+                label9.Text = "~code~";
+            }
+            else
+            {
+                MessageBox.Show(this, "Oops, Wrong Password :P", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

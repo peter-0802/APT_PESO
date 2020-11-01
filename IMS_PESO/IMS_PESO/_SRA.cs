@@ -374,8 +374,6 @@ namespace IMS_PESO
                     }
                     else
                     {
-                        //insert();
-                        //insertToContact();
                         insertToContact2();
                         this.Close();
                     }

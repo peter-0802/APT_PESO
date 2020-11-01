@@ -52,7 +52,8 @@ namespace IMS_PESO
                                 cp_no `COMTACT NO.`,
                                 `status` `STATUS`,
                                 remarks `REMARKS`
-                                FROM kasambahay2";
+                                FROM kasambahay2
+                                order by code asc";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -449,11 +450,20 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _kasambahayForm2 a = new _kasambahayForm2();
-            a.label2.Text = this.label9.Text;
+            _auth a = new _auth();
             a.ShowDialog();
-            getEvent();
-            label9.Text = "~code~";
+            if (a.upflag == "1")
+            {
+                _kasambahayForm2 b = new _kasambahayForm2();
+                b.label2.Text = this.label9.Text;
+                b.ShowDialog();
+                getEvent();
+                label9.Text = "~code~";
+            }
+            else
+            {
+                MessageBox.Show(this, "Oops, Wrong Password :P", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

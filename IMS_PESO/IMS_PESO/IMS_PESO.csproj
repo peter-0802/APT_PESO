@@ -112,6 +112,12 @@
       <DependentUpon>cr_testGraph.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rrrr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rrrr.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="_addUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_cr_kasReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_cr_nsrp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_cr_nsrp.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="_cr_pwd.cs">
@@ -496,6 +508,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>cr_testGraph.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rrrr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rrrr.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="_addUser.resx">
       <DependentUpon>_addUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -514,6 +530,10 @@
     <EmbeddedResource Include="_cr_kasReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>_cr_kasReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_cr_nsrp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>_cr_nsrp.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="_cr_pwd.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

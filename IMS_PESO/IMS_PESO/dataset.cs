@@ -4,6 +4,10 @@
 
     public partial class dataset
     {
+        partial class nsrpReportDataTable
+        {
+        }
+
         partial class colReportDataTable
         {
         }

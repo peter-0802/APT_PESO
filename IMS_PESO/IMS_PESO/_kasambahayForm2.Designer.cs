@@ -63,7 +63,6 @@
             this.email = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.pppp = new System.Windows.Forms.ComboBox();
             this.birthplace = new System.Windows.Forms.TextBox();
             this.address = new System.Windows.Forms.ComboBox();
             this.religion = new System.Windows.Forms.ComboBox();
@@ -73,6 +72,7 @@
             this.civil = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pppp = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -179,6 +179,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pppp);
             this.groupBox1.Controls.Add(this.age);
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.label5);
@@ -204,7 +205,6 @@
             this.groupBox1.Controls.Add(this.email);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.pppp);
             this.groupBox1.Controls.Add(this.birthplace);
             this.groupBox1.Controls.Add(this.address);
             this.groupBox1.Controls.Add(this.religion);
@@ -337,7 +337,7 @@
             this.contact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contact.Location = new System.Drawing.Point(125, 311);
             this.contact.Name = "contact";
-            this.contact.Size = new System.Drawing.Size(213, 26);
+            this.contact.Size = new System.Drawing.Size(187, 26);
             this.contact.TabIndex = 11;
             // 
             // label15
@@ -449,7 +449,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(340, 315);
+            this.label21.Location = new System.Drawing.Point(318, 314);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(47, 18);
             this.label21.TabIndex = 106;
@@ -464,20 +464,6 @@
             this.label22.Size = new System.Drawing.Size(101, 18);
             this.label22.TabIndex = 114;
             this.label22.Text = "Birth Place:";
-            // 
-            // pppp
-            // 
-            this.pppp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pppp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.pppp.FormattingEnabled = true;
-            this.pppp.ItemHeight = 18;
-            this.pppp.Items.AddRange(new object[] {
-            "YES",
-            "NO"});
-            this.pppp.Location = new System.Drawing.Point(393, 311);
-            this.pppp.Name = "pppp";
-            this.pppp.Size = new System.Drawing.Size(80, 26);
-            this.pppp.TabIndex = 12;
             // 
             // birthplace
             // 
@@ -608,6 +594,15 @@
             this.groupBox2.Text = "KASAMBAHAY FIELDS";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // pppp
+            // 
+            this.pppp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.pppp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pppp.Location = new System.Drawing.Point(369, 311);
+            this.pppp.Name = "pppp";
+            this.pppp.Size = new System.Drawing.Size(104, 26);
+            this.pppp.TabIndex = 121;
+            // 
             // _kasambahayForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,7 +669,6 @@
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox pppp;
         private System.Windows.Forms.TextBox birthplace;
         private System.Windows.Forms.ComboBox address;
         private System.Windows.Forms.ComboBox religion;
@@ -684,5 +678,6 @@
         private System.Windows.Forms.ComboBox civil;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox pppp;
     }
 }

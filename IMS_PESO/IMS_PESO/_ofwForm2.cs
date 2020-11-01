@@ -346,5 +346,10 @@ namespace IMS_PESO
         {
             getContact();
         }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

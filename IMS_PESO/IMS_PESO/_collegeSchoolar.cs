@@ -405,7 +405,8 @@ namespace IMS_PESO
                             yearlevel `YEAR LEVEL`,
                             ave `AVERAGE`,
                             status `STATUS`
-                            FROM schoolar_coll";
+                            FROM schoolar_coll
+                            order by code asc";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try

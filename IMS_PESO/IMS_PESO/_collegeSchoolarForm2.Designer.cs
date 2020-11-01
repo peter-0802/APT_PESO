@@ -51,7 +51,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.gender = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.pppp = new System.Windows.Forms.ComboBox();
             this.address = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dob = new System.Windows.Forms.DateTimePicker();
@@ -79,9 +78,10 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label27 = new System.Windows.Forms.Label();
             this.age = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pppp = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -169,7 +169,7 @@
             this.contact.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contact.Location = new System.Drawing.Point(125, 311);
             this.contact.Name = "contact";
-            this.contact.Size = new System.Drawing.Size(213, 26);
+            this.contact.Size = new System.Drawing.Size(187, 26);
             this.contact.TabIndex = 11;
             // 
             // label7
@@ -314,25 +314,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(340, 315);
+            this.label14.Location = new System.Drawing.Point(318, 314);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 18);
             this.label14.TabIndex = 106;
             this.label14.Text = "4Ps?";
-            // 
-            // pppp
-            // 
-            this.pppp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pppp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.pppp.FormattingEnabled = true;
-            this.pppp.ItemHeight = 18;
-            this.pppp.Items.AddRange(new object[] {
-            "YES",
-            "NO"});
-            this.pppp.Location = new System.Drawing.Point(393, 311);
-            this.pppp.Name = "pppp";
-            this.pppp.Size = new System.Drawing.Size(80, 26);
-            this.pppp.TabIndex = 12;
             // 
             // address
             // 
@@ -635,6 +621,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pppp);
             this.groupBox1.Controls.Add(this.age);
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.label5);
@@ -660,7 +647,6 @@
             this.groupBox1.Controls.Add(this.email);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.pppp);
             this.groupBox1.Controls.Add(this.birthplace);
             this.groupBox1.Controls.Add(this.address);
             this.groupBox1.Controls.Add(this.religion);
@@ -676,6 +662,25 @@
             this.groupBox1.TabIndex = 1013;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "NSRP FIELDS";
+            // 
+            // age
+            // 
+            this.age.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.age.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.age.Location = new System.Drawing.Point(369, 119);
+            this.age.Name = "age";
+            this.age.Size = new System.Drawing.Size(104, 26);
+            this.age.TabIndex = 120;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(318, 122);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(45, 18);
+            this.label27.TabIndex = 119;
+            this.label27.Text = "Age:";
             // 
             // groupBox2
             // 
@@ -699,24 +704,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "College Schoolar Fields";
             // 
-            // label27
+            // pppp
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(318, 122);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(45, 18);
-            this.label27.TabIndex = 119;
-            this.label27.Text = "Age:";
-            // 
-            // age
-            // 
-            this.age.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.age.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.age.Location = new System.Drawing.Point(369, 119);
-            this.age.Name = "age";
-            this.age.Size = new System.Drawing.Size(104, 26);
-            this.age.TabIndex = 120;
+            this.pppp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.pppp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pppp.Location = new System.Drawing.Point(369, 311);
+            this.pppp.Name = "pppp";
+            this.pppp.Size = new System.Drawing.Size(104, 26);
+            this.pppp.TabIndex = 121;
             // 
             // _collegeSchoolarForm2
             // 
@@ -774,7 +769,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox gender;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox pppp;
         private System.Windows.Forms.ComboBox address;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DateTimePicker dob;
@@ -805,5 +799,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox age;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox pppp;
     }
 }

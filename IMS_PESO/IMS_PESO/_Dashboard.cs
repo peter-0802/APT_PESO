@@ -322,5 +322,10 @@ namespace IMS_PESO
             _addUser a = new _addUser();
             a.ShowDialog();
         }
+
+        private void button18_Click_1(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -25,13 +25,155 @@ namespace IMS_PESO
                 MessageBox.Show(ex.GetType().ToString());
             }
             InitializeComponent();
+            panel1.BackColor = ColorTranslator.FromHtml("#FCA311");
         }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
 
         private void getContactList()
         {
             string query;
-            query = @"select code `CODE`, surname `SURNAME`, firstname `FIRSTNAME`, middlename `MIDDLE NAME` from contacts";
-            string FinalQuery = string.Format(query);
+            query = @"select * from
+                            (
+                            SELECT
+                            date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            birthplace `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM schoolar_coll
+
+                            union all
+
+                            SELECT
+                            event_date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM sra2
+
+                            union all
+
+                            SELECT
+                            event_date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM jobfair2
+
+                            union all
+
+                            SELECT
+                            date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM kasambahay2
+
+                            union all
+
+                            SELECT
+                            date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM ofw2
+
+                            union all
+
+                            SELECT
+                            date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM contact2
+                            ) fin
+                            where `from` like '%%{0}%%'
+                            order by date asc";
+            string FinalQuery = string.Format(query, comboBox2.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
             try
@@ -84,11 +226,6 @@ namespace IMS_PESO
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button3_Click(object sender, EventArgs e)
         {
             
         }
@@ -204,38 +341,7 @@ namespace IMS_PESO
         {
 
         }
-
-        private void textBox5_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string query;
-                query = @"select code `CODE`, surname `SURNAME`, firstname `FIRSTNAME`, middlename `MIDDLE NAME` from contacts where surname like '%%{0}%%' or code like '%%{0}%%' or firstname like '%%{0}%%' or middlename like '%%{0}%%'";
-                string FinalQuery = string.Format(query, textBox5.Text);
-                MySqlConnection conn = new MySqlConnection(DBConn.connstring);
-                MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
-                try
-                {
-                    MySqlDataAdapter dgv = new MySqlDataAdapter();
-                    dgv.SelectCommand = cmd;
-                    DataTable dbdatasec = new DataTable();
-                    dgv.Fill(dbdatasec);
-                    BindingSource bsource = new BindingSource();
-
-                    bsource.DataSource = dbdatasec;
-                    dataGridView1.DataSource = bsource;
-                    dgv.Update(dbdatasec);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
-        }
+       
         private void delete()
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -316,6 +422,174 @@ namespace IMS_PESO
         {
             _nsrpForm a = new _nsrpForm();
             a.Show();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            _report a = new _report();
+            string iQry = @"SELECT
+                            date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            birthplace `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM schoolar_coll
+
+                            union all
+
+                            SELECT
+                            event_date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM sra2
+
+                            union all
+
+                            SELECT
+                            event_date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM jobfair2
+
+                            union all
+
+                            SELECT
+                            date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM kasambahay2
+
+                            union all
+
+                            SELECT
+                            date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM ofw2
+
+                            union all
+
+                            SELECT
+                            date `DATE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM contact2
+
+                            order by date";
+            dataset ds = new dataset();
+            using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(iQry, conn);
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds, ds.Tables["nsrpReport"].TableName);
+                _cr_nsrp rep = new _cr_nsrp();
+                rep.SetDataSource(ds);
+                a.crystalReportViewer1.ReportSource = rep;
+                a.ShowDialog();
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                initMovable.ReleaseCapture();
+                initMovable.SendMessage(Handle, initMovable.WM_NCLBUTTONDOWN, initMovable.HT_CAPTION, 0);
+            }
+        }
+
+        private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            getContactList();
         }
     }
 }

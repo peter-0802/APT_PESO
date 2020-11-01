@@ -90,7 +90,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '$';
             this.textBox3.Size = new System.Drawing.Size(228, 26);
-            this.textBox3.TabIndex = 5;
+            this.textBox3.TabIndex = 1;
             // 
             // label4
             // 
@@ -112,13 +112,13 @@
             this.button3.Location = new System.Drawing.Point(257, 131);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(228, 47);
-            this.button3.TabIndex = 84;
+            this.button3.TabIndex = 2;
             this.button3.Text = "Authenticate";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // auth
+            // _auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,7 +130,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "auth";
+            this.Name = "_auth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "auth";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.auth_FormClosing);
