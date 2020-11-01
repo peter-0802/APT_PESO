@@ -55,6 +55,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button13 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -152,7 +156,6 @@
             this.button5.Text = "Report";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             this.button5.MouseHover += new System.EventHandler(this.button5_MouseHover);
             // 
@@ -416,12 +419,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(491, 498);
+            this.dataGridView1.Size = new System.Drawing.Size(491, 468);
             this.dataGridView1.TabIndex = 35;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // button13
             // 
@@ -442,6 +447,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.button18);
             this.groupBox1.Controls.Add(this.button17);
             this.groupBox1.Controls.Add(this.button14);
@@ -455,6 +464,50 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ToDo";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(395, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 18);
+            this.label7.TabIndex = 108;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 18);
+            this.label6.TabIndex = 107;
+            this.label6.Text = "Status:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.ItemHeight = 18;
+            this.comboBox2.Items.AddRange(new object[] {
+            "PENDING",
+            "DONE"});
+            this.comboBox2.Location = new System.Drawing.Point(77, 13);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(160, 26);
+            this.comboBox2.TabIndex = 105;
+            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(334, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 18);
+            this.label13.TabIndex = 106;
+            this.label13.Text = "Code:";
             // 
             // button18
             // 
@@ -486,6 +539,7 @@
             this.button17.Text = "Delete Task";
             this.button17.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button14
             // 
@@ -501,6 +555,7 @@
             this.button14.Text = "Update Task";
             this.button14.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click_1);
             // 
             // _Dashboard
             // 
@@ -535,6 +590,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -570,6 +626,10 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label7;
     }
 }
 

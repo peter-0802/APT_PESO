@@ -432,7 +432,9 @@ namespace IMS_PESO
         private void button5_Click_1(object sender, EventArgs e)
         {
             _report a = new _report();
-            string iQry = @"SELECT
+            string iQry = @"select * from
+                            (
+                            SELECT
                             date `DATE`,
                             concat(surname, ', ', firstname, ' ', middlename) `NAME`,
                             dob `BIRTHDAY`,
@@ -561,7 +563,7 @@ namespace IMS_PESO
                             skills `SKILLS`,
                             `from` `FROM`
                             FROM contact2
-
+) fin
                             order by date";
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))

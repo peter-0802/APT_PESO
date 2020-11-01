@@ -140,10 +140,9 @@
         <xs:element name="graph" msprop:Generator_TableClassName="graphDataTable" msprop:Generator_TableVarName="tablegraph" msprop:Generator_RowChangedName="graphRowChanged" msprop:Generator_TablePropName="graph" msprop:Generator_RowDeletingName="graphRowDeleting" msprop:Generator_RowChangingName="graphRowChanging" msprop:Generator_RowEvHandlerName="graphRowChangeEventHandler" msprop:Generator_RowDeletedName="graphRowDeleted" msprop:Generator_RowClassName="graphRow" msprop:Generator_UserTableName="graph" msprop:Generator_RowEvArgName="graphRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" msprop:Generator_UserColumnName="YEAR" type="xs:string" minOccurs="0" />
-              <xs:element name="BEARS" msprop:Generator_ColumnVarNameInTable="columnBEARS" msprop:Generator_ColumnPropNameInRow="BEARS" msprop:Generator_ColumnPropNameInTable="BEARSColumn" msprop:Generator_UserColumnName="BEARS" type="xs:int" minOccurs="0" />
-              <xs:element name="DOLHINS" msprop:Generator_ColumnVarNameInTable="columnDOLHINS" msprop:Generator_ColumnPropNameInRow="DOLHINS" msprop:Generator_ColumnPropNameInTable="DOLHINSColumn" msprop:Generator_UserColumnName="DOLHINS" type="xs:int" minOccurs="0" />
-              <xs:element name="WHALES" msprop:Generator_ColumnVarNameInTable="columnWHALES" msprop:Generator_ColumnPropNameInRow="WHALES" msprop:Generator_ColumnPropNameInTable="WHALESColumn" msprop:Generator_UserColumnName="WHALES" type="xs:int" minOccurs="0" />
+              <xs:element name="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" msprop:Generator_UserColumnName="DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SRA" msprop:Generator_ColumnVarNameInTable="columnSRA" msprop:Generator_ColumnPropNameInRow="SRA" msprop:Generator_ColumnPropNameInTable="SRAColumn" msprop:Generator_UserColumnName="SRA" type="xs:int" minOccurs="0" />
+              <xs:element name="JOB_FAIR" msprop:Generator_ColumnVarNameInTable="columnJOB_FAIR" msprop:Generator_ColumnPropNameInRow="JOB_FAIR" msprop:Generator_ColumnPropNameInTable="JOB_FAIRColumn" msprop:Generator_UserColumnName="JOB_FAIR" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

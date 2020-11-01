@@ -3463,13 +3463,11 @@ namespace IMS_PESO {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class graphDataTable : global::System.Data.TypedTableBase<graphRow> {
             
-            private global::System.Data.DataColumn columnYEAR;
+            private global::System.Data.DataColumn columnDATE;
             
-            private global::System.Data.DataColumn columnBEARS;
+            private global::System.Data.DataColumn columnSRA;
             
-            private global::System.Data.DataColumn columnDOLHINS;
-            
-            private global::System.Data.DataColumn columnWHALES;
+            private global::System.Data.DataColumn columnJOB_FAIR;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3506,33 +3504,25 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn YEARColumn {
+            public global::System.Data.DataColumn DATEColumn {
                 get {
-                    return this.columnYEAR;
+                    return this.columnDATE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BEARSColumn {
+            public global::System.Data.DataColumn SRAColumn {
                 get {
-                    return this.columnBEARS;
+                    return this.columnSRA;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DOLHINSColumn {
+            public global::System.Data.DataColumn JOB_FAIRColumn {
                 get {
-                    return this.columnDOLHINS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WHALESColumn {
-                get {
-                    return this.columnWHALES;
+                    return this.columnJOB_FAIR;
                 }
             }
             
@@ -3573,13 +3563,12 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public graphRow AddgraphRow(string YEAR, int BEARS, int DOLHINS, int WHALES) {
+            public graphRow AddgraphRow(string DATE, int SRA, int JOB_FAIR) {
                 graphRow rowgraphRow = ((graphRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        YEAR,
-                        BEARS,
-                        DOLHINS,
-                        WHALES};
+                        DATE,
+                        SRA,
+                        JOB_FAIR};
                 rowgraphRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgraphRow);
                 return rowgraphRow;
@@ -3602,23 +3591,20 @@ namespace IMS_PESO {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnYEAR = base.Columns["YEAR"];
-                this.columnBEARS = base.Columns["BEARS"];
-                this.columnDOLHINS = base.Columns["DOLHINS"];
-                this.columnWHALES = base.Columns["WHALES"];
+                this.columnDATE = base.Columns["DATE"];
+                this.columnSRA = base.Columns["SRA"];
+                this.columnJOB_FAIR = base.Columns["JOB_FAIR"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnYEAR = new global::System.Data.DataColumn("YEAR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnYEAR);
-                this.columnBEARS = new global::System.Data.DataColumn("BEARS", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBEARS);
-                this.columnDOLHINS = new global::System.Data.DataColumn("DOLHINS", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDOLHINS);
-                this.columnWHALES = new global::System.Data.DataColumn("WHALES", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWHALES);
+                this.columnDATE = new global::System.Data.DataColumn("DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATE);
+                this.columnSRA = new global::System.Data.DataColumn("SRA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSRA);
+                this.columnJOB_FAIR = new global::System.Data.DataColumn("JOB_FAIR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJOB_FAIR);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7741,114 +7727,86 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string YEAR {
+            public string DATE {
                 get {
                     try {
-                        return ((string)(this[this.tablegraph.YEARColumn]));
+                        return ((string)(this[this.tablegraph.DATEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'YEAR\' in table \'graph\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DATE\' in table \'graph\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablegraph.YEARColumn] = value;
+                    this[this.tablegraph.DATEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int BEARS {
+            public int SRA {
                 get {
                     try {
-                        return ((int)(this[this.tablegraph.BEARSColumn]));
+                        return ((int)(this[this.tablegraph.SRAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BEARS\' in table \'graph\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SRA\' in table \'graph\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablegraph.BEARSColumn] = value;
+                    this[this.tablegraph.SRAColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DOLHINS {
+            public int JOB_FAIR {
                 get {
                     try {
-                        return ((int)(this[this.tablegraph.DOLHINSColumn]));
+                        return ((int)(this[this.tablegraph.JOB_FAIRColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DOLHINS\' in table \'graph\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'JOB_FAIR\' in table \'graph\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablegraph.DOLHINSColumn] = value;
+                    this[this.tablegraph.JOB_FAIRColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int WHALES {
-                get {
-                    try {
-                        return ((int)(this[this.tablegraph.WHALESColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WHALES\' in table \'graph\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablegraph.WHALESColumn] = value;
-                }
+            public bool IsDATENull() {
+                return this.IsNull(this.tablegraph.DATEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsYEARNull() {
-                return this.IsNull(this.tablegraph.YEARColumn);
+            public void SetDATENull() {
+                this[this.tablegraph.DATEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetYEARNull() {
-                this[this.tablegraph.YEARColumn] = global::System.Convert.DBNull;
+            public bool IsSRANull() {
+                return this.IsNull(this.tablegraph.SRAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBEARSNull() {
-                return this.IsNull(this.tablegraph.BEARSColumn);
+            public void SetSRANull() {
+                this[this.tablegraph.SRAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBEARSNull() {
-                this[this.tablegraph.BEARSColumn] = global::System.Convert.DBNull;
+            public bool IsJOB_FAIRNull() {
+                return this.IsNull(this.tablegraph.JOB_FAIRColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDOLHINSNull() {
-                return this.IsNull(this.tablegraph.DOLHINSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDOLHINSNull() {
-                this[this.tablegraph.DOLHINSColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWHALESNull() {
-                return this.IsNull(this.tablegraph.WHALESColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWHALESNull() {
-                this[this.tablegraph.WHALESColumn] = global::System.Convert.DBNull;
+            public void SetJOB_FAIRNull() {
+                this[this.tablegraph.JOB_FAIRColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -1,0 +1,69 @@
+﻿SELECT
+`DATE`,
+coalesce(`SRA`, 0) `SRA`,
+coalesce(`JOB_FAIR`, 0) `JOB_FAIR`,
+coalesce(`COLLEGE_SCHOOLAR`, 0) `COLLEGE_SCHOOLAR`,
+coalesce(`HS_SCHOOLAR`, 0) `HS_SCHOOLAR`
+FROM
+  #SELECT ALL YEARS
+  (
+  select DATE_FORMAT(event_date, '%M') `DATE` from sra2
+  where DATE_FORMAT(event_date, '%Y') = '2020'
+  union all
+  select DATE_FORMAT(event_date, '%M') `DATE` from jobfair2
+  where DATE_FORMAT(event_date, '%Y') = '2020'
+  union all
+  select DATE_FORMAT(date, '%M') `DATE` from schoolar_coll
+  where DATE_FORMAT(date, '%Y') = '2020'
+  union all
+  select DATE_FORMAT(date, '%M') `DATE` from hsshcoolar
+  where DATE_FORMAT(date, '%Y') = '2020'
+  ) `BASE_DATE`
+  #SELECT ALL YEARS
+
+  #JOIN THE RESPECTIVE COUNTS PER TABLE
+  left join
+
+  (
+  SELECT
+  DATE_FORMAT(event_date, '%M') `YEAR`,
+  count(*) `SRA`
+  FROM sra2
+  where DATE_FORMAT(event_date, '%Y') = '2020'
+  group by `YEAR`
+  ) `SRA` on `SRA`.`YEAR` = `BASE_DATE`.`DATE`
+
+  left join
+
+  (
+  SELECT
+  DATE_FORMAT(event_date, '%M') `YEAR`,
+  count(*) `JOB_FAIR`
+  FROM jobfair2
+  where DATE_FORMAT(event_date, '%Y') = '2020'
+  group by `YEAR`
+  ) `JOB_FAIR` on `JOB_FAIR`.`YEAR` = `BASE_DATE`.`DATE`
+
+  left join
+
+  (
+  SELECT
+  DATE_FORMAT(date, '%M') `YEAR`,
+  count(*) `COLLEGE_SCHOOLAR`
+  FROM schoolar_coll
+  where DATE_FORMAT(date, '%Y') = '2020'
+  group by `YEAR`
+  ) `COLLEGE_SCHOOLAR` on `COLLEGE_SCHOOLAR`.`YEAR` = `BASE_DATE`.`DATE`
+
+  left join
+
+  (
+  SELECT
+  DATE_FORMAT(date, '%M') `YEAR`,
+  count(*) `HS_SCHOOLAR`
+  FROM hsshcoolar
+  where DATE_FORMAT(date, '%Y') = '2020'
+  group by `YEAR`
+  ) `HS_SCHOOLAR` on `HS_SCHOOLAR`.`YEAR` = `BASE_DATE`.`DATE`
+
+group by `DATE`

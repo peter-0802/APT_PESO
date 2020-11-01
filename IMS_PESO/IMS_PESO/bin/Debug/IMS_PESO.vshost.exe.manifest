@@ -274,14 +274,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IMS_PESO.exe" size="2077696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IMS_PESO.exe" size="2084864">
       <assemblyIdentity name="IMS_PESO" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WHbDFKeFAZclj+wqpWfdpASpdaI=</dsig:DigestValue>
+        <dsig:DigestValue>j+dj4iI/E9xv7GBmYu1Mwk/NHeI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -484,6 +484,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>f3xXDVQkRGbLRauGDecWClhLQyo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="notes.txt" size="623">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Pe+3b3r52Bp1JZFMPwLrKPOBSPA=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

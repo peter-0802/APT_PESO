@@ -113,8 +113,8 @@ namespace IMS_PESO
         private void loadTask()
         {
             string query;
-            query = @"select title `TITLE`, `desc` `DESCRIPTION`, assignee `ASSIGNEE` from todo";
-            string FinalQuery = string.Format(query);
+            query = @"select code `CODE`, title `TITLE`, `desc` `DESCRIPTION`, assignee `ASSIGNEE`, flag `FLAG` from todo where flag like '%%{0}%%'";
+            string FinalQuery = string.Format(query, comboBox2.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
             try
@@ -240,7 +240,37 @@ namespace IMS_PESO
         private void button5_Click(object sender, EventArgs e)
         {
             _report a = new _report();
-            string iQry = @"select YEAR, BEARS, DOLHINS, WHALES from test";
+            string iQry = @"SELECT `DATE`, `SRA`, `JOB_FAIR` FROM
+                              #SELECT ALL YEARS
+                              (
+                              select DATE_FORMAT(event_date, '%M - %Y') `DATE` from sra2
+                              union all
+                              select DATE_FORMAT(event_date, '%M - %Y') `DATE` from jobfair2
+                              ) `BASE_DATE`
+                              #SELECT ALL YEARS
+
+                              #JOIN THE RESPECTIVE COUNTS PER TABLE
+                              left join
+
+                              (
+                              SELECT
+                              DATE_FORMAT(event_date, '%M - %Y') `YEAR`,
+                              count(*) `SRA`
+                              FROM sra2
+                              group by `YEAR`
+                              ) `SRA` on `SRA`.`YEAR` = `BASE_DATE`.`DATE`
+
+                              left join
+
+                              (
+                              SELECT
+                              DATE_FORMAT(event_date, '%M - %Y') `YEAR`,
+                              count(*) `JOB_FAIR`
+                              FROM jobfair2
+                              group by `YEAR`
+                              ) `JOB_FAIR` on `JOB_FAIR`.`YEAR` = `BASE_DATE`.`DATE`
+
+                            group by `DATE`";
 
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
@@ -325,7 +355,187 @@ namespace IMS_PESO
 
         private void button18_Click_1(object sender, EventArgs e)
         {
+            string strPending = "update todo set flag = 'DONE' where code = @code";
+            string strDone = "update todo set flag = 'PENDING' where code = @code";
+            string messPending = "Task Marked as Done!";
+            string messDone = "Task Marked as Pending!";
+            string qry = null;
+            string mess = null;
+            if (comboBox2.Text == "PENDING")
+            {
+                qry = strPending;
+                mess = messPending;
+            }
+            else if (comboBox2.Text == "DONE")
+            {
+                _auth val = new _auth();
+                val.ShowDialog();
+                if (val.upflag == "1")
+                {
+                    qry = strDone;
+                    mess = messDone;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            conn.Open();
+            MySqlCommand myCommand = conn.CreateCommand();
+            MySqlTransaction myTrans;
+            myTrans = conn.BeginTransaction();
+            myCommand.Connection = conn;
+            myCommand.Transaction = myTrans;
+            try
+            {
+                myCommand = conn.CreateCommand();
+                myCommand.Parameters.AddWithValue("@code", label7.Text);
+                myCommand.CommandText = qry;
+                myCommand.ExecuteNonQuery();
+                myTrans.Commit();
+                MessageBox.Show(this, mess, "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exg)
+            {
+                try
+                {
+                    myTrans.Rollback();
+                }
+                catch (Exception ex)
+                {
+                    if (myTrans.Connection != null)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                MessageBox.Show(exg.ToString());
+            }
+            finally
+            {
+                label7.Text = string.Empty;
+                loadTask();
+            }
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             
+        }
+
+        private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            label7.Text = string.Empty;
+            loadTask();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(comboBox2.Text))
+            {
+                MessageBox.Show(this, "Select status group!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                try
+                {
+                    int index = e.RowIndex;
+                    DataGridViewRow selected = dataGridView1.Rows[index];
+                    label7.Text = selected.Cells[0].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            }
+        }
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            if (comboBox2.Text == "DONE")
+            {
+                _auth val = new _auth();
+                val.ShowDialog();
+                if (val.upflag == "1")
+                {
+                    _todoAdd a = new _todoAdd();
+                    a.label2.Text = this.label7.Text;
+                    a.ShowDialog();
+                    loadTask();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                _todoAdd a = new _todoAdd();
+                a.label2.Text = this.label7.Text;
+                a.ShowDialog();
+                loadTask();
+            }
+        }
+
+        private void delete()
+        {
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            conn.Open();
+            MySqlCommand myCommand = conn.CreateCommand();
+            MySqlTransaction myTrans;
+            myTrans = conn.BeginTransaction();
+            myCommand.Connection = conn;
+            myCommand.Transaction = myTrans;
+            try
+            {
+                myCommand = conn.CreateCommand();
+                myCommand.Parameters.AddWithValue("@code", label7.Text);
+                string query = @"delete from todo where code = @code";
+                myCommand.CommandText = query;
+                myCommand.ExecuteNonQuery();
+                myTrans.Commit();
+                MessageBox.Show(this, "Task Deleted!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exg)
+            {
+                try
+                {
+                    myTrans.Rollback();
+                }
+                catch (Exception ex)
+                {
+                    if (myTrans.Connection != null)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                MessageBox.Show(exg.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            _auth val = new _auth();
+            val.ShowDialog();
+            if (val.upflag == "1")
+            {
+                delete();
+            }
+            else
+            {
+                return;
+            }
+            loadTask();
         }
     }
 }
