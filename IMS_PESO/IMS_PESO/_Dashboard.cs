@@ -239,58 +239,15 @@ namespace IMS_PESO
 
         private void button5_Click(object sender, EventArgs e)
         {
-            _report a = new _report();
-            string iQry = @"SELECT `DATE`, `SRA`, `JOB_FAIR` FROM
-                              #SELECT ALL YEARS
-                              (
-                              select DATE_FORMAT(event_date, '%M - %Y') `DATE` from sra2
-                              union all
-                              select DATE_FORMAT(event_date, '%M - %Y') `DATE` from jobfair2
-                              ) `BASE_DATE`
-                              #SELECT ALL YEARS
-
-                              #JOIN THE RESPECTIVE COUNTS PER TABLE
-                              left join
-
-                              (
-                              SELECT
-                              DATE_FORMAT(event_date, '%M - %Y') `YEAR`,
-                              count(*) `SRA`
-                              FROM sra2
-                              group by `YEAR`
-                              ) `SRA` on `SRA`.`YEAR` = `BASE_DATE`.`DATE`
-
-                              left join
-
-                              (
-                              SELECT
-                              DATE_FORMAT(event_date, '%M - %Y') `YEAR`,
-                              count(*) `JOB_FAIR`
-                              FROM jobfair2
-                              group by `YEAR`
-                              ) `JOB_FAIR` on `JOB_FAIR`.`YEAR` = `BASE_DATE`.`DATE`
-
-                            group by `DATE`";
-
-            dataset ds = new dataset();
-            using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(iQry, conn);
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds, ds.Tables["graph"].TableName);
-                _cr_GraphStat rep = new _cr_GraphStat();
-                rep.SetDataSource(ds);
-                a.crystalReportViewer1.ReportSource = rep;
-                a.ShowDialog();
-            }
+            _reportPanel aa = new _reportPanel();
+            aa.ShowDialog();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             _OFW a = new _OFW();
             a.ShowDialog();
+            
         }
 
         private void button5_MouseHover(object sender, EventArgs e)

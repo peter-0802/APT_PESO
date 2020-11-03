@@ -4,6 +4,14 @@
 
     public partial class dataset
     {
+        partial class graphSpecificDataTable
+        {
+        }
+
+        partial class graph2DataTable
+        {
+        }
+
         partial class graphDataTable
         {
         }

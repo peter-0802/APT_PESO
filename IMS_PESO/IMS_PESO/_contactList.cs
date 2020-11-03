@@ -148,28 +148,6 @@ namespace IMS_PESO
                             skills `SKILLS`,
                             `from` `FROM`
                             FROM ofw2
-
-                            union all
-
-                            SELECT
-                            date `DATE`,
-                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
-                            dob `BIRTHDAY`,
-                            age `AGE`,
-                            IF(sex = 'MALE','M','F') `GENDER`,
-                            civil_status `CIVIL STATUS`,
-                            religion `RELIGION`,
-                            'BIRTHPLACE' `BIRTHPLACE`,
-                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
-                            email `EMAIL`,
-                            cp_no `CONTACT`,
-                            `4ps` `4Ps`,
-                            emp_status `EMP. STATUS`,
-                            job_pre `JOB PREF.`,
-                            educ_level `EDUC. LEVEL`,
-                            skills `SKILLS`,
-                            `from` `FROM`
-                            FROM contact2
                             ) fin
                             where `from` like '%%{0}%%'
                             order by date asc";
@@ -197,7 +175,56 @@ namespace IMS_PESO
                 conn.Close();
             }
         }
+        private void getNSRP()
+        {
+            
+            string query;
+            query = @"
+                            SELECT
+                            date `DATE`,
+                            code `CODE`,
+                            concat(surname, ', ', firstname, ' ', middlename) `NAME`,
+                            dob `BIRTHDAY`,
+                            age `AGE`,
+                            IF(sex = 'MALE','M','F') `GENDER`,
+                            civil_status `CIVIL STATUS`,
+                            religion `RELIGION`,
+                            'BIRTHPLACE' `BIRTHPLACE`,
+                            concat(brgy, ', ' , municipality, ', ', province) `ADDRESS`,
+                            email `EMAIL`,
+                            cp_no `CONTACT`,
+                            `4ps` `4Ps`,
+                            emp_status `EMP. STATUS`,
+                            job_pre `JOB PREF.`,
+                            educ_level `EDUC. LEVEL`,
+                            skills `SKILLS`,
+                            `from` `FROM`
+                            FROM contact2
+                            order by date asc";
+            string FinalQuery = string.Format(query, comboBox2.Text);
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
+            try
+            {
+                MySqlDataAdapter dgv = new MySqlDataAdapter();
+                dgv.SelectCommand = cmd;
+                DataTable dbdatasec = new DataTable();
+                dgv.Fill(dbdatasec);
+                BindingSource bsource = new BindingSource();
 
+                bsource.DataSource = dbdatasec;
+                dataGridView1.DataSource = bsource;
+                dgv.Update(dbdatasec);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         private void contactList_Load(object sender, EventArgs e)
         {
             getContactList();
@@ -591,7 +618,46 @@ namespace IMS_PESO
 
         private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
         {
-            getContactList();
+            if(comboBox2.Text == "NSRP ONLY")
+            {
+                getNSRP();
+            }
+            else
+            {
+                getContactList();
+                this.label1.Text = "~code~";
+            }
+            
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            _auth b = new _auth();
+            b.ShowDialog();
+            if (b.upflag == "1")
+            {
+                _nsrpForm a = new _nsrpForm();
+                a.label2.Text = this.label1.Text;
+                a.ShowDialog();
+                getContactList();
+                label1.Text = "~code~";
+            }
+            else
+            {
+                MessageBox.Show(this, "Oops, Wrong Password :P", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (comboBox2.Text == "NSRP ONLY")
+            {
+                label1.Text = this.dataGridView1.CurrentRow.Cells["CODE"].Value.ToString();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

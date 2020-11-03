@@ -112,6 +112,14 @@
       <DependentUpon>cr_testGraph.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="graphSpecific.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>graphSpecific.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportSpecific.cs" />
+    <Compile Include="reportQuery.cs" />
     <Compile Include="rrrr.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +131,12 @@
     </Compile>
     <Compile Include="_addUser.Designer.cs">
       <DependentUpon>_addUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_reportPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_reportPanel.Designer.cs">
+      <DependentUpon>_reportPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="_cr_college.cs">
       <AutoGen>True</AutoGen>
@@ -508,12 +522,19 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>cr_testGraph.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="graphSpecific.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>graphSpecific.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="rrrr.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rrrr.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="_addUser.resx">
       <DependentUpon>_addUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_reportPanel.resx">
+      <DependentUpon>_reportPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_cr_college.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

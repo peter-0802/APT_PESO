@@ -48,6 +48,8 @@ namespace IMS_PESO {
         
         private nsrpReportDataTable tablensrpReport;
         
+        private graphSpecificDataTable tablegraphSpecific;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -111,6 +113,9 @@ namespace IMS_PESO {
                 }
                 if ((ds.Tables["nsrpReport"] != null)) {
                     base.Tables.Add(new nsrpReportDataTable(ds.Tables["nsrpReport"]));
+                }
+                if ((ds.Tables["graphSpecific"] != null)) {
+                    base.Tables.Add(new graphSpecificDataTable(ds.Tables["graphSpecific"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -252,6 +257,16 @@ namespace IMS_PESO {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public graphSpecificDataTable graphSpecific {
+            get {
+                return this.tablegraphSpecific;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -352,6 +367,9 @@ namespace IMS_PESO {
                 }
                 if ((ds.Tables["nsrpReport"] != null)) {
                     base.Tables.Add(new nsrpReportDataTable(ds.Tables["nsrpReport"]));
+                }
+                if ((ds.Tables["graphSpecific"] != null)) {
+                    base.Tables.Add(new graphSpecificDataTable(ds.Tables["graphSpecific"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -458,6 +476,12 @@ namespace IMS_PESO {
                     this.tablensrpReport.InitVars();
                 }
             }
+            this.tablegraphSpecific = ((graphSpecificDataTable)(base.Tables["graphSpecific"]));
+            if ((initTable == true)) {
+                if ((this.tablegraphSpecific != null)) {
+                    this.tablegraphSpecific.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,6 +516,8 @@ namespace IMS_PESO {
             base.Tables.Add(this.tablespesReport);
             this.tablensrpReport = new nsrpReportDataTable();
             base.Tables.Add(this.tablensrpReport);
+            this.tablegraphSpecific = new graphSpecificDataTable();
+            base.Tables.Add(this.tablegraphSpecific);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -563,6 +589,12 @@ namespace IMS_PESO {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializensrpReport() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializegraphSpecific() {
             return false;
         }
         
@@ -656,6 +688,9 @@ namespace IMS_PESO {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void nsrpReportRowChangeEventHandler(object sender, nsrpReportRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void graphSpecificRowChangeEventHandler(object sender, graphSpecificRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3469,6 +3504,24 @@ namespace IMS_PESO {
             
             private global::System.Data.DataColumn columnJOB_FAIR;
             
+            private global::System.Data.DataColumn columnCOLLEGE_SCHOOLAR;
+            
+            private global::System.Data.DataColumn columnHS_SCHOOLAR;
+            
+            private global::System.Data.DataColumn columnOFW;
+            
+            private global::System.Data.DataColumn columnRWA;
+            
+            private global::System.Data.DataColumn columnCL;
+            
+            private global::System.Data.DataColumn columnPWD;
+            
+            private global::System.Data.DataColumn columnSPES;
+            
+            private global::System.Data.DataColumn columnKAS;
+            
+            private global::System.Data.DataColumn columnNSRP;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public graphDataTable() {
@@ -3528,6 +3581,78 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn COLLEGE_SCHOOLARColumn {
+                get {
+                    return this.columnCOLLEGE_SCHOOLAR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HS_SCHOOLARColumn {
+                get {
+                    return this.columnHS_SCHOOLAR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OFWColumn {
+                get {
+                    return this.columnOFW;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RWAColumn {
+                get {
+                    return this.columnRWA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CLColumn {
+                get {
+                    return this.columnCL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PWDColumn {
+                get {
+                    return this.columnPWD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SPESColumn {
+                get {
+                    return this.columnSPES;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KASColumn {
+                get {
+                    return this.columnKAS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NSRPColumn {
+                get {
+                    return this.columnNSRP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3563,12 +3688,21 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public graphRow AddgraphRow(string DATE, int SRA, int JOB_FAIR) {
+            public graphRow AddgraphRow(string DATE, int SRA, int JOB_FAIR, int COLLEGE_SCHOOLAR, int HS_SCHOOLAR, int OFW, int RWA, int CL, int PWD, int SPES, int KAS, int NSRP) {
                 graphRow rowgraphRow = ((graphRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DATE,
                         SRA,
-                        JOB_FAIR};
+                        JOB_FAIR,
+                        COLLEGE_SCHOOLAR,
+                        HS_SCHOOLAR,
+                        OFW,
+                        RWA,
+                        CL,
+                        PWD,
+                        SPES,
+                        KAS,
+                        NSRP};
                 rowgraphRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgraphRow);
                 return rowgraphRow;
@@ -3594,6 +3728,15 @@ namespace IMS_PESO {
                 this.columnDATE = base.Columns["DATE"];
                 this.columnSRA = base.Columns["SRA"];
                 this.columnJOB_FAIR = base.Columns["JOB_FAIR"];
+                this.columnCOLLEGE_SCHOOLAR = base.Columns["COLLEGE_SCHOOLAR"];
+                this.columnHS_SCHOOLAR = base.Columns["HS_SCHOOLAR"];
+                this.columnOFW = base.Columns["OFW"];
+                this.columnRWA = base.Columns["RWA"];
+                this.columnCL = base.Columns["CL"];
+                this.columnPWD = base.Columns["PWD"];
+                this.columnSPES = base.Columns["SPES"];
+                this.columnKAS = base.Columns["KAS"];
+                this.columnNSRP = base.Columns["NSRP"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3605,6 +3748,24 @@ namespace IMS_PESO {
                 base.Columns.Add(this.columnSRA);
                 this.columnJOB_FAIR = new global::System.Data.DataColumn("JOB_FAIR", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJOB_FAIR);
+                this.columnCOLLEGE_SCHOOLAR = new global::System.Data.DataColumn("COLLEGE_SCHOOLAR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOLLEGE_SCHOOLAR);
+                this.columnHS_SCHOOLAR = new global::System.Data.DataColumn("HS_SCHOOLAR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHS_SCHOOLAR);
+                this.columnOFW = new global::System.Data.DataColumn("OFW", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOFW);
+                this.columnRWA = new global::System.Data.DataColumn("RWA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRWA);
+                this.columnCL = new global::System.Data.DataColumn("CL", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCL);
+                this.columnPWD = new global::System.Data.DataColumn("PWD", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPWD);
+                this.columnSPES = new global::System.Data.DataColumn("SPES", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSPES);
+                this.columnKAS = new global::System.Data.DataColumn("KAS", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKAS);
+                this.columnNSRP = new global::System.Data.DataColumn("NSRP", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNSRP);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5242,6 +5403,267 @@ namespace IMS_PESO {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "nsrpReportDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class graphSpecificDataTable : global::System.Data.TypedTableBase<graphSpecificRow> {
+            
+            private global::System.Data.DataColumn columnDATE;
+            
+            private global::System.Data.DataColumn columnCOUNT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public graphSpecificDataTable() {
+                this.TableName = "graphSpecific";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal graphSpecificDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected graphSpecificDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DATEColumn {
+                get {
+                    return this.columnDATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn COUNTColumn {
+                get {
+                    return this.columnCOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public graphSpecificRow this[int index] {
+                get {
+                    return ((graphSpecificRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event graphSpecificRowChangeEventHandler graphSpecificRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event graphSpecificRowChangeEventHandler graphSpecificRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event graphSpecificRowChangeEventHandler graphSpecificRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event graphSpecificRowChangeEventHandler graphSpecificRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddgraphSpecificRow(graphSpecificRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public graphSpecificRow AddgraphSpecificRow(string DATE, int COUNT) {
+                graphSpecificRow rowgraphSpecificRow = ((graphSpecificRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        DATE,
+                        COUNT};
+                rowgraphSpecificRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowgraphSpecificRow);
+                return rowgraphSpecificRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                graphSpecificDataTable cln = ((graphSpecificDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new graphSpecificDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDATE = base.Columns["DATE"];
+                this.columnCOUNT = base.Columns["COUNT"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDATE = new global::System.Data.DataColumn("DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDATE);
+                this.columnCOUNT = new global::System.Data.DataColumn("COUNT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOUNT);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public graphSpecificRow NewgraphSpecificRow() {
+                return ((graphSpecificRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new graphSpecificRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(graphSpecificRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.graphSpecificRowChanged != null)) {
+                    this.graphSpecificRowChanged(this, new graphSpecificRowChangeEvent(((graphSpecificRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.graphSpecificRowChanging != null)) {
+                    this.graphSpecificRowChanging(this, new graphSpecificRowChangeEvent(((graphSpecificRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.graphSpecificRowDeleted != null)) {
+                    this.graphSpecificRowDeleted(this, new graphSpecificRowChangeEvent(((graphSpecificRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.graphSpecificRowDeleting != null)) {
+                    this.graphSpecificRowDeleting(this, new graphSpecificRowChangeEvent(((graphSpecificRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovegraphSpecificRow(graphSpecificRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dataset ds = new dataset();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "graphSpecificDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -7775,6 +8197,150 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int COLLEGE_SCHOOLAR {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.COLLEGE_SCHOOLARColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'COLLEGE_SCHOOLAR\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.COLLEGE_SCHOOLARColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int HS_SCHOOLAR {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.HS_SCHOOLARColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HS_SCHOOLAR\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.HS_SCHOOLARColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int OFW {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.OFWColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OFW\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.OFWColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int RWA {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.RWAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RWA\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.RWAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CL {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.CLColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CL\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.CLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PWD {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.PWDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PWD\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.PWDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int SPES {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.SPESColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SPES\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.SPESColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int KAS {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.KASColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KAS\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.KASColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NSRP {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraph.NSRPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NSRP\' in table \'graph\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraph.NSRPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDATENull() {
                 return this.IsNull(this.tablegraph.DATEColumn);
             }
@@ -7807,6 +8373,114 @@ namespace IMS_PESO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetJOB_FAIRNull() {
                 this[this.tablegraph.JOB_FAIRColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCOLLEGE_SCHOOLARNull() {
+                return this.IsNull(this.tablegraph.COLLEGE_SCHOOLARColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCOLLEGE_SCHOOLARNull() {
+                this[this.tablegraph.COLLEGE_SCHOOLARColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHS_SCHOOLARNull() {
+                return this.IsNull(this.tablegraph.HS_SCHOOLARColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHS_SCHOOLARNull() {
+                this[this.tablegraph.HS_SCHOOLARColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOFWNull() {
+                return this.IsNull(this.tablegraph.OFWColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOFWNull() {
+                this[this.tablegraph.OFWColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRWANull() {
+                return this.IsNull(this.tablegraph.RWAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRWANull() {
+                this[this.tablegraph.RWAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCLNull() {
+                return this.IsNull(this.tablegraph.CLColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCLNull() {
+                this[this.tablegraph.CLColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPWDNull() {
+                return this.IsNull(this.tablegraph.PWDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPWDNull() {
+                this[this.tablegraph.PWDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSPESNull() {
+                return this.IsNull(this.tablegraph.SPESColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSPESNull() {
+                this[this.tablegraph.SPESColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKASNull() {
+                return this.IsNull(this.tablegraph.KASColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKASNull() {
+                this[this.tablegraph.KASColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNSRPNull() {
+                return this.IsNull(this.tablegraph.NSRPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNSRPNull() {
+                this[this.tablegraph.NSRPColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9047,6 +9721,77 @@ namespace IMS_PESO {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class graphSpecificRow : global::System.Data.DataRow {
+            
+            private graphSpecificDataTable tablegraphSpecific;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal graphSpecificRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablegraphSpecific = ((graphSpecificDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DATE {
+                get {
+                    try {
+                        return ((string)(this[this.tablegraphSpecific.DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DATE\' in table \'graphSpecific\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraphSpecific.DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int COUNT {
+                get {
+                    try {
+                        return ((int)(this[this.tablegraphSpecific.COUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'COUNT\' in table \'graphSpecific\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegraphSpecific.COUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDATENull() {
+                return this.IsNull(this.tablegraphSpecific.DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDATENull() {
+                this[this.tablegraphSpecific.DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCOUNTNull() {
+                return this.IsNull(this.tablegraphSpecific.COUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCOUNTNull() {
+                this[this.tablegraphSpecific.COUNTColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -9440,6 +10185,40 @@ namespace IMS_PESO {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public nsrpReportRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class graphSpecificRowChangeEvent : global::System.EventArgs {
+            
+            private graphSpecificRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public graphSpecificRowChangeEvent(graphSpecificRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public graphSpecificRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -30,7 +30,7 @@ namespace IMS_PESO
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlDataReader myreader;
-            string query = @"select * from ofw where code = '{0}'";
+            string query = @"select * from contact2 where code = '{0}'";
             string finalQuery = string.Format(query, label2.Text);
             MySqlCommand cmdmdlr = new MySqlCommand(finalQuery, conn);
             try
@@ -48,22 +48,34 @@ namespace IMS_PESO
                     this.firstname.Text = firstname;
                     string middlename = myreader.GetString("middlename");
                     this.middlename.Text = middlename;
-                    string gender = myreader.GetString("gender");
+                    string dob = myreader.GetString("dob");
+                    this.dob.Text = dob;
+                    string age = myreader.GetString("age");
+                    this.age.Text = age;
+                    string gender = myreader.GetString("sex");
                     this.gender.Text = gender;
-                    string address = myreader.GetString("address");
+                    string civil = myreader.GetString("civil_status");
+                    this.civil.Text = civil;
+                    string religion = myreader.GetString("religion");
+                    this.religion.Text = religion;
+                    string bplace = myreader.GetString("birthplace");
+                    this.birthplace.Text = bplace;
+                    string address = myreader.GetString("brgy");
                     this.address.Text = address;
-                    string country = myreader.GetString("country");
-                    contact.Text = country;
-                    string passport = myreader.GetString("passport");
-                    emp_status.Text = passport;
-                    string type = myreader.GetString("type");
-                    //comboBox3.Text = type;
-                    string contact_no = myreader.GetString("contact_no");
-                    job_pref.Text = contact_no;
-                    string status = myreader.GetString("status");
-                    //comboBox1.Text = status;
-                    string remarks = myreader.GetString("remarks");
-                    educ_level.Text = remarks;
+                    string email = myreader.GetString("email");
+                    this.email.Text = email;
+                    string contact_no = myreader.GetString("cp_no");
+                    this.contact.Text = contact_no;
+                    string pppp = myreader.GetString("4ps");
+                    this.pppp.Text = pppp;
+                    string emp_status = myreader.GetString("emp_status");
+                    this.emp_status.Text = emp_status;
+                    string job_pre = myreader.GetString("job_pre");
+                    this.job_pref.Text = job_pre;
+                    string educ = myreader.GetString("educ_level");
+                    this.educ_level.Text = educ;
+                    string skills = myreader.GetString("skills");
+                    this.skills.Text = skills;
                 }
             }
             catch (Exception ex)
