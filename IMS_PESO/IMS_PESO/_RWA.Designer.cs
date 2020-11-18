@@ -216,6 +216,7 @@
             this.label5.Size = new System.Drawing.Size(85, 18);
             this.label5.TabIndex = 31;
             this.label5.Text = "Surname:";
+            this.label5.Visible = false;
             // 
             // textBox1
             // 
@@ -224,9 +225,10 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(348, 26);
             this.textBox1.TabIndex = 30;
+            this.textBox1.Visible = false;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // RWA
+            // _RWA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -244,7 +246,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "RWA";
+            this.Name = "_RWA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Child Labor";
             this.Load += new System.EventHandler(this.childLabor_Load);

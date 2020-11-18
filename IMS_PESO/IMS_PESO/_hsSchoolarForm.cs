@@ -246,7 +246,7 @@ namespace IMS_PESO
             if (label2.Text == "~code~")
             {
                 insert();
-                insertToContact();
+                //insertToContact();
                 a.ClearTextBoxes(this.Controls);
                 comboBox1.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;

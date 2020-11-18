@@ -228,7 +228,7 @@ namespace IMS_PESO
             if (label2.Text == "~code~")
             {
                 insert();
-                insertToContact();
+                //insertToContact();
                 utility a = new utility();
                 a.ClearTextBoxes(this.Controls);
             }

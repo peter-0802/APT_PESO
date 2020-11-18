@@ -402,7 +402,6 @@
             // 
             // religion
             // 
-            this.religion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.religion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.religion.FormattingEnabled = true;
             this.religion.ItemHeight = 18;

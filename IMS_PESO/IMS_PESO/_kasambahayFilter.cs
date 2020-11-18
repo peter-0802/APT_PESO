@@ -54,7 +54,7 @@ namespace IMS_PESO
                             skills `SKILLS`,
                             `from` `FROM`
                             FROM kasambahay2
-                            where event_date between '{0}' and '{1}'
+                            where date between '{0}' and '{1}'
                             order by date";
             dataset ds = new dataset();
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);

@@ -359,7 +359,7 @@ namespace IMS_PESO
             {
                 MySqlConnection conn = new MySqlConnection(DBConn.connstring);
                 MySqlDataReader myreader;
-                string query = @"select agency from sra where agency = '{0}'";
+                string query = @"select agency from sra2 where agency = '{0}'";
                 string q2 = string.Format(query, textBox1.Text);
                 MySqlCommand cmdmdlr = new MySqlCommand(q2, conn);
                 try
@@ -420,7 +420,7 @@ namespace IMS_PESO
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlDataReader myreader;
-            string query = @"select agency from sra where agency = '{0}'";
+            string query = @"select agency from sra2 where agency = '{0}'";
             string q2 = string.Format(query, textBox1.Text);
             MySqlCommand cmdmdlr = new MySqlCommand(q2, conn);
             try

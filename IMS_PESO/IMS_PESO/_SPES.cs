@@ -273,7 +273,7 @@ namespace IMS_PESO
                     else
                     {
                         insert();
-                        insertToContact();
+                        //insertToContact();
                         this.Close();
                     }
                 }
