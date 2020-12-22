@@ -68,6 +68,8 @@ namespace IMS_PESO
                     this.contact.Text = contact_no;
                     string pppp = myreader.GetString("4ps");
                     this.pppp.Text = pppp;
+                    string remarks = myreader.GetString("remarks");
+                    this.remarks.Text = remarks;
                     string emp_status = myreader.GetString("emp_status");
                     this.emp_status.Text = emp_status;
                     string job_pre = myreader.GetString("job_pre");
@@ -183,7 +185,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@ave", average.Text);
                 myCommand.Parameters.AddWithValue("@status", status.Text);
                 myCommand.Parameters.AddWithValue("@pppp", pppp.Text);
-
+                myCommand.Parameters.AddWithValue("@remarks", remarks.Text);
                 myCommand.Parameters.AddWithValue("@job", job.Text);
                 myCommand.Parameters.AddWithValue("@emp_status", emp_status.Text);
                 myCommand.Parameters.AddWithValue("@educ_level", educ.Text);
@@ -191,11 +193,11 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@from", "COLLEGE SCHOOLAR");
                 string query = @"insert ignore into schoolar_coll
                                         (date, code, surname, firstname, middlename, dob, age, sex, civil_status, religion, birthplace,
-                                         brgy, email, cp_no, mother, father, school, yearlevel, ave, status, 4ps, emp_status, job_pre,
+                                         brgy, email, cp_no, mother, father, school, yearlevel, ave, status, 4ps, remarks, emp_status, job_pre,
                                          educ_level, skills, `from`)
                                         values
                                         (@date, (select if (count(id) <= 0, 'S COL - 1', concat('S COL - ', max(id) + 1)) code from schoolar_coll as code), @surname, @firstname, @middlename, @dob, @age, @gender, @civil, @religion, @birthplace,
-                                         @address, @email, @cp_no, @mother, @father, @school, @yearlevel, @ave, @status, @pppp, @emp_status, @job,
+                                         @address, @email, @cp_no, @mother, @father, @school, @yearlevel, @ave, @status, @pppp, @remarks, @emp_status, @job,
                                          @educ_level, @skills, @from)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
@@ -307,7 +309,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@ave", average.Text);
                 myCommand.Parameters.AddWithValue("@status", status.Text);
                 myCommand.Parameters.AddWithValue("@pppp", pppp.Text);
-
+                myCommand.Parameters.AddWithValue("@remarks", remarks.Text);
                 myCommand.Parameters.AddWithValue("@job", job.Text);
                 myCommand.Parameters.AddWithValue("@emp_status", emp_status.Text);
                 myCommand.Parameters.AddWithValue("@educ_level", educ.Text);
@@ -315,11 +317,11 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@from", "COLLEGE SCHOOLAR");
                 string query = @"insert ignore into schoolar_coll
                                         (date, code, surname, firstname, middlename, dob, age, sex, civil_status, religion, birthplace,
-                                         brgy, email, cp_no, mother, father, school, yearlevel, ave, status, 4ps, emp_status, job_pre,
+                                         brgy, email, cp_no, mother, father, school, yearlevel, ave, status, 4ps, remarks, emp_status, job_pre,
                                          educ_level, skills, `from`)
                                         values
                                         (@date, @code, @surname, @firstname, @middlename, @dob, @age, @gender, @civil, @religion, @birthplace,
-                                         @address, @email, @cp_no, @mother, @father, @school, @yearlevel, @ave, @status, @pppp, @emp_status, @job,
+                                         @address, @email, @cp_no, @mother, @father, @school, @yearlevel, @ave, @status, @pppp, @remarks, @emp_status, @job,
                                          @educ_level, @skills, @from)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();

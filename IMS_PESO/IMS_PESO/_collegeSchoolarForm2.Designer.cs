@@ -82,6 +82,8 @@
             this.age = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.remarks = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -236,7 +238,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(126, 218);
+            this.button6.Location = new System.Drawing.Point(127, 244);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(348, 50);
             this.button6.TabIndex = 23;
@@ -692,6 +694,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.remarks);
             this.groupBox2.Controls.Add(this.mother);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.year_level);
@@ -699,8 +703,8 @@
             this.groupBox2.Controls.Add(this.school);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.status);
+            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.label25);
@@ -708,10 +712,29 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(520, 48);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(487, 273);
+            this.groupBox2.Size = new System.Drawing.Size(487, 305);
             this.groupBox2.TabIndex = 1014;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "College Schoolar Fields";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(6, 215);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(84, 18);
+            this.label28.TabIndex = 1014;
+            this.label28.Text = "Remarks:";
+            // 
+            // remarks
+            // 
+            this.remarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.remarks.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remarks.Location = new System.Drawing.Point(126, 212);
+            this.remarks.Name = "remarks";
+            this.remarks.Size = new System.Drawing.Size(348, 26);
+            this.remarks.TabIndex = 1013;
             // 
             // _collegeSchoolarForm2
             // 
@@ -732,7 +755,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "4";
             this.Load += new System.EventHandler(this.ofwForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -799,5 +821,7 @@
         private System.Windows.Forms.TextBox age;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox pppp;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox remarks;
     }
 }

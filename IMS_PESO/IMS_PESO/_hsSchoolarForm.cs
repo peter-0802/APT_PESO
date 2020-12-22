@@ -54,10 +54,8 @@ namespace IMS_PESO
                     dateTimePicker2.Text = dob;
                     string mother = myreader.GetString("mother");
                     textBox9.Text = mother;
-
                     string father = myreader.GetString("father");
                     textBox4.Text = father;
-
                     string address = myreader.GetString("address");
                     comboBox5.Text = address;
                     string contact_no = myreader.GetString("contact");
@@ -70,6 +68,8 @@ namespace IMS_PESO
                     textBox10.Text = ave;
                     string status = myreader.GetString("status");
                     comboBox1.Text = status;
+                    string remark = myreader.GetString("remarks");
+                    remarks.Text = remark;
                 }
             }
             catch (Exception ex)
@@ -104,10 +104,11 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@yearlevel", comboBox4.Text);
                 myCommand.Parameters.AddWithValue("@ave", textBox10.Text);
                 myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
+                myCommand.Parameters.AddWithValue("@remarks", remarks.Text);
                 string query = @"insert ignore into hsshcoolar
-                                        (code, date ,surname, firstname, middlename, gender, dob, mother, father, address, contact, school, yearlevel, ave, status)
+                                        (code, date ,surname, firstname, middlename, gender, dob, mother, father, address, contact, school, yearlevel, ave, status, remarks)
                                         values
-                                        ((select if (count(id) <= 0, 'HSS - 1', concat('HSS - ', max(id) + 1)) code from hsshcoolar as code), @date, @surname, @firstname, @middlename, @gender, @dob, @mother, @father, @address, @contact, @school, @yearlevel, @ave, @status)";
+                                        ((select if (count(id) <= 0, 'HSS - 1', concat('HSS - ', max(id) + 1)) code from hsshcoolar as code), @date, @surname, @firstname, @middlename, @gender, @dob, @mother, @father, @address, @contact, @school, @yearlevel, @ave, @status, @remarks)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -210,10 +211,11 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@yearlevel", comboBox4.Text);
                 myCommand.Parameters.AddWithValue("@ave", textBox10.Text);
                 myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
+                myCommand.Parameters.AddWithValue("@remarks", remarks.Text);
                 string query = @"insert ignore into hsshcoolar
-                                        (code, date ,surname, firstname, middlename, gender, dob, mother, father, address, contact, school, yearlevel, ave, status)
+                                        (code, date ,surname, firstname, middlename, gender, dob, mother, father, address, contact, school, yearlevel, ave, status, remarks)
                                         values
-                                        (@code, @date, @surname, @firstname, @middlename, @gender, @dob, @mother, @father, @address, @contact, @school, @yearlevel, @ave, @status)";
+                                        (@code, @date, @surname, @firstname, @middlename, @gender, @dob, @mother, @father, @address, @contact, @school, @yearlevel, @ave, @status, @remarks)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -246,7 +248,6 @@ namespace IMS_PESO
             if (label2.Text == "~code~")
             {
                 insert();
-                //insertToContact();
                 a.ClearTextBoxes(this.Controls);
                 comboBox1.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;
