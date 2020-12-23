@@ -61,6 +61,8 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.reg_no = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -224,7 +226,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(195, 494);
+            this.button6.Location = new System.Drawing.Point(195, 525);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(348, 50);
             this.button6.TabIndex = 16;
@@ -408,11 +410,32 @@
             this.comboBox1.TabIndex = 14;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(22, 496);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 18);
+            this.label18.TabIndex = 115;
+            this.label18.Text = "Reg. No.:";
+            // 
+            // reg_no
+            // 
+            this.reg_no.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.reg_no.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reg_no.Location = new System.Drawing.Point(195, 493);
+            this.reg_no.Name = "reg_no";
+            this.reg_no.Size = new System.Drawing.Size(348, 26);
+            this.reg_no.TabIndex = 114;
+            // 
             // _rwaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 560);
+            this.ClientSize = new System.Drawing.Size(558, 589);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.reg_no);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.label17);
@@ -495,5 +518,7 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox reg_no;
     }
 }

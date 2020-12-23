@@ -42,6 +42,8 @@ namespace IMS_PESO
                 {
                     string date = myreader.GetString("date");
                     dateTimePicker1.Text = date;
+                    string reg = myreader.GetString("reg_no");
+                    reg_no.Text = reg;
                     string name = myreader.GetString("establishment_name");
                     textBox1.Text = name;
                     string acronym = myreader.GetString("acronym");
@@ -91,6 +93,7 @@ namespace IMS_PESO
             {
                     myCommand = conn.CreateCommand();
                     myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                    myCommand.Parameters.AddWithValue("@reg_no", reg_no.Text);
                     myCommand.Parameters.AddWithValue("@establishment_name", textBox1.Text);
                     myCommand.Parameters.AddWithValue("@acronym", textBox2.Text);
                     myCommand.Parameters.AddWithValue("@tin", textBox3.Text);
@@ -106,9 +109,9 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@type", comboBox1.Text);
                     myCommand.Parameters.AddWithValue("@email", textBox11.Text);
                 string query = @"insert into rwa
-                                        (date, code, establishment_name, acronym, tin, employer_type, work_force, business_line, address, municipality, province, contact_person, position, tel, type, email)
+                                        (date, code, reg_no, establishment_name, acronym, tin, employer_type, work_force, business_line, address, municipality, province, contact_person, position, tel, type, email)
                                         values
-                                        (@date, (select if (count(id) <= 0, 'RWA - 1', concat('RWA - ', max(id) + 1)) code from rwa as code), @establishment_name, @acronym, @tin, @employer_type, @work_force, @business_line, @address, @municipality, @province, @contact_person, @position, @tel, @type, @email)";
+                                        (@date, (select if (count(id) <= 0, 'RWA - 1', concat('RWA - ', max(id) + 1)) code from rwa as code), @reg_no, @establishment_name, @acronym, @tin, @employer_type, @work_force, @business_line, @address, @municipality, @province, @contact_person, @position, @tel, @type, @email)";
                     myCommand.CommandText = query;
                     myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -153,6 +156,7 @@ namespace IMS_PESO
                 myCommand = conn.CreateCommand();
                 myCommand.Parameters.AddWithValue("@code", label2.Text);
                 myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                myCommand.Parameters.AddWithValue("@reg_no", reg_no.Text);
                 myCommand.Parameters.AddWithValue("@establishment_name", textBox1.Text);
                 myCommand.Parameters.AddWithValue("@acronym", textBox2.Text);
                 myCommand.Parameters.AddWithValue("@tin", textBox3.Text);
@@ -168,9 +172,9 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@type", comboBox1.Text);
                 myCommand.Parameters.AddWithValue("@email", textBox11.Text);
                 string query = @"insert into rwa
-                                        (date, code, establishment_name, acronym, tin, employer_type, work_force, business_line, address, municipality, province, contact_person, position, tel, type, email)
+                                        (date, code, reg_no, establishment_name, acronym, tin, employer_type, work_force, business_line, address, municipality, province, contact_person, position, tel, type, email)
                                         values
-                                        (@date, @code, @establishment_name, @acronym, @tin, @employer_type, @work_force, @business_line, @address, @municipality, @province, @contact_person, @position, @tel, @type, @email)";
+                                        (@date, @code, @reg_no, @establishment_name, @acronym, @tin, @employer_type, @work_force, @business_line, @address, @municipality, @province, @contact_person, @position, @tel, @type, @email)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();

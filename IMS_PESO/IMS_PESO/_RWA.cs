@@ -45,6 +45,7 @@ namespace IMS_PESO
             string query = @"select
                                 date `DATE`,
                                 code `CODE`,
+                                reg_no `REG. NO.`,
                                 establishment_name `ESTABLISHMENT`,
                                 acronym `ACRONYM`,
                                 tin `TIN`,

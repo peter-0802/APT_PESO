@@ -161,28 +161,36 @@ namespace IMS_PESO
             try
             {
                 myCommand.Parameters.AddWithValue("@code", label2.Text);
-                string qD = @"delete from ofw where code = @code;";
+                string qD = @"delete from contact2 where code = @code;";
                 myCommand.CommandText = qD;
                 myCommand.ExecuteNonQuery();
 
                 myCommand = conn.CreateCommand();
-                myCommand.Parameters.AddWithValue("@code", label2.Text);
                 myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
                 myCommand.Parameters.AddWithValue("@surname", surname.Text);
                 myCommand.Parameters.AddWithValue("@firstname", firstname.Text);
                 myCommand.Parameters.AddWithValue("@middlename", middlename.Text);
-                myCommand.Parameters.AddWithValue("@address", address.Text);
+                myCommand.Parameters.AddWithValue("@dob", dob.Text);
+                myCommand.Parameters.AddWithValue("@age", age.Text);
                 myCommand.Parameters.AddWithValue("@gender", gender.Text);
-                myCommand.Parameters.AddWithValue("@country", contact.Text);
-                myCommand.Parameters.AddWithValue("@passport", emp_status.Text);
-                //myCommand.Parameters.AddWithValue("@type", comboBox3.Text);
-                myCommand.Parameters.AddWithValue("@contact_no", job_pref.Text);
-                //myCommand.Parameters.AddWithValue("@status", comboBox1.Text);
-                myCommand.Parameters.AddWithValue("@remarks", educ_level.Text);
-                string query = @"insert ignore into ofw
-                                        (date, code, surname, firstname, middlename, address, gender, country, passport, type, contact_no, status, remarks)
+                myCommand.Parameters.AddWithValue("@civil", civil.Text);
+                myCommand.Parameters.AddWithValue("@religion", religion.Text);
+                myCommand.Parameters.AddWithValue("@birthplace", birthplace.Text);
+                myCommand.Parameters.AddWithValue("@address", address.Text);
+                myCommand.Parameters.AddWithValue("@email", email.Text);
+                myCommand.Parameters.AddWithValue("@cp_no", contact.Text);
+                myCommand.Parameters.AddWithValue("@pppp", pppp.Text);
+                myCommand.Parameters.AddWithValue("@emp_status", emp_status.Text);
+                myCommand.Parameters.AddWithValue("@job", job_pref.Text);
+                myCommand.Parameters.AddWithValue("@educ_level", educ_level.Text);
+                myCommand.Parameters.AddWithValue("@skills", skills.Text);
+                myCommand.Parameters.AddWithValue("@from", "NSRP MODULE");
+                string query = @"insert ignore into contact2
+                                        (date, code, surname, firstname, middlename, dob, age, sex, civil_status, religion, birthplace,
+                                         brgy, email, cp_no, 4ps, emp_status, job_pre, educ_level, skills, `from`)
                                         values
-                                        (@date, (select if (count(id) <= 0, 'OFW - 1', concat('OFW - ', max(id) + 1)) code from ofw as code), @surname, @firstname, @middlename, @address, @gender, @country, @passport, @type, @contact_no, @status, @remarks)";
+                                        (@date, (select if (count(id) <= 0, 'NSRP - 1', concat('NSRP - ', max(id) + 1)) code from contact2 as code), @surname, @firstname, @middlename, @dob, @age, @gender, @civil, @religion, @birthplace,
+                                         @address, @email, @cp_no, @pppp, @emp_status, @job, @educ_level, @skills, @from)";
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();

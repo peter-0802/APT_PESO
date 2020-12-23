@@ -4237,11 +4237,11 @@ namespace IMS_PESO {
             
             private global::System.Data.DataColumn columnname;
             
-            private global::System.Data.DataColumn columnaddress;
+            private global::System.Data.DataColumn columnbrgy;
             
-            private global::System.Data.DataColumn columngender;
+            private global::System.Data.DataColumn columnsex;
             
-            private global::System.Data.DataColumn columncontact_no;
+            private global::System.Data.DataColumn columncp_no;
             
             private global::System.Data.DataColumn columnstatus;
             
@@ -4306,25 +4306,25 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn addressColumn {
+            public global::System.Data.DataColumn brgyColumn {
                 get {
-                    return this.columnaddress;
+                    return this.columnbrgy;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn genderColumn {
+            public global::System.Data.DataColumn sexColumn {
                 get {
-                    return this.columngender;
+                    return this.columnsex;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn contact_noColumn {
+            public global::System.Data.DataColumn cp_noColumn {
                 get {
-                    return this.columncontact_no;
+                    return this.columncp_no;
                 }
             }
             
@@ -4381,15 +4381,15 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public kasReportRow AddkasReportRow(System.DateTime date, string code, string name, string address, string gender, string contact_no, string status, string remarks) {
+            public kasReportRow AddkasReportRow(System.DateTime date, string code, string name, string brgy, string sex, string cp_no, string status, string remarks) {
                 kasReportRow rowkasReportRow = ((kasReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         date,
                         code,
                         name,
-                        address,
-                        gender,
-                        contact_no,
+                        brgy,
+                        sex,
+                        cp_no,
                         status,
                         remarks};
                 rowkasReportRow.ItemArray = columnValuesArray;
@@ -4417,9 +4417,9 @@ namespace IMS_PESO {
                 this.columndate = base.Columns["date"];
                 this.columncode = base.Columns["code"];
                 this.columnname = base.Columns["name"];
-                this.columnaddress = base.Columns["address"];
-                this.columngender = base.Columns["gender"];
-                this.columncontact_no = base.Columns["contact_no"];
+                this.columnbrgy = base.Columns["brgy"];
+                this.columnsex = base.Columns["sex"];
+                this.columncp_no = base.Columns["cp_no"];
                 this.columnstatus = base.Columns["status"];
                 this.columnremarks = base.Columns["remarks"];
             }
@@ -4433,12 +4433,12 @@ namespace IMS_PESO {
                 base.Columns.Add(this.columncode);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
-                this.columnaddress = new global::System.Data.DataColumn("address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnaddress);
-                this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columngender);
-                this.columncontact_no = new global::System.Data.DataColumn("contact_no", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncontact_no);
+                this.columnbrgy = new global::System.Data.DataColumn("brgy", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbrgy);
+                this.columnsex = new global::System.Data.DataColumn("sex", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsex);
+                this.columncp_no = new global::System.Data.DataColumn("cp_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncp_no);
                 this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstatus);
                 this.columnremarks = new global::System.Data.DataColumn("remarks", typeof(string), null, global::System.Data.MappingType.Element);
@@ -8759,49 +8759,49 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string address {
+            public string brgy {
                 get {
                     try {
-                        return ((string)(this[this.tablekasReport.addressColumn]));
+                        return ((string)(this[this.tablekasReport.brgyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'address\' in table \'kasReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'brgy\' in table \'kasReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablekasReport.addressColumn] = value;
+                    this[this.tablekasReport.brgyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string gender {
+            public string sex {
                 get {
                     try {
-                        return ((string)(this[this.tablekasReport.genderColumn]));
+                        return ((string)(this[this.tablekasReport.sexColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'gender\' in table \'kasReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'sex\' in table \'kasReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablekasReport.genderColumn] = value;
+                    this[this.tablekasReport.sexColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string contact_no {
+            public string cp_no {
                 get {
                     try {
-                        return ((string)(this[this.tablekasReport.contact_noColumn]));
+                        return ((string)(this[this.tablekasReport.cp_noColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'contact_no\' in table \'kasReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cp_no\' in table \'kasReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablekasReport.contact_noColumn] = value;
+                    this[this.tablekasReport.cp_noColumn] = value;
                 }
             }
             
@@ -8875,38 +8875,38 @@ namespace IMS_PESO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsaddressNull() {
-                return this.IsNull(this.tablekasReport.addressColumn);
+            public bool IsbrgyNull() {
+                return this.IsNull(this.tablekasReport.brgyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetaddressNull() {
-                this[this.tablekasReport.addressColumn] = global::System.Convert.DBNull;
+            public void SetbrgyNull() {
+                this[this.tablekasReport.brgyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsgenderNull() {
-                return this.IsNull(this.tablekasReport.genderColumn);
+            public bool IssexNull() {
+                return this.IsNull(this.tablekasReport.sexColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetgenderNull() {
-                this[this.tablekasReport.genderColumn] = global::System.Convert.DBNull;
+            public void SetsexNull() {
+                this[this.tablekasReport.sexColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iscontact_noNull() {
-                return this.IsNull(this.tablekasReport.contact_noColumn);
+            public bool Iscp_noNull() {
+                return this.IsNull(this.tablekasReport.cp_noColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setcontact_noNull() {
-                this[this.tablekasReport.contact_noColumn] = global::System.Convert.DBNull;
+            public void Setcp_noNull() {
+                this[this.tablekasReport.cp_noColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

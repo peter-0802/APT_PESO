@@ -79,14 +79,14 @@ namespace IMS_PESO
                         date,
                         code,
                         concat(surname, ', ', firstname, ' ', middlename) name,
-                        address,
-                        gender,
-                        contact_no,
+                        brgy,
+                        sex,
+                        cp_no,
                         status,
                         remarks
                         from kasambahay2
                         where date between '{0}' and '{1}'
-                        and address like '%%{2}%%'";
+                        and brgy like '%%{2}%%'";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text);
 
             dataset ds = new dataset();

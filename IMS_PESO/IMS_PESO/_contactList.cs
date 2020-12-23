@@ -243,9 +243,9 @@ namespace IMS_PESO
             {
                 return;
             }
-            NSRPUpdate a = new NSRPUpdate();
-            a.label26.Text = label1.Text;
-            a.ShowDialog();
+            //NSRPUpdate a = new NSRPUpdate();
+            //a.label26.Text = label1.Text;
+            //a.ShowDialog();
         }
         private void contactList_Activated(object sender, EventArgs e)
         {
@@ -590,7 +590,7 @@ namespace IMS_PESO
                             skills `SKILLS`,
                             `from` `FROM`
                             FROM contact2
-) fin
+                            ) fin
                             order by date";
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))

@@ -404,7 +404,8 @@ namespace IMS_PESO
                             school `SCHOOL`,
                             yearlevel `YEAR LEVEL`,
                             ave `AVERAGE`,
-                            status `STATUS`
+                            status `STATUS`,
+                            remarks `REMARKS`
                             FROM schoolar_coll
                             order by code asc";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
