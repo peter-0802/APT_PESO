@@ -34,7 +34,7 @@ namespace IMS_PESO
 
         private void button6_Click(object sender, EventArgs e)
         {
-            _report a = new _report();
+            f_report a = new f_report();
             string iQry = @"SELECT
                         (select min(event_date) from sra where event_date between '{0}' and '{1}') `min`,
                         (select max(event_date) from sra where event_date between '{0}' and '{1}') `max`,

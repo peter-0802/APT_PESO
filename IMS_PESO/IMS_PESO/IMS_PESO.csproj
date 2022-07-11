@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IMS_PESO</RootNamespace>
     <AssemblyName>IMS_PESO</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -39,6 +40,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>
     </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +50,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -65,7 +68,7 @@
     <ManifestKeyFile>IMS_PESO_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>logo_icon.ico</ApplicationIcon>
@@ -90,6 +93,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -120,17 +124,29 @@
       <DependentUpon>rrrr.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_addUser.cs">
+    <Compile Include="f_add_user.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_addUser.Designer.cs">
-      <DependentUpon>_addUser.cs</DependentUpon>
+    <Compile Include="f_add_user.Designer.cs">
+      <DependentUpon>f_add_user.cs</DependentUpon>
     </Compile>
-    <Compile Include="_reportPanel.cs">
+    <Compile Include="f_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_reportPanel.Designer.cs">
-      <DependentUpon>_reportPanel.cs</DependentUpon>
+    <Compile Include="f_dashboard.Designer.cs">
+      <DependentUpon>f_dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f_report_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_report_panel.Designer.cs">
+      <DependentUpon>f_report_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crp_container\crp_tester.cs">
+      <DependentUpon>crp_tester.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="_cr_college.cs">
       <AutoGen>True</AutoGen>
@@ -168,11 +184,11 @@
       <DependentUpon>_cr_pwd.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_kasambahay.cs">
+    <Compile Include="f_kasambahay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_kasambahay.Designer.cs">
-      <DependentUpon>_kasambahay.cs</DependentUpon>
+    <Compile Include="f_kasambahay.Designer.cs">
+      <DependentUpon>f_kasambahay.cs</DependentUpon>
     </Compile>
     <Compile Include="_kasambahayForm.cs">
       <SubType>Form</SubType>
@@ -180,77 +196,77 @@
     <Compile Include="_kasambahayForm.Designer.cs">
       <DependentUpon>_kasambahayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="_kasambahayFilter.cs">
+    <Compile Include="f_kasambahay_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_kasambahayFilter.Designer.cs">
-      <DependentUpon>_kasambahayFilter.cs</DependentUpon>
+    <Compile Include="f_kasambahay_filter.Designer.cs">
+      <DependentUpon>f_kasambahay_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_collegeSchoolarForm2.cs">
+    <Compile Include="f_college_schoolar_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_collegeSchoolarForm2.Designer.cs">
-      <DependentUpon>_collegeSchoolarForm2.cs</DependentUpon>
+    <Compile Include="f_college_schoolar_form.Designer.cs">
+      <DependentUpon>f_college_schoolar_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="_nsrpForm.cs">
+    <Compile Include="f_nsrp_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_nsrpForm.Designer.cs">
-      <DependentUpon>_nsrpForm.cs</DependentUpon>
+    <Compile Include="f_nsrp_form.Designer.cs">
+      <DependentUpon>f_nsrp_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="_kasambahayForm2.cs">
+    <Compile Include="f_kasambahay_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_kasambahayForm2.Designer.cs">
-      <DependentUpon>_kasambahayForm2.cs</DependentUpon>
+    <Compile Include="f_kasambahay_form.Designer.cs">
+      <DependentUpon>f_kasambahay_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="_ofwForm2.cs">
+    <Compile Include="f_ofw_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_ofwForm2.Designer.cs">
-      <DependentUpon>_ofwForm2.cs</DependentUpon>
+    <Compile Include="f_ofw_form.Designer.cs">
+      <DependentUpon>f_ofw_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="_pwdFilter.cs">
+    <Compile Include="f_pwd_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_pwdFilter.Designer.cs">
-      <DependentUpon>_pwdFilter.cs</DependentUpon>
+    <Compile Include="f_pwd_filter.Designer.cs">
+      <DependentUpon>f_pwd_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_pwdForm.cs">
+    <Compile Include="f_pwd_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_pwdForm.Designer.cs">
-      <DependentUpon>_pwdForm.cs</DependentUpon>
+    <Compile Include="f_pwd_form.Designer.cs">
+      <DependentUpon>f_pwd_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="_PWD.cs">
+    <Compile Include="f_pwd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_PWD.Designer.cs">
-      <DependentUpon>_PWD.cs</DependentUpon>
+    <Compile Include="f_pwd.Designer.cs">
+      <DependentUpon>f_pwd.cs</DependentUpon>
     </Compile>
-    <Compile Include="_rwaForm.cs">
+    <Compile Include="f_rwa_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_rwaForm.Designer.cs">
-      <DependentUpon>_rwaForm.cs</DependentUpon>
+    <Compile Include="f_rwa_form.Designer.cs">
+      <DependentUpon>f_rwa_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="_RWA.cs">
+    <Compile Include="f_rwa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_RWA.Designer.cs">
-      <DependentUpon>_RWA.cs</DependentUpon>
+    <Compile Include="f_rwa.Designer.cs">
+      <DependentUpon>f_rwa.cs</DependentUpon>
     </Compile>
-    <Compile Include="_collegeSchoolarFilter.cs">
+    <Compile Include="f_college_scholar_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_collegeSchoolarFilter.Designer.cs">
-      <DependentUpon>_collegeSchoolarFilter.cs</DependentUpon>
+    <Compile Include="f_college_scholar_filter.Designer.cs">
+      <DependentUpon>f_college_scholar_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_collegeSchoolar.cs">
+    <Compile Include="f_college_scholar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_collegeSchoolar.Designer.cs">
-      <DependentUpon>_collegeSchoolar.cs</DependentUpon>
+    <Compile Include="f_college_scholar.Designer.cs">
+      <DependentUpon>f_college_scholar.cs</DependentUpon>
     </Compile>
     <Compile Include="_collegeSchoolarForm.cs">
       <SubType>Form</SubType>
@@ -270,23 +286,23 @@
       <DependentUpon>_cr_rwa.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_hsSchoolarForm.cs">
+    <Compile Include="f_hsschoolar_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_hsSchoolarForm.Designer.cs">
-      <DependentUpon>_hsSchoolarForm.cs</DependentUpon>
+    <Compile Include="f_hsschoolar_form.Designer.cs">
+      <DependentUpon>f_hsschoolar_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="_rwaFilter.cs">
+    <Compile Include="f_rwa_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_rwaFilter.Designer.cs">
-      <DependentUpon>_rwaFilter.cs</DependentUpon>
+    <Compile Include="f_rwa_filter.Designer.cs">
+      <DependentUpon>f_rwa_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_ofwFilter.cs">
+    <Compile Include="f_ofw_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_ofwFilter.Designer.cs">
-      <DependentUpon>_ofwFilter.cs</DependentUpon>
+    <Compile Include="f_ofw_filter.Designer.cs">
+      <DependentUpon>f_ofw_filter.cs</DependentUpon>
     </Compile>
     <Compile Include="_cr_jobFair.cs">
       <DependentUpon>_cr_jobFair.rpt</DependentUpon>
@@ -300,17 +316,17 @@
       <DependentUpon>_cr_ofw.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_jobFairFilter.cs">
+    <Compile Include="f_job_fair_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_jobFairFilter.Designer.cs">
-      <DependentUpon>_jobFairFilter.cs</DependentUpon>
+    <Compile Include="f_job_fair_filter.Designer.cs">
+      <DependentUpon>f_job_fair_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_auth.cs">
+    <Compile Include="f_auth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_auth.Designer.cs">
-      <DependentUpon>_auth.cs</DependentUpon>
+    <Compile Include="f_auth.Designer.cs">
+      <DependentUpon>f_auth.cs</DependentUpon>
     </Compile>
     <Compile Include="_cr_shReport.cs">
       <AutoGen>True</AutoGen>
@@ -325,11 +341,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DGVColumnSelector.cs" />
-    <Compile Include="_OFW.cs">
+    <Compile Include="f_ofw.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_OFW.Designer.cs">
-      <DependentUpon>_OFW.cs</DependentUpon>
+    <Compile Include="f_ofw.Designer.cs">
+      <DependentUpon>f_ofw.cs</DependentUpon>
     </Compile>
     <Compile Include="ofwFilter.cs">
       <SubType>Form</SubType>
@@ -343,65 +359,65 @@
     <Compile Include="_ofwForm.Designer.cs">
       <DependentUpon>_ofwForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="_jobFair.cs">
+    <Compile Include="f_job_fair.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_jobFair.Designer.cs">
-      <DependentUpon>_jobFair.cs</DependentUpon>
+    <Compile Include="f_job_fair.Designer.cs">
+      <DependentUpon>f_job_fair.cs</DependentUpon>
     </Compile>
-    <Compile Include="_sraFilter.cs">
+    <Compile Include="f_sra_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_sraFilter.Designer.cs">
-      <DependentUpon>_sraFilter.cs</DependentUpon>
+    <Compile Include="f_sra_filter.Designer.cs">
+      <DependentUpon>f_sra_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_SRA.cs">
+    <Compile Include="f_sra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_SRA.Designer.cs">
-      <DependentUpon>_SRA.cs</DependentUpon>
+    <Compile Include="f_sra.Designer.cs">
+      <DependentUpon>f_sra.cs</DependentUpon>
     </Compile>
-    <Compile Include="_hsSchoolarFilter.cs">
+    <Compile Include="f_hsscholar_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_hsSchoolarFilter.Designer.cs">
-      <DependentUpon>_hsSchoolarFilter.cs</DependentUpon>
+    <Compile Include="f_hsscholar_filter.Designer.cs">
+      <DependentUpon>f_hsscholar_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_HSschoolar.cs">
+    <Compile Include="f_hsscholar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_HSschoolar.Designer.cs">
-      <DependentUpon>_HSschoolar.cs</DependentUpon>
+    <Compile Include="f_hsscholar.Designer.cs">
+      <DependentUpon>f_hsscholar.cs</DependentUpon>
     </Compile>
-    <Compile Include="_spesFilter.cs">
+    <Compile Include="f_spes_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_spesFilter.Designer.cs">
-      <DependentUpon>_spesFilter.cs</DependentUpon>
+    <Compile Include="f_spes_filter.Designer.cs">
+      <DependentUpon>f_spes_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_SPES.cs">
+    <Compile Include="f_spes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_SPES.Designer.cs">
-      <DependentUpon>_SPES.cs</DependentUpon>
+    <Compile Include="f_spes.Designer.cs">
+      <DependentUpon>f_spes.cs</DependentUpon>
     </Compile>
-    <Compile Include="_childLabor.cs">
+    <Compile Include="f_child_labor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_childLabor.Designer.cs">
-      <DependentUpon>_childLabor.cs</DependentUpon>
+    <Compile Include="f_child_labor.Designer.cs">
+      <DependentUpon>f_child_labor.cs</DependentUpon>
     </Compile>
-    <Compile Include="_childLaborFilter.cs">
+    <Compile Include="f_child_labor_filter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_childLaborFilter.Designer.cs">
-      <DependentUpon>_childLaborFilter.cs</DependentUpon>
+    <Compile Include="f_child_labor_filter.Designer.cs">
+      <DependentUpon>f_child_labor_filter.cs</DependentUpon>
     </Compile>
-    <Compile Include="_contactList.cs">
+    <Compile Include="f_contact_list.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_contactList.Designer.cs">
-      <DependentUpon>_contactList.cs</DependentUpon>
+    <Compile Include="f_contact_list.Designer.cs">
+      <DependentUpon>f_contact_list.cs</DependentUpon>
     </Compile>
     <Compile Include="_cr_childLaborReport.cs">
       <AutoGen>True</AutoGen>
@@ -463,11 +479,11 @@
     <Compile Include="initMovable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_report.cs">
+    <Compile Include="f_report.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_report.Designer.cs">
-      <DependentUpon>_report.cs</DependentUpon>
+    <Compile Include="f_report.Designer.cs">
+      <DependentUpon>f_report.cs</DependentUpon>
     </Compile>
     <Compile Include="skill.cs">
       <SubType>Form</SubType>
@@ -512,11 +528,18 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rrrr.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="_addUser.resx">
-      <DependentUpon>_addUser.cs</DependentUpon>
+    <EmbeddedResource Include="f_add_user.resx">
+      <DependentUpon>f_add_user.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_reportPanel.resx">
-      <DependentUpon>_reportPanel.cs</DependentUpon>
+    <EmbeddedResource Include="f_dashboard.resx">
+      <DependentUpon>f_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_report_panel.resx">
+      <DependentUpon>f_report_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crp_container\crp_tester.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crp_tester.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="_cr_college.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -542,47 +565,47 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>_cr_pwd.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="_kasambahay.resx">
-      <DependentUpon>_kasambahay.cs</DependentUpon>
+    <EmbeddedResource Include="f_kasambahay.resx">
+      <DependentUpon>f_kasambahay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_kasambahayForm.resx">
       <DependentUpon>_kasambahayForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_kasambahayFilter.resx">
-      <DependentUpon>_kasambahayFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_kasambahay_filter.resx">
+      <DependentUpon>f_kasambahay_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_collegeSchoolarForm2.resx">
-      <DependentUpon>_collegeSchoolarForm2.cs</DependentUpon>
+    <EmbeddedResource Include="f_college_schoolar_form.resx">
+      <DependentUpon>f_college_schoolar_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_nsrpForm.resx">
-      <DependentUpon>_nsrpForm.cs</DependentUpon>
+    <EmbeddedResource Include="f_nsrp_form.resx">
+      <DependentUpon>f_nsrp_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_kasambahayForm2.resx">
-      <DependentUpon>_kasambahayForm2.cs</DependentUpon>
+    <EmbeddedResource Include="f_kasambahay_form.resx">
+      <DependentUpon>f_kasambahay_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_ofwForm2.resx">
-      <DependentUpon>_ofwForm2.cs</DependentUpon>
+    <EmbeddedResource Include="f_ofw_form.resx">
+      <DependentUpon>f_ofw_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_pwdFilter.resx">
-      <DependentUpon>_pwdFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_pwd_filter.resx">
+      <DependentUpon>f_pwd_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_pwdForm.resx">
-      <DependentUpon>_pwdForm.cs</DependentUpon>
+    <EmbeddedResource Include="f_pwd_form.resx">
+      <DependentUpon>f_pwd_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_PWD.resx">
-      <DependentUpon>_PWD.cs</DependentUpon>
+    <EmbeddedResource Include="f_pwd.resx">
+      <DependentUpon>f_pwd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_rwaForm.resx">
-      <DependentUpon>_rwaForm.cs</DependentUpon>
+    <EmbeddedResource Include="f_rwa_form.resx">
+      <DependentUpon>f_rwa_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_RWA.resx">
-      <DependentUpon>_RWA.cs</DependentUpon>
+    <EmbeddedResource Include="f_rwa.resx">
+      <DependentUpon>f_rwa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_collegeSchoolarFilter.resx">
-      <DependentUpon>_collegeSchoolarFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_college_scholar_filter.resx">
+      <DependentUpon>f_college_scholar_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_collegeSchoolar.resx">
-      <DependentUpon>_collegeSchoolar.cs</DependentUpon>
+    <EmbeddedResource Include="f_college_scholar.resx">
+      <DependentUpon>f_college_scholar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_collegeSchoolarForm.resx">
       <DependentUpon>_collegeSchoolarForm.cs</DependentUpon>
@@ -595,14 +618,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>_cr_rwa.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="_hsSchoolarForm.resx">
-      <DependentUpon>_hsSchoolarForm.cs</DependentUpon>
+    <EmbeddedResource Include="f_hsschoolar_form.resx">
+      <DependentUpon>f_hsschoolar_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_rwaFilter.resx">
-      <DependentUpon>_rwaFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_rwa_filter.resx">
+      <DependentUpon>f_rwa_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_ofwFilter.resx">
-      <DependentUpon>_ofwFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_ofw_filter.resx">
+      <DependentUpon>f_ofw_filter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_cr_jobFair.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -612,11 +635,11 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>_cr_ofw.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="_jobFairFilter.resx">
-      <DependentUpon>_jobFairFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_job_fair_filter.resx">
+      <DependentUpon>f_job_fair_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_auth.resx">
-      <DependentUpon>_auth.cs</DependentUpon>
+    <EmbeddedResource Include="f_auth.resx">
+      <DependentUpon>f_auth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_cr_shReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -626,8 +649,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>_cr_sraReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="_OFW.resx">
-      <DependentUpon>_OFW.cs</DependentUpon>
+    <EmbeddedResource Include="f_ofw.resx">
+      <DependentUpon>f_ofw.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ofwFilter.resx">
       <DependentUpon>ofwFilter.cs</DependentUpon>
@@ -635,35 +658,35 @@
     <EmbeddedResource Include="_ofwForm.resx">
       <DependentUpon>_ofwForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_jobFair.resx">
-      <DependentUpon>_jobFair.cs</DependentUpon>
+    <EmbeddedResource Include="f_job_fair.resx">
+      <DependentUpon>f_job_fair.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_sraFilter.resx">
-      <DependentUpon>_sraFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_sra_filter.resx">
+      <DependentUpon>f_sra_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_SRA.resx">
-      <DependentUpon>_SRA.cs</DependentUpon>
+    <EmbeddedResource Include="f_sra.resx">
+      <DependentUpon>f_sra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_hsSchoolarFilter.resx">
-      <DependentUpon>_hsSchoolarFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_hsscholar_filter.resx">
+      <DependentUpon>f_hsscholar_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_HSschoolar.resx">
-      <DependentUpon>_HSschoolar.cs</DependentUpon>
+    <EmbeddedResource Include="f_hsscholar.resx">
+      <DependentUpon>f_hsscholar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_spesFilter.resx">
-      <DependentUpon>_spesFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_spes_filter.resx">
+      <DependentUpon>f_spes_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_SPES.resx">
-      <DependentUpon>_SPES.cs</DependentUpon>
+    <EmbeddedResource Include="f_spes.resx">
+      <DependentUpon>f_spes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_childLabor.resx">
-      <DependentUpon>_childLabor.cs</DependentUpon>
+    <EmbeddedResource Include="f_child_labor.resx">
+      <DependentUpon>f_child_labor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_childLaborFilter.resx">
-      <DependentUpon>_childLaborFilter.cs</DependentUpon>
+    <EmbeddedResource Include="f_child_labor_filter.resx">
+      <DependentUpon>f_child_labor_filter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_contactList.resx">
-      <DependentUpon>_contactList.cs</DependentUpon>
+    <EmbeddedResource Include="f_contact_list.resx">
+      <DependentUpon>f_contact_list.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_cr_childLaborReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -701,8 +724,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="_report.resx">
-      <DependentUpon>_report.cs</DependentUpon>
+    <EmbeddedResource Include="f_report.resx">
+      <DependentUpon>f_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="skill.resx">
       <DependentUpon>skill.cs</DependentUpon>
@@ -719,6 +742,7 @@
     <EmbeddedResource Include="_todoAdd.resx">
       <DependentUpon>_todoAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="dataset.xsc">
       <DependentUpon>dataset.xsd</DependentUpon>
     </None>

@@ -150,19 +150,19 @@ namespace IMS_PESO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _SPES a = new _SPES();
+            f_spes a = new f_spes();
             a.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            _SRA a = new _SRA();
+            f_sra a = new f_sra();
             a.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-                _report a = new _report();
+                f_report a = new f_report();
                 a.qry = @"select
                             code `CODE`,
                             surname `SURNAME`,
@@ -175,7 +175,7 @@ namespace IMS_PESO
             }
         private void button4_Click(object sender, EventArgs e)
         {
-            _contactList a = new _contactList();
+            f_contact_list a = new f_contact_list();
             a.ShowDialog();
         }
 
@@ -193,19 +193,19 @@ namespace IMS_PESO
 
         private void button6_Click(object sender, EventArgs e)
         {
-            _childLabor a = new _childLabor();
+            f_child_labor a = new f_child_labor();
             a.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            _collegeSchoolar a = new _collegeSchoolar();
+            f_college_scholar a = new f_college_scholar();
             a.ShowDialog();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            _OFW a = new _OFW();
+            f_ofw a = new f_ofw();
             a.ShowDialog();
             /*
             passport
@@ -221,31 +221,31 @@ namespace IMS_PESO
 
         private void button10_Click(object sender, EventArgs e)
         {
-            _RWA a = new _RWA();
+            f_rwa a = new f_rwa();
             a.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            _HSschoolar a = new _HSschoolar();
+            f_hsscholar a = new f_hsscholar();
             a.ShowDialog();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            _jobFair a = new _jobFair();
+            f_job_fair a = new f_job_fair();
             a.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            _reportPanel aa = new _reportPanel();
+            f_report_panel aa = new f_report_panel();
             aa.ShowDialog();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            _OFW a = new _OFW();
+            f_ofw a = new f_ofw();
             a.ShowDialog();
             
         }
@@ -257,7 +257,7 @@ namespace IMS_PESO
 
         private void button15_Click(object sender, EventArgs e)
         {
-            _PWD a = new _PWD();
+            f_pwd a = new f_pwd();
             a.ShowDialog();
         }
 
@@ -287,7 +287,7 @@ namespace IMS_PESO
 
         private void button3_Click_2(object sender, EventArgs e)
         {
-            _contactList a = new _contactList();
+            f_contact_list a = new f_contact_list();
             a.ShowDialog();
         }
 
@@ -300,13 +300,13 @@ namespace IMS_PESO
 
         private void button13_Click_1(object sender, EventArgs e)
         {
-            _kasambahay a = new _kasambahay();
+            f_kasambahay a = new f_kasambahay();
             a.ShowDialog();
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            _addUser a = new _addUser();
+            f_add_user a = new f_add_user();
             a.ShowDialog();
         }
 
@@ -325,7 +325,7 @@ namespace IMS_PESO
             }
             else if (comboBox2.Text == "DONE")
             {
-                _auth val = new _auth();
+                f_auth val = new f_auth();
                 val.ShowDialog();
                 if (val.upflag == "1")
                 {
@@ -417,7 +417,7 @@ namespace IMS_PESO
         {
             if (comboBox2.Text == "DONE")
             {
-                _auth val = new _auth();
+                f_auth val = new f_auth();
                 val.ShowDialog();
                 if (val.upflag == "1")
                 {
@@ -482,7 +482,7 @@ namespace IMS_PESO
 
         private void button17_Click(object sender, EventArgs e)
         {
-            _auth val = new _auth();
+            f_auth val = new f_auth();
             val.ShowDialog();
             if (val.upflag == "1")
             {
