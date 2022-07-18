@@ -52,6 +52,7 @@
             this.collegeScholarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRecordToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.sPESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRecordToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.highSchoolScholarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRecordToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.oFWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,7 @@
             this.nSRPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addRecordToolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.addRecordToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -289,6 +290,13 @@
             this.sPESToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.sPESToolStripMenuItem.Text = "SPES";
             // 
+            // addRecordToolStripMenuItem5
+            // 
+            this.addRecordToolStripMenuItem5.Name = "addRecordToolStripMenuItem5";
+            this.addRecordToolStripMenuItem5.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem5.Text = "Add Record";
+            this.addRecordToolStripMenuItem5.Click += new System.EventHandler(this.addRecordToolStripMenuItem5_Click_1);
+            // 
             // highSchoolScholarToolStripMenuItem
             // 
             this.highSchoolScholarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -300,7 +308,7 @@
             // addRecordToolStripMenuItem6
             // 
             this.addRecordToolStripMenuItem6.Name = "addRecordToolStripMenuItem6";
-            this.addRecordToolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
+            this.addRecordToolStripMenuItem6.Size = new System.Drawing.Size(136, 22);
             this.addRecordToolStripMenuItem6.Text = "Add Record";
             this.addRecordToolStripMenuItem6.Click += new System.EventHandler(this.addRecordToolStripMenuItem6_Click);
             // 
@@ -388,24 +396,27 @@
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             this.chart1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseDoubleClick);
             // 
-            // addRecordToolStripMenuItem5
+            // label1
             // 
-            this.addRecordToolStripMenuItem5.Name = "addRecordToolStripMenuItem5";
-            this.addRecordToolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
-            this.addRecordToolStripMenuItem5.Text = "Add Record";
-            this.addRecordToolStripMenuItem5.Click += new System.EventHandler(this.addRecordToolStripMenuItem5_Click_1);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1153, 678);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "V2.0";
             // 
-            // _Dashboard_new
+            // f_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "_Dashboard_new";
+            this.Name = "f_dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PESO - IMS | Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this._Dashboard_new_FormClosed);
@@ -455,6 +466,7 @@
         private System.Windows.Forms.ToolStripMenuItem addRecordToolStripMenuItem10;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.ToolStripMenuItem addRecordToolStripMenuItem5;
+        private System.Windows.Forms.Label label1;
     }
 }
 
