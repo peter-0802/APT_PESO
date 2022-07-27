@@ -104,7 +104,7 @@ namespace IMS_PESO
                         myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Record Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Record Added!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -165,7 +165,7 @@ namespace IMS_PESO
             //        myCommand.ExecuteNonQuery();
             //    }
             //    myTrans.Commit();
-            //    MessageBox.Show(this, "Record Added!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    MessageBox.Show(this, "Record Added!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
             //catch (Exception exg)
             //{
@@ -214,7 +214,7 @@ namespace IMS_PESO
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Contacts added to masterlist!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Contacts added to masterlist!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -262,7 +262,7 @@ namespace IMS_PESO
                 {
                     if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
                     {
-                        MessageBox.Show(this, "Looks like some fields are empty :-(", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this, "Looks like some fields are empty :-(", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     else
@@ -287,7 +287,7 @@ namespace IMS_PESO
 
             //    if (myreader.Read())
             //    {
-            //        MessageBox.Show(this, "This code already exist please change event title :-)", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        MessageBox.Show(this, "This code already exist please change event title :-)", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //        label9.Focus();
             //    }
             //}
@@ -330,7 +330,7 @@ namespace IMS_PESO
             {
                 if (String.IsNullOrWhiteSpace(label9.Text) || label9.Text == "~code~")
                 {
-                    MessageBox.Show(this, "Please select an event to delete", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Please select an event to delete", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -348,7 +348,7 @@ namespace IMS_PESO
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
-                        MessageBox.Show(this, "Record Deleted", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this, "Record Deleted", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception exg)
                     {
@@ -375,7 +375,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show(this, "Oops, Wrong Password :P", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Oops, Wrong Password :P", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -492,7 +492,7 @@ namespace IMS_PESO
             {
                 if (String.IsNullOrWhiteSpace(label9.Text) || label9.Text == "~code~")
                 {
-                    MessageBox.Show(this, "Please select an event to update", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Please select an event to update", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -503,7 +503,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show(this, "Oops, Wrong Password :P", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Oops, Wrong Password :P", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             getAttendee();
             label9.Text = "~code~";
