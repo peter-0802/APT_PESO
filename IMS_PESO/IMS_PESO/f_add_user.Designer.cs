@@ -62,11 +62,22 @@
             this.comboBox5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.ItemHeight = 18;
-            this.comboBox5.Location = new System.Drawing.Point(12, 132);
+            this.comboBox5.Items.AddRange(new object[] {
+            "SRA / NSRP",
+            "Child Labor",
+            "Job Fair",
+            "PWD",
+            "College Scholar",
+            "SPES",
+            "High School Scholar",
+            "OFW",
+            "Kasambahay",
+            "RWA",
+            "Administrator"});
+            this.comboBox5.Location = new System.Drawing.Point(133, 76);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(101, 26);
+            this.comboBox5.Size = new System.Drawing.Size(276, 26);
             this.comboBox5.TabIndex = 3;
-            this.comboBox5.Visible = false;
             // 
             // label2
             // 
@@ -132,12 +143,13 @@
             // 
             this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(132, 76);
+            this.textBox2.Location = new System.Drawing.Point(12, 132);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(276, 26);
+            this.textBox2.Size = new System.Drawing.Size(41, 26);
             this.textBox2.TabIndex = 117;
+            this.textBox2.Visible = false;
             // 
-            // _addUser
+            // f_add_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -153,7 +165,7 @@
             this.Controls.Add(this.button6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "_addUser";
+            this.Name = "f_add_user";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "User Management";

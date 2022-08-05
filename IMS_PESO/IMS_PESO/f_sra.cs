@@ -114,7 +114,7 @@ namespace IMS_PESO
                         myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Record Added!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Record Added!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -163,7 +163,7 @@ namespace IMS_PESO
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Contacts added to masterlist!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Contacts added to masterlist!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -241,7 +241,7 @@ namespace IMS_PESO
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Contacts Added!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Contacts Added!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -325,7 +325,7 @@ namespace IMS_PESO
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Record Updated!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Record Updated!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -352,7 +352,7 @@ namespace IMS_PESO
         {
             if (String.IsNullOrWhiteSpace(textBox1.Text) || String.IsNullOrWhiteSpace(textBox2.Text) || String.IsNullOrWhiteSpace(textBox3.Text))
             {
-                MessageBox.Show(this, "Looks like some fields are empty :-(", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Looks like some fields are empty :-(", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -368,7 +368,7 @@ namespace IMS_PESO
 
                     if (myreader.Read())
                     {
-                        MessageBox.Show(this, "This agency already exist please change agency title :-)", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this, "This agency already exist please change agency title :-)", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         textBox1.Focus();
                     }
                     else
@@ -397,22 +397,22 @@ namespace IMS_PESO
 
         private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewRow rw in this.dataGridView1.Rows)
-            {
-                if (rw.IsNewRow) continue;
-                for (int i = 0; i < rw.Cells.Count - 2; i++)
-                {
-                    if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
-                    {
-                        MessageBox.Show(this, "Looks like some fields are empty :-(", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else
-                    {
+            //foreach (DataGridViewRow rw in this.dataGridView1.Rows)
+            //{
+            //    if (rw.IsNewRow) continue;
+            //    for (int i = 0; i < rw.Cells.Count - 2; i++)
+            //    {
+            //        if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
+            //        {
+            //            MessageBox.Show(this, "Looks like some fields are empty :-(", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            return;
+            //        }
+            //        else
+            //        {
 
-                    }
-                }
-            }
+            //        }
+            //    }
+            //}
         }
         
         private void textBox1_Leave(object sender, EventArgs e)
@@ -429,7 +429,7 @@ namespace IMS_PESO
 
                 if (myreader.Read())
                 {
-                    MessageBox.Show(this, "This agency already exist please change agency title :-)", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "This agency already exist please change agency title :-)", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textBox1.Focus();
                 }
             }
@@ -472,7 +472,7 @@ namespace IMS_PESO
             {
                 if (String.IsNullOrWhiteSpace(label9.Text) || label9.Text == "~code~")
                 {
-                    MessageBox.Show(this, "Please select an agency to delete", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Please select an agency to delete", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -490,7 +490,7 @@ namespace IMS_PESO
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
-                        MessageBox.Show(this, "Record Deleted", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this, "Record Deleted", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception exg)
                     {
@@ -517,7 +517,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show(this, "Oops, Wrong Password :P", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Oops, Wrong Password :P", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -653,7 +653,7 @@ namespace IMS_PESO
             {
                 if (String.IsNullOrWhiteSpace(label9.Text) || label9.Text == "~code~")
                 {
-                    MessageBox.Show(this, "Please select an agency to update", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Please select an agency to update", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -664,7 +664,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show(this, "Oops, Wrong Password :P", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Oops, Wrong Password :P", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -675,6 +675,71 @@ namespace IMS_PESO
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                initMovable.ReleaseCapture();
+                initMovable.SendMessage(Handle, initMovable.WM_NCLBUTTONDOWN, initMovable.HT_CAPTION, 0);
+            }
+        }
+        DateTimePicker dateTimePickercol;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            // Check the cell clicked is not the column header cell
+            if (e.RowIndex != -1)
+            {
+                // Apply on column index in which you want to display DatetimePicker.
+                // For this example it is 2.
+                if (e.ColumnIndex == 3)
+                {
+                    // Initialize the dateTimePickercol.
+                    dateTimePickercol = new DateTimePicker();
+                    // Adding the dateTimePickercol into DataGridView.   
+                    dataGridView1.Controls.Add(dateTimePickercol);
+                    // Setting the format i.e. mm/dd/yyyy)
+                    dateTimePickercol.Format = DateTimePickerFormat.Short;
+                    // Create retangular area that represents the display area for a cell.
+                    Rectangle oRectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                    // Setting area for dateTimePickercol.
+                    dateTimePickercol.Size = new Size(oRectangle.Width, oRectangle.Height);
+                    // Setting location for dateTimePickercol.
+                    dateTimePickercol.Location = new Point(oRectangle.X, oRectangle.Y);
+                    // An event attached to dateTimePickercol which is fired when any date is selected.
+                    dateTimePickercol.TextChanged += new EventHandler(DateTimePickerChange);
+                    // An event attached to dateTimePickercol which is fired when DateTimeControl is closed.
+                    dateTimePickercol.CloseUp += new EventHandler(DateTimePickerClose);
+                }
+            }
+        }
+
+        private void DateTimePickerClose(object sender, EventArgs e)
+        {
+            for (int i = 0; i <= dataGridView1.Rows.Count -1 ; i++)
+            {
+                dataGridView1.Rows[i].Cells[3].Value = dateTimePickercol.Text.ToString();
+                int years = DateTime.Now.Year - dateTimePickercol.Value.Year;
+                if (dateTimePickercol.Value.AddYears(years) > DateTime.Now) years--;
+                dataGridView1.Rows[i].Cells[4].Value = years.ToString();
+            }
+        }
+
+        private void DateTimePickerChange(object sender, EventArgs e)
+        {
+            dateTimePickercol.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {

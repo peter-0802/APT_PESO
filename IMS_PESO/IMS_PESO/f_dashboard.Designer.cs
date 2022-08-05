@@ -91,6 +91,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.chart1);
             this.panel2.Controls.Add(this.button19);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
@@ -381,7 +382,7 @@
             legend1.BackColor = System.Drawing.SystemColors.Control;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(250, 41);
+            this.chart1.Location = new System.Drawing.Point(15, 362);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
@@ -390,9 +391,10 @@
             series1.Legend = "Legend1";
             series1.Name = "data";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(938, 622);
+            this.chart1.Size = new System.Drawing.Size(48, 29);
             this.chart1.TabIndex = 33;
             this.chart1.Text = "chart1";
+            this.chart1.Visible = false;
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             this.chart1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseDoubleClick);
             // 
@@ -411,7 +413,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

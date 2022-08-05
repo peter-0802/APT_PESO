@@ -153,14 +153,31 @@ namespace IMS_PESO
             else
             {
                 this.button4.Enabled = false;
+                foreach (ToolStripMenuItem item in menuStrip1.Items)
+                {
+                    foreach (ToolStripMenuItem children in item.DropDownItems)
+                    {
+                        if (children.Text != this.label4.Text)
+                        {
+                            children.Visible = false;
+                        }
+                    }
+                }
             }
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            Login a = new Login();
-            a.Show();
-            this.Dispose();
+            if (MessageBox.Show("Are you sure you want to Logout?", "System Says", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Login a = new Login();
+                a.Show();
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Delete operation Cancelled.");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

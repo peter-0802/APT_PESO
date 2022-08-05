@@ -87,7 +87,7 @@ namespace IMS_PESO
                 myCommand = conn.CreateCommand();
                 myCommand.Parameters.AddWithValue("@username", textBox6.Text);
                 myCommand.Parameters.AddWithValue("@password", textBox1.Text);
-                myCommand.Parameters.AddWithValue("@designation", textBox2.Text);
+                myCommand.Parameters.AddWithValue("@designation", comboBox5.Text);
                 string query = @"insert into accounts
                                         (username, password, designation)
                                         values
@@ -119,6 +119,7 @@ namespace IMS_PESO
                 textBox1.Text = string.Empty;
                 textBox2.Text = string.Empty;
                 comboBox5.SelectedIndex = -1;
+                loadUsers();
             }
         }
 
