@@ -38,6 +38,15 @@
             this.button16 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.purok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.work_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -53,15 +62,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.purok = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.work_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -160,9 +160,94 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.Size = new System.Drawing.Size(847, 472);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowLeave);
+            // 
+            // surname
+            // 
+            this.surname.HeaderText = "SURNAME";
+            this.surname.Name = "surname";
+            this.surname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.surname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.surname.Width = 201;
+            // 
+            // firstname
+            // 
+            this.firstname.HeaderText = "FIRST NAME";
+            this.firstname.Name = "firstname";
+            this.firstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.firstname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.firstname.Width = 201;
+            // 
+            // middlename
+            // 
+            this.middlename.HeaderText = "MIDDLE NAME";
+            this.middlename.Name = "middlename";
+            this.middlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.middlename.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.middlename.Width = 201;
+            // 
+            // gender
+            // 
+            this.gender.HeaderText = "GENDER";
+            this.gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.gender.Name = "gender";
+            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // purok
+            // 
+            this.purok.HeaderText = "PUROK";
+            this.purok.Name = "purok";
+            // 
+            // address
+            // 
+            this.address.HeaderText = "ADDRESS";
+            this.address.Items.AddRange(new object[] {
+            "BACUNGAN",
+            "BALNATE",
+            "BARAYONG",
+            "BLOCON",
+            "DALAWINON",
+            "DALUMAY",
+            "GLAMANG",
+            "KANAPOLO",
+            "KASUGA",
+            "LOWER BALA",
+            "MABINI",
+            "MAIBO",
+            "MALAWANIT",
+            "MALONGON",
+            "NEW ILOCOS",
+            "NEW OPON",
+            "POBLACION",
+            "SAN ISIDRO",
+            "SAN MIGUEL",
+            "TACUL",
+            "TAGAYTAY",
+            "UPPER BALA"});
+            this.address.Name = "address";
+            this.address.Width = 200;
+            // 
+            // dob
+            // 
+            this.dob.HeaderText = "BIRTHDAY";
+            this.dob.Name = "dob";
+            // 
+            // contact
+            // 
+            this.contact.HeaderText = "CONTACT";
+            this.contact.Name = "contact";
+            this.contact.Width = 150;
+            // 
+            // work_type
+            // 
+            this.work_type.HeaderText = "NATURE OF WORK";
+            this.work_type.Name = "work_type";
+            this.work_type.Width = 200;
             // 
             // textBox2
             // 
@@ -365,91 +450,7 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // surname
-            // 
-            this.surname.HeaderText = "SURNAME";
-            this.surname.Name = "surname";
-            this.surname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.surname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.surname.Width = 201;
-            // 
-            // firstname
-            // 
-            this.firstname.HeaderText = "FIRST NAME";
-            this.firstname.Name = "firstname";
-            this.firstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.firstname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.firstname.Width = 201;
-            // 
-            // middlename
-            // 
-            this.middlename.HeaderText = "MIDDLE NAME";
-            this.middlename.Name = "middlename";
-            this.middlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.middlename.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.middlename.Width = 201;
-            // 
-            // gender
-            // 
-            this.gender.HeaderText = "GENDER";
-            this.gender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.gender.Name = "gender";
-            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // purok
-            // 
-            this.purok.HeaderText = "PUROK";
-            this.purok.Name = "purok";
-            // 
-            // address
-            // 
-            this.address.HeaderText = "ADDRESS";
-            this.address.Items.AddRange(new object[] {
-            "BACUNGAN",
-            "BALNATE",
-            "BARAYONG",
-            "BLOCON",
-            "DALAWINON",
-            "DALUMAY",
-            "GLAMANG",
-            "KANAPOLO",
-            "KASUGA",
-            "LOWER BALA",
-            "MABINI",
-            "MAIBO",
-            "MALAWANIT",
-            "MALONGON",
-            "NEW ILOCOS",
-            "NEW OPON",
-            "POBLACION",
-            "SAN ISIDRO",
-            "SAN MIGUEL",
-            "TACUL",
-            "TAGAYTAY",
-            "UPPER BALA"});
-            this.address.Name = "address";
-            this.address.Width = 200;
-            // 
-            // dob
-            // 
-            this.dob.HeaderText = "BIRTHDAY";
-            this.dob.Name = "dob";
-            // 
-            // contact
-            // 
-            this.contact.HeaderText = "CONTACT";
-            this.contact.Name = "contact";
-            this.contact.Width = 150;
-            // 
-            // work_type
-            // 
-            this.work_type.HeaderText = "NATURE OF WORK";
-            this.work_type.Name = "work_type";
-            this.work_type.Width = 200;
-            // 
-            // _childLabor
+            // f_child_labor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -476,7 +477,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "_childLabor";
+            this.Name = "f_child_labor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Child Labor";
             this.Load += new System.EventHandler(this.childLabor_Load);

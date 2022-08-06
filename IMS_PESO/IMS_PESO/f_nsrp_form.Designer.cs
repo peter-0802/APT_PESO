@@ -356,6 +356,7 @@
             this.dob.Name = "dob";
             this.dob.Size = new System.Drawing.Size(170, 26);
             this.dob.TabIndex = 4;
+            this.dob.ValueChanged += new System.EventHandler(this.dob_ValueChanged);
             // 
             // civil
             // 
@@ -480,6 +481,7 @@
             this.age.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.age.Location = new System.Drawing.Point(361, 141);
             this.age.Name = "age";
+            this.age.ReadOnly = true;
             this.age.Size = new System.Drawing.Size(127, 26);
             this.age.TabIndex = 1002;
             // 
@@ -493,7 +495,7 @@
             this.label9.TabIndex = 1001;
             this.label9.Text = "AGE:";
             // 
-            // _nsrpForm
+            // f_nsrp_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -540,7 +542,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "_nsrpForm";
+            this.Name = "f_nsrp_form";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

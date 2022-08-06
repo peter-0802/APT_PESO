@@ -343,6 +343,7 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView1.Size = new System.Drawing.Size(847, 472);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting_1);
             this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowLeave_1);
             // 
@@ -382,6 +383,7 @@
             // 
             this.age.HeaderText = "AGE";
             this.age.Name = "age";
+            this.age.ReadOnly = true;
             // 
             // gender
             // 
@@ -498,7 +500,7 @@
             this.remarks.Name = "remarks";
             this.remarks.Width = 150;
             // 
-            // _jobFair
+            // f_job_fair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -521,7 +523,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "_jobFair";
+            this.Name = "f_job_fair";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Child Labor";
             this.Load += new System.EventHandler(this.childLabor_Load);

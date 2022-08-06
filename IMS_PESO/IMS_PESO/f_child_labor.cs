@@ -572,5 +572,9 @@ namespace IMS_PESO
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
             ToolTip1.SetToolTip(this.button1, "note: this will only update records on child labor list");
         }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+        }
     }
 }

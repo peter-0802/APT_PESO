@@ -699,5 +699,36 @@ namespace IMS_PESO
                 }
             }
         }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Index == 3)
+            {
+                for (int i = 0; i <= dataGridView1.Rows.Count - 2; i++)
+                {
+                    try
+                    {
+                        DateTime dDate;
+
+                        if (DateTime.TryParse(dataGridView1.Rows[i].Cells[3].Value.ToString(), out dDate))
+                        {
+                            String.Format("MM-dd-yyyy", dDate);
+                            dataGridView1.Rows[i].Cells[3].Value = Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).ToString("MM-dd-yyyy");
+                            int years = DateTime.Now.Year - Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).Year;
+                            if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).AddYears(years) > DateTime.Now) years--;
+                            dataGridView1.Rows[i].Cells[4].Value = years.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid");
+                            dataGridView1.Rows[i].Cells[3].Value = DateTime.Now.ToString("MM-dd-yyyy");
+                        }
+                    }
+                    catch (Exception r)
+                    {
+                    }
+                }
+            }
+        }
     }
 }

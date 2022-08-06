@@ -241,5 +241,12 @@ namespace IMS_PESO
         {
             getContact();
         }
+
+        private void dob_ValueChanged(object sender, EventArgs e)
+        {
+            int years = DateTime.Now.Year - Convert.ToDateTime(dob.Text).Year;
+            if (Convert.ToDateTime(dob.Text).AddYears(years) > DateTime.Now) years--;
+            this.age.Text = years.ToString();
+        }
     }
 }

@@ -234,8 +234,9 @@
             // 
             this.age.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.age.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.age.Location = new System.Drawing.Point(369, 119);
+            this.age.Location = new System.Drawing.Point(369, 116);
             this.age.Name = "age";
+            this.age.ReadOnly = true;
             this.age.Size = new System.Drawing.Size(104, 26);
             this.age.TabIndex = 5;
             // 
@@ -561,6 +562,7 @@
             this.dob.Name = "dob";
             this.dob.Size = new System.Drawing.Size(187, 26);
             this.dob.TabIndex = 4;
+            this.dob.ValueChanged += new System.EventHandler(this.dob_ValueChanged);
             // 
             // civil
             // 
@@ -604,7 +606,7 @@
             this.groupBox2.Text = "KASAMBAHAY FIELDS";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // _kasambahayForm2
+            // f_kasambahay_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -618,7 +620,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "_kasambahayForm2";
+            this.Name = "f_kasambahay_form";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
