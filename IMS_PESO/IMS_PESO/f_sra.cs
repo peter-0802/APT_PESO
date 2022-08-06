@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace IMS_PESO
 {
@@ -384,36 +385,6 @@ namespace IMS_PESO
                 finally { conn.Close(); }
             }
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            //foreach (DataGridViewRow rw in this.dataGridView1.Rows)
-            //{
-            //    if (rw.IsNewRow) continue;
-            //    for (int i = 0; i < rw.Cells.Count - 2; i++)
-            //    {
-            //        if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
-            //        {
-            //            MessageBox.Show(this, "Looks like some fields are empty :-(", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            return;
-            //        }
-            //        else
-            //        {
-
-            //        }
-            //    }
-            //}
-        }
         
         private void textBox1_Leave(object sender, EventArgs e)
         {
@@ -440,11 +411,6 @@ namespace IMS_PESO
             finally { conn.Close(); }
         }
 
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.Value != null)
@@ -454,14 +420,10 @@ namespace IMS_PESO
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                    label9.Text = this.dataGridView2.CurrentRow.Cells[0].Value.ToString();
+           label9.Text = this.dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -521,15 +483,6 @@ namespace IMS_PESO
             }
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-            
-        }
         private void getAttendee()
         {
             this.dataGridView1.DataSource = null;
@@ -682,58 +635,6 @@ namespace IMS_PESO
                 initMovable.SendMessage(Handle, initMovable.WM_NCLBUTTONDOWN, initMovable.HT_CAPTION, 0);
             }
         }
-        DateTimePicker dateTimePickercol;
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-            // Check the cell clicked is not the column header cell
-            if (e.RowIndex != -1)
-            {
-                // Apply on column index in which you want to display DatetimePicker.
-                // For this example it is 2.
-                if (e.ColumnIndex == 3)
-                {
-                    // Initialize the dateTimePickercol.
-                    dateTimePickercol = new DateTimePicker();
-                    // Adding the dateTimePickercol into DataGridView.   
-                    dataGridView1.Controls.Add(dateTimePickercol);
-                    // Setting the format i.e. mm/dd/yyyy)
-                    dateTimePickercol.Format = DateTimePickerFormat.Short;
-                    // Create retangular area that represents the display area for a cell.
-                    Rectangle oRectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-                    // Setting area for dateTimePickercol.
-                    dateTimePickercol.Size = new Size(oRectangle.Width, oRectangle.Height);
-                    // Setting location for dateTimePickercol.
-                    dateTimePickercol.Location = new Point(oRectangle.X, oRectangle.Y);
-                    // An event attached to dateTimePickercol which is fired when any date is selected.
-                    dateTimePickercol.TextChanged += new EventHandler(DateTimePickerChange);
-                    // An event attached to dateTimePickercol which is fired when DateTimeControl is closed.
-                    dateTimePickercol.CloseUp += new EventHandler(DateTimePickerClose);
-                }
-            }
-        }
-
-        private void DateTimePickerClose(object sender, EventArgs e)
-        {
-            for (int i = 0; i <= dataGridView1.Rows.Count -1 ; i++)
-            {
-                dataGridView1.Rows[i].Cells[3].Value = dateTimePickercol.Text.ToString();
-                int years = DateTime.Now.Year - dateTimePickercol.Value.Year;
-                if (dateTimePickercol.Value.AddYears(years) > DateTime.Now) years--;
-                dataGridView1.Rows[i].Cells[4].Value = years.ToString();
-            }
-        }
-
-        private void DateTimePickerChange(object sender, EventArgs e)
-        {
-            dateTimePickercol.Visible = false;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -745,6 +646,37 @@ namespace IMS_PESO
             {
                 initMovable.ReleaseCapture();
                 initMovable.SendMessage(Handle, initMovable.WM_NCLBUTTONDOWN, initMovable.HT_CAPTION, 0);
+            }
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Index == 3)
+            {
+                for (int i = 0; i <= dataGridView1.Rows.Count - 2; i++)
+                {
+                    try
+                    {
+                        DateTime dDate;
+
+                        if (DateTime.TryParse(dataGridView1.Rows[i].Cells[3].Value.ToString(), out dDate))
+                        {
+                            String.Format("MM-dd-yyyy", dDate);
+                            dataGridView1.Rows[i].Cells[3].Value = Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).ToString("MM-dd-yyyy");
+                            int years = DateTime.Now.Year - Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).Year;
+                            if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).AddYears(years) > DateTime.Now) years--;
+                            dataGridView1.Rows[i].Cells[4].Value = years.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid");
+                            dataGridView1.Rows[i].Cells[3].Value = DateTime.Now.ToString("MM-dd-yyyy");
+                        }
+                    }
+                    catch (Exception r)
+                    {
+                    }
+                }
             }
         }
     }
