@@ -1,4 +1,4 @@
-Auto-Calculate Age (pending)
+Auto-Calculate Age (Done)
 
 Address-Barangay - change HEader (Done)
 
@@ -6,7 +6,7 @@ Navigation - Child labor - SRA ttile - (Done)
 
 Logout-prompt (Done)
 
-Auto fill branch - Non editable - (to negotiate)
+Auto fill branch - Non editable - (Done)
 
 Format - (to clarify)
 
