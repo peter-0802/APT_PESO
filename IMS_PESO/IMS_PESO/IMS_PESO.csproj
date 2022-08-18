@@ -463,17 +463,17 @@
     <Compile Include="elegibility.Designer.cs">
       <DependentUpon>elegibility.cs</DependentUpon>
     </Compile>
-    <Compile Include="jobPreference.cs">
+    <Compile Include="zzold_jobPreference.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="jobPreference.Designer.cs">
-      <DependentUpon>jobPreference.cs</DependentUpon>
+    <Compile Include="zzold_jobPreference.Designer.cs">
+      <DependentUpon>zzold_jobPreference.cs</DependentUpon>
     </Compile>
-    <Compile Include="language.cs">
+    <Compile Include="xxold_language.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="language.Designer.cs">
-      <DependentUpon>language.cs</DependentUpon>
+    <Compile Include="xxold_language.Designer.cs">
+      <DependentUpon>xxold_language.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -490,30 +490,30 @@
     <Compile Include="f_report.Designer.cs">
       <DependentUpon>f_report.cs</DependentUpon>
     </Compile>
-    <Compile Include="skill.cs">
+    <Compile Include="zzold_skill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="skill.Designer.cs">
-      <DependentUpon>skill.cs</DependentUpon>
+    <Compile Include="zzold_skill.Designer.cs">
+      <DependentUpon>zzold_skill.cs</DependentUpon>
     </Compile>
-    <Compile Include="techvoc.cs">
+    <Compile Include="zzold_techvoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="techvoc.Designer.cs">
-      <DependentUpon>techvoc.cs</DependentUpon>
+    <Compile Include="zzold_techvoc.Designer.cs">
+      <DependentUpon>zzold_techvoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="tester.cs">
+    <Compile Include="zzold_tester.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tester.Designer.cs">
-      <DependentUpon>tester.cs</DependentUpon>
+    <Compile Include="zzold_tester.Designer.cs">
+      <DependentUpon>zzold_tester.cs</DependentUpon>
     </Compile>
     <Compile Include="utility.cs" />
-    <Compile Include="work_exp.cs">
+    <Compile Include="zzold_work_exp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="work_exp.Designer.cs">
-      <DependentUpon>work_exp.cs</DependentUpon>
+    <Compile Include="zzold_work_exp.Designer.cs">
+      <DependentUpon>zzold_work_exp.cs</DependentUpon>
     </Compile>
     <Compile Include="_todoAdd.cs">
       <SubType>Form</SubType>
@@ -710,11 +710,11 @@
     <EmbeddedResource Include="elegibility.resx">
       <DependentUpon>elegibility.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="jobPreference.resx">
-      <DependentUpon>jobPreference.cs</DependentUpon>
+    <EmbeddedResource Include="zzold_jobPreference.resx">
+      <DependentUpon>zzold_jobPreference.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="language.resx">
-      <DependentUpon>language.cs</DependentUpon>
+    <EmbeddedResource Include="xxold_language.resx">
+      <DependentUpon>xxold_language.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -732,17 +732,17 @@
     <EmbeddedResource Include="f_report.resx">
       <DependentUpon>f_report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="skill.resx">
-      <DependentUpon>skill.cs</DependentUpon>
+    <EmbeddedResource Include="zzold_skill.resx">
+      <DependentUpon>zzold_skill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="techvoc.resx">
-      <DependentUpon>techvoc.cs</DependentUpon>
+    <EmbeddedResource Include="zzold_techvoc.resx">
+      <DependentUpon>zzold_techvoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="tester.resx">
-      <DependentUpon>tester.cs</DependentUpon>
+    <EmbeddedResource Include="zzold_tester.resx">
+      <DependentUpon>zzold_tester.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="work_exp.resx">
-      <DependentUpon>work_exp.cs</DependentUpon>
+    <EmbeddedResource Include="zzold_work_exp.resx">
+      <DependentUpon>zzold_work_exp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_todoAdd.resx">
       <DependentUpon>_todoAdd.cs</DependentUpon>

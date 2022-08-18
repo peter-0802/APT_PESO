@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class skill
+    partial class zzold_skill
     {
         /// <summary>
         /// Required designer variable.

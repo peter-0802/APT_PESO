@@ -9,10 +9,10 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 namespace IMS_PESO
 {
-    public partial class language : Form
+    public partial class xxold_language : Form
     {
         DBConn DB = new DBConn();
-        public language()
+        public xxold_language()
         {
             try
             {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using System.IO;
 
 namespace IMS_PESO
 {
@@ -146,6 +146,7 @@ namespace IMS_PESO
         private void _Dashboard_new_Load(object sender, EventArgs e)
         {
             loadContent();
+            
             if(this.label4.Text == "Administrator")
             {
                 this.button4.Enabled = true;
@@ -164,6 +165,41 @@ namespace IMS_PESO
                     }
                 }
             }
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
+                {
+                    string qry = @"SELECT image FROM accounts where username = @username";
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(qry, conn);
+                    cmd.Parameters.AddWithValue("@username", label3.Text);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    adapter.SelectCommand = cmd;
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    try
+                    {
+                        byte[] img = (byte[])dataTable.Rows[0][0];
+                        MemoryStream ms = new MemoryStream(img);
+                        pictureBox1.Image = Image.FromStream(ms);
+                        adapter.Dispose();
+                        img = null;
+                        conn.Close();
+                    }
+                    catch (Exception er)
+                    {
+                        //return;
+                        MessageBox.Show(er.ToString());
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void button19_Click(object sender, EventArgs e)

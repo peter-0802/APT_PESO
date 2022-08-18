@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class jobPreference
+    partial class zzold_jobPreference
     {
         /// <summary>
         /// Required designer variable.

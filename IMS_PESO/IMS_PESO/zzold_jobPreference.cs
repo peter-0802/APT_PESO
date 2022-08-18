@@ -11,10 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class jobPreference : Form
+    public partial class zzold_jobPreference : Form
     {
         DBConn DB = new DBConn();
-        public jobPreference()
+        public zzold_jobPreference()
         {
             try
             {

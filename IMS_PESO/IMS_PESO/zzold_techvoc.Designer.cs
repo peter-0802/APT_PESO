@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class techvoc
+    partial class zzold_techvoc
     {
         /// <summary>
         /// Required designer variable.

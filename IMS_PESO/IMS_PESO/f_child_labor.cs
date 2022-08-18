@@ -576,5 +576,10 @@ namespace IMS_PESO
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

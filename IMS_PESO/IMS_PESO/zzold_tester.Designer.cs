@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class tester
+    partial class zzold_tester
     {
         /// <summary>
         /// Required designer variable.

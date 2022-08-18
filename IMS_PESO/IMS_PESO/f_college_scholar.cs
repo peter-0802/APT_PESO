@@ -534,5 +534,10 @@ namespace IMS_PESO
         {
             label9.Text = this.dataGridView1.CurrentRow.Cells["CODE"].Value.ToString();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class language
+    partial class xxold_language
     {
         /// <summary>
         /// Required designer variable.

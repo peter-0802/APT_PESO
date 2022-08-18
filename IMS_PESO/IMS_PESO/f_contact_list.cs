@@ -280,7 +280,7 @@ namespace IMS_PESO
             {
                 return;
             }
-            jobPreference a = new jobPreference();
+            zzold_jobPreference a = new zzold_jobPreference();
             a.label1.Text = label1.Text;
             a.ShowDialog();
         }
@@ -291,7 +291,7 @@ namespace IMS_PESO
             {
                 return;
             }
-            language a = new language();
+            xxold_language a = new xxold_language();
             a.label1.Text = label1.Text;
             a.ShowDialog();
         }
@@ -313,7 +313,7 @@ namespace IMS_PESO
             {
                 return;
             }
-            techvoc a = new techvoc();
+            zzold_techvoc a = new zzold_techvoc();
             a.label1.Text = label1.Text;
             a.ShowDialog();
         }
@@ -335,7 +335,7 @@ namespace IMS_PESO
             {
                 return;
             }
-            work_exp a = new work_exp();
+            zzold_work_exp a = new zzold_work_exp();
             a.label1.Text = label1.Text;
             a.ShowDialog();
         }
@@ -346,7 +346,7 @@ namespace IMS_PESO
             {
                 return;
             }
-            skill a = new skill();
+            zzold_skill a = new zzold_skill();
             a.label1.Text = label1.Text;
             a.ShowDialog();
         }
@@ -650,6 +650,11 @@ namespace IMS_PESO
             {
                 return;
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

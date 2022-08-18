@@ -1,6 +1,6 @@
 ﻿namespace IMS_PESO
 {
-    partial class work_exp
+    partial class zzold_work_exp
     {
         /// <summary>
         /// Required designer variable.

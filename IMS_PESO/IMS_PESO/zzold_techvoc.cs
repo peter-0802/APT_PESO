@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class techvoc : Form
+    public partial class zzold_techvoc : Form
     {
         DBConn DB = new DBConn();
-        public techvoc()
+        public zzold_techvoc()
         {
             try
             {

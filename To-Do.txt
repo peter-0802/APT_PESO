@@ -1,3 +1,9 @@
+User Image - (Done)
+
+Reset password - (Done)
+
+Format - (Done, all set as MM-dd-yyyy)
+
 Auto-Calculate Age (Done)
 
 Address-Barangay - change HEader (Done)
@@ -7,7 +13,5 @@ Navigation - Child labor - SRA ttile - (Done)
 Logout-prompt (Done)
 
 Auto fill branch - Non editable - (Done)
-
-Format - (to clarify)
 
 By Unit( user access ) - Disable min, max, close - (Done)

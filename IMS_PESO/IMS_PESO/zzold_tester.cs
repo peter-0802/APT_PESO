@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace IMS_PESO
 {
-    public partial class tester : Form
+    public partial class zzold_tester : Form
     {
-        public tester()
+        public zzold_tester()
         {
             InitializeComponent();
         }
