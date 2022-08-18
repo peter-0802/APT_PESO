@@ -25,7 +25,6 @@ namespace IMS_PESO
                 MessageBox.Show(ex.GetType().ToString());
             }
             InitializeComponent();
-            panel1.BackColor = ColorTranslator.FromHtml("#FCA311");
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

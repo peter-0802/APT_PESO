@@ -4,7 +4,7 @@
   <description asmv2:publisher="IMS_PESO" asmv2:product="IMS_PESO" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
     <dependentAssembly dependencyType="install" codebase="IMS_PESO.exe.manifest" size="23355">
@@ -14,7 +14,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>y+BmtYAn5gEpcD9A42mwAbbSpEas/HKtZdvMkfvH6bY=</dsig:DigestValue>
+        <dsig:DigestValue>yP7U27o7M5VeLsoJOa6Jv351e3CbZwbH0/e8TJMP0GY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

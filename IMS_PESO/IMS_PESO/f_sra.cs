@@ -669,7 +669,6 @@ namespace IMS_PESO
                         }
                         else
                         {
-                            MessageBox.Show("Invalid");
                             dataGridView1.Rows[i].Cells[3].Value = DateTime.Now.ToString("MM-dd-yyyy");
                         }
                     }

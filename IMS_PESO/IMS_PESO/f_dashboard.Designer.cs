@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button19 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -124,26 +124,25 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.SystemColors.Control;
-            chartArea2.BackColor = System.Drawing.SystemColors.Control;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.BackColor = System.Drawing.SystemColors.Control;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea5.BackColor = System.Drawing.SystemColors.Control;
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.BackColor = System.Drawing.SystemColors.Control;
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(15, 362);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "data";
-            this.chart1.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series5.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.Name = "data";
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(48, 29);
             this.chart1.TabIndex = 33;
             this.chart1.Text = "chart1";
             this.chart1.Visible = false;
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             this.chart1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseDoubleClick);
             // 
             // label4
@@ -320,7 +319,7 @@
             // addRecordToolStripMenuItem5
             // 
             this.addRecordToolStripMenuItem5.Name = "addRecordToolStripMenuItem5";
-            this.addRecordToolStripMenuItem5.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
             this.addRecordToolStripMenuItem5.Text = "Add Record";
             this.addRecordToolStripMenuItem5.Click += new System.EventHandler(this.addRecordToolStripMenuItem5_Click_1);
             // 
@@ -366,8 +365,9 @@
             // addRecordToolStripMenuItem8
             // 
             this.addRecordToolStripMenuItem8.Name = "addRecordToolStripMenuItem8";
-            this.addRecordToolStripMenuItem8.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem8.Size = new System.Drawing.Size(152, 22);
             this.addRecordToolStripMenuItem8.Text = "Add Record";
+            this.addRecordToolStripMenuItem8.Click += new System.EventHandler(this.addRecordToolStripMenuItem8_Click);
             // 
             // rWAToolStripMenuItem
             // 
@@ -381,8 +381,9 @@
             // addRecordToolStripMenuItem9
             // 
             this.addRecordToolStripMenuItem9.Name = "addRecordToolStripMenuItem9";
-            this.addRecordToolStripMenuItem9.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem9.Size = new System.Drawing.Size(152, 22);
             this.addRecordToolStripMenuItem9.Text = "Add Record";
+            this.addRecordToolStripMenuItem9.Click += new System.EventHandler(this.addRecordToolStripMenuItem9_Click);
             // 
             // nSRPToolStripMenuItem1
             // 

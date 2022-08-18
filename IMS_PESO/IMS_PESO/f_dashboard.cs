@@ -104,14 +104,12 @@ namespace IMS_PESO
 
         private void kasambahayToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f_kasambahay a = new f_kasambahay();
-            a.ShowDialog();
+            
         }
 
         private void rWAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f_rwa a = new f_rwa();
-            a.ShowDialog();
+            
         }
 
         private void addRecordToolStripMenuItem10_Click(object sender, EventArgs e)
@@ -212,7 +210,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show("Delete operation Cancelled.");
+                MessageBox.Show("Operation Cancelled.");
             }
         }
 
@@ -222,10 +220,6 @@ namespace IMS_PESO
             a.ShowDialog();
         }
 
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void chart1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -240,5 +234,18 @@ namespace IMS_PESO
         {
             f_spes a = new f_spes();
         }
+
+        private void addRecordToolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            f_kasambahay a = new f_kasambahay();
+            a.ShowDialog();
+        }
+
+        private void addRecordToolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            f_rwa a = new f_rwa();
+            a.ShowDialog();
+        }
+        
     }
 }
