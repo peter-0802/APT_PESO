@@ -249,5 +249,11 @@ namespace IMS_PESO
         {
             getContact();
         }
+
+        private void dateTimePicker1_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
+        }
     }
 }

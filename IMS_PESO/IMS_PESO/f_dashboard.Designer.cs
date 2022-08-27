@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button19 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -91,7 +91,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.chart1);
             this.panel2.Controls.Add(this.button19);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
@@ -124,25 +123,24 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.SystemColors.Control;
-            chartArea5.BackColor = System.Drawing.SystemColors.Control;
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.BackColor = System.Drawing.SystemColors.Control;
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
-            this.chart1.Location = new System.Drawing.Point(15, 362);
+            chartArea1.BackColor = System.Drawing.SystemColors.Control;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.SystemColors.Control;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(240, 28);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "data";
-            this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(48, 29);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "data";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(948, 628);
             this.chart1.TabIndex = 33;
             this.chart1.Text = "chart1";
-            this.chart1.Visible = false;
             this.chart1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseDoubleClick);
             // 
             // label4
@@ -155,6 +153,7 @@
             this.label4.Size = new System.Drawing.Size(69, 18);
             this.label4.TabIndex = 4;
             this.label4.Text = "~value~";
+            this.label4.MouseHover += new System.EventHandler(this.label4_MouseHover);
             // 
             // label5
             // 
@@ -319,7 +318,7 @@
             // addRecordToolStripMenuItem5
             // 
             this.addRecordToolStripMenuItem5.Name = "addRecordToolStripMenuItem5";
-            this.addRecordToolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
+            this.addRecordToolStripMenuItem5.Size = new System.Drawing.Size(136, 22);
             this.addRecordToolStripMenuItem5.Text = "Add Record";
             this.addRecordToolStripMenuItem5.Click += new System.EventHandler(this.addRecordToolStripMenuItem5_Click_1);
             // 
@@ -365,7 +364,7 @@
             // addRecordToolStripMenuItem8
             // 
             this.addRecordToolStripMenuItem8.Name = "addRecordToolStripMenuItem8";
-            this.addRecordToolStripMenuItem8.Size = new System.Drawing.Size(152, 22);
+            this.addRecordToolStripMenuItem8.Size = new System.Drawing.Size(136, 22);
             this.addRecordToolStripMenuItem8.Text = "Add Record";
             this.addRecordToolStripMenuItem8.Click += new System.EventHandler(this.addRecordToolStripMenuItem8_Click);
             // 
@@ -381,7 +380,7 @@
             // addRecordToolStripMenuItem9
             // 
             this.addRecordToolStripMenuItem9.Name = "addRecordToolStripMenuItem9";
-            this.addRecordToolStripMenuItem9.Size = new System.Drawing.Size(152, 22);
+            this.addRecordToolStripMenuItem9.Size = new System.Drawing.Size(136, 22);
             this.addRecordToolStripMenuItem9.Text = "Add Record";
             this.addRecordToolStripMenuItem9.Click += new System.EventHandler(this.addRecordToolStripMenuItem9_Click);
             // 
@@ -415,6 +414,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

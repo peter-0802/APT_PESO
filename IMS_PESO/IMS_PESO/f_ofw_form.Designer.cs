@@ -189,6 +189,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(162, 26);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.MouseHover += new System.EventHandler(this.dateTimePicker1_MouseHover);
             // 
             // label11
             // 
@@ -631,6 +632,7 @@
             this.dob.Size = new System.Drawing.Size(187, 26);
             this.dob.TabIndex = 4;
             this.dob.ValueChanged += new System.EventHandler(this.dob_ValueChanged);
+            this.dob.MouseHover += new System.EventHandler(this.dob_MouseHover);
             // 
             // civil
             // 

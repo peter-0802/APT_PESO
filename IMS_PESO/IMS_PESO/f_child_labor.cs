@@ -343,6 +343,12 @@ namespace IMS_PESO
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if ((e.ColumnIndex == this.dataGridView1.Columns[3].Index))
+            {
+                DataGridViewCell cell = this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                cell.ToolTipText = "use MM-dd-yyyy format";
+            }
+
             if (e.Value != null)
             {
                 e.Value = e.Value.ToString().ToUpper();
@@ -580,6 +586,12 @@ namespace IMS_PESO
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dateTimePicker1_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
         }
     }
 }

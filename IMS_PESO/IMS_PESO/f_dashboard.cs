@@ -120,25 +120,25 @@ namespace IMS_PESO
 
         public void loadContent()
         {
-            //try
-            //{
-            //    using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
-            //    {
-            //        string qry = @"SELECT * FROM v_dashboard";
-            //        conn.Open();
-            //        MySqlCommand cmd = new MySqlCommand(qry, conn);
-            //        MySqlDataReader reader = cmd.ExecuteReader();
-            //        if (reader.Read())
-            //        {
-            //            chart1.Series["data"].Points.AddXY("SRA", int.Parse(reader.GetString("sra")));
-            //            chart1.Series["data"].Points.AddXY("PWD", int.Parse(reader.GetString("pwd")));
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
+                {
+                    string qry = @"SELECT * FROM v_dashboard";
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(qry, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        chart1.Series["data"].Points.AddXY("SRA", int.Parse(reader.GetString("sra")));
+                        chart1.Series["data"].Points.AddXY("PWD", int.Parse(reader.GetString("pwd")));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void _Dashboard_new_Load(object sender, EventArgs e)
@@ -246,6 +246,9 @@ namespace IMS_PESO
             f_rwa a = new f_rwa();
             a.ShowDialog();
         }
-        
+
+        private void label4_MouseHover(object sender, EventArgs e)
+        {
+        }
     }
 }

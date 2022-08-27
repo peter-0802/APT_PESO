@@ -65,7 +65,7 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.ItemHeight = 18;
             this.comboBox5.Items.AddRange(new object[] {
-            "SRA / NSRP",
+            "SRA",
             "Child Labor",
             "Job Fair",
             "PWD",
@@ -75,7 +75,8 @@
             "OFW",
             "Kasambahay",
             "RWA",
-            "Administrator"});
+            "Administrator",
+            "NSRP (Contact List)"});
             this.comboBox5.Location = new System.Drawing.Point(138, 182);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(276, 26);
@@ -87,9 +88,9 @@
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 185);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 18);
+            this.label2.Size = new System.Drawing.Size(108, 18);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Disignation:";
+            this.label2.Text = "Designation:";
             // 
             // textBox6
             // 
@@ -132,6 +133,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -142,6 +144,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(387, 146);
             this.dataGridView1.TabIndex = 116;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseMove);
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            this.dataGridView1.MouseHover += new System.EventHandler(this.dataGridView1_MouseHover);
             // 
             // pictureBox1
             // 

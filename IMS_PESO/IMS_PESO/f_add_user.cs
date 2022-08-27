@@ -279,5 +279,102 @@ namespace IMS_PESO
                 MessageBox.Show(ex.Message);
             }
         }
+        private void cellMouseMove(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Hhmm, Are you sure you want to delete this User?", "System Says", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                delete();
+                loadUsers();
+            }
+            else
+            {
+                MessageBox.Show("Delete operation Cancelled.");
+            }
+        }
+
+        private void delete()
+        {
+            MySqlConnection myConnection = new MySqlConnection(DBConn.connstring);
+            myConnection.Open();
+
+            MySqlCommand myCommand = myConnection.CreateCommand();
+            MySqlTransaction myTrans;
+
+            // Start a local transaction
+            myTrans = myConnection.BeginTransaction();
+            // Must assign both transaction object and connection
+            // to Command object for a pending local transaction
+            myCommand.Connection = myConnection;
+            myCommand.Transaction = myTrans;
+
+            try
+            {
+                myCommand.CommandText = @"DELETE FROM accounts where username = @code;";
+                myCommand.Parameters.AddWithValue("@code", selected_code);
+                myCommand.ExecuteNonQuery();
+                myTrans.Commit();
+                MessageBox.Show("User Deleted!");
+                loadUsers();
+            }
+            catch (Exception e)
+            {
+                try
+                {
+                    myTrans.Rollback();
+                }
+                catch (MySqlException ex)
+                {
+                    if (myTrans.Connection != null)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                myConnection.Close();
+                selected_code = null;
+            }
+        }
+
+        string selected_code;
+        private void dataGridView1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // function for getting the mouse hovered cell value
+            try
+            {
+                if ((e.RowIndex >= 0 && e.ColumnIndex >= 0))
+                {
+                    selected_code = dataGridView1[0, e.RowIndex].Value.ToString();
+                }
+            }
+            catch (NullReferenceException err)
+            {
+                return;
+            }
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenu m = new ContextMenu();
+
+                int currentMouseOverRow = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+                if (currentMouseOverRow >= 0)
+                {
+                    m.MenuItems.Add(new MenuItem(string.Format("Delete User: \"{0}\"", selected_code), cellMouseMove));
+                }
+
+                m.Show(dataGridView1, new Point(e.X, e.Y));
+
+            }
+        }
+
+        private void dataGridView1_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

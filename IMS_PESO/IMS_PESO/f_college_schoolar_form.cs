@@ -427,5 +427,17 @@ namespace IMS_PESO
             if (Convert.ToDateTime(dob.Text).AddYears(years) > DateTime.Now) years--;
             this.age.Text = years.ToString();
         }
+
+        private void dob_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.dob, "use MM-dd-yyyy format");
+        }
+
+        private void dateTimePicker1_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
+        }
     }
 }

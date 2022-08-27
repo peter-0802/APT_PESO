@@ -61,5 +61,17 @@ namespace IMS_PESO
                 a.ShowDialog();
             }
         }
+
+        private void dateTimePicker1_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
+        }
+
+        private void dateTimePicker2_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.dateTimePicker2, "use MM-dd-yyyy format");
+        }
     }
 }
