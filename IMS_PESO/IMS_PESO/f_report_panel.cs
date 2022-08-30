@@ -63,7 +63,7 @@ namespace IMS_PESO
             f_report a = new f_report();
             reportQuery st = new reportQuery();
             string iQry = string.Format(st.graphAll, this.dateTimePicker1.Text);
-                dataset ds = new dataset();
+            dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
             {
                 conn.Open();

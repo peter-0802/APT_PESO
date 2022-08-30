@@ -124,14 +124,23 @@ namespace IMS_PESO
             {
                 using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
                 {
-                    string qry = @"SELECT * FROM v_dashboard";
+                    string qry = @"SELECT * FROM v_dashboard_v2";
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(qry, conn);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        chart1.Series["data"].Points.AddXY("SRA", int.Parse(reader.GetString("sra")));
+                        chart1.Series["data"].Points.AddXY("Child Labor", int.Parse(reader.GetString("child_labor")));
+                        chart1.Series["data"].Points.AddXY("High School Scholar", int.Parse(reader.GetString("hsshcoolar")));
+                        chart1.Series["data"].Points.AddXY("Job Fair", int.Parse(reader.GetString("jobfair")));
+                        chart1.Series["data"].Points.AddXY("Kasambahay", int.Parse(reader.GetString("kasambahay")));
+                        chart1.Series["data"].Points.AddXY("OFW", int.Parse(reader.GetString("ofw")));
                         chart1.Series["data"].Points.AddXY("PWD", int.Parse(reader.GetString("pwd")));
+                        chart1.Series["data"].Points.AddXY("RWA", int.Parse(reader.GetString("rwa")));
+                        chart1.Series["data"].Points.AddXY("College Scholar", int.Parse(reader.GetString("schoolar_coll")));
+                        chart1.Series["data"].Points.AddXY("SPES", int.Parse(reader.GetString("spes")));
+                        chart1.Series["data"].Points.AddXY("SRA", int.Parse(reader.GetString("sra")));
+                        chart1.Series["data"].Points.AddXY("NSRP/Contacts", int.Parse(reader.GetString("contact")));
                     }
                 }
             }
