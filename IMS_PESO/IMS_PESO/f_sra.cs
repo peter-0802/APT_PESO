@@ -675,6 +675,8 @@ namespace IMS_PESO
                         }
                         else
                         {
+                            //dataGridView1.Rows[i].Cells[3].Value = DateTime.Now.ToString("MM-dd-yyyy");
+                            MessageBox.Show("Inconnect format, Please use MM-DD-YYYY");
                             dataGridView1.Rows[i].Cells[3].Value = DateTime.Now.ToString("MM-dd-yyyy");
                         }
                     }

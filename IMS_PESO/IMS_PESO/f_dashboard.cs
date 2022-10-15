@@ -242,6 +242,7 @@ namespace IMS_PESO
         private void addRecordToolStripMenuItem5_Click_1(object sender, EventArgs e)
         {
             f_spes a = new f_spes();
+            a.ShowDialog();
         }
 
         private void addRecordToolStripMenuItem8_Click(object sender, EventArgs e)

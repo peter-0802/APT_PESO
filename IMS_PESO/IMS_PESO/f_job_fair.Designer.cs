@@ -482,9 +482,9 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconSize = 40;
             this.iconButton1.Image = ((System.Drawing.Image)(resources.GetObject("iconButton1.Image")));
-            this.iconButton1.Location = new System.Drawing.Point(1155, 0);
+            this.iconButton1.Location = new System.Drawing.Point(0, 0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(45, 41);
+            this.iconButton1.Size = new System.Drawing.Size(61, 41);
             this.iconButton1.TabIndex = 37;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
