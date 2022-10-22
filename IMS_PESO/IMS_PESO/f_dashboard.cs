@@ -153,14 +153,15 @@ namespace IMS_PESO
         private void _Dashboard_new_Load(object sender, EventArgs e)
         {
             loadContent();
-            
             if(this.label4.Text == "Administrator")
             {
-                this.button4.Enabled = true;
+                toolStripComboBox1.Visible = true;
             }
             else
             {
-                this.button4.Enabled = false;
+                try
+                {
+                this.button4.Visible = false;
                 foreach (ToolStripMenuItem item in menuStrip1.Items)
                 {
                     foreach (ToolStripMenuItem children in item.DropDownItems)
@@ -171,7 +172,14 @@ namespace IMS_PESO
                         }
                     }
                 }
+                }
+                catch
+                {
+                    return;
+                }
+                
             }
+        
 
             try
             {
@@ -213,7 +221,7 @@ namespace IMS_PESO
         {
             if (MessageBox.Show("Are you sure you want to Logout?", "System Says", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Login a = new Login();
+                f_login a = new f_login();
                 a.Show();
                 this.Dispose();
             }
@@ -232,6 +240,7 @@ namespace IMS_PESO
 
         private void chart1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            toolStripComboBox1.SelectedIndex = -1;
             foreach (var series in chart1.Series)
             {
                 series.Points.Clear();
@@ -259,6 +268,66 @@ namespace IMS_PESO
 
         private void label4_MouseHover(object sender, EventArgs e)
         {
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            
+        }
+        
+        
+        
+
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (var series in chart1.Series)
+            {
+                series.Points.Clear();
+            }
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
+                {
+                    string qry = @"select
+                                    (select count(0) from `child_labor` where address = '{0}') AS `child_labor`,
+                                    (select count(0) from `hsshcoolar` where address = '{0}') AS `hsshcoolar`,
+                                    (select count(0) from `jobfair2` where brgy = '{0}') AS `jobfair`,
+                                    (select count(0) from `kasambahay2` where brgy = '{0}') AS `kasambahay`,
+                                    (select count(0) from `ofw2` where brgy = '{0}') AS `ofw`,
+                                    (select count(0) from `pwd` where address = '{0}') AS `pwd`,
+                                    (select count(0) from `schoolar_coll` where brgy = '{0}') AS `schoolar_coll`,
+                                    (select count(0) from `spes` where address = '{0}') AS `spes`,
+                                    (select count(0) from `sra2` where brgy = '{0}') AS `sra`,
+                                    (select count(0) from `contact2` where brgy = '{0}') AS `contact`";
+                    conn.Open();
+                    string _qry = string.Format(qry, toolStripComboBox1.Text);
+                    MySqlCommand cmd = new MySqlCommand(_qry, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        chart1.Series["data"].Points.AddXY("Child Labor", int.Parse(reader.GetString("child_labor")));
+                        chart1.Series["data"].Points.AddXY("High School Scholar", int.Parse(reader.GetString("hsshcoolar")));
+                        chart1.Series["data"].Points.AddXY("Job Fair", int.Parse(reader.GetString("jobfair")));
+                        chart1.Series["data"].Points.AddXY("Kasambahay", int.Parse(reader.GetString("kasambahay")));
+                        chart1.Series["data"].Points.AddXY("OFW", int.Parse(reader.GetString("ofw")));
+                        chart1.Series["data"].Points.AddXY("PWD", int.Parse(reader.GetString("pwd")));
+                        chart1.Series["data"].Points.AddXY("College Scholar", int.Parse(reader.GetString("schoolar_coll")));
+                        chart1.Series["data"].Points.AddXY("SPES", int.Parse(reader.GetString("spes")));
+                        chart1.Series["data"].Points.AddXY("SRA", int.Parse(reader.GetString("sra")));
+                        chart1.Series["data"].Points.AddXY("NSRP/Contacts", int.Parse(reader.GetString("contact")));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            f_archive a = new f_archive();
+            a.ShowDialog();
         }
     }
 }

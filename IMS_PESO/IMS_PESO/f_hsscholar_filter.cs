@@ -74,5 +74,32 @@ namespace IMS_PESO
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.dateTimePicker2, "use MM-dd-yyyy format");
         }
+
+        private void f_hsscholar_filter_Load(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    ((Button)ctrl).ForeColor = System.Drawing.SystemColors.Control;
+                    ((Button)ctrl).BackColor = System.Drawing.Color.DodgerBlue;
+                    ((Button)ctrl).TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    ((Button)ctrl).FlatAppearance.BorderSize = 0;
+                    ((Button)ctrl).Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+                else if (ctrl is Label)
+                {
+                    ((Label)ctrl).Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+                else if (ctrl is TextBox)
+                {
+                    ((TextBox)ctrl).Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+                else if (ctrl is DateTimePicker)
+                {
+                    ((DateTimePicker)ctrl).Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
     }
 }

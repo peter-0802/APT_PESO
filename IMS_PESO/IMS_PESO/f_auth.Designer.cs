@@ -85,6 +85,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
             this.textBox3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(257, 99);
             this.textBox3.Name = "textBox3";
@@ -114,15 +115,14 @@
             this.button3.Size = new System.Drawing.Size(228, 47);
             this.button3.TabIndex = 2;
             this.button3.Text = "Authenticate";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // _auth
+            // f_auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(547, 247);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
@@ -130,7 +130,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "_auth";
+            this.Name = "f_auth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "auth";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.auth_FormClosing);

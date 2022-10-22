@@ -68,6 +68,14 @@ namespace IMS_PESO
         }
         private void childLabor_Load(object sender, EventArgs e)
         {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    ((Button)ctrl).ForeColor = System.Drawing.SystemColors.Control; 
+                    ((Button)ctrl).BackColor = System.Drawing.Color.DodgerBlue;
+                }
+            }
             getEvent();
         }
 

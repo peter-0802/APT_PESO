@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button19 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.recordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nSRPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,26 +64,26 @@
             this.addRecordToolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.nSRPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addRecordToolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button19
             // 
-            this.button19.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button19.BackColor = System.Drawing.SystemColors.Control;
             this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.ForeColor = System.Drawing.Color.White;
+            this.button19.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.ForeColor = System.Drawing.Color.DodgerBlue;
             this.button19.Location = new System.Drawing.Point(15, 604);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(200, 47);
-            this.button19.TabIndex = 30;
+            this.button19.TabIndex = 3;
             this.button19.Text = "LogOut";
-            this.button19.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button19.UseVisualStyleBackColor = false;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
@@ -98,59 +98,33 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 24);
+            this.panel2.Location = new System.Drawing.Point(0, 27);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(234, 676);
+            this.panel2.Size = new System.Drawing.Size(234, 673);
             this.panel2.TabIndex = 31;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.Enabled = false;
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
             this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.DodgerBlue;
             this.button4.Location = new System.Drawing.Point(15, 551);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 47);
-            this.button4.TabIndex = 31;
+            this.button4.TabIndex = 2;
             this.button4.Text = "Misc.";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.SystemColors.Control;
-            chartArea1.BackColor = System.Drawing.SystemColors.Control;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.SystemColors.Control;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(240, 28);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "data";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(948, 628);
-            this.chart1.TabIndex = 33;
-            this.chart1.Text = "chart1";
-            this.chart1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseDoubleClick);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(12, 310);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 18);
+            this.label4.Size = new System.Drawing.Size(70, 19);
             this.label4.TabIndex = 4;
             this.label4.Text = "~value~";
             this.label4.MouseHover += new System.EventHandler(this.label4_MouseHover);
@@ -158,33 +132,33 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(12, 285);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 18);
+            this.label5.Size = new System.Drawing.Size(98, 19);
             this.label5.TabIndex = 3;
             this.label5.Text = "Designation:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(12, 251);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 18);
+            this.label3.Size = new System.Drawing.Size(70, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "~value~";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 233);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 18);
+            this.label2.Size = new System.Drawing.Size(47, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "User:";
             // 
@@ -198,15 +172,43 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.SystemColors.Control;
+            chartArea2.BackColor = System.Drawing.SystemColors.Control;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.SystemColors.Control;
+            legend2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(240, 44);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            series2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "data";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(948, 634);
+            this.chart1.TabIndex = 4;
+            this.chart1.Text = "Quick Inquiry";
+            this.chart1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseDoubleClick);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recordsToolStripMenuItem});
+            this.recordsToolStripMenuItem,
+            this.toolStripComboBox1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 24);
-            this.menuStrip1.TabIndex = 32;
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 27);
+            this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // recordsToolStripMenuItem
@@ -222,11 +224,12 @@
             this.oFWToolStripMenuItem,
             this.kasambahayToolStripMenuItem,
             this.rWAToolStripMenuItem,
-            this.nSRPToolStripMenuItem1});
-            this.recordsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.nSRPToolStripMenuItem1,
+            this.toolStripMenuItem1});
+            this.recordsToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.recordsToolStripMenuItem.Name = "recordsToolStripMenuItem";
-            this.recordsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.recordsToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
             this.recordsToolStripMenuItem.Text = "Records";
             this.recordsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.recordsToolStripMenuItem_DropDownClosed);
             this.recordsToolStripMenuItem.DropDownOpening += new System.EventHandler(this.recordsToolStripMenuItem_DropDownOpening);
@@ -236,13 +239,13 @@
             this.nSRPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem});
             this.nSRPToolStripMenuItem.Name = "nSRPToolStripMenuItem";
-            this.nSRPToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.nSRPToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.nSRPToolStripMenuItem.Text = "SRA";
             // 
             // addRecordToolStripMenuItem
             // 
             this.addRecordToolStripMenuItem.Name = "addRecordToolStripMenuItem";
-            this.addRecordToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem.Text = "Add Record";
             this.addRecordToolStripMenuItem.Click += new System.EventHandler(this.addRecordToolStripMenuItem_Click);
             // 
@@ -251,13 +254,13 @@
             this.childLaborToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem1});
             this.childLaborToolStripMenuItem.Name = "childLaborToolStripMenuItem";
-            this.childLaborToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.childLaborToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.childLaborToolStripMenuItem.Text = "Child Labor";
             // 
             // addRecordToolStripMenuItem1
             // 
             this.addRecordToolStripMenuItem1.Name = "addRecordToolStripMenuItem1";
-            this.addRecordToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem1.Text = "Add Record";
             this.addRecordToolStripMenuItem1.Click += new System.EventHandler(this.addRecordToolStripMenuItem1_Click);
             // 
@@ -266,13 +269,13 @@
             this.jobFairToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem2});
             this.jobFairToolStripMenuItem.Name = "jobFairToolStripMenuItem";
-            this.jobFairToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.jobFairToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.jobFairToolStripMenuItem.Text = "Job Fair";
             // 
             // addRecordToolStripMenuItem2
             // 
             this.addRecordToolStripMenuItem2.Name = "addRecordToolStripMenuItem2";
-            this.addRecordToolStripMenuItem2.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem2.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem2.Text = "Add Record";
             this.addRecordToolStripMenuItem2.Click += new System.EventHandler(this.addRecordToolStripMenuItem2_Click);
             // 
@@ -281,13 +284,13 @@
             this.pWDToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem3});
             this.pWDToolStripMenuItem.Name = "pWDToolStripMenuItem";
-            this.pWDToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.pWDToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.pWDToolStripMenuItem.Text = "PWD";
             // 
             // addRecordToolStripMenuItem3
             // 
             this.addRecordToolStripMenuItem3.Name = "addRecordToolStripMenuItem3";
-            this.addRecordToolStripMenuItem3.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem3.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem3.Text = "Add Record";
             this.addRecordToolStripMenuItem3.Click += new System.EventHandler(this.addRecordToolStripMenuItem3_Click);
             // 
@@ -296,14 +299,14 @@
             this.collegeScholarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem4});
             this.collegeScholarToolStripMenuItem.Name = "collegeScholarToolStripMenuItem";
-            this.collegeScholarToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.collegeScholarToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.collegeScholarToolStripMenuItem.Text = "College Scholar";
             this.collegeScholarToolStripMenuItem.Click += new System.EventHandler(this.collegeScholarToolStripMenuItem_Click);
             // 
             // addRecordToolStripMenuItem4
             // 
             this.addRecordToolStripMenuItem4.Name = "addRecordToolStripMenuItem4";
-            this.addRecordToolStripMenuItem4.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem4.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem4.Text = "Add Record";
             this.addRecordToolStripMenuItem4.Click += new System.EventHandler(this.addRecordToolStripMenuItem4_Click);
             // 
@@ -312,13 +315,13 @@
             this.sPESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem5});
             this.sPESToolStripMenuItem.Name = "sPESToolStripMenuItem";
-            this.sPESToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.sPESToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.sPESToolStripMenuItem.Text = "SPES";
             // 
             // addRecordToolStripMenuItem5
             // 
             this.addRecordToolStripMenuItem5.Name = "addRecordToolStripMenuItem5";
-            this.addRecordToolStripMenuItem5.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem5.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem5.Text = "Add Record";
             this.addRecordToolStripMenuItem5.Click += new System.EventHandler(this.addRecordToolStripMenuItem5_Click_1);
             // 
@@ -327,13 +330,13 @@
             this.highSchoolScholarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem6});
             this.highSchoolScholarToolStripMenuItem.Name = "highSchoolScholarToolStripMenuItem";
-            this.highSchoolScholarToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.highSchoolScholarToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.highSchoolScholarToolStripMenuItem.Text = "High School Scholar";
             // 
             // addRecordToolStripMenuItem6
             // 
             this.addRecordToolStripMenuItem6.Name = "addRecordToolStripMenuItem6";
-            this.addRecordToolStripMenuItem6.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem6.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem6.Text = "Add Record";
             this.addRecordToolStripMenuItem6.Click += new System.EventHandler(this.addRecordToolStripMenuItem6_Click);
             // 
@@ -342,13 +345,13 @@
             this.oFWToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem7});
             this.oFWToolStripMenuItem.Name = "oFWToolStripMenuItem";
-            this.oFWToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.oFWToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.oFWToolStripMenuItem.Text = "OFW";
             // 
             // addRecordToolStripMenuItem7
             // 
             this.addRecordToolStripMenuItem7.Name = "addRecordToolStripMenuItem7";
-            this.addRecordToolStripMenuItem7.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem7.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem7.Text = "Add Record";
             this.addRecordToolStripMenuItem7.Click += new System.EventHandler(this.addRecordToolStripMenuItem7_Click);
             // 
@@ -357,14 +360,14 @@
             this.kasambahayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem8});
             this.kasambahayToolStripMenuItem.Name = "kasambahayToolStripMenuItem";
-            this.kasambahayToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.kasambahayToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.kasambahayToolStripMenuItem.Text = "Kasambahay";
             this.kasambahayToolStripMenuItem.Click += new System.EventHandler(this.kasambahayToolStripMenuItem_Click);
             // 
             // addRecordToolStripMenuItem8
             // 
             this.addRecordToolStripMenuItem8.Name = "addRecordToolStripMenuItem8";
-            this.addRecordToolStripMenuItem8.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem8.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem8.Text = "Add Record";
             this.addRecordToolStripMenuItem8.Click += new System.EventHandler(this.addRecordToolStripMenuItem8_Click);
             // 
@@ -373,14 +376,14 @@
             this.rWAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem9});
             this.rWAToolStripMenuItem.Name = "rWAToolStripMenuItem";
-            this.rWAToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.rWAToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.rWAToolStripMenuItem.Text = "RWA";
             this.rWAToolStripMenuItem.Click += new System.EventHandler(this.rWAToolStripMenuItem_Click);
             // 
             // addRecordToolStripMenuItem9
             // 
             this.addRecordToolStripMenuItem9.Name = "addRecordToolStripMenuItem9";
-            this.addRecordToolStripMenuItem9.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem9.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem9.Text = "Add Record";
             this.addRecordToolStripMenuItem9.Click += new System.EventHandler(this.addRecordToolStripMenuItem9_Click);
             // 
@@ -389,15 +392,57 @@
             this.nSRPToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem10});
             this.nSRPToolStripMenuItem1.Name = "nSRPToolStripMenuItem1";
-            this.nSRPToolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
+            this.nSRPToolStripMenuItem1.Size = new System.Drawing.Size(196, 22);
             this.nSRPToolStripMenuItem1.Text = "NSRP (Contact List)";
             // 
             // addRecordToolStripMenuItem10
             // 
             this.addRecordToolStripMenuItem10.Name = "addRecordToolStripMenuItem10";
-            this.addRecordToolStripMenuItem10.Size = new System.Drawing.Size(136, 22);
+            this.addRecordToolStripMenuItem10.Size = new System.Drawing.Size(146, 22);
             this.addRecordToolStripMenuItem10.Text = "Add Record";
             this.addRecordToolStripMenuItem10.Click += new System.EventHandler(this.addRecordToolStripMenuItem10_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 22);
+            this.toolStripMenuItem1.Text = "Archived Data";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripComboBox1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripComboBox1.ForeColor = System.Drawing.SystemColors.Control;
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "BACUNGAN",
+            "BALNATE",
+            "BARAYONG",
+            "BLOCON",
+            "DALAWINON",
+            "DALUMAY",
+            "GLAMANG",
+            "KANAPOLO",
+            "KASUGA",
+            "LOWER BALA",
+            "MABINI",
+            "MAIBO",
+            "MALAWANIT",
+            "MALONGON",
+            "NEW ILOCOS",
+            "NEW OPON",
+            "POBLACION",
+            "SAN ISIDRO",
+            "SAN MIGUEL",
+            "TACUL",
+            "TAGAYTAY",
+            "UPPER BALA"});
+            this.toolStripComboBox1.MaxDropDownItems = 15;
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            this.toolStripComboBox1.Visible = false;
+            this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -426,8 +471,8 @@
             this.Load += new System.EventHandler(this._Dashboard_new_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -470,6 +515,8 @@
         private System.Windows.Forms.ToolStripMenuItem addRecordToolStripMenuItem5;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

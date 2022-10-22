@@ -186,7 +186,7 @@ namespace IMS_PESO
 
         private void button19_Click(object sender, EventArgs e)
         {
-            Login a = new Login();
+            f_login a = new f_login();
             a.Show();
             this.Close();
         }

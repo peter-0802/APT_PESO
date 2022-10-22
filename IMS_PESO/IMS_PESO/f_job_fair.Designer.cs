@@ -228,6 +228,7 @@
             this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 27;
             this.label6.Text = "Code:";
+            this.label6.Visible = false;
             // 
             // label9
             // 
@@ -238,6 +239,7 @@
             this.label9.Size = new System.Drawing.Size(66, 18);
             this.label9.TabIndex = 28;
             this.label9.Text = "~code~";
+            this.label9.Visible = false;
             this.label9.TextChanged += new System.EventHandler(this.label9_TextChanged);
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 

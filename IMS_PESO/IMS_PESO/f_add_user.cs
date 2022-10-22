@@ -97,7 +97,21 @@ namespace IMS_PESO
 
         private void _collegeSchoolarFilter_Load(object sender, EventArgs e)
         {
-
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    //((TextBox)ctrl).ForeColor = System.Drawing.Color.DodgerBlue;
+                }
+                else if (ctrl is Label)
+                {
+                    ((Label)ctrl).ForeColor = System.Drawing.SystemColors.Control;
+                }
+                else if (ctrl is Button)
+                {
+                    ((Button)ctrl).ForeColor = System.Drawing.Color.DodgerBlue;
+                }
+            }
         }
         private void update()
         {

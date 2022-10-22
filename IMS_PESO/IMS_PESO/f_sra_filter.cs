@@ -124,7 +124,29 @@ namespace IMS_PESO
         
         private void spesFilter_Load(object sender, EventArgs e)
         {
-
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button)
+                {
+                    ((Button)ctrl).ForeColor = System.Drawing.SystemColors.Control;
+                    ((Button)ctrl).BackColor = System.Drawing.Color.DodgerBlue;
+                    ((Button)ctrl).TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    ((Button)ctrl).FlatAppearance.BorderSize = 0;
+                    ((Button)ctrl).Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+                else if (ctrl is Label)
+                {
+                    ((Label)ctrl).Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+                else if (ctrl is TextBox)
+                {
+                    ((TextBox)ctrl).Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+                else if (ctrl is DateTimePicker)
+                {
+                    ((DateTimePicker)ctrl).Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
         }
 
         private void dateTimePicker1_MouseHover(object sender, EventArgs e)

@@ -206,6 +206,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Report Filter";
+            this.Load += new System.EventHandler(this.f_hsscholar_filter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

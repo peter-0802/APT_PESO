@@ -45,9 +45,32 @@ namespace IMS_PESO
             }
         }
 
+
         private void auth_Load(object sender, EventArgs e)
         {
+            //trimming Logo to sphere
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
+            Region rg = new Region(gp);
+            pictureBox1.Region = rg;
 
+            this.BackColor = System.Drawing.Color.DodgerBlue;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    //((TextBox)ctrl).ForeColor = System.Drawing.Color.DodgerBlue;
+                }
+                else if (ctrl is Label)
+                {
+                    ((Label)ctrl).ForeColor = System.Drawing.SystemColors.Control;
+                }
+                else if (ctrl is Button)
+                {
+                    ((Button)ctrl).ForeColor = System.Drawing.Color.DodgerBlue;
+                    ((Button)ctrl).BackColor = System.Drawing.SystemColors.Control;
+                }
+            }
         }
     }
 }

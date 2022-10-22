@@ -57,6 +57,7 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "~code~";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Visible = false;
             // 
             // button6
             // 
@@ -175,6 +176,7 @@
             this.label2.Size = new System.Drawing.Size(54, 18);
             this.label2.TabIndex = 31;
             this.label2.Text = "From:";
+            this.label2.Visible = false;
             // 
             // button5
             // 

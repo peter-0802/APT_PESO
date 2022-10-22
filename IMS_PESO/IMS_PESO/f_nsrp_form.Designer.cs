@@ -248,6 +248,7 @@
             this.label11.Size = new System.Drawing.Size(55, 18);
             this.label11.TabIndex = 32;
             this.label11.Text = "Code:";
+            this.label11.Visible = false;
             // 
             // label2
             // 
@@ -258,6 +259,7 @@
             this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 101;
             this.label2.Text = "~code~";
+            this.label2.Visible = false;
             this.label2.TextChanged += new System.EventHandler(this.label2_TextChanged);
             // 
             // label12

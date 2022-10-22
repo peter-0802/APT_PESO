@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace IMS_PESO
 {
-    public partial class f_pwd_filter : Form
+    public partial class f_archive : Form
     {
         DBConn DB = new DBConn();
-        public f_pwd_filter()
+        public f_archive()
         {
             try
             {
@@ -25,44 +25,45 @@ namespace IMS_PESO
                 MessageBox.Show(ex.GetType().ToString());
             }
             InitializeComponent();
+            getEvent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        
+        private void getEvent()
         {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            f_report a = new f_report();
-            string iQry = @"select
-                        date,
-                        code,
-                        concat(surname, ', ', firstname, ' ', middlename) name,
-                        address,
-                        gender,
-                        disability,
-                        remarks
-                        from pwd
-                        where date between '{0}' and '{1}'";
-            string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text);
-
-            dataset ds = new dataset();
-            using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
+            string query = @"SELECT `table` `MODULE`, `action` `ACTION`, `value` `VALUE`, `timestamp` `TIMESTAMP` FROM action_log";
+            MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            try
             {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(qry, conn);
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds, ds.Tables["pwdReport"].TableName);
-                _cr_pwd rep = new _cr_pwd();
-                rep.SetDataSource(ds);
-                a.crystalReportViewer1.ReportSource = rep;
-                a.ShowDialog();
+                MySqlDataAdapter dgv = new MySqlDataAdapter();
+                dgv.SelectCommand = cmd;
+                DataTable dbdatasec = new DataTable();
+                dgv.Fill(dbdatasec);
+                BindingSource bsource = new BindingSource();
+
+                bsource.DataSource = dbdatasec;
+                dataGridView1.DataSource = bsource;
+                dgv.Update(dbdatasec);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close(); ;
             }
         }
-        
-        private void spesFilter_Load(object sender, EventArgs e)
+
+        private void f_archive_Load(object sender, EventArgs e)
         {
             foreach (Control ctrl in this.Controls)
             {
@@ -89,16 +90,9 @@ namespace IMS_PESO
             }
         }
 
-        private void dateTimePicker1_MouseHover(object sender, EventArgs e)
+        private void iconButton2_Click(object sender, EventArgs e)
         {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
-        }
-
-        private void dateTimePicker2_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.dateTimePicker2, "use MM-dd-yyyy format");
+            this.Close();
         }
     }
 }
