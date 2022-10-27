@@ -49,7 +49,8 @@ namespace IMS_PESO
                         remarks
                         FROM jobfair2
                         where event_date between '{0}' and '{1}'
-                        and host like '%%{2}%%'";
+                        and host like '%%{2}%%'
+                        and archived = 0";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text);
             dataset ds = new dataset();
             using (MySqlConnection conn = new MySqlConnection(DBConn.connstring))
@@ -89,6 +90,7 @@ namespace IMS_PESO
                             `from` `FROM`
                             FROM jobfair2
                             where event_date between '{0}' and '{1}'
+                            and archived = 0
                             order by date";
             dataset ds = new dataset();
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);

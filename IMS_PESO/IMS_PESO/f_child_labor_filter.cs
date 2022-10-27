@@ -43,7 +43,8 @@ namespace IMS_PESO
                         and host like '%%{3}%%'
                         and veneu like '%%{4}%%'
                         and address like '%%{6}%%'
-                        and concat(surname, firstname, middlename) like '%%{5}%%'";
+                        and concat(surname, firstname, middlename) like '%%{5}%%'
+                        and archived = 0";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, comboBox5.Text);
             string datasetTable = "childLaborReport";
 

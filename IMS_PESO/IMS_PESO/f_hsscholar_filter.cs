@@ -44,6 +44,7 @@ namespace IMS_PESO
                             and address like '%%{2}%%'
                             and school like '%%{3}%%'
                             and status like '%%{4}%%'
+                            and archived = 0
                             group by code";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text, textBox6.Text, comboBox1.Text);
             string datasetTable = "hsReport";

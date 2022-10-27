@@ -59,7 +59,8 @@ namespace IMS_PESO
                                 tel `TEL/MOBILE NO.`,
                                 type `TYPE`,
                                 email `EMAIL`
-                                from rwa";
+                                from rwa
+                                where archived = 0";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -376,7 +377,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from rwa where code = @code;";
+                        string qD = @"update rwa set archived = 1 where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();

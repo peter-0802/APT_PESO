@@ -25,7 +25,7 @@ namespace IMS_PESO
                 MessageBox.Show(ex.GetType().ToString());
             }
             InitializeComponent();
-            getEvent();
+            
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -38,7 +38,31 @@ namespace IMS_PESO
         
         private void getEvent()
         {
-            string query = @"SELECT `table` `MODULE`, `action` `ACTION`, `value` `VALUE`, `timestamp` `TIMESTAMP` FROM action_log";
+            this.dataGridView1.DataSource = null;
+            this.dataGridView1.Rows.Clear();
+            this.dataGridView1.Columns.Clear();
+
+            string query = @"
+                           SELECT id, 'child_labor' as `tab`, 'Child Labor' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM child_labor where archived = 1
+                            union
+                            SELECT id, 'hsshcoolar' as `tab`, 'HS Scholar' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM hsshcoolar where archived = 1
+                            union
+                            SELECT id, 'contact2' as `tab`, 'NSRP' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM contact2 where archived = 1
+                            union
+                            SELECT id, 'jobfair2' as `tab`, 'Job Fair' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM jobfair2 where archived = 1
+                            union
+                            SELECT id, 'kasambahay2' as `tab`, 'Kasambahay' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM kasambahay2 where archived = 1
+                            union
+                            SELECT id, 'ofw2' as `tab`, 'OFW' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM ofw2 where archived = 1
+                            union
+                            SELECT id, 'pwd' as `tab`, 'PWD' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM pwd where archived = 1
+                            union
+                            SELECT id, 'schoolar_coll' as `tab`, 'College Scholar' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM schoolar_coll where archived = 1
+                            union
+                            SELECT id, 'sra2' as `tab`, 'SRA' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM sra2 where archived = 1
+                            union
+                            SELECT id, 'spes' as `tab`, 'SPES' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM spes where archived = 1
+                                ";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -51,7 +75,36 @@ namespace IMS_PESO
 
                 bsource.DataSource = dbdatasec;
                 dataGridView1.DataSource = bsource;
+
+                //Add a CheckBox Column to the DataGridView at the first position.
+                DataGridViewButtonColumn pre_test = new DataGridViewButtonColumn();
+                pre_test.UseColumnTextForButtonValue = true;
+                pre_test.HeaderText = "Retrieve";
+                pre_test.Width = 30;
+                pre_test.Name = "Retrieve";
+                pre_test.Text = "Retrieve";
+                dataGridView1.Columns.Insert(4, pre_test);
+
+                DataGridViewButtonColumn remediation = new DataGridViewButtonColumn();
+                remediation.UseColumnTextForButtonValue = true;
+                remediation.HeaderText = "Delete Permanently";
+                remediation.Width = 30;
+                remediation.Name = "Delete Permanently";
+                remediation.Text = "Delete Permanently";
+                dataGridView1.Columns.Insert(5, remediation);
+
                 dgv.Update(dbdatasec);
+
+                try
+                {
+                    this.dataGridView1.Rows[0].Cells[0].Selected = false;
+                }
+                catch (Exception)
+                {
+
+                    return;
+                }
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -61,10 +114,22 @@ namespace IMS_PESO
             {
                 conn.Close(); ;
             }
+            this.dataGridView1.Columns[0].Visible = false;
+            this.dataGridView1.Columns[1].Visible = false;
         }
 
         private void f_archive_Load(object sender, EventArgs e)
         {
+            getEvent();
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
             foreach (Control ctrl in this.Controls)
             {
                 if (ctrl is Button)
@@ -93,6 +158,135 @@ namespace IMS_PESO
         private void iconButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                string option = dataGridView1.Columns[e.ColumnIndex].Name;
+                if (option == "Retrieve")
+                {
+                    if (dataGridView1.SelectedCells.Count > 0)
+                    {
+                        int selectedidindex = dataGridView1.SelectedCells[0].RowIndex;
+                        DataGridViewRow selectedid = dataGridView1.Rows[selectedidindex];
+                        string id = Convert.ToString(selectedid.Cells[0].Value);
+                        
+
+                        int selectedtableindex = dataGridView1.SelectedCells[0].RowIndex;
+                        DataGridViewRow selectedtable = dataGridView1.Rows[selectedtableindex];
+                        string table = Convert.ToString(selectedtable.Cells[1].Value);
+
+                        MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+                        conn.Open();
+                        MySqlCommand myCommand = conn.CreateCommand();
+                        MySqlTransaction myTrans;
+                        myTrans = conn.BeginTransaction();
+                        myCommand.Connection = conn;
+                        myCommand.Transaction = myTrans;
+                        try
+                        {
+                            myCommand.Parameters.AddWithValue("@id", id);
+                            myCommand.Parameters.AddWithValue("@table", table);
+                            string qD = @"update {0} set archived = 0 where id = {1}";
+                            string _qD = string.Format(qD, table, id);
+                            myCommand.CommandText = _qD;
+                            myCommand.ExecuteNonQuery();
+                            myTrans.Commit();
+                            MessageBox.Show(this, "Record Retrieved", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception exg)
+                        {
+                            try
+                            {
+                                myTrans.Rollback();
+                            }
+                            catch (Exception ex)
+                            {
+                                if (myTrans.Connection != null)
+                                {
+                                    MessageBox.Show(ex.ToString());
+                                }
+                            }
+                            MessageBox.Show(exg.ToString());
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        getEvent();
+
+                    }
+                }
+                else if (option == "Delete Permanently")
+                {
+                    if (dataGridView1.SelectedCells.Count > 0)
+                    {
+                        int selectedidindex = dataGridView1.SelectedCells[0].RowIndex;
+                        DataGridViewRow selectedid = dataGridView1.Rows[selectedidindex];
+                        string id = Convert.ToString(selectedid.Cells[0].Value);
+
+
+                        int selectedtableindex = dataGridView1.SelectedCells[0].RowIndex;
+                        DataGridViewRow selectedtable = dataGridView1.Rows[selectedtableindex];
+                        string table = Convert.ToString(selectedtable.Cells[1].Value);
+
+                        MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+                        conn.Open();
+                        MySqlCommand myCommand = conn.CreateCommand();
+                        MySqlTransaction myTrans;
+                        myTrans = conn.BeginTransaction();
+                        myCommand.Connection = conn;
+                        myCommand.Transaction = myTrans;
+                        try
+                        {
+                            myCommand.Parameters.AddWithValue("@id", id);
+                            myCommand.Parameters.AddWithValue("@table", table);
+                            string qD = @"delete from {0} where id = {1}";
+                            string _qD = string.Format(qD, table, id);
+                            myCommand.CommandText = _qD;
+                            myCommand.ExecuteNonQuery();
+                            myTrans.Commit();
+                            MessageBox.Show(this, "Record Deleted Permanently", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception exg)
+                        {
+                            try
+                            {
+                                myTrans.Rollback();
+                            }
+                            catch (Exception ex)
+                            {
+                                if (myTrans.Connection != null)
+                                {
+                                    MessageBox.Show(ex.ToString());
+                                }
+                            }
+                            MessageBox.Show(exg.ToString());
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        getEvent();
+
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+        private void dataGridView1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -53,7 +53,8 @@ namespace IMS_PESO
                                 contact `CONTACT`,
                                 disability `DISABILITY`,
                                 remarks `REMARKS`
-                                FROM pwd";
+                                FROM pwd
+                                where archived = 0";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -350,7 +351,8 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from pwd where code = @code;";
+                       //string qD = @"delete from pwd where code = @code;";
+                        string qD = @"update pwd set archived = 1 where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();

@@ -398,9 +398,16 @@ namespace IMS_PESO
 
         private void dob_ValueChanged(object sender, EventArgs e)
         {
-            int years = DateTime.Now.Year - Convert.ToDateTime(dob.Text).Year;
-            if (Convert.ToDateTime(dob.Text).AddYears(years) > DateTime.Now) years--;
-            this.age.Text = years.ToString();
+            if (string.IsNullOrEmpty(dob.Text))
+            {
+                return;
+            }
+            else
+            {
+                int years = DateTime.Now.Year - Convert.ToDateTime(dob.Text).Year;
+                if (Convert.ToDateTime(dob.Text).AddYears(years) > DateTime.Now) years--;
+                this.age.Text = years.ToString();
+            }
         }
 
         private void dateTimePicker1_MouseHover(object sender, EventArgs e)

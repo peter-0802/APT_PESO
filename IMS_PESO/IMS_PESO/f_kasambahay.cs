@@ -52,6 +52,7 @@ namespace IMS_PESO
                                 `status` `STATUS`,
                                 remarks `REMARKS`
                                 FROM kasambahay2
+                                where archived = 0
                                 order by code asc";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -369,7 +370,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from kasambahay2 where code = @code;";
+                        string qD = @"update kasambahay2 set archived = 1 where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();

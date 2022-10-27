@@ -45,7 +45,8 @@ namespace IMS_PESO
                             tel `TEL`,
                             type `TYPE`
                             from rwa
-                        where date between '{0}' and '{1}'";
+                        where date between '{0}' and '{1}'
+                            and archived = 0";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
 
             dataset ds = new dataset();

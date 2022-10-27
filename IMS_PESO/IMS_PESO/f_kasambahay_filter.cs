@@ -55,6 +55,7 @@ namespace IMS_PESO
                             `from` `FROM`
                             FROM kasambahay2
                             where date between '{0}' and '{1}'
+                            and archived = 0
                             order by date";
             dataset ds = new dataset();
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
@@ -86,7 +87,8 @@ namespace IMS_PESO
                         remarks
                         from kasambahay2
                         where date between '{0}' and '{1}'
-                        and brgy like '%%{2}%%'";
+                        and brgy like '%%{2}%%'
+                        and archived = 0";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text);
 
             dataset ds = new dataset();

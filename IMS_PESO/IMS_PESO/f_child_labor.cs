@@ -25,7 +25,7 @@ namespace IMS_PESO
                 MessageBox.Show(ex.GetType().ToString());
             }
             InitializeComponent();
-            
+
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -63,7 +63,7 @@ namespace IMS_PESO
             }
             finally
             {
-                conn.Close();;
+                conn.Close(); ;
             }
         }
         private void childLabor_Load(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace IMS_PESO
             {
                 if (ctrl is Button)
                 {
-                    ((Button)ctrl).ForeColor = System.Drawing.SystemColors.Control; 
+                    ((Button)ctrl).ForeColor = System.Drawing.SystemColors.Control;
                     ((Button)ctrl).BackColor = System.Drawing.Color.DodgerBlue;
                 }
             }
@@ -92,27 +92,27 @@ namespace IMS_PESO
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                        myCommand = conn.CreateCommand();
-                        if (row.IsNewRow) continue;
-                        myCommand.Parameters.AddWithValue("@event", textBox1.Text);
-                        myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
-                        myCommand.Parameters.AddWithValue("@veneu", textBox2.Text);
-                        myCommand.Parameters.AddWithValue("@host", textBox3.Text);
-                        myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
-                        myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
-                        myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
-                        myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
-                        myCommand.Parameters.AddWithValue("@purok", row.Cells["purok"].Value);
-                        myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
-                        myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
-                        myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
-                        myCommand.Parameters.AddWithValue("@work_type", row.Cells["work_type"].Value);
-                        string query = @"insert ignore into child_labor
+                    myCommand = conn.CreateCommand();
+                    if (row.IsNewRow) continue;
+                    myCommand.Parameters.AddWithValue("@event", textBox1.Text);
+                    myCommand.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                    myCommand.Parameters.AddWithValue("@veneu", textBox2.Text);
+                    myCommand.Parameters.AddWithValue("@host", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@surname", row.Cells["surname"].Value);
+                    myCommand.Parameters.AddWithValue("@firstname", row.Cells["firstname"].Value);
+                    myCommand.Parameters.AddWithValue("@middlename", row.Cells["middlename"].Value);
+                    myCommand.Parameters.AddWithValue("@gender", row.Cells["gender"].Value);
+                    myCommand.Parameters.AddWithValue("@purok", row.Cells["purok"].Value);
+                    myCommand.Parameters.AddWithValue("@address", row.Cells["address"].Value);
+                    myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
+                    myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
+                    myCommand.Parameters.AddWithValue("@work_type", row.Cells["work_type"].Value);
+                    string query = @"insert ignore into child_labor
                                         (event, event_date, host, veneu, surname, firstname, middlename, gender, purok, address, dob, contact, work_type)
                                         values
                                         (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @purok, @address, @dob, @contact, @work_type)";
-                        myCommand.CommandText = query;
-                        myCommand.ExecuteNonQuery();
+                    myCommand.CommandText = query;
+                    myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
                 MessageBox.Show(this, "Record Added!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -199,7 +199,7 @@ namespace IMS_PESO
             {
 
                 myCommand.Parameters.AddWithValue("@event", label9.Text);
-                string qD = @"delete from child_labor where event = @event;";
+                string qD = @"delete from child_labor where event = @event and archived = 0;";
                 myCommand.CommandText = qD;
                 myCommand.ExecuteNonQuery();
 
@@ -220,7 +220,7 @@ namespace IMS_PESO
                     myCommand.Parameters.AddWithValue("@dob", row.Cells["dob"].Value);
                     myCommand.Parameters.AddWithValue("@contact", row.Cells["contact"].Value);
                     myCommand.Parameters.AddWithValue("@work_type", row.Cells["work_type"].Value);
-                    string query = @"insert ignore into child_labor
+                    string query = @"replace into child_labor
                                         (event, event_date, host, veneu, surname, firstname, middlename, gender, purok, address, dob, contact, work_type)
                                         values
                                         (@event, @date, @host, @veneu, @surname, @firstname, @middlename, @gender, @purok, @address, @dob, @contact, @work_type)";
@@ -228,7 +228,7 @@ namespace IMS_PESO
                     myCommand.ExecuteNonQuery();
                 }
                 myTrans.Commit();
-                MessageBox.Show(this, "Record Added!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Record Updated!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {
@@ -296,7 +296,7 @@ namespace IMS_PESO
 
         private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
@@ -304,7 +304,7 @@ namespace IMS_PESO
             foreach (DataGridViewRow rw in this.dataGridView1.Rows)
             {
                 if (rw.IsNewRow) continue;
-                for (int i = 0; i < rw.Cells.Count - 1; i++)
+                for (int i = 1; i < rw.Cells.Count - 1; i++)
                 {
                     if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
                     {
@@ -318,7 +318,7 @@ namespace IMS_PESO
                 }
             }
         }
-        
+
         private void textBox1_Leave(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -346,7 +346,7 @@ namespace IMS_PESO
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -366,12 +366,12 @@ namespace IMS_PESO
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                    label9.Text = this.dataGridView2.CurrentRow.Cells[0].Value.ToString();
+            label9.Text = this.dataGridView2.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -396,7 +396,8 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@event", label9.Text);
-                        string qD = @"delete from child_labor where event = @event;";
+                        //string qD = @"delete from child_labor where event = @event;";
+                        string qD = @"update child_labor set archived = 1 where event = @event;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -438,7 +439,7 @@ namespace IMS_PESO
 
         private void label9_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void getAttendee()
         {
@@ -446,6 +447,7 @@ namespace IMS_PESO
             this.dataGridView1.Rows.Clear();
             string query;
             query = @"SELECT
+                        id,
                         surname,
                         firstname,
                         middlename,
@@ -456,7 +458,8 @@ namespace IMS_PESO
                         contact,
                         work_type
                         from child_labor
-                        where event = '{0}'";
+                        where event = '{0}'
+                        and archived = 0";
             string FinalQuery = string.Format(query, label9.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
@@ -469,6 +472,7 @@ namespace IMS_PESO
                 for (int i = 0; i < dbdatasec1.Rows.Count; i++)
                 {
                     dataGridView1.Rows.Add();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["ID"].Value = dbdatasec1.Rows[i]["id"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["surname"].Value = dbdatasec1.Rows[i]["surname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
@@ -600,6 +604,68 @@ namespace IMS_PESO
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
+        }
+
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+
+        }
+        
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            string id;
+            if (e.KeyCode == Keys.Delete)
+            {
+                try
+                {
+                    id = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    //MessageBox.Show(id);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+                
+                MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+                conn.Open();
+                MySqlCommand myCommand = conn.CreateCommand();
+                MySqlTransaction myTrans;
+                myTrans = conn.BeginTransaction();
+                myCommand.Connection = conn;
+                myCommand.Transaction = myTrans;
+                try
+                {
+
+                    myCommand.Parameters.AddWithValue("@id", id);
+                    string qD = @"update child_labor set archived = 1 where id = @id;";
+                    myCommand.CommandText = qD;
+                    myCommand.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show(this, "Record Archived!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception exg)
+                {
+                    try
+                    {
+                        myTrans.Rollback();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (myTrans.Connection != null)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
+                    MessageBox.Show(exg.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                    getAttendee();
+                }
+                
+            }
         }
     }
 }

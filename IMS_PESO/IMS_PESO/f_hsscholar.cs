@@ -366,7 +366,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from hsshcoolar where code = @code;";
+                        string qD = @"update hsshcoolar set archived = 1 where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -428,7 +428,8 @@ namespace IMS_PESO
                             ave `AVERAGE`,
                             status `STATUS`,
                             remarks `REMARKS`
-                            FROM hsshcoolar";
+                            FROM hsshcoolar
+                            where archived = 0";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try

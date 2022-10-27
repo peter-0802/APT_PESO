@@ -53,7 +53,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.address = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.dob = new System.Windows.Forms.DateTimePicker();
             this.civil = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.religion = new System.Windows.Forms.ComboBox();
@@ -84,6 +83,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label28 = new System.Windows.Forms.Label();
             this.remarks = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -369,18 +369,6 @@
             this.label15.TabIndex = 107;
             this.label15.Text = "Birthday:";
             // 
-            // dob
-            // 
-            this.dob.CustomFormat = "MM-dd-yyyy";
-            this.dob.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dob.Location = new System.Drawing.Point(125, 116);
-            this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(187, 26);
-            this.dob.TabIndex = 4;
-            this.dob.ValueChanged += new System.EventHandler(this.dob_ValueChanged);
-            this.dob.MouseHover += new System.EventHandler(this.dob_MouseHover);
-            // 
             // civil
             // 
             this.civil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -534,7 +522,6 @@
             this.year_level.Name = "year_level";
             this.year_level.Size = new System.Drawing.Size(330, 26);
             this.year_level.TabIndex = 20;
-            this.year_level.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // school
             // 
@@ -627,6 +614,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.pppp);
             this.groupBox1.Controls.Add(this.age);
             this.groupBox1.Controls.Add(this.label27);
@@ -658,7 +646,6 @@
             this.groupBox1.Controls.Add(this.religion);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.dob);
             this.groupBox1.Controls.Add(this.civil);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -742,6 +729,18 @@
             this.remarks.Size = new System.Drawing.Size(330, 26);
             this.remarks.TabIndex = 1013;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "MM-dd-yyyy";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(125, 116);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(187, 26);
+            this.dateTimePicker2.TabIndex = 1015;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged_1);
+            this.dateTimePicker2.MouseHover += new System.EventHandler(this.dateTimePicker2_MouseHover_1);
+            // 
             // f_college_schoolar_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -798,7 +797,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox address;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker dob;
         private System.Windows.Forms.ComboBox civil;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox religion;
@@ -829,5 +827,6 @@
         private System.Windows.Forms.TextBox pppp;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox remarks;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

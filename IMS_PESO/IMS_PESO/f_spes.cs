@@ -323,7 +323,7 @@ namespace IMS_PESO
             foreach (DataGridViewRow rw in this.dataGridView1.Rows)
             {
                 if (rw.IsNewRow) continue;
-                for (int i = 0; i < rw.Cells.Count - 1; i++)
+                for (int i = 1; i < rw.Cells.Count - 1; i++)
                 {
                     if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
                     {
@@ -395,7 +395,7 @@ namespace IMS_PESO
             {
                 if (String.IsNullOrWhiteSpace(label9.Text) || label9.Text == "~code~")
                 {
-                    MessageBox.Show(this, "Please select an event to delete", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Please select an event to archive", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -409,11 +409,11 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@event", label9.Text);
-                        string qD = @"delete from spes where event = @event;";
+                        string qD = @"update spes set archived = 1 where event = @event;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
-                        MessageBox.Show(this, "Record Deleted", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this, "Record archived", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception exg)
                     {
@@ -459,6 +459,7 @@ namespace IMS_PESO
             this.dataGridView1.Rows.Clear();
             string query;
             query = @"SELECT
+                        id,
                         surname,
                         firstname,
                         middlename,
@@ -468,7 +469,8 @@ namespace IMS_PESO
                         contact,
                         type
                         from spes
-                        where event = '{0}'";
+                        where event = '{0}'
+                        and archived = 0";
             string FinalQuery = string.Format(query, label9.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
@@ -481,6 +483,7 @@ namespace IMS_PESO
                 for (int i = 0; i < dbdatasec1.Rows.Count; i++)
                 {
                     dataGridView1.Rows.Add();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["id"].Value = dbdatasec1.Rows[i]["id"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["surname"].Value = dbdatasec1.Rows[i]["surname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
@@ -606,6 +609,62 @@ namespace IMS_PESO
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            string id;
+            if (e.KeyCode == Keys.Delete)
+            {
+                try
+                {
+                    id = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    //MessageBox.Show(id);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+
+                MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+                conn.Open();
+                MySqlCommand myCommand = conn.CreateCommand();
+                MySqlTransaction myTrans;
+                myTrans = conn.BeginTransaction();
+                myCommand.Connection = conn;
+                myCommand.Transaction = myTrans;
+                try
+                {
+
+                    myCommand.Parameters.AddWithValue("@id", id);
+                    string qD = @"update spes set archived = 1 where id = @id;";
+                    myCommand.CommandText = qD;
+                    myCommand.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show(this, "Record Archived!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception exg)
+                {
+                    try
+                    {
+                        myTrans.Rollback();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (myTrans.Connection != null)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
+                    MessageBox.Show(exg.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                    getAttendee();
+                }
+
+            }
         }
     }
 }

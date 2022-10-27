@@ -44,7 +44,8 @@ namespace IMS_PESO
                         disability,
                         remarks
                         from pwd
-                        where date between '{0}' and '{1}'";
+                        where date between '{0}' and '{1}'
+                        and archived = 0";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text);
 
             dataset ds = new dataset();

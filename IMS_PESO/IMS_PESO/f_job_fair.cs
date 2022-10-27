@@ -509,7 +509,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from jobfair2 where code = @code;";
+                        string qD = @"update jobfair2 set archived = 1 where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
@@ -558,7 +558,7 @@ namespace IMS_PESO
             this.dataGridView1.DataSource = null;
             this.dataGridView1.Rows.Clear();
             string query;
-            query = @"SELECT * from jobfair2 where code = '{0}'";
+            query = @"SELECT * from jobfair2 where code = '{0}' and archived = 0";
             string FinalQuery = string.Format(query, label9.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(FinalQuery, conn);
@@ -571,6 +571,7 @@ namespace IMS_PESO
                 for (int i = 0; i < dbdatasec1.Rows.Count; i++)
                 {
                     dataGridView1.Rows.Add();
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["id"].Value = dbdatasec1.Rows[i]["id"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["surname"].Value = dbdatasec1.Rows[i]["surname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["firstname"].Value = dbdatasec1.Rows[i]["firstname"].ToString();
                     dataGridView1.Rows[dataGridView1.Rows.Count - 2].Cells["middlename"].Value = dbdatasec1.Rows[i]["middlename"].ToString();
@@ -713,7 +714,7 @@ namespace IMS_PESO
             foreach (DataGridViewRow rw in this.dataGridView1.Rows)
             {
                 if (rw.IsNewRow) continue;
-                for (int i = 0; i < rw.Cells.Count - 1; i++)
+                for (int i = 1; i < rw.Cells.Count - 1; i++)
                 {
                     if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
                     {
@@ -730,7 +731,7 @@ namespace IMS_PESO
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Index == 3)
+            if (dataGridView1.Columns[e.ColumnIndex].Index == 4)
             {
                 for (int i = 0; i <= dataGridView1.Rows.Count - 2; i++)
                 {
@@ -738,17 +739,17 @@ namespace IMS_PESO
                     {
                         DateTime dDate;
 
-                        if (DateTime.TryParse(dataGridView1.Rows[i].Cells[3].Value.ToString(), out dDate))
+                        if (DateTime.TryParse(dataGridView1.Rows[i].Cells[4].Value.ToString(), out dDate))
                         {
                             String.Format("MM-dd-yyyy", dDate);
-                            dataGridView1.Rows[i].Cells[3].Value = Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).ToString("MM-dd-yyyy");
-                            int years = DateTime.Now.Year - Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).Year;
-                            if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value).AddYears(years) > DateTime.Now) years--;
-                            dataGridView1.Rows[i].Cells[4].Value = years.ToString();
+                            dataGridView1.Rows[i].Cells[4].Value = Convert.ToDateTime(dataGridView1.Rows[i].Cells[4].Value).ToString("MM-dd-yyyy");
+                            int years = DateTime.Now.Year - Convert.ToDateTime(dataGridView1.Rows[i].Cells[4].Value).Year;
+                            if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[4].Value).AddYears(years) > DateTime.Now) years--;
+                            dataGridView1.Rows[i].Cells[5].Value = years.ToString();
                         }
                         else
                         {
-                            dataGridView1.Rows[i].Cells[3].Value = DateTime.Now.ToString("MM-dd-yyyy");
+                            dataGridView1.Rows[i].Cells[4].Value = DateTime.Now.ToString("MM-dd-yyyy");
                         }
                     }
                     catch (Exception r)
@@ -767,6 +768,62 @@ namespace IMS_PESO
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            string id;
+            if (e.KeyCode == Keys.Delete)
+            {
+                try
+                {
+                    id = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    //MessageBox.Show(id);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+
+                MySqlConnection conn = new MySqlConnection(DBConn.connstring);
+                conn.Open();
+                MySqlCommand myCommand = conn.CreateCommand();
+                MySqlTransaction myTrans;
+                myTrans = conn.BeginTransaction();
+                myCommand.Connection = conn;
+                myCommand.Transaction = myTrans;
+                try
+                {
+
+                    myCommand.Parameters.AddWithValue("@id", id);
+                    string qD = @"update jobfair2 set archived = 1 where id = @id;";
+                    myCommand.CommandText = qD;
+                    myCommand.ExecuteNonQuery();
+                    myTrans.Commit();
+                    MessageBox.Show(this, "Record Archived!", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception exg)
+                {
+                    try
+                    {
+                        myTrans.Rollback();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (myTrans.Connection != null)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
+                    MessageBox.Show(exg.ToString());
+                }
+                finally
+                {
+                    conn.Close();
+                    getAttendee();
+                }
+
+            }
         }
     }
 }

@@ -45,6 +45,7 @@ namespace IMS_PESO
                             `from` `FROM`
                             FROM schoolar_coll
                             where date between '{0}' and '{1}'
+                            and archived = 0
                             order by date";
             dataset ds = new dataset();
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text);
@@ -83,6 +84,7 @@ namespace IMS_PESO
                             and brgy like '%%{2}%%'
                             and school like '%%{3}%%'
                             and status like '%%{4}%%'
+                            and archived = 0
                             group by code";
             string qry = string.Format(iQry, dateTimePicker1.Text, dateTimePicker2.Text, comboBox5.Text, textBox6.Text, comboBox1.Text);
             string datasetTable = "colReport";

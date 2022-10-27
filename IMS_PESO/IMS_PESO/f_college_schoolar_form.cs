@@ -49,7 +49,7 @@ namespace IMS_PESO
                     string middlename = myreader.GetString("middlename");
                     this.middlename.Text = middlename;
                     string dob = myreader.GetString("dob");
-                    this.dob.Text = dob;
+                    dateTimePicker2.Text = dob;
                     string age = myreader.GetString("age");
                     this.age.Text = age;
                     string gender = myreader.GetString("sex");
@@ -96,6 +96,7 @@ namespace IMS_PESO
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+
             }
             finally { conn.Close(); }
         }
@@ -169,7 +170,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@surname", surname.Text);
                 myCommand.Parameters.AddWithValue("@firstname", firstname.Text);
                 myCommand.Parameters.AddWithValue("@middlename", middlename.Text);
-                myCommand.Parameters.AddWithValue("@dob", dob.Text);
+                myCommand.Parameters.AddWithValue("@dob", dateTimePicker2.Text);
                 myCommand.Parameters.AddWithValue("@age", age.Text);
                 myCommand.Parameters.AddWithValue("@gender", gender.Text);
                 myCommand.Parameters.AddWithValue("@civil", civil.Text);
@@ -293,7 +294,7 @@ namespace IMS_PESO
                 myCommand.Parameters.AddWithValue("@surname", surname.Text);
                 myCommand.Parameters.AddWithValue("@firstname", firstname.Text);
                 myCommand.Parameters.AddWithValue("@middlename", middlename.Text);
-                myCommand.Parameters.AddWithValue("@dob", dob.Text);
+                myCommand.Parameters.AddWithValue("@dob", dateTimePicker2.Text);
                 myCommand.Parameters.AddWithValue("@age", age.Text);
                 myCommand.Parameters.AddWithValue("@gender", gender.Text);
                 myCommand.Parameters.AddWithValue("@civil", civil.Text);
@@ -438,28 +439,32 @@ namespace IMS_PESO
 
         }
 
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void dob_ValueChanged(object sender, EventArgs e)
-        {
-            int years = DateTime.Now.Year - Convert.ToDateTime(dob.Text).Year;
-            if (Convert.ToDateTime(dob.Text).AddYears(years) > DateTime.Now) years--;
-            this.age.Text = years.ToString();
-        }
-
-        private void dob_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.dob, "use MM-dd-yyyy format");
-        }
 
         private void dateTimePicker1_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
+        }
+        private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(dateTimePicker2.Text))
+            {
+                return;
+            }
+            else
+            {
+                int years = DateTime.Now.Year - Convert.ToDateTime(dateTimePicker2.Text).Year;
+                if (Convert.ToDateTime(dateTimePicker2.Text).AddYears(years) > DateTime.Now) years--;
+                this.age.Text = years.ToString();
+            }
+            
+        }
+
+        private void dateTimePicker2_MouseHover_1(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.dateTimePicker2, "use MM-dd-yyyy format");
         }
     }
 }

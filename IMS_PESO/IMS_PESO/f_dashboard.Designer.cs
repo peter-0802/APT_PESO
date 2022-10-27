@@ -229,7 +229,7 @@
             this.recordsToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recordsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Control;
             this.recordsToolStripMenuItem.Name = "recordsToolStripMenuItem";
-            this.recordsToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
+            this.recordsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.recordsToolStripMenuItem.Text = "Records";
             this.recordsToolStripMenuItem.DropDownClosed += new System.EventHandler(this.recordsToolStripMenuItem_DropDownClosed);
             this.recordsToolStripMenuItem.DropDownOpening += new System.EventHandler(this.recordsToolStripMenuItem_DropDownOpening);
@@ -416,6 +416,7 @@
             this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripComboBox1.Items.AddRange(new object[] {
+            "-Select Barangay-",
             "BACUNGAN",
             "BALNATE",
             "BARAYONG",

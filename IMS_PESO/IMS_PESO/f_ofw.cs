@@ -54,7 +54,8 @@ namespace IMS_PESO
                                 cp_no `COMTACT NO.`,
                                 `status` `STATUS`,
                                 remarks `REMARKS`
-                                FROM ofw2";
+                                FROM ofw2
+                                where archived = 0";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
@@ -371,7 +372,7 @@ namespace IMS_PESO
                     try
                     {
                         myCommand.Parameters.AddWithValue("@code", label9.Text);
-                        string qD = @"delete from ofw2 where code = @code;";
+                        string qD = @"update ofw2 set archived = 1 where code = @code;";
                         myCommand.CommandText = qD;
                         myCommand.ExecuteNonQuery();
                         myTrans.Commit();
