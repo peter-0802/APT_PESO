@@ -57,11 +57,11 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "~code~";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Visible = false;
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Red;
+            this.button6.Enabled = false;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,6 +78,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Green;
+            this.button7.Enabled = false;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,7 +177,6 @@
             this.label2.Size = new System.Drawing.Size(54, 18);
             this.label2.TabIndex = 31;
             this.label2.Text = "From:";
-            this.label2.Visible = false;
             // 
             // button5
             // 

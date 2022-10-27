@@ -62,6 +62,8 @@ namespace IMS_PESO
                             SELECT id, 'sra2' as `tab`, 'SRA' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM sra2 where archived = 1
                             union
                             SELECT id, 'spes' as `tab`, 'SPES' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM spes where archived = 1
+                            union
+                            SELECT id, 'contact2' as `tab`, 'NSRP' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM contact2 where archived = 1
                                 ";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);

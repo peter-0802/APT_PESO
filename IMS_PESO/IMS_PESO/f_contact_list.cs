@@ -192,6 +192,7 @@ namespace IMS_PESO
                             skills `SKILLS`,
                             `from` `FROM`
                             FROM contact2
+                            where archived = 0
                             order by date asc";
             string FinalQuery = string.Format(query, comboBox2.Text);
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
@@ -396,36 +397,37 @@ namespace IMS_PESO
             try
             {
                 myCommand.Parameters.AddWithValue("@code", label1.Text);
-                string qD = @"delete
-                                contacts,
-                                emp_status_type,
-                                contacts_job,
-                                `language`,
-                                elementary,
-                                hs,
-                                college,
-                                grad,
-                                disability,
-                                eligibility,
-                                prc,
-                                skills,
-                                tech_voc,
-                                work_exp
-                                from contacts
-                                left join emp_status_type on contacts.id = emp_status_type.contact_id
-                                left join contacts_job on contacts.id = contacts_job.contact_id
-                                left join elementary on contacts.id = elementary.contact_id
-                                left join `language` on contacts.id = `language`.contact_id
-                                left join hs on contacts.id = hs.contact_id
-                                left join college on contacts.id = college.contact_id
-                                left join grad on contacts.id = grad.contact_id
-                                left join disability on contacts.id = disability.contact_id
-                                left join eligibility on contacts.id = eligibility.contact_id
-                                left join prc on contacts.id = prc.contact_id
-                                left join skills on contacts.id = skills.contact_id
-                                left join tech_voc on contacts.id = tech_voc.contact_id
-                                left join work_exp on contacts.id = work_exp.contact_id
-                                where contacts.code = @code";
+                //string qD = @"delete
+                //                contacts,
+                //                emp_status_type,
+                //                contacts_job,
+                //                `language`,
+                //                elementary,
+                //                hs,
+                //                college,
+                //                grad,
+                //                disability,
+                //                eligibility,
+                //                prc,
+                //                skills,
+                //                tech_voc,
+                //                work_exp
+                //                from contacts
+                //                left join emp_status_type on contacts.id = emp_status_type.contact_id
+                //                left join contacts_job on contacts.id = contacts_job.contact_id
+                //                left join elementary on contacts.id = elementary.contact_id
+                //                left join `language` on contacts.id = `language`.contact_id
+                //                left join hs on contacts.id = hs.contact_id
+                //                left join college on contacts.id = college.contact_id
+                //                left join grad on contacts.id = grad.contact_id
+                //                left join disability on contacts.id = disability.contact_id
+                //                left join eligibility on contacts.id = eligibility.contact_id
+                //                left join prc on contacts.id = prc.contact_id
+                //                left join skills on contacts.id = skills.contact_id
+                //                left join tech_voc on contacts.id = tech_voc.contact_id
+                //                left join work_exp on contacts.id = work_exp.contact_id
+                //                where contacts.code = @code";
+                string qD = @"update contact2 set archived = 1 where code = @code";
                 myCommand.CommandText = qD;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();
@@ -458,6 +460,7 @@ namespace IMS_PESO
                 return;
             }
             delete();
+            getNSRP();
         }
 
         private void button4_Click_1(object sender, EventArgs e)
@@ -661,6 +664,7 @@ namespace IMS_PESO
             {
                 MessageBox.Show(this, "Oops, Wrong Password :P", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            getNSRP();
         }
 
         private void dataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -668,10 +672,14 @@ namespace IMS_PESO
             if (comboBox2.Text == "NSRP ONLY")
             {
                 label1.Text = this.dataGridView1.CurrentRow.Cells["CODE"].Value.ToString();
+                button6.Enabled = true;
+                button7.Enabled = true;
             }
             else
             {
-                return;
+                MessageBox.Show("You only update records manually added from NSRP form");
+                button6.Enabled = false;
+                button7.Enabled = false;
             }
         }
 
