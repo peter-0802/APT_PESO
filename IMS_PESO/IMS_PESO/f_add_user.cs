@@ -126,7 +126,7 @@ namespace IMS_PESO
             //this is the code for adding image
             Image image = pictureBox1.Image;
             MemoryStream memoryStream = new MemoryStream();
-            image.Save(memoryStream, ImageFormat.Png);
+            image.Save(memoryStream, ImageFormat.Bmp);
             byte[] imageBt = memoryStream.ToArray();
 
             try
@@ -141,7 +141,7 @@ namespace IMS_PESO
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();
-                MessageBox.Show(this, "User Saved!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "User Saved!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 button6.Text = "Save";
             }
             catch (Exception exg)
@@ -165,6 +165,7 @@ namespace IMS_PESO
                 textBox6.Text = string.Empty;
                 textBox1.Text = string.Empty;
                 comboBox5.SelectedIndex = -1;
+                pictureBox1.Image = global::IMS_PESO.Properties.Resources.peso_logo;
                 imageBt = null;
                 loadUsers();
             }
@@ -181,10 +182,12 @@ namespace IMS_PESO
             myCommand.Transaction = myTrans;
 
             //this is the code for adding image
-            Image image = pictureBox1.Image;
+            byte[] imageBt = null;
+            Image image = null;
+            image = pictureBox1.Image;
             MemoryStream memoryStream = new MemoryStream();
             image.Save(memoryStream, ImageFormat.Png);
-            byte[] imageBt = memoryStream.ToArray();
+            imageBt = memoryStream.ToArray();
 
             try
             {
@@ -223,6 +226,7 @@ namespace IMS_PESO
                 textBox6.Text = string.Empty;
                 textBox1.Text = string.Empty;
                 comboBox5.SelectedIndex = -1;
+                pictureBox1.Image = global::IMS_PESO.Properties.Resources.peso_logo;
                 imageBt = null;
                 loadUsers();
             }
@@ -282,7 +286,7 @@ namespace IMS_PESO
             try
             {
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.Filter = "Image files | *.jpg";
+                openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);

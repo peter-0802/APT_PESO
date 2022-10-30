@@ -396,7 +396,7 @@ namespace IMS_PESO
         {
             if (string.IsNullOrWhiteSpace(comboBox2.Text))
             {
-                MessageBox.Show(this, "Select status group!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Select status group!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -457,7 +457,7 @@ namespace IMS_PESO
                 myCommand.CommandText = query;
                 myCommand.ExecuteNonQuery();
                 myTrans.Commit();
-                MessageBox.Show(this, "Task Deleted!", "Peter Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Task Deleted!", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exg)
             {

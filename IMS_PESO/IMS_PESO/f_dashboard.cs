@@ -152,35 +152,6 @@ namespace IMS_PESO
 
         private void _Dashboard_new_Load(object sender, EventArgs e)
         {
-            this.toolStripComboBox1.SelectedIndex = 0;
-            loadContent();
-            if(this.label4.Text == "Administrator")
-            {
-                toolStripComboBox1.Visible = true;
-            }
-            else
-            {
-                try
-                {
-                this.button4.Visible = false;
-                foreach (ToolStripMenuItem item in menuStrip1.Items)
-                {
-                    foreach (ToolStripMenuItem children in item.DropDownItems)
-                    {
-                        if (children.Text != this.label4.Text)
-                        {
-                            children.Visible = false;
-                        }
-                    }
-                }
-                }
-                catch
-                {
-                    return;
-                }
-                
-            }
-        
 
             try
             {
@@ -215,6 +186,38 @@ namespace IMS_PESO
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            this.toolStripComboBox1.SelectedIndex = 0;
+            loadContent();
+            if(this.label4.Text == "Administrator")
+            {
+                toolStripComboBox1.Visible = true;
+            }
+            else
+            {
+                try
+                {
+                this.button4.Visible = false;
+                foreach (ToolStripMenuItem item in menuStrip1.Items)
+                {
+                    foreach (ToolStripMenuItem children in item.DropDownItems)
+                    {
+                        if (children.Text != this.label4.Text)
+                        {
+                            children.Visible = false;
+                        }
+                    }
+                }
+                }
+                catch
+                {
+                    return;
+                }
+                
+            }
+        
+
+            
 
         }
 
