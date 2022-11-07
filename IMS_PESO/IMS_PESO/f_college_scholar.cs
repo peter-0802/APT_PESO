@@ -397,7 +397,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show(this, "Oops, Wrong Password :P", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Oops, Wrong Password", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -527,7 +527,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show(this, "Oops, Wrong Password :P", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Oops, Wrong Password", "Sytem Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             getAttendee();
             label9.Text = "~code~";
@@ -567,6 +567,11 @@ namespace IMS_PESO
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.dateTimePicker1, "use MM-dd-yyyy format");
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

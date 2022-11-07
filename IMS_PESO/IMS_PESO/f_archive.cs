@@ -43,27 +43,27 @@ namespace IMS_PESO
             this.dataGridView1.Columns.Clear();
 
             string query = @"
-                           SELECT id, 'child_labor' as `tab`, 'Child Labor' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM child_labor where archived = 1
+                           SELECT id, 'child_labor' as `tab`, 'Child Labor' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM child_labor where archived = 1
                             union
-                            SELECT id, 'hsshcoolar' as `tab`, 'HS Scholar' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM hsshcoolar where archived = 1
+                            SELECT id, 'hsshcoolar' as `tab`, 'HS Scholar' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM hsshcoolar where archived = 1
                             union
-                            SELECT id, 'contact2' as `tab`, 'NSRP' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM contact2 where archived = 1
+                            SELECT id, 'contact2' as `tab`, 'NSRP' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM contact2 where archived = 1
                             union
-                            SELECT id, 'jobfair2' as `tab`, 'Job Fair' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM jobfair2 where archived = 1
+                            SELECT id, 'jobfair2' as `tab`, 'Job Fair' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM jobfair2 where archived = 1
                             union
-                            SELECT id, 'kasambahay2' as `tab`, 'Kasambahay' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM kasambahay2 where archived = 1
+                            SELECT id, 'kasambahay2' as `tab`, 'Kasambahay' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM kasambahay2 where archived = 1
                             union
-                            SELECT id, 'ofw2' as `tab`, 'OFW' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM ofw2 where archived = 1
+                            SELECT id, 'ofw2' as `tab`, 'OFW' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM ofw2 where archived = 1
                             union
-                            SELECT id, 'pwd' as `tab`, 'PWD' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM pwd where archived = 1
+                            SELECT id, 'pwd' as `tab`, 'PWD' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM pwd where archived = 1
                             union
-                            SELECT id, 'schoolar_coll' as `tab`, 'College Scholar' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM schoolar_coll where archived = 1
+                            SELECT id, 'schoolar_coll' as `tab`, 'College Scholar' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM schoolar_coll where archived = 1
                             union
-                            SELECT id, 'sra2' as `tab`, 'SRA' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM sra2 where archived = 1
+                            SELECT id, 'sra2' as `tab`, 'SRA' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM sra2 where archived = 1
                             union
-                            SELECT id, 'spes' as `tab`, 'SPES' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM spes where archived = 1
+                            SELECT id, 'spes' as `tab`, 'SPES' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM spes where archived = 1
                             union
-                            SELECT id, 'contact2' as `tab`, 'NSRP' as `Module`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM contact2 where archived = 1
+                            SELECT id, 'contact2' as `tab`, 'NSRP' as `Program`, concat(surname, ', ', firstname, ' ', middlename) `Name` FROM contact2 where archived = 1
                                 ";
             MySqlConnection conn = new MySqlConnection(DBConn.connstring);
             MySqlCommand cmd = new MySqlCommand(query, conn);

@@ -182,12 +182,10 @@ namespace IMS_PESO
             myCommand.Transaction = myTrans;
 
             //this is the code for adding image
-            byte[] imageBt = null;
-            Image image = null;
-            image = pictureBox1.Image;
+            Image image = pictureBox1.Image;
             MemoryStream memoryStream = new MemoryStream();
             image.Save(memoryStream, ImageFormat.Png);
-            imageBt = memoryStream.ToArray();
+            byte[] imageBt = memoryStream.ToArray();
 
             try
             {

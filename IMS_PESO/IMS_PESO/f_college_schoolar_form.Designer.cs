@@ -77,13 +77,13 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.pppp = new System.Windows.Forms.TextBox();
             this.age = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label28 = new System.Windows.Forms.Label();
             this.remarks = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -656,6 +656,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "NSRP FIELDS";
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "MM-dd-yyyy";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(125, 116);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(187, 26);
+            this.dateTimePicker2.TabIndex = 1015;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged_1);
+            this.dateTimePicker2.MouseHover += new System.EventHandler(this.dateTimePicker2_MouseHover_1);
+            // 
             // pppp
             // 
             this.pppp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -708,7 +720,7 @@
             this.groupBox2.Size = new System.Drawing.Size(487, 305);
             this.groupBox2.TabIndex = 1014;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "College Schoolar Fields";
+            this.groupBox2.Text = "College Scholar Fields";
             // 
             // label28
             // 
@@ -728,18 +740,6 @@
             this.remarks.Name = "remarks";
             this.remarks.Size = new System.Drawing.Size(330, 26);
             this.remarks.TabIndex = 1013;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "MM-dd-yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(125, 116);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(187, 26);
-            this.dateTimePicker2.TabIndex = 1015;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged_1);
-            this.dateTimePicker2.MouseHover += new System.EventHandler(this.dateTimePicker2_MouseHover_1);
             // 
             // f_college_schoolar_form
             // 

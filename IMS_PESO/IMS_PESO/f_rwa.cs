@@ -407,7 +407,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show(this, "Oops, Wrong Password :P", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Oops, Wrong Password", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             getEvent();
             label9.Text = "~code~";
@@ -492,7 +492,7 @@ namespace IMS_PESO
             }
             else
             {
-                MessageBox.Show(this, "Oops, Wrong Password :P", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Oops, Wrong Password", "System Says", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

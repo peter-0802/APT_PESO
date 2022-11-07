@@ -341,5 +341,10 @@ namespace IMS_PESO
             f_archive a = new f_archive();
             a.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
